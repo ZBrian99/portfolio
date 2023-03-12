@@ -1,0 +1,29 @@
+// Importar los estilos de reset y tipografía
+// @import "base/reset";
+// @import "base/typography";
+
+// Importar los estilos de los componentes
+// @import "components/_navbar";
+// @import "components/_hero";
+// @import "components/_about";
+// @import "components/_technologies";
+// @import "components/_projects";
+// @import "components/_form";
+// @import "components/_footer";
+
+// Importar los estilos de utilidades
+// @import "utilities/spacing";
+// @import "utilities/text";
+// @import "utilities/visibility";
+
+// @use 'navbar' as navbar;
+// @use 'hero' as hero;
+// @use 'about' as about;
+// @use 'technologies' as technologies;
+// @use 'projects' as projects;
+// @use 'form' as form;
+// @use 'footer' as footer;
+
+@use './mixins/media-queries';
+@use './base/reset';
+
