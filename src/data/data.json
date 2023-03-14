@@ -1,0 +1,40 @@
+{
+	"navbar": {
+		"homeLinkText": "Inicio",
+		"aboutLinkText": "Sobre mí",
+		"projectsLinkText": "Proyectos",
+		"contactLinkText": "Contacto"
+	},
+	"header": {
+		"homeLinkText": "Inicio",
+		"aboutLinkText": "Sobre mí",
+		"projectsLinkText": "Proyectos",
+		"contactLinkText": "Contacto"
+	},
+	"aboutMe": {
+		"title": "Sobre mí",
+		"description": "Hola, soy...",
+		"buttonText": "Ver más"
+	},
+	"technologies": {
+		"title": "Tecnologías",
+		"description": "Algunas de las tecnologías que utilizo son...",
+		"buttonText": "Más información"
+	},
+	"projects": {
+		"title": "Mis proyectos",
+		"description": "Estos son algunos de mis proyectos recientes...",
+		"buttonText": "Ver todos los proyectos"
+	},
+
+	"contact": {
+		"title": "Contacto",
+		"nameLabel": "Nombre",
+		"emailLabel": "Correo electrónico",
+		"messageLabel": "Mensaje",
+		"submitButton": "Enviar"
+	},
+	"footer": {
+		"copyrightText": "Copyright..."
+	}
+}

@@ -1,0 +1,8 @@
+@use './base/variables';
+
+body {
+	font-family: variables.$font-family;
+	color: variables.$color-blanco;
+	background-color: variables.$color-gris-oscuro;
+	letter-spacing: .5px;
+}

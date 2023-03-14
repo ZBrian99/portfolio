@@ -1,5 +1,10 @@
+import { Header } from './components/Header';
+import { DataProvider } from './context';
+
 export const App = () => {
-  return (
-    <div>App</div>
-  )
-}
+	return (
+		<DataProvider>
+			<Header />
+		</DataProvider>
+	);
+};

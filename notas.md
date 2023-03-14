@@ -62,8 +62,10 @@ src/
 
 ---
 loading="lazy" en img
-estilo espacial
+estilo espacia
 
+uuid
+data?.map()
 loader espacial
 
 boton up o algo similar
@@ -105,3 +107,13 @@ redes sociales
 boton up
 navegacion o efecto al ir bajando
 animacion en cada componente al ser cargado
+
+
+new notas::
+
+efecto hover en funcion de donde esta el cursor: https://5t4t1ck.github.io/#index.html#portfolio
+secciones apareciendo con efecto desde abajo o desde cualquier lado
+estrellas de fondo animadas en lo posible fondo espacial con animacion: https://portfolio-nicolotrombin1.vercel.app/
+
+referencia en general muy buena: https://ftag-portfolio.netlify.app/#home
+referencias background: https://portfolio-diegato.vercel.app/

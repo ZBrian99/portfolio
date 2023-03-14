@@ -1,35 +1,39 @@
-// Definición de variables de colores
-$color-blanco: #F8F8F8;
-$color-blanco2: #FCFCFC ;
-$color-blanco3: #F2F2F2;
-$color-gris-claro: #EAEAEA;
-$color-gris-oscuro: #333333;
-$color-negro: #1A1A1A;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+$font-family: 'Roboto Slab', serif;
+
+$color-blanco: #f8f8f8;
+$color-blanco2: #fcfcfc;
+$color-blanco3: #f2f2f2;
+$color-gris-claro: #333333;
+$color-gris-oscuro: #0a0a0c;
+$color-negro: #1a1a1a;
 $color-negro2: #212121;
-$color-negro3: #1E1E1E;
+$color-negro3: #1e1e1e;
 $color-negro3: #141414;
-$color-negro3: #2B2B2B;
-$color-negro-oscuro: #01070D;
-$color-azul-oscuro: #0A2342;
+$color-negro3: #2b2b2b;
+$color-negro-oscuro: #01070d;
+$color-azul-oscuro: #0a2342;
 $color-azul-oscuro2: #063573;
-$color-azul-medio: #4E7AC7;
-$color-azul-claro: #A4B6D6;
+$color-azul-medio: #4e7ac7;
+$color-azul-claro: #a4b6d6;
 
+:root {
+	--font-family: #{$font-family};
 
-// fuentes
-
-// Uso de las variables de colores
-// body {
-//   background-color: $color-azul-oscuro;
-//   color: $color-blanco;
-// }
-
-// .navbar {
-//   background-color: $color-azul-medio;
-// }
-
-// .footer {
-//   background-color: $color-azul-claro;
-// }
-
-// y así sucesivamente...
+	--color-blanco: #{$color-blanco};
+	--color-blanco2: #{$color-blanco2};
+	--color-blanco3: #{$color-blanco3};
+	--color-gris-claro: #{$color-gris-claro};
+	--color-gris-oscuro: #{$color-gris-oscuro};
+	--color-negro: #{$color-negro};
+	--color-negro2: #{$color-negro2};
+	--color-negro3: #{$color-negro3};
+	--color-negro3: #{$color-negro3};
+	--color-negro3: #{$color-negro3};
+	--color-negro-oscuro: #{$color-negro-oscuro};
+	--color-azul-oscuro: #{$color-azul-oscuro};
+	--color-azul-oscuro2: #{$color-azul-oscuro2};
+	--color-azul-medio: #{$color-azul-medio};
+	--color-azul-claro: #{$color-azul-claro};
+}
