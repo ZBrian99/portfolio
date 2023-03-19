@@ -2,6 +2,13 @@
 
 $font-family: 'Roboto Slab', serif;
 
+$black: #232323;
+$dark: #232323;
+$grey: #232323;
+$light: #b2b2b2;
+$blue: #6d83f2;
+$white: #f8f8f8;
+
 $color-blanco: #f8f8f8;
 $color-blanco2: #fcfcfc;
 $color-blanco3: #f2f2f2;
@@ -18,10 +25,14 @@ $color-azul-oscuro2: #063573;
 $color-azul-medio: #4e7ac7;
 $color-azul-claro: #a4b6d6;
 :root {
-
-
-
 	--font-family: #{$font-family};
+
+	--black: #{$black};
+	--dark: #{$dark};
+	--grey: #{$grey};
+	--light: #{$light};
+	--blue: #{$blue};
+	--white: #{$white};
 
 	--color-blanco: #{$color-blanco};
 	--color-blanco2: #{$color-blanco2};
