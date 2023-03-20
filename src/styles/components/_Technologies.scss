@@ -1,0 +1,61 @@
+.Tech {
+	width: 100%;
+	height: 100vh;
+	max-height: 50rem;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+
+	&-panel {
+	}
+	&-system {
+	}
+}
+
+.Panel {
+	background-color: darkblue;
+	&-title {
+	}
+	&-list {
+	}
+	&-item {
+	}
+}
+
+@keyframes rotation {
+	from {
+		transform: translate(0rem, 0rem) rotate(0deg);
+	}
+	to {
+		transform: translate(0rem, 0rem) rotate(360deg);
+	}
+}
+
+.System {
+	position: relative;
+	background-color: gray;
+
+	&-sun {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		width: 3rem;
+		height: 3rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&-planet {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 3rem;
+		height: 3rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}

@@ -1,4 +1,4 @@
-@use './base/variables';
+@use './base/variables' as var;
 
 html {
 	scrollbar-width: thin;
@@ -19,8 +19,12 @@ html {
 }
 
 body {
-	font-family: variables.$font-family;
-	color: variables.$color-blanco;
-	background-color: variables.$color-gris-oscuro;
-	letter-spacing: .5px;
+	font-family: var.$font-family;
+	color: var.$white;
+	background-color: var.$black;
+	letter-spacing: 0.5px;
+}
+
+.Container {
+	padding: 0 5rem;
 }

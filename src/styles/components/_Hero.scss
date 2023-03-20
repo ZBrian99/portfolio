@@ -1,0 +1,35 @@
+@use '../base/variables' as var;
+
+.Hero {
+	width: 100%;
+	height: calc(100vh - 4rem);
+	max-height: 50rem;
+	padding-bottom: 4rem;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	font-size: 5em;
+	&-span {
+		font-size: 0.75em;
+	}
+	&-h1 {
+		font-size: 1em;
+	}
+	&-h2 {
+		font-size: 0.5em;
+	}
+	&-color {
+		color: var.$blue;
+	}
+	&-socialList {
+		display: flex;
+		margin-top: 2rem;
+		gap: 3rem;
+	}
+	&-socialLink {
+		font-size: 0.75em;
+	}
+	&-socialIcon {
+		display: block;
+	}
+}
