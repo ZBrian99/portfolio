@@ -1,9 +1,12 @@
-import { Test } from "./components/Test";
+import GlobalStyles from './styles/GlobalStyles ';
+import { Test } from './components/Test';
+import { Skills } from './components/Skills/Skills';
 
 export const App = () => {
 	return (
-		<div>
-			<Test />
-		</div>
+		<>
+			<GlobalStyles />
+			<Skills />
+		</>
 	);
 };
