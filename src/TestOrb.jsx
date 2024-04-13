@@ -1,67 +1,82 @@
-import { useState } from 'react';
-import { css, keyframes } from '@emotion/css';
+import { useState, useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 import styled from '@emotion/styled';
-
-const rotateAnimation = keyframes`
-  0% {
-    transform: rotate(45deg);
-  }
-  50% {
-    transform: rotate(65deg);
-  }
-  100% {
-    transform: rotate(45deg);
-  }
-`;
 
 const PlanetContainer = styled.div`
 	width: 100%;
 	height: 100vh;
-	background-color: hotpink;
 	position: relative;
+	overflow: hidden;
+  background-image: url('src/assets/images/background.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* background-size: cover; */
 `;
 
 const Sun = styled.div`
-	width: 5rem;
-	height: 5rem;
+	width: 15vw;
+	height: 15vw;
 	background-color: #ffd000;
 	border-radius: 50%;
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	margin: -7.5vw 0 0 -7.5vw;
 `;
 
-const PlanetOrbit = styled.div`
-	width: 10rem;
-	height: 10rem;
+const PlanetOrbit = styled(motion.div)`
+	width: 30vw;
+	height: 30vw;
 	background-color: transparent;
 	border: 1px dashed white;
 	border-radius: 50%;
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	margin: -5rem 0 0 -5rem;
-	animation: ${rotateAnimation} 5s linear infinite;
+	margin: -15vw 0 0 -15vw;
+`;
+const PlanetRotation = styled(motion.div)`
+	width: 100%;
+	height: 100%;
+	position: absolute;
 `;
 
 const Planet = styled.div`
-	width: 1rem;
-	height: 1rem;
-	background-color: lightblue;
+	width: 7vw;
+	height: 7vw;
 	border-radius: 50%;
-	margin: -0.5rem auto 0;
+	background-color: #add8e6;
+	margin: -3.5vw auto;
 `;
 
-const SistemaSolar = () => {
+export const SistemaSolar = () => {
+	const [direction, setDirection] = useState(true);
+
+	const controls = useAnimation();
+
+	useEffect(() => {
+		const startAnimation = async () => {
+			await controls.start({
+				rotate: direction ? 65 : 45,
+				transition: {
+					duration: 5,
+					ease: 'easeInOut',
+				},
+			});
+			setDirection(!direction);
+		};
+
+		startAnimation();
+	}, [controls, direction]);
+
 	return (
 		<PlanetContainer>
 			<Sun />
 			<PlanetOrbit>
-				<Planet />
+				<PlanetRotation animate={controls}>
+					<Planet />
+				</PlanetRotation>
 			</PlanetOrbit>
 		</PlanetContainer>
 	);
 };
-
-export default SistemaSolar;
