@@ -1,0 +1,78 @@
+{
+	"main": {
+		"src": "src/assets/icons/react.svg",
+		"name": "React"
+	},
+	"skills": [
+		{
+			"src": "src/assets/icons/html.svg",
+			"name": "HTML"
+		},
+		{
+			"src": "src/assets/icons/css.svg",
+			"name": "CSS"
+		},
+		{
+			"src": "src/assets/icons/js.svg",
+			"name": "JavaScript"
+		},
+		{
+			"src": "src/assets/icons/sass.svg",
+			"name": "Sass"
+		},
+		{
+			"src": "src/assets/icons/git.svg",
+			"name": "Git"
+		},
+		{
+			"src": "src/assets/icons/framer-motion.svg",
+			"name": "Framer Motion"
+		},
+		{
+			"src": "src/assets/icons/emotion.svg",
+			"name": "Emotion"
+		},
+		{
+			"src": "src/assets/icons/styled-components.svg",
+			"name": "Styled Components"
+		},
+		{
+			"src": "src/assets/icons/nodejs.svg",
+			"name": "Node"
+		},
+		{
+			"src": "src/assets/icons/react-router.svg",
+			"name": "React Router"
+		}
+	],
+	"futureSkills": [
+		{
+			"src": "src/assets/icons/redux.svg",
+			"name": "Redux"
+		},
+		{
+			"src": "src/assets/icons/testing-library.svg",
+			"name": "React Testing Library"
+		},
+		{
+			"src": "src/assets/icons/typescript.svg",
+			"name": "TypeScript"
+		},
+		{
+			"src": "src/assets/icons/react-query.svg",
+			"name": "React Query"
+		},
+		{
+			"src": "src/assets/icons/tailwind.svg",
+			"name": "Tailwind CSS"
+		},
+		{
+			"src": "src/assets/icons/graphql.svg",
+			"name": "GraphQL"
+		},
+		{
+			"src": "src/assets/icons/aws.svg",
+			"name": "Amazon Web Services"
+		}
+	]
+}

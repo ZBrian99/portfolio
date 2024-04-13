@@ -22,6 +22,8 @@ const GlobalStyles = () => (
 				background-color: #333;
 				font-size: 100%;
 				min-height: 100vh;
+				font-family: var(--font-body);
+				color: var(--color-secondary);
 			}
 		`}
 	/>
