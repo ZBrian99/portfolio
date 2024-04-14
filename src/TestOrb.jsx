@@ -22,11 +22,11 @@ const Sun = styled(motion.div)`
 	/* background-color: #ffd000; */
 	/* border-radius: 50%; */
 	position: absolute;
-	top: 100%;
+	top: 50%;
 	left: 0%;
-
+  margin-top: calc(-${({ sunSize }) => sunSize} / 2);
 	/* margin: -7.5vw 0 0 -7.5vw; */
-	margin: calc(-${({ sunSize }) => sunSize} / 2) 0 0 calc(-${({ sunSize }) => sunSize} / 2);
+	/* margin: calc(-${({ sunSize }) => sunSize} / 2) 0 0 calc(-${({ sunSize }) => sunSize} / 2); */
 
 	background-image: url('src/assets/icons/react.svg');
 	background-size: cover;
@@ -40,10 +40,10 @@ const PlanetOrbit = styled(motion.div)`
 	width: ${({ orbitSize }) => orbitSize};
 	height: ${({ orbitSize }) => orbitSize};
 	background-color: transparent;
-	/* border: 1px dashed white; */
+	border: 1px dashed white;
 	border-radius: 50%;
 	position: absolute;
-	top: 100%;
+	top: 50%;
 	left: 0%;
 	/* margin: calc(-30vw / 2) 0 0 calc(-30vw / 2); */
 	margin: calc(-${({ orbitSize }) => orbitSize} / 2) 0 0 calc(-${({ orbitSize }) => orbitSize} / 2);
@@ -67,14 +67,17 @@ const Planet = styled(motion.div)`
 	justify-content: center;
 	align-items: center;
 	position: relative;
-	background-color: #c7db1184;
+	/* background-color: #c7db1184; */
 	/* margin: calc(-30vw / 2) auto; */
+  background-color: #ffffff;
 	margin: calc(-${({ planetSize }) => planetSize} / 2) auto;
+  
 `;
 const PlanetIcon = styled.img`
-	width: 80%;
-	height: 80%;
+	width: 100%;
+	height: 100%;
 	object-fit: cover;
+  border-radius: 50%;
 `;
 
 const MoonOrbit = styled(motion.div)`
@@ -82,7 +85,9 @@ const MoonOrbit = styled(motion.div)`
 	width: ${({ orbitSize }) => orbitSize};
 	height: ${({ orbitSize }) => orbitSize};
 	background-color: transparent;
-	background-color: #0d491f5a;
+	/* border: 1px dashed white; */
+  
+	/* background-color: #0d491f5a; */
 	/* margin-top: calc(50% - ${({ orbitSize }) => orbitSize} / 2); */
 	/* margin-left: calc(50% - ${({ orbitSize }) => orbitSize} / 2); */
 
@@ -95,10 +100,10 @@ const Line = styled.div`
 	width: 300%; /* Doble del ancho de la ventana */
 	height: 5px; /* Grosor de la línea */
 	background-color: red;
-	bottom: 0; /* Fijar a la parte inferior */
+	top: 0; /* Fijar a la parte inferior */
 	left: 0; /* Fijar a la parte izquierda */
 	transform-origin: center left;
-	transform: rotate(-${(props) => props.angle}deg);
+	transform: rotate(+${(props) => props.angle}deg);
 	z-index: 10;
 `;
 
@@ -109,6 +114,7 @@ const getScreenAngle = () => {
 	const angleDegrees = angleRadians * (180 / Math.PI);
 	return angleDegrees;
 };
+
 
 export const SistemaSolar = () => {
 	const planetsData = [
@@ -138,7 +144,7 @@ export const SistemaSolar = () => {
 
 	return (
 		<>
-			{/* <Line angle={+ angle} /> */}
+			{/* <Line angle={+angle} /> */}
 			{/* <Line angle={-10 + angle} /> */}
 			<PlanetContainer>
 				<Sun
@@ -156,10 +162,10 @@ export const SistemaSolar = () => {
 					<PlanetOrbit key={index} orbitSize={planet.orbitSize}>
 						<PlanetRotation
 							animate={{
-								rotate: [80, 90 - angle],
+								rotate: [80 + angle, 90 + angle],
 							}}
 							transition={{
-								duration: index +1,
+								duration: index + 10,
 								ease: 'easeInOut',
 								repeat: Infinity,
 								repeatType: 'reverse',
@@ -167,10 +173,12 @@ export const SistemaSolar = () => {
 						>
 							<Planet
 								animate={{
-									rotate: [80 * -1, (90 - angle) * -1],
+									// rotate: [80 - angle, 100 - angle],
+
+									rotate: [(80 + angle) * -1,(90 + angle) * -1],
 								}}
 								transition={{
-									duration: index +1,
+									duration: index + 10,
 									ease: 'easeInOut',
 									repeat: Infinity,
 									repeatType: 'reverse',
@@ -183,10 +191,11 @@ export const SistemaSolar = () => {
 									<MoonOrbit key={`moon-${index}-${moonIndex}`} orbitSize={moon.orbitSize}>
 										<PlanetRotation
 											animate={{
+												// rotate: [90],
 												rotate: [360, 0],
 											}}
 											transition={{
-												duration: moonIndex +1,
+												duration: moonIndex +10,
 												ease: 'linear',
 												repeat: Infinity,
 											}}
@@ -196,7 +205,7 @@ export const SistemaSolar = () => {
 													rotate: [-360, 0],
 												}}
 												transition={{
-													duration: moonIndex +1,
+													duration: moonIndex +10,
 													ease: 'linear',
 													repeat: Infinity,
 												}}

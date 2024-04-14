@@ -8,92 +8,43 @@
 		{
 			"src": "src/assets/icons/html.svg",
 			"name": "HTML",
-			"orbitSize": "40vw",
-			"planetSize": "4vw"
+			"orbitSize": "85vw",
+			"planetSize": "5vw"
 		},
 		{
 			"src": "src/assets/icons/css.svg",
 			"name": "CSS",
-			"orbitSize": "53vw",
-			"planetSize": "6vw",
+			"orbitSize": "135vw",
+			"planetSize": "10vw",
 			"moons": [
-				{ "src": "src/assets/icons/sass.svg", "name": "Sass", "orbitSize": "9vw", "planetSize": "3vw" },
+				{ "src": "src/assets/icons/sass.svg", "name": "Sass", "orbitSize": "17vw", "planetSize": "5vw" },
 				{
 					"src": "src/assets/icons/framer-motion.svg",
 					"name": "Framer Motion",
-					"orbitSize": "12vw",
-					"planetSize": "4vw"
-				},
-				{
-					"src": "src/assets/icons/emotion.svg",
-					"name": "Emotion",
-					"orbitSize": "15vw",
-					"planetSize": "2vw"
+					"orbitSize": "25vw",
+					"planetSize": "5vw"
 				},
 				{
 					"src": "src/assets/icons/styled-components.svg",
 					"name": "Styled Components",
-					"orbitSize": "18vw",
-					"planetSize": "1.5vw"
+					"orbitSize": "33vw",
+					"planetSize": "4vw"
 				}
 			]
 		},
 		{
 			"src": "src/assets/icons/js.svg",
 			"name": "JavaScript",
-			"orbitSize": "70vw",
+			"orbitSize": "190vw",
 			"planetSize": "8vw",
 			"moons": [
 				{
 					"src": "src/assets/icons/nodejs.svg",
 					"name": "Node",
-					"orbitSize": "11vw",
+					"orbitSize": "13vw",
 					"planetSize": "4vw"
-				},
-				{ "orbitSize": "8vw", "planetSize": "1.5vw", "src": "src/assets/icons/css.svg" }
+				}
 			]
-		},
-		{
-			"src": "src/assets/icons/sass.svg",
-			"name": "Sass",
-			"orbitSize": "95vw",
-			"planetSize": "13vw"
-		},
-		{
-			"src": "src/assets/icons/git.svg",
-			"name": "Git",
-			"orbitSize": "115vw",
-			"planetSize": "8vw"
-		},
-		{
-			"src": "src/assets/icons/framer-motion.svg",
-			"name": "Framer Motion",
-			"orbitSize": "133vw",
-			"planetSize": "9vw"
-		},
-		{
-			"src": "src/assets/icons/emotion.svg",
-			"name": "Emotion",
-			"orbitSize": "150vw",
-			"planetSize": "5vw"
-		},
-		{
-			"src": "src/assets/icons/styled-components.svg",
-			"name": "Styled Components",
-			"orbitSize": "170vw",
-			"planetSize": "12vw"
-		},
-		{
-			"src": "src/assets/icons/nodejs.svg",
-			"name": "Node",
-			"orbitSize": "190vw",
-			"planetSize": "10vw"
-		},
-		{
-			"src": "src/assets/icons/react-router.svg",
-			"name": "React Router",
-			"orbitSize": "210vw",
-			"planetSize": "7vw"
 		}
 	],
 	"futureSkills": [
