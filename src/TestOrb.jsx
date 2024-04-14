@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import styled from '@emotion/styled';
-
+import skillsData from './data/skills.json';
 const PlanetContainer = styled.div`
 	width: 100%;
 	height: 100vh;
@@ -40,7 +40,7 @@ const PlanetOrbit = styled(motion.div)`
 	width: ${({ orbitSize }) => orbitSize};
 	height: ${({ orbitSize }) => orbitSize};
 	background-color: transparent;
-	border: 1px dashed white;
+	/* border: 1px dashed white; */
 	border-radius: 50%;
 	position: absolute;
 	top: 100%;
@@ -62,11 +62,12 @@ const Planet = styled(motion.div)`
 	width: ${({ planetSize }) => planetSize};
 	height: ${({ planetSize }) => planetSize};
 	border-radius: 50%;
-	overflow: hidden;
+	/* overflow: hidden; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* background-color: #1180db; */
+	position: relative;
+	background-color: #c7db1184;
 	/* margin: calc(-30vw / 2) auto; */
 	margin: calc(-${({ planetSize }) => planetSize} / 2) auto;
 `;
@@ -74,6 +75,20 @@ const PlanetIcon = styled.img`
 	width: 80%;
 	height: 80%;
 	object-fit: cover;
+`;
+
+const MoonOrbit = styled(motion.div)`
+	/* Alinea la órbita de la luna con el centro del planeta */
+	width: ${({ orbitSize }) => orbitSize};
+	height: ${({ orbitSize }) => orbitSize};
+	background-color: transparent;
+	background-color: #0d491f5a;
+	/* margin-top: calc(50% - ${({ orbitSize }) => orbitSize} / 2); */
+	/* margin-left: calc(50% - ${({ orbitSize }) => orbitSize} / 2); */
+
+	border-radius: 50%;
+	position: absolute;
+	margin: calc(-${({ orbitSize }) => orbitSize} / 2) auto;
 `;
 const Line = styled.div`
 	position: fixed;
@@ -84,7 +99,7 @@ const Line = styled.div`
 	left: 0; /* Fijar a la parte izquierda */
 	transform-origin: center left;
 	transform: rotate(-${(props) => props.angle}deg);
-  z-index: 10;
+	z-index: 10;
 `;
 
 const getScreenAngle = () => {
@@ -97,17 +112,17 @@ const getScreenAngle = () => {
 
 export const SistemaSolar = () => {
 	const planetsData = [
-		{ orbitSize: '40vw', planetSize: '4vw', rotateTime: 15, startAngle: 5, endAngle: 8 },
-		{ orbitSize: '53vw', planetSize: '6vw', rotateTime: 10, startAngle: 5, endAngle: 8 },
-		{ orbitSize: '70vw', planetSize: '10vw', rotateTime: 17, startAngle: 5, endAngle: 8 },
-		{ orbitSize: '95vw', planetSize: '13vw', rotateTime: 18, startAngle: 5, endAngle: 8 },
-		{ orbitSize: '115vw', planetSize: '8vw', rotateTime: 16, startAngle: 5, endAngle: 8 },
-		{ orbitSize: '133vw', planetSize: '9vw', rotateTime: 19, startAngle: 5, endAngle: 8 },
-		{ orbitSize: '150vw', planetSize: '5vw', rotateTime: 14, startAngle: 5, endAngle: 8 },
-		{ orbitSize: '170vw', planetSize: '12vw', rotateTime: 11, startAngle: 5, endAngle: 8 },
-		{ orbitSize: '190vw', planetSize: '10vw', rotateTime: 17, startAngle: 5, endAngle: 8 },
+		{ orbitSize: '40vw', planetSize: '4vw' },
+		{ orbitSize: '53vw', planetSize: '6vw' },
+		{ orbitSize: '70vw', planetSize: '10vw' },
+		{ orbitSize: '95vw', planetSize: '13vw' },
+		{ orbitSize: '115vw', planetSize: '8vw' },
+		{ orbitSize: '133vw', planetSize: '9vw' },
+		{ orbitSize: '150vw', planetSize: '5vw' },
+		{ orbitSize: '170vw', planetSize: '12vw' },
+		{ orbitSize: '190vw', planetSize: '10vw' },
 	];
-	const [angle, setAngle] = useState(90);
+	const [angle, setAngle] = useState(80);
 	useEffect(() => {
 		setAngle(getScreenAngle());
 		const handleResize = () => {
@@ -123,8 +138,8 @@ export const SistemaSolar = () => {
 
 	return (
 		<>
-			<Line angle={10 + angle} />
-			<Line angle={-20 + angle} />
+			{/* <Line angle={+ angle} /> */}
+			{/* <Line angle={-10 + angle} /> */}
 			<PlanetContainer>
 				<Sun
 					animate={{
@@ -137,15 +152,14 @@ export const SistemaSolar = () => {
 					}}
 					sunSize={'30vw'}
 				/>
-				{planetsData.map((planet, index) => (
+				{skillsData.skills.map((planet, index) => (
 					<PlanetOrbit key={index} orbitSize={planet.orbitSize}>
 						<PlanetRotation
 							animate={{
-								rotate: [100 - angle, 90 - angle],
-								// rotate: [planet.endAngle + angle, planet.startAngle + angle],
+								rotate: [80, 90 - angle],
 							}}
 							transition={{
-								duration: planet.rotateTime,
+								duration: index +1,
 								ease: 'easeInOut',
 								repeat: Infinity,
 								repeatType: 'reverse',
@@ -153,18 +167,46 @@ export const SistemaSolar = () => {
 						>
 							<Planet
 								animate={{
-									// rotate: [0, 0],
-									rotate: [(100 - angle) * -1, (90 - angle) * -1],
+									rotate: [80 * -1, (90 - angle) * -1],
 								}}
 								transition={{
-									duration: planet.rotateTime,
+									duration: index +1,
 									ease: 'easeInOut',
 									repeat: Infinity,
 									repeatType: 'reverse',
 								}}
 								planetSize={planet.planetSize}
+								// planetSize={planet.planetSize}
 							>
-								<PlanetIcon src='src/assets/icons/sass.webp' alt='' />
+								<PlanetIcon src={planet.src} alt={planet.name} />
+								{planet.moons?.map((moon, moonIndex) => (
+									<MoonOrbit key={`moon-${index}-${moonIndex}`} orbitSize={moon.orbitSize}>
+										<PlanetRotation
+											animate={{
+												rotate: [360, 0],
+											}}
+											transition={{
+												duration: moonIndex +1,
+												ease: 'linear',
+												repeat: Infinity,
+											}}
+										>
+											<Planet
+												animate={{
+													rotate: [-360, 0],
+												}}
+												transition={{
+													duration: moonIndex +1,
+													ease: 'linear',
+													repeat: Infinity,
+												}}
+												planetSize={moon.planetSize}
+											>
+												<PlanetIcon src={moon.src} alt={`Moon of ${planet.name}`} />
+											</Planet>
+										</PlanetRotation>
+									</MoonOrbit>
+								))}
 							</Planet>
 						</PlanetRotation>
 					</PlanetOrbit>

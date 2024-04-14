@@ -1,48 +1,99 @@
 {
 	"main": {
 		"src": "src/assets/icons/react.svg",
-		"name": "React"
+		"name": "React",
+		"size": ""
 	},
 	"skills": [
 		{
 			"src": "src/assets/icons/html.svg",
-			"name": "HTML"
+			"name": "HTML",
+			"orbitSize": "40vw",
+			"planetSize": "4vw"
 		},
 		{
 			"src": "src/assets/icons/css.svg",
-			"name": "CSS"
+			"name": "CSS",
+			"orbitSize": "53vw",
+			"planetSize": "6vw",
+			"moons": [
+				{ "src": "src/assets/icons/sass.svg", "name": "Sass", "orbitSize": "9vw", "planetSize": "3vw" },
+				{
+					"src": "src/assets/icons/framer-motion.svg",
+					"name": "Framer Motion",
+					"orbitSize": "12vw",
+					"planetSize": "4vw"
+				},
+				{
+					"src": "src/assets/icons/emotion.svg",
+					"name": "Emotion",
+					"orbitSize": "15vw",
+					"planetSize": "2vw"
+				},
+				{
+					"src": "src/assets/icons/styled-components.svg",
+					"name": "Styled Components",
+					"orbitSize": "18vw",
+					"planetSize": "1.5vw"
+				}
+			]
 		},
 		{
 			"src": "src/assets/icons/js.svg",
-			"name": "JavaScript"
+			"name": "JavaScript",
+			"orbitSize": "70vw",
+			"planetSize": "8vw",
+			"moons": [
+				{
+					"src": "src/assets/icons/nodejs.svg",
+					"name": "Node",
+					"orbitSize": "11vw",
+					"planetSize": "4vw"
+				},
+				{ "orbitSize": "8vw", "planetSize": "1.5vw", "src": "src/assets/icons/css.svg" }
+			]
 		},
 		{
 			"src": "src/assets/icons/sass.svg",
-			"name": "Sass"
+			"name": "Sass",
+			"orbitSize": "95vw",
+			"planetSize": "13vw"
 		},
 		{
 			"src": "src/assets/icons/git.svg",
-			"name": "Git"
+			"name": "Git",
+			"orbitSize": "115vw",
+			"planetSize": "8vw"
 		},
 		{
 			"src": "src/assets/icons/framer-motion.svg",
-			"name": "Framer Motion"
+			"name": "Framer Motion",
+			"orbitSize": "133vw",
+			"planetSize": "9vw"
 		},
 		{
 			"src": "src/assets/icons/emotion.svg",
-			"name": "Emotion"
+			"name": "Emotion",
+			"orbitSize": "150vw",
+			"planetSize": "5vw"
 		},
 		{
 			"src": "src/assets/icons/styled-components.svg",
-			"name": "Styled Components"
+			"name": "Styled Components",
+			"orbitSize": "170vw",
+			"planetSize": "12vw"
 		},
 		{
 			"src": "src/assets/icons/nodejs.svg",
-			"name": "Node"
+			"name": "Node",
+			"orbitSize": "190vw",
+			"planetSize": "10vw"
 		},
 		{
 			"src": "src/assets/icons/react-router.svg",
-			"name": "React Router"
+			"name": "React Router",
+			"orbitSize": "210vw",
+			"planetSize": "7vw"
 		}
 	],
 	"futureSkills": [
