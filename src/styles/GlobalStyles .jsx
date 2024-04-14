@@ -19,9 +19,14 @@ const GlobalStyles = () => (
 				margin: 0;
 			}
 			body {
-				background-color: #333;
+				background-color: #000;
 				font-size: 100%;
-				min-height: 100vh;
+				padding: 100rem 0;
+				height: 500vh;
+				background-image: url('src/assets/images/background.png');
+				background-attachment: fixed;
+				background-repeat: repeat;
+				/* background-size: cover; */
 				font-family: var(--font-body);
 				color: var(--color-secondary);
 			}

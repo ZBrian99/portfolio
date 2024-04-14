@@ -5,13 +5,11 @@ import skillsData from './data/skills.json';
 const SkillSection = styled.div`
 	width: 100%;
 	height: 100vh;
-	overflow: hidden;
 `;
 const SolarSystem = styled.div`
 	width: 100%;
 	height: 100vh;
 	position: absolute;
-  overflow: hidden;
 	background-image: url('src/assets/images/background.png');
 	background-repeat: no-repeat;
 	background-attachment: fixed;

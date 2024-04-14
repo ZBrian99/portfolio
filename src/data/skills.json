@@ -1,82 +1,128 @@
 {
 	"main": {
-		"src2": "src/assets/icons/react.svg",
 		"src": "src/assets/icons/react.svg",
 		"name": "React",
-		"orbitSize": "0vw",
-		"planetSize": "20vw"
+		"size": 20,
+		"speed": 200
 	},
 	"skills": [
 		{
 			"src": "src/assets/icons/js.svg",
 			"name": "JavaScript",
-			"orbitSize": "70vw",
-			"planetSize": "8vw",
+			"orbitSize": 45,
+			"size": 8,
+			"speed": 5,
+			"angle": 25,
 			"moons": [
 				{
 					"src": "src/assets/icons/nodejs.svg",
 					"name": "Node",
-					"orbitSize": "13vw",
-					"planetSize": "4vw"
+					"orbitSize": 16,
+					"size": 4,
+					"speed": 30,
+					"angle": 10
 				}
 			]
 		},
 		{
 			"src": "src/assets/icons/css.svg",
 			"name": "CSS",
-			"orbitSize": "100vw",
-			"planetSize": "10vw",
+			"orbitSize": 107,
+			"size": 10,
+			"speed": 10,
+			"angle": 4,
 			"moons": [
-				{ "src": "src/assets/icons/sass.svg", "name": "Sass", "orbitSize": "17vw", "planetSize": "5vw" },
+				{
+					"src": "src/assets/icons/sass.svg",
+					"name": "Sass",
+					"orbitSize": 17,
+					"size": 4,
+					"speed": 20,
+					"angle": 10
+				},
 				{
 					"src": "src/assets/icons/framer-motion.svg",
 					"name": "Framer Motion",
-					"orbitSize": "25vw",
-					"planetSize": "5vw"
+					"orbitSize": 27,
+					"size": 5,
+					"speed": 30,
+					"angle": 10
 				},
 				{
 					"src": "src/assets/icons/styled-components.svg",
 					"name": "Styled Components",
-					"orbitSize": "33vw",
-					"planetSize": "4vw"
+					"orbitSize": 37,
+					"size": 4,
+					"speed": 40,
+					"angle": 10
 				}
 			]
 		},
 		{
 			"src": "src/assets/icons/html.svg",
 			"name": "HTML",
-			"orbitSize": "140vw",
-			"planetSize": "6vw"
+			"orbitSize": 160,
+			"size": 6,
+			"speed": 15,
+			"angle": 12
 		}
 	],
 	"futureSkills": [
 		{
 			"src": "src/assets/icons/redux.svg",
-			"name": "Redux"
+			"name": "Redux",
+			"size": 6,
+			"speed": 15,
+			"x": 13,
+			"y": 30
 		},
 		{
 			"src": "src/assets/icons/testing-library.svg",
-			"name": "React Testing Library"
+			"name": "React Testing Library",
+			"size": 6,
+			"speed": 15,
+			"x": 22,
+			"y": 10
 		},
 		{
 			"src": "src/assets/icons/typescript.svg",
-			"name": "TypeScript"
+			"name": "TypeScript",
+			"size": 6,
+			"speed": 15,
+			"x": 5,
+			"y": 5
 		},
 		{
 			"src": "src/assets/icons/react-query.svg",
-			"name": "React Query"
+			"name": "React Query",
+			"size": 6,
+			"speed": 15,
+			"x": 20,
+			"y": 25
 		},
 		{
 			"src": "src/assets/icons/tailwind.svg",
-			"name": "Tailwind CSS"
+			"name": "Tailwind CSS",
+			"size": 6,
+			"speed": 15,
+			"x": 10,
+			"y": 13
 		},
 		{
 			"src": "src/assets/icons/graphql.svg",
-			"name": "GraphQL"
+			"name": "GraphQL",
+			"size": 6,
+			"speed": 15,
+			"x": 8,
+			"y": 7
 		},
 		{
 			"src": "src/assets/icons/aws.svg",
-			"name": "Amazon Web Services"
+			"name": "Amazon Web Services",
+			"size": 6,
+			"speed": 15,
+			"x": 5,
+			"y": 20
 		}
 	]
 }
