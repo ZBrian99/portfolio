@@ -2,11 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import styled from '@emotion/styled';
 import skillsData from './data/skills.json';
-const PlanetContainer = styled.div`
+const SkillSection = styled.div`
 	width: 100%;
 	height: 100vh;
-	position: relative;
 	overflow: hidden;
+`;
+const SolarSystem = styled.div`
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+  overflow: hidden;
 	background-image: url('src/assets/images/background.png');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -14,25 +19,6 @@ const PlanetContainer = styled.div`
 	background-position: center;
 `;
 
-const Sun = styled(motion.div)`
-	/* width: 15vw; */
-	/* height: 15vw; */
-	width: ${({ sunSize }) => sunSize};
-	height: ${({ sunSize }) => sunSize};
-	/* background-color: #ffd000; */
-	/* border-radius: 50%; */
-	position: absolute;
-	top: 50%;
-	left: 0%;
-  margin-top: calc(-${({ sunSize }) => sunSize} / 2);
-	/* margin: -7.5vw 0 0 -7.5vw; */
-	/* margin: calc(-${({ sunSize }) => sunSize} / 2) 0 0 calc(-${({ sunSize }) => sunSize} / 2); */
-
-	background-image: url('src/assets/icons/react.svg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-`;
 
 const PlanetOrbit = styled(motion.div)`
 	/* width: 30vw;
@@ -43,10 +29,12 @@ const PlanetOrbit = styled(motion.div)`
 	border: 1px dashed white;
 	border-radius: 50%;
 	position: absolute;
-	top: 50%;
-	left: 0%;
+	/* top: 25%; */
+	margin-top: 25%;
+	margin-left: 25%;
 	/* margin: calc(-30vw / 2) 0 0 calc(-30vw / 2); */
-	margin: calc(-${({ orbitSize }) => orbitSize} / 2) 0 0 calc(-${({ orbitSize }) => orbitSize} / 2);
+	/* margin-top: calc(-${({ orbitSize }) => orbitSize} / 2); */
+	/* margin-top: calc((${({ sunSize }) => sunSize} / 2)); */
 `;
 
 const PlanetRotation = styled(motion.div)`
@@ -69,15 +57,14 @@ const Planet = styled(motion.div)`
 	position: relative;
 	/* background-color: #c7db1184; */
 	/* margin: calc(-30vw / 2) auto; */
-  background-color: #ffffff;
+	background-color: #ffffff;
 	margin: calc(-${({ planetSize }) => planetSize} / 2) auto;
-  
 `;
 const PlanetIcon = styled.img`
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-  border-radius: 50%;
+	border-radius: 50%;
 `;
 
 const MoonOrbit = styled(motion.div)`
@@ -85,8 +72,8 @@ const MoonOrbit = styled(motion.div)`
 	width: ${({ orbitSize }) => orbitSize};
 	height: ${({ orbitSize }) => orbitSize};
 	background-color: transparent;
-	/* border: 1px dashed white; */
-  
+	border: 1px dashed white;
+
 	/* background-color: #0d491f5a; */
 	/* margin-top: calc(50% - ${({ orbitSize }) => orbitSize} / 2); */
 	/* margin-left: calc(50% - ${({ orbitSize }) => orbitSize} / 2); */
@@ -103,7 +90,7 @@ const Line = styled.div`
 	top: 0; /* Fijar a la parte inferior */
 	left: 0; /* Fijar a la parte izquierda */
 	transform-origin: center left;
-	transform: rotate(+${(props) => props.angle}deg);
+	transform: rotate(+ ${(props) => props.angle}deg);
 	z-index: 10;
 `;
 
@@ -114,7 +101,6 @@ const getScreenAngle = () => {
 	const angleDegrees = angleRadians * (180 / Math.PI);
 	return angleDegrees;
 };
-
 
 export const SistemaSolar = () => {
 	const planetsData = [
@@ -146,81 +132,127 @@ export const SistemaSolar = () => {
 		<>
 			{/* <Line angle={+angle} /> */}
 			{/* <Line angle={-10 + angle} /> */}
-			<PlanetContainer>
-				<Sun
+			<SkillSection>
+				<SolarSystem>
+					{/* <Sun
 					animate={{
-						rotate: -360,
+						// rotate: -360,
 					}}
 					transition={{
 						duration: 60,
 						ease: 'linear',
 						repeat: Infinity,
 					}}
-					sunSize={'30vw'}
-				/>
-				{skillsData.skills.map((planet, index) => (
-					<PlanetOrbit key={index} orbitSize={planet.orbitSize}>
+					sunSize={skillsData.main.planetSize}
+				> */}
+					<PlanetOrbit orbitSize={'1vw'} sunSize={skillsData.main.planetSize}>
 						<PlanetRotation
-							animate={{
-								rotate: [80 + angle, 90 + angle],
-							}}
+							animate={
+								{
+									// rotate: [90],
+									// rotate: [88, 92],
+								}
+							}
 							transition={{
-								duration: index + 10,
+								duration: 1,
 								ease: 'easeInOut',
 								repeat: Infinity,
 								repeatType: 'reverse',
 							}}
 						>
 							<Planet
-								animate={{
-									// rotate: [80 - angle, 100 - angle],
-
-									rotate: [(80 + angle) * -1,(90 + angle) * -1],
-								}}
+								animate={
+									{
+										// rotate: [80 - angle, 100 - angle],
+										// rotate: [(80 + angle) * -1,(90 + angle) * -1],
+									}
+								}
 								transition={{
-									duration: index + 10,
+									duration: 1,
 									ease: 'easeInOut',
 									repeat: Infinity,
 									repeatType: 'reverse',
 								}}
-								planetSize={planet.planetSize}
+								planetSize={skillsData.main.planetSize}
 								// planetSize={planet.planetSize}
 							>
-								<PlanetIcon src={planet.src} alt={planet.name} />
-								{planet.moons?.map((moon, moonIndex) => (
-									<MoonOrbit key={`moon-${index}-${moonIndex}`} orbitSize={moon.orbitSize}>
+								<PlanetIcon src={skillsData.main.src} alt={skillsData.main.name} />
+								{skillsData.skills.map((planet, index) => (
+									<PlanetOrbit key={index} orbitSize={planet.orbitSize} sunSize={skillsData.main.planetSize}>
 										<PlanetRotation
-											animate={{
-												// rotate: [90],
-												rotate: [360, 0],
-											}}
+											animate={
+												{
+													// rotate: [90],
+													// rotate: [88, 92],
+												}
+											}
 											transition={{
-												duration: moonIndex +10,
-												ease: 'linear',
+												duration: index + 1,
+												ease: 'easeInOut',
 												repeat: Infinity,
+												repeatType: 'reverse',
 											}}
 										>
 											<Planet
-												animate={{
-													rotate: [-360, 0],
-												}}
+												animate={
+													{
+														// rotate: [80 - angle, 100 - angle],
+														// rotate: [(80 + angle) * -1,(90 + angle) * -1],
+													}
+												}
 												transition={{
-													duration: moonIndex +10,
-													ease: 'linear',
+													duration: index + 1,
+													ease: 'easeInOut',
 													repeat: Infinity,
+													repeatType: 'reverse',
 												}}
-												planetSize={moon.planetSize}
+												planetSize={planet.planetSize}
+												// planetSize={planet.planetSize}
 											>
-												<PlanetIcon src={moon.src} alt={`Moon of ${planet.name}`} />
+												<PlanetIcon src={planet.src} alt={planet.name} />
+												{/* {planet.moons?.map((moon, moonIndex) => (
+												<MoonOrbit key={`moon-${index}-${moonIndex}`} orbitSize={moon.orbitSize}>
+													<PlanetRotation
+														animate={
+															{
+																// rotate: [270],
+																// rotate: [360, 0],
+															}
+														}
+														transition={{
+															duration: moonIndex + 10,
+															ease: 'linear',
+															repeat: Infinity,
+														}}
+													>
+														<Planet
+															animate={
+																{
+																	// rotate: [-360, 0],
+																}
+															}
+															transition={{
+																duration: moonIndex + 10,
+																ease: 'linear',
+																repeat: Infinity,
+															}}
+															planetSize={moon.planetSize}
+														>
+															<PlanetIcon src={moon.src} alt={`Moon of ${planet.name}`} />
+														</Planet>
+													</PlanetRotation>
+												</MoonOrbit>
+											))} */}
 											</Planet>
 										</PlanetRotation>
-									</MoonOrbit>
+									</PlanetOrbit>
 								))}
 							</Planet>
 						</PlanetRotation>
 					</PlanetOrbit>
-				))}
-			</PlanetContainer>
+					{/* </Sun> */}
+				</SolarSystem>
+			</SkillSection>
 		</>
 	);
 };

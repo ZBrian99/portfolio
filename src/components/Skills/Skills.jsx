@@ -1,141 +1,392 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 import styled from '@emotion/styled';
 import skillsData from '../../data/skills.json';
 
-const Section = styled.section`
+const SkillSection = styled.div`
 	width: 100%;
 	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	font-size: 1.5rem;
+	overflow: hidden;
 	background-image: url('src/assets/images/background.png');
-	background-repeat: no-repeat;
 	background-attachment: fixed;
 `;
 
-const Title = styled.h1`
-	/* Estilos para el título */
-`;
-
-const Container = styled.div`
-	/* Estilos para el contenedor */
-	height: 100%;
+const PlanetContainer = styled.div`
+	background-color: #ffdab994;
 	width: 100%;
+	height: 100%;
 	position: relative;
-	background-color: red;
-`;
-
-const ReactSkill = styled.div`
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-`;
-
-const ReactLogo = styled.img`
-	width: 100px; /* Tamaño del logo de React */
-	height: 100px; /* Tamaño del logo de React */
-`;
-
-const SkillsContainer = styled.div`
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-`;
-
-const Skill = styled.div`
-	position: absolute;
 	display: flex;
-	align-items: center;
 	justify-content: center;
+	align-items: center;
+	left: -50%;
+	margin-left: calc(${({ sunSize }) => sunSize} / 2 + 3rem);
 `;
 
-const SkillOrbit = styled.div`
+const PlanetOrbit = styled(motion.div)`
+	/* width: 80vw; */
+	/* height: 80vw; */
+	width: ${({ orbitSize }) => orbitSize};
+	height: ${({ orbitSize }) => orbitSize};
+	background-color: transparent;
+	border: 1px dashed white;
+	border-radius: 50%;
 	position: absolute;
-	border: 1px dashed white; /* Estilo de la línea de la órbita */
-	border-radius: 50%; /* Hace que la línea de la órbita sea circular */
-	transform: translate(-50%, -50%);
+	/* background-color: #0000ff4c; */
+	/* margin-top: 25%; */
+	/* margin-left: 25%; */
+	/* margin: calc(-30vw / 2) 0 0 calc(-30vw / 2); */
+	/* margin-top: calc(-${({ orbitSize }) => orbitSize} / 2); */
+	/* margin-top: calc((${({ sunSize }) => sunSize} / 2)); */
 `;
 
-const SkillLogo = styled.img`
-	width: 50px; /* Ajusta el tamaño según tu necesidad */
-	height: 50px; /* Ajusta el tamaño según tu necesidad */
-	animation: orbitAnimation ${(props) => props.duration}s linear infinite; /* Animación de órbita */
-	@keyframes orbitAnimation {
-		from {
-			transform: rotate(0deg) translateX(${(props) => props.radius}px) rotate(0deg); /* Posición inicial de la órbita */
-		}
-		to {
-			transform: rotate(360deg) translateX(${(props) => props.radius}px) rotate(-360deg); /* Posición final de la órbita */
-		}
-	}
+const PlanetRotation = styled(motion.div)`
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	/* background-color: #ff000044; */
+`;
+
+const Planet = styled(motion.div)`
+	/* width: 30vw; */
+	/* height: 30vw; */
+	width: ${({ planetSize }) => planetSize};
+	height: ${({ planetSize }) => planetSize};
+	/* border-radius: 50%; */
+	/* overflow: hidden; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	/* background-color: #c7db1184; */
+	/* margin: calc(-30vw / 2) auto; */
+	margin: calc(-${({ planetSize }) => planetSize} / 2) auto;
+`;
+const PlanetIcon = styled.img`
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+`;
+
+const MoonOrbit = styled(motion.div)`
+	/* Alinea la órbita de la luna con el centro del planeta */
+	width: ${({ orbitSize }) => orbitSize};
+	height: ${({ orbitSize }) => orbitSize};
+	background-color: transparent;
+	border: 1px dashed white;
+
+	/* background-color: #0d491f5a; */
+	/* margin-top: calc(50% - ${({ orbitSize }) => orbitSize} / 2); */
+	/* margin-left: calc(50% - ${({ orbitSize }) => orbitSize} / 2); */
+
+	border-radius: 50%;
+	position: absolute;
+	margin: calc(-${({ orbitSize }) => orbitSize} / 2) auto;
 `;
 
 export const Skills = () => {
-	const { main, skills, futureSkills } = skillsData;
-	const [angles, setAngles] = useState(Array(skills.length + futureSkills.length).fill(Math.PI / 6));
-	const orbitRadius = 150; /* Radio de la órbita */
-
-	const handleAngleChange = (index, increment) => {
-		setAngles((prevAngles) => {
-			const newAngles = [...prevAngles];
-			newAngles[index] += increment;
-			return newAngles;
-		});
-	};
-
 	return (
-		<Section>
-			<Title>Skills</Title>
-			<Container>
-				<ReactSkill>
-					<ReactLogo src={main.src} alt={main.name} />
-				</ReactSkill>
-				<SkillsContainer>
-					{skills.map((skill, index) => (
-						<Skill
-							key={index}
-							style={{
-								left: `${orbitRadius * Math.cos(angles[index])}px`,
-								top: `${orbitRadius * Math.sin(angles[index])}px`,
+		<SkillSection>
+			<PlanetContainer sunSize={'10vw'}>
+				<Planet
+					planetSize={'10vw'}
+					animate={{
+						rotate: [0, -360],
+					}}
+					transition={{
+						duration: 60,
+						ease: 'linear',
+						repeat: Infinity,
+					}}
+				>
+					<PlanetIcon src={skillsData.main.src} alt={skillsData.main.name} />
+				</Planet>
+
+				<PlanetOrbit orbitSize={'40vw'}>
+					<PlanetRotation
+						animate={{
+							rotate: [88, 92],
+						}}
+						transition={{
+							duration: 10,
+							ease: 'easeInOut',
+							repeat: Infinity,
+							repeatType: 'reverse',
+						}}
+					>
+						<Planet
+							planetSize={'10vw'}
+							animate={{ rotate: [-88, -92] }}
+							transition={{
+								duration: 10,
+								ease: 'easeInOut',
+								repeat: Infinity,
+								repeatType: 'reverse',
 							}}
 						>
-							<SkillOrbit style={{ width: orbitRadius * 2, height: orbitRadius * 2 }} />
-							<SkillLogo src={skill.src} alt={skill.name} duration={(index + 1) * 3} radius={orbitRadius} />
-							<span>{skill.name}</span>
-							<button onClick={() => handleAngleChange(index, -Math.PI / 12)}>Disminuir Ángulo</button>
-							<button onClick={() => handleAngleChange(index, Math.PI / 12)}>Aumentar Ángulo</button>
-						</Skill>
-					))}
-					{futureSkills.map((futureSkill, index) => (
-						<Skill
-							key={index + skills.length}
-							style={{
-								left: `${orbitRadius * Math.cos(angles[skills.length + index])}px`,
-								top: `${orbitRadius * Math.sin(angles[skills.length + index])}px`,
+							<PlanetIcon src={skillsData.main.src} alt={skillsData.main.name} />
+							<PlanetOrbit orbitSize={'20vw'}>
+								<PlanetRotation
+									animate={{
+										rotate: [0, -360],
+									}}
+									transition={{
+										duration: 10,
+										ease: 'linear',
+										repeat: Infinity,
+									}}
+								>
+									<Planet
+										planetSize={'5vw'}
+										animate={{
+											rotate: [0, 360],
+										}}
+										transition={{
+											duration: 10,
+											ease: 'linear',
+											repeat: Infinity,
+										}}
+									>
+										<PlanetIcon src={skillsData.main.src} alt={skillsData.main.name} />
+									</Planet>
+								</PlanetRotation>
+							</PlanetOrbit>
+						</Planet>
+					</PlanetRotation>
+				</PlanetOrbit>
+				<PlanetOrbit orbitSize={'110vw'}>
+					<PlanetRotation
+						animate={{
+							rotate: [88, 92],
+						}}
+						transition={{
+							duration: 10,
+							ease: 'easeInOut',
+							repeat: Infinity,
+							repeatType: 'reverse',
+						}}
+					>
+						<Planet
+							planetSize={'10vw'}
+							animate={{ rotate: [-88, -92] }}
+							transition={{
+								duration: 10,
+								ease: 'easeInOut',
+								repeat: Infinity,
+								repeatType: 'reverse',
 							}}
 						>
-							<SkillOrbit style={{ width: orbitRadius * 2, height: orbitRadius * 2 }} />
-							<SkillLogo
-								src={futureSkill.src}
-								alt={futureSkill.name}
-								duration={(skills.length + index + 1) * 3}
-								radius={orbitRadius}
-							/>
-							<span>{futureSkill.name}</span>
-							<button onClick={() => handleAngleChange(skills.length + index, -Math.PI / 12)}>
-								Disminuir Ángulo
-							</button>
-							<button onClick={() => handleAngleChange(skills.length + index, Math.PI / 12)}>
-								Aumentar Ángulo
-							</button>
-						</Skill>
-					))}
-				</SkillsContainer>
-			</Container>
-		</Section>
+							<PlanetIcon src={skillsData.main.src} alt={skillsData.main.name} />
+							<PlanetOrbit orbitSize={'20vw'}>
+								<PlanetRotation
+									animate={{
+										rotate: [0, -360],
+									}}
+									transition={{
+										duration: 10,
+										ease: 'linear',
+										repeat: Infinity,
+									}}
+								>
+									<Planet
+										planetSize={'5vw'}
+										animate={{
+											rotate: [0, 360],
+										}}
+										transition={{
+											duration: 10,
+											ease: 'linear',
+											repeat: Infinity,
+										}}
+									>
+										<PlanetIcon src={skillsData.main.src} alt={skillsData.main.name} />
+									</Planet>
+								</PlanetRotation>
+							</PlanetOrbit>
+							<PlanetOrbit orbitSize={'30vw'}>
+								<PlanetRotation
+									animate={{
+										rotate: [0, -360],
+									}}
+									transition={{
+										duration: 10,
+										ease: 'linear',
+										repeat: Infinity,
+									}}
+								>
+									<Planet
+										planetSize={'5vw'}
+										animate={{
+											rotate: [0, 360],
+										}}
+										transition={{
+											duration: 10,
+											ease: 'linear',
+											repeat: Infinity,
+										}}
+									>
+										<PlanetIcon src={skillsData.main.src} alt={skillsData.main.name} />
+									</Planet>
+								</PlanetRotation>
+							</PlanetOrbit>
+							<PlanetOrbit orbitSize={'40vw'}>
+								<PlanetRotation
+									animate={{
+										rotate: [0, -360],
+									}}
+									transition={{
+										duration: 10,
+										ease: 'linear',
+										repeat: Infinity,
+									}}
+								>
+									<Planet
+										planetSize={'5vw'}
+										animate={{
+											rotate: [0, 360],
+										}}
+										transition={{
+											duration: 10,
+											ease: 'linear',
+											repeat: Infinity,
+										}}
+									>
+										<PlanetIcon src={skillsData.main.src} alt={skillsData.main.name} />
+									</Planet>
+								</PlanetRotation>
+							</PlanetOrbit>
+						</Planet>
+					</PlanetRotation>
+				</PlanetOrbit>
+				<PlanetOrbit orbitSize={'170vw'}>
+					<PlanetRotation
+						animate={{
+							rotate: [88, 92],
+						}}
+						transition={{
+							duration: 10,
+							ease: 'easeInOut',
+							repeat: Infinity,
+							repeatType: 'reverse',
+						}}
+					>
+						<Planet
+							planetSize={'10vw'}
+							animate={{ rotate: [-88, -92] }}
+							transition={{
+								duration: 10,
+								ease: 'easeInOut',
+								repeat: Infinity,
+								repeatType: 'reverse',
+							}}
+						>
+							<PlanetIcon src={skillsData.main.src} alt={skillsData.main.name} />
+						</Planet>
+					</PlanetRotation>
+				</PlanetOrbit>
+				{/* <PlanetOrbit orbitSize={'1vw'} sunSize={skillsData.main.planetSize}>
+					<PlanetRotation
+						animate={
+							{
+								// rotate: [90],
+								// rotate: [88, 92],
+							}
+						}
+						transition={{
+							duration: 10,
+							ease: 'easeInOut',
+							repeat: Infinity,
+							repeatType: 'reverse',
+						}}
+					>
+						<Planet
+							animate={
+								{
+								}
+							}
+							transition={{
+								duration: 10,
+								ease: 'easeInOut',
+								repeat: Infinity,
+								repeatType: 'reverse',
+							}}
+							planetSize={skillsData.main.planetSize}
+							// planetSize={planet.planetSize}
+						>
+							<PlanetIcon src={skillsData.main.src} alt={skillsData.main.name} />
+							{skillsData.skills.map((planet, index) => (
+								<PlanetOrbit key={index} orbitSize={planet.orbitSize} sunSize={skillsData.main.planetSize}>
+									<PlanetRotation
+										animate={
+											{
+												// rotate: [90],
+												// rotate: [88, 92],
+											}
+										}
+										transition={{
+											duration: index + 1,
+											ease: 'easeInOut',
+											repeat: Infinity,
+											repeatType: 'reverse',
+										}}
+									>
+										<Planet
+											animate={
+												{
+												}
+											}
+											transition={{
+												duration: index + 1,
+												ease: 'easeInOut',
+												repeat: Infinity,
+												repeatType: 'reverse',
+											}}
+											planetSize={planet.planetSize}
+											// planetSize={planet.planetSize}
+										>
+											<PlanetIcon src={planet.src} alt={planet.name} />
+											{/* {planet.moons?.map((moon, moonIndex) => (
+												<MoonOrbit key={`moon-${index}-${moonIndex}`} orbitSize={moon.orbitSize}>
+													<PlanetRotation
+														animate={
+															{
+																// rotate: [270],
+																// rotate: [360, 0],
+															}
+														}
+														transition={{
+															duration: moonIndex + 10,
+															ease: 'linear',
+															repeat: Infinity,
+														}}
+													>
+														<Planet
+															animate={
+																{
+																	// rotate: [-360, 0],
+																}
+															}
+															transition={{
+																duration: moonIndex + 10,
+																ease: 'linear',
+																repeat: Infinity,
+															}}
+															planetSize={moon.planetSize}
+														>
+															<PlanetIcon src={moon.src} alt={`Moon of ${planet.name}`} />
+														</Planet>
+													</PlanetRotation>
+												</MoonOrbit>
+											))} 
+										</Planet>
+									</PlanetRotation>
+								</PlanetOrbit>
+							))}
+						</Planet>
+					</PlanetRotation>
+				</PlanetOrbit> */}
+			</PlanetContainer>
+		</SkillSection>
 	);
 };

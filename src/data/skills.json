@@ -1,20 +1,30 @@
 {
 	"main": {
+		"src2": "src/assets/icons/react.svg",
 		"src": "src/assets/icons/react.svg",
 		"name": "React",
-		"size": ""
+		"orbitSize": "0vw",
+		"planetSize": "20vw"
 	},
 	"skills": [
 		{
-			"src": "src/assets/icons/html.svg",
-			"name": "HTML",
-			"orbitSize": "85vw",
-			"planetSize": "5vw"
+			"src": "src/assets/icons/js.svg",
+			"name": "JavaScript",
+			"orbitSize": "70vw",
+			"planetSize": "8vw",
+			"moons": [
+				{
+					"src": "src/assets/icons/nodejs.svg",
+					"name": "Node",
+					"orbitSize": "13vw",
+					"planetSize": "4vw"
+				}
+			]
 		},
 		{
 			"src": "src/assets/icons/css.svg",
 			"name": "CSS",
-			"orbitSize": "135vw",
+			"orbitSize": "100vw",
 			"planetSize": "10vw",
 			"moons": [
 				{ "src": "src/assets/icons/sass.svg", "name": "Sass", "orbitSize": "17vw", "planetSize": "5vw" },
@@ -33,18 +43,10 @@
 			]
 		},
 		{
-			"src": "src/assets/icons/js.svg",
-			"name": "JavaScript",
-			"orbitSize": "190vw",
-			"planetSize": "8vw",
-			"moons": [
-				{
-					"src": "src/assets/icons/nodejs.svg",
-					"name": "Node",
-					"orbitSize": "13vw",
-					"planetSize": "4vw"
-				}
-			]
+			"src": "src/assets/icons/html.svg",
+			"name": "HTML",
+			"orbitSize": "140vw",
+			"planetSize": "6vw"
 		}
 	],
 	"futureSkills": [
