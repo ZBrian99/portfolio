@@ -9,12 +9,34 @@ const SkillSection = styled.div`
 	width: 100%;
 	height: 120vh;
 	overflow: hidden;
+
+	position: relative;
 	/* border-top: 1px dashed rgba(255, 255, 255, 0.3); */
 	@media screen and (min-width: 48rem) {
 		height: 120vh;
 		border-top: 1px dashed rgba(255, 255, 255, 0.3);
 		border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
 	}
+	/* background-color: #ff99005f; */
+`;
+
+const StartContainer = styled.div`
+	width: 100%;
+	height: 100%;
+	position: absolute;
+  
+	/* background-color: #00eeff5f; */
+	@media screen and (min-width: 48rem) {
+    margin-top: 10vh;
+	}
+	/* display: grid;
+
+	grid-template-columns: repeat(2, 1fr);
+
+	gap: 5rem;
+	@media (min-width: 48rem) {
+		grid-template-columns: repeat(4, 1fr);
+	} */
 `;
 
 const PlanetContainer = styled.div`
@@ -38,9 +60,11 @@ const PlanetContainer = styled.div`
 const Skills = () => {
 	return (
 		<SkillSection>
-			{skillsData.futureSkills.map((skill, index) => (
-				<Star key={index} {...skill} sun={skillsData.main.size} />
-			))}
+			<StartContainer>
+				{skillsData.secondaySkills.map((skill, index) => (
+					<Star key={index} {...skill} sun={skillsData.main.size} />
+				))}
+			</StartContainer>
 			<PlanetContainer size={skillsData.main.size}>
 				<Sun {...skillsData.main} />
 				{skillsData.skills.map((skill, index) => (

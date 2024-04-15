@@ -6,10 +6,12 @@ import { motion } from 'framer-motion';
 const PlanetOrbit = styled(motion.div)`
 	width: ${({ orbitSize }) => `${orbitSize}vw`};
 	height: ${({ orbitSize }) => `${orbitSize}vw`};
+
 	@media screen and (max-width: 48rem) {
 		width: ${({ orbitSize }) => `${orbitSize}vh`};
 		height: ${({ orbitSize }) => `${orbitSize}vh`};
 	}
+
 	background-color: transparent;
 	border: 1px dashed rgba(255, 255, 255, 0.3);
 	border-radius: 50%;
@@ -26,11 +28,13 @@ const Planet = styled(motion.div)`
 	width: ${({ size }) => `${size}vw`};
 	height: ${({ size }) => `${size}vw`};
 	margin: calc(-${({ size }) => `${size}vw`} / 2) auto;
+
 	@media screen and (max-width: 48rem) {
 		width: ${({ size }) => `${size}vh`};
 		height: ${({ size }) => `${size}vh`};
 		margin: calc(-${({ size }) => `${size}vh`} / 2) auto;
 	}
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -39,8 +43,8 @@ const Planet = styled(motion.div)`
 const PlanetIcon = styled.img`
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
-	border-radius: 50%;
+	/* object-fit: cover;
+	border-radius: 50%; */
 `;
 
 const PlanetComponent = ({ size, orbitSize, src, name, moons, speed, angle }) => {
