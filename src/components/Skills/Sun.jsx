@@ -7,7 +7,7 @@ const SunContainer = styled(motion.div)`
 	width: ${({ size }) => `${size}vw`};
 	height: ${({ size }) => `${size}vw`};
 
-	@media screen and (max-width: 48rem) {
+	@media screen and (max-width: 60rem) {
 		width: ${({ size }) => `${size}vh`};
 		height: ${({ size }) => `${size}vh`};
 	}
@@ -24,7 +24,7 @@ const SunIcon = styled.img`
 	object-fit: cover;
 	border-radius: 50%;
 `;
-const Sun = ({ size, src, name, speed }) => {
+export const Sun = ({ size, src, name, speed }) => {
 	return (
 		<SunContainer
 			size={size}
@@ -42,4 +42,3 @@ const Sun = ({ size, src, name, speed }) => {
 	);
 };
 
-export default Sun;

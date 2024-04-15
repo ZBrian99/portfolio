@@ -11,11 +11,11 @@ const Planet = styled(motion.div)`
 	position: absolute;
 
 	filter: ${({ learned }) => (learned ? 'none' : 'grayscale(100%)')};
-
+	opacity: ${({ learned }) => (learned ? '.5' : '0.3')};
 	top: calc(${({ y }) => `${y}%`} - ${({ size }) => `${size / 2}vh`});
 	left: calc(${({ x }) => `${x}%`} - ${({ size }) => `${size / 2}vw`});
 
-	@media screen and (min-width: 48rem) {
+	@media screen and (min-width: 60rem) {
 		top: calc(${({ x }) => `${x}vh`} - ${({ size }) => `${size / 2}vw`});
 		left: calc(${({ y }) => `${y}%`} - ${({ size }) => `${size / 2}vw`});
 	}

@@ -11,7 +11,7 @@
 			"name": "JavaScript",
 			"orbitSize": 45,
 			"size": 8,
-			"speed": 5,
+			"speed": 8,
 			"angle": 25,
 			"moons": [
 				{
@@ -63,7 +63,7 @@
 			"name": "HTML",
 			"orbitSize": 160,
 			"size": 6,
-			"speed": 15,
+			"speed": 20,
 			"angle": 12
 		}
 	],
@@ -71,7 +71,7 @@
 		{
 			"src": "src/assets/icons/git.svg",
 			"name": "Github",
-			"size": 9,
+			"size": 7,
 			"speed": 15,
 			"x": 15,
 			"y": 95,
@@ -89,7 +89,7 @@
 		{
 			"src": "src/assets/icons/redux.svg",
 			"name": "Redux",
-			"size": 12,
+			"size": 10,
 			"speed": 15,
 			"x": 10,
 			"y": 10,
@@ -107,7 +107,7 @@
 		{
 			"src": "src/assets/icons/typescript.svg",
 			"name": "TypeScript",
-			"size": 12,
+			"size": 8,
 			"speed": 15,
 			"x": 90,
 			"y": 10,

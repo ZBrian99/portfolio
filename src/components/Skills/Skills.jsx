@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Sun from './Sun';
-import PlanetComponent from './Planet';
+import {Sun} from './Sun';
 import skillsData from '../../data/skills.json';
 import { Star } from './Star';
+import {Planet} from './Planet';
 
 const SkillSection = styled.div`
 	width: 100%;
@@ -11,32 +11,21 @@ const SkillSection = styled.div`
 	overflow: hidden;
 
 	position: relative;
-	/* border-top: 1px dashed rgba(255, 255, 255, 0.3); */
-	@media screen and (min-width: 48rem) {
+	@media screen and (min-width: 60rem) {
 		height: 120vh;
 		border-top: 1px dashed rgba(255, 255, 255, 0.3);
 		border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
 	}
-	/* background-color: #ff99005f; */
 `;
 
 const StartContainer = styled.div`
 	width: 100%;
 	height: 100%;
 	position: absolute;
-  
-	/* background-color: #00eeff5f; */
-	@media screen and (min-width: 48rem) {
-    margin-top: 10vh;
+
+	@media screen and (min-width: 60rem) {
+		margin-top: 10vh;
 	}
-	/* display: grid;
-
-	grid-template-columns: repeat(2, 1fr);
-
-	gap: 5rem;
-	@media (min-width: 48rem) {
-		grid-template-columns: repeat(4, 1fr);
-	} */
 `;
 
 const PlanetContainer = styled.div`
@@ -48,7 +37,7 @@ const PlanetContainer = styled.div`
 	align-items: center;
 	top: -50%;
 	margin-top: calc(${({ size }) => `${size}vh`} + 10vh);
-	@media screen and (min-width: 48rem) {
+	@media screen and (min-width: 60rem) {
 		height: 120vh;
 		top: 0;
 		margin-top: 0;
@@ -57,7 +46,7 @@ const PlanetContainer = styled.div`
 	}
 `;
 
-const Skills = () => {
+export const Skills = () => {
 	return (
 		<SkillSection>
 			<StartContainer>
@@ -68,11 +57,10 @@ const Skills = () => {
 			<PlanetContainer size={skillsData.main.size}>
 				<Sun {...skillsData.main} />
 				{skillsData.skills.map((skill, index) => (
-					<PlanetComponent key={index} {...skill} />
+					<Planet key={index} {...skill} />
 				))}
 			</PlanetContainer>
 		</SkillSection>
 	);
 };
 
-export default Skills;
