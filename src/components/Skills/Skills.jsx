@@ -5,7 +5,7 @@ import skillsData from '../../data/skills.json';
 import { Star } from './Star';
 import {Planet} from './Planet';
 
-const SkillSection = styled.div`
+const SkillsSection = styled.div`
 	width: 100%;
 	height: 120vh;
 	overflow: hidden;
@@ -48,7 +48,7 @@ const PlanetContainer = styled.div`
 
 export const Skills = () => {
 	return (
-		<SkillSection>
+		<SkillsSection>
 			<StartContainer>
 				{skillsData.secondaySkills.map((skill, index) => (
 					<Star key={index} {...skill} sun={skillsData.main.size} />
@@ -60,7 +60,7 @@ export const Skills = () => {
 					<Planet key={index} {...skill} />
 				))}
 			</PlanetContainer>
-		</SkillSection>
+		</SkillsSection>
 	);
 };
 

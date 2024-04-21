@@ -1,5 +1,5 @@
 import { Global, css } from '@emotion/react';
-import {theme} from './theme';
+import { theme } from './theme';
 
 export const GlobalStyles = () => (
 	<Global
@@ -21,8 +21,8 @@ export const GlobalStyles = () => (
 			body {
 				background-color: #000;
 				font-size: 100%;
-				padding: 100rem 0;
-				height: 500vh;
+				/* padding: 100rem 0; */
+				/* min-height: 100vh; */
 				background-image: url('src/assets/images/background.png');
 				background-attachment: fixed;
 				background-repeat: repeat;
@@ -33,4 +33,3 @@ export const GlobalStyles = () => (
 		`}
 	/>
 );
-
