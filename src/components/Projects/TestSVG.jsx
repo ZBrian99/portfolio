@@ -90,8 +90,7 @@ export const TestSVG = () => {
 		const handleScroll = () => {
 			const scroll = scrollYProgress.get();
 			const totalElements = controlsCircle.length + controlsCard.length + controlsLine.length;
-			const scrollPerElement = 0.8 / (totalElements + 2); // Agregamos 2 para los rangos de scroll extra de la tarjeta
-
+			const scrollPerElement = 0.8 / totalElements;
 			const scrollStart = 0.1;
 
 			const intercalatedArray = [];
@@ -112,31 +111,34 @@ export const TestSVG = () => {
 				const endScroll = startScroll + scrollPerElement;
 
 				if (element.type === 'card') {
-					const cardScrollPerPart = scrollPerElement / 5;
+					const cardScrollPerPart = scrollPerElement / 3;
 					const startScrollCard = startScroll;
 					const midScrollCard = startScrollCard + cardScrollPerPart;
-					const endScrollCard = midScrollCard + 3 * cardScrollPerPart;
-
+					const endScrollCard = midScrollCard + cardScrollPerPart;
 					if (scroll >= startScrollCard && scroll < midScrollCard) {
 						const progress = mapRange(scroll, [startScrollCard, midScrollCard], [0, 1]);
 						element.control.start({
 							scale: progress,
+              
 							transition: { duration: 0 },
 						});
 					} else if (scroll >= midScrollCard && scroll < endScrollCard) {
 						element.control.start({
 							scale: 1,
+              
 							transition: { duration: 0 },
 						});
 					} else if (scroll >= endScrollCard && scroll <= endScroll) {
 						const progress = mapRange(scroll, [endScrollCard, endScroll], [1, 0]);
 						element.control.start({
 							scale: progress,
+              
 							transition: { duration: 0 },
 						});
 					} else if (scroll < startScrollCard || scroll > endScroll) {
 						element.control.start({
 							scale: 0,
+              
 							transition: { duration: 0 },
 						});
 					}
@@ -202,7 +204,19 @@ export const TestSVG = () => {
 				))}
 			</SVG>
 			{controlsCard.map((controlCard, index) => (
-				<Card key={index} index={index} initial={{ scale: 0 }} animate={controlCard} />
+				<Card
+    key={index}
+    index={index}
+    position={positions[index]}
+    initial={{
+        scale: 0,
+        x: `calc(${positions[index].x}vw - 50%)`,
+        y: `calc(${positions[index].y}vh - 50%)`,
+        // originX: '50%',
+        // originY: '50%',
+    }}
+    animate={controlCard}
+/>
 			))}
 		</Container>
 	);
@@ -210,8 +224,6 @@ export const TestSVG = () => {
 
 const CardSyled = styled(motion.div)`
 	position: fixed;
-	top: 25%;
-	left: 25%;
 	background-color: #333;
 	color: white;
 	padding: 1rem;
