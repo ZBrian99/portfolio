@@ -8,7 +8,7 @@ const Container = styled(motion.div)`
 	color: white;
 	position: sticky;
 	top: 0;
-	height: 5000vh;
+	height: 2000vh;
 	scroll-behavior: smooth;
 `;
 
@@ -90,39 +90,64 @@ export const TestSVG = () => {
 	useEffect(() => {
 		const handleScroll = () => {
 			const scroll = scrollYProgress.get();
+
 			const totalElements = controlsCircle.length + controlsCard.length + controlsLine.length;
-			const scrollPerElement = 0.8 / totalElements;
-			const scrollStart = 0.1;
+
+			const scrollPerCircleAndLine = 0.35 / (controlsCircle.length + controlsLine.length);
+
+			const scrollPerCard = 0.55 / controlsCard.length;
+
+			let scrollStartPerElement = 0.05;
+
+			// const scrollPerElement = 0.8 / totalElements;
+			// const scrollStart = 0.1;
 
 			const intercalatedArray = [];
 			for (let i = 0; i < totalElements / 3; i++) {
 				if (controlsCircle[i]) {
-					intercalatedArray.push({ type: 'circle', control: controlsCircle[i] });
+					intercalatedArray.push({
+						type: 'circle',
+						control: controlsCircle[i],
+						startScroll: scrollStartPerElement,
+						endScroll: scrollStartPerElement + scrollPerCircleAndLine,
+					});
+					scrollStartPerElement = scrollStartPerElement + scrollPerCircleAndLine;
 				}
 				if (controlsCard[i]) {
-					intercalatedArray.push({ type: 'card', control: controlsCard[i] });
+					intercalatedArray.push({
+						type: 'card',
+						control: controlsCard[i],
+						startScroll: scrollStartPerElement,
+						endScroll: scrollStartPerElement + scrollPerCard,
+					});
+					scrollStartPerElement = scrollStartPerElement + scrollPerCard;
 				}
 				if (controlsLine[i]) {
-					intercalatedArray.push({ type: 'line', control: controlsLine[i] });
+					intercalatedArray.push({
+						type: 'line',
+						control: controlsLine[i],
+						startScroll: scrollStartPerElement,
+						endScroll: scrollStartPerElement + scrollPerCircleAndLine,
+					});
+					scrollStartPerElement = scrollStartPerElement + scrollPerCircleAndLine;
 				}
 			}
 
 			intercalatedArray.forEach((element, i) => {
-				const startScroll = scrollStart + i * scrollPerElement;
-				const endScroll = startScroll + scrollPerElement;
-
 				if (element.type === 'card') {
-					const startEndScroll = scrollPerElement / 5;
-					const midScroll = (scrollPerElement * 3) / 5;
+					const scrollSegment = scrollPerCard / 5;
 
-					const startScrollCard = startScroll;
-					const midScrollStart = startScrollCard + startEndScroll;
+					const midScroll = scrollSegment * 3;
+
+					const midScrollStart = element.startScroll + scrollSegment;
 					const midScrollEnd = midScrollStart + midScroll;
-					const endScrollCard = midScrollEnd + startEndScroll;
 
-					if (scroll >= startScrollCard && scroll < midScrollStart) {
+					const endScrollCard = midScrollEnd + scrollSegment;
+
+					if (scroll >= element.startScroll && scroll < midScrollStart) {
+						console.log(element.type);
 						// start
-						const progress = mapRange(scroll, [startScrollCard, midScrollStart], [0, 1]);
+						const progress = mapRange(scroll, [element.startScroll, midScrollStart], [0, 1]);
 						element.control.start({ scale: progress, transition: { duration: 0 } });
 					} else if (scroll >= midScrollStart && scroll < midScrollEnd) {
 						// mid
@@ -136,36 +161,36 @@ export const TestSVG = () => {
 						element.control.start({ scale: 0, transition: { duration: 0 } });
 					}
 				} else if (element.type === 'line') {
-					if (scroll >= startScroll && scroll <= endScroll) {
-						const progress = mapRange(scroll, [startScroll, endScroll], [0, 1]);
+					if (scroll >= element.startScroll && scroll <= element.endScroll) {
+						const progress = mapRange(scroll, [element.startScroll, element.endScroll], [0, 1]);
 						element.control.start({
 							pathLength: progress,
 							transition: { duration: 0 },
 						});
-					} else if (scroll > endScroll) {
+					} else if (scroll > element.endScroll) {
 						element.control.start({
 							pathLength: 1,
 							transition: { duration: 0 },
 						});
-					} else if (scroll < startScroll) {
+					} else if (scroll < element.startScroll) {
 						element.control.start({
 							pathLength: 0,
 							transition: { duration: 0 },
 						});
 					}
 				} else if (element.type === 'circle') {
-					if (scroll >= startScroll && scroll <= endScroll) {
-						const progress = mapRange(scroll, [startScroll, endScroll], [0, 1]);
+					if (scroll >= element.startScroll && scroll <= element.endScroll) {
+						const progress = mapRange(scroll, [element.startScroll, element.endScroll], [0, 1]);
 						element.control.start({
 							scale: progress,
 							transition: { duration: 0 },
 						});
-					} else if (scroll > endScroll) {
+					} else if (scroll > element.endScroll) {
 						element.control.start({
 							scale: 1,
 							transition: { duration: 0 },
 						});
-					} else if (scroll < startScroll) {
+					} else if (scroll < element.startScroll) {
 						element.control.start({
 							scale: 0,
 							transition: { duration: 0 },
@@ -178,12 +203,8 @@ export const TestSVG = () => {
 		window.addEventListener('scroll', handleScroll);
 
 		return () => window.removeEventListener('scroll', handleScroll);
-  }, [controlsLine, controlsCircle, controlsCard, scrollYProgress]);
-  
+	}, [controlsLine, controlsCircle, controlsCard, scrollYProgress]);
 
-
-
-  
 	return (
 		<Container ref={ref}>
 			<SVG width='100%' height='100vh'>
