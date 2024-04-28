@@ -9,6 +9,7 @@ const Container = styled(motion.div)`
 	position: sticky;
 	top: 0;
 	height: 5000vh;
+	scroll-behavior: smooth;
 `;
 
 const SVG = styled(motion.svg)`
@@ -111,36 +112,28 @@ export const TestSVG = () => {
 				const endScroll = startScroll + scrollPerElement;
 
 				if (element.type === 'card') {
-					const cardScrollPerPart = scrollPerElement / 3;
+					const startEndScroll = scrollPerElement / 5;
+					const midScroll = (scrollPerElement * 3) / 5;
+
 					const startScrollCard = startScroll;
-					const midScrollCard = startScrollCard + cardScrollPerPart;
-					const endScrollCard = midScrollCard + cardScrollPerPart;
-					if (scroll >= startScrollCard && scroll < midScrollCard) {
-						const progress = mapRange(scroll, [startScrollCard, midScrollCard], [0, 1]);
-						element.control.start({
-							scale: progress,
-              
-							transition: { duration: 0 },
-						});
-					} else if (scroll >= midScrollCard && scroll < endScrollCard) {
-						element.control.start({
-							scale: 1,
-              
-							transition: { duration: 0 },
-						});
-					} else if (scroll >= endScrollCard && scroll <= endScroll) {
-						const progress = mapRange(scroll, [endScrollCard, endScroll], [1, 0]);
-						element.control.start({
-							scale: progress,
-              
-							transition: { duration: 0 },
-						});
-					} else if (scroll < startScrollCard || scroll > endScroll) {
-						element.control.start({
-							scale: 0,
-              
-							transition: { duration: 0 },
-						});
+					const midScrollStart = startScrollCard + startEndScroll;
+					const midScrollEnd = midScrollStart + midScroll;
+					const endScrollCard = midScrollEnd + startEndScroll;
+
+					if (scroll >= startScrollCard && scroll < midScrollStart) {
+						// start
+						const progress = mapRange(scroll, [startScrollCard, midScrollStart], [0, 1]);
+						element.control.start({ scale: progress, transition: { duration: 0 } });
+					} else if (scroll >= midScrollStart && scroll < midScrollEnd) {
+						// mid
+						element.control.start({ scale: 1, transition: { duration: 0 } });
+					} else if (scroll >= midScrollEnd && scroll <= endScrollCard) {
+						// end
+						const progress = mapRange(scroll, [midScrollEnd, endScrollCard], [1, 0]);
+						element.control.start({ scale: progress, transition: { duration: 0 } });
+					} else {
+						// out
+						element.control.start({ scale: 0, transition: { duration: 0 } });
 					}
 				} else if (element.type === 'line') {
 					if (scroll >= startScroll && scroll <= endScroll) {
@@ -185,7 +178,12 @@ export const TestSVG = () => {
 		window.addEventListener('scroll', handleScroll);
 
 		return () => window.removeEventListener('scroll', handleScroll);
-	}, [controlsLine, controlsCircle, controlsCard, scrollYProgress]);
+  }, [controlsLine, controlsCircle, controlsCard, scrollYProgress]);
+  
+
+
+
+  
 	return (
 		<Container ref={ref}>
 			<SVG width='100%' height='100vh'>
@@ -205,18 +203,20 @@ export const TestSVG = () => {
 			</SVG>
 			{controlsCard.map((controlCard, index) => (
 				<Card
-    key={index}
-    index={index}
-    position={positions[index]}
-    initial={{
-        scale: 0,
-        x: `calc(${positions[index].x}vw - 50%)`,
-        y: `calc(${positions[index].y}vh - 50%)`,
-        // originX: '50%',
-        // originY: '50%',
-    }}
-    animate={controlCard}
-/>
+					key={index}
+					index={index}
+					position={positions[index]}
+					initial={{
+						scale: 0,
+						x: `50%`,
+						y: `50%`,
+						// x: `calc(${positions[index].x}vw - 50%)`,
+						// y: `calc(${positions[index].y}vh - 50%)`,
+						// originX: '50%',
+						// originY: '50%',
+					}}
+					animate={controlCard}
+				/>
 			))}
 		</Container>
 	);

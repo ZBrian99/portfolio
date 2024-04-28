@@ -19,6 +19,7 @@ export const GlobalStyles = () => (
 				margin: 0;
 			}
 			body {
+				scroll-behavior: smooth;
 				background-color: #000;
 				font-size: 100%;
 				/* padding: 100rem 0; */

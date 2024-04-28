@@ -1,103 +1,53 @@
-import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
-import { useEffect, useState } from 'react';
 
 const Container = styled.div`
 	width: 100%;
 	height: 100vh;
-	background-color: lightcoral;
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 `;
-
+const Card = styled.div`
+	background-color: darkslategray;
+	width: 20rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+`;
+const Title = styled.h3`
+	margin: 0 auto;
+	padding: 1rem;
+	color: white;
+`;
+const Description = styled.p`
+	padding: 1rem;
+	font-size: 0.95em;
+	color: gray;
+`;
+const ImageContainer = styled.div`
+	width: 100%;
+	height: 15rem;
+`;
+const Image = styled.img`
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center center;
+`;
 export const Constellation = () => {
-	const [stars, setStars] = useState([]);
-	const [currentLineIndex, setCurrentLineIndex] = useState(0);
-
-	useEffect(() => {
-		// Generar estrellas aleatorias
-		const generateRandomStars = () => {
-			const newStars = [];
-			for (let i = 0; i < 5; i++) {
-				newStars.push({
-					cx: Math.random() * 100,
-					cy: Math.random() * 100,
-					r: 3,
-				});
-			}
-			return newStars;
-		};
-
-		setStars(generateRandomStars());
-	}, []);
-
-	// Obtener el trazo de la constelación que pasa por cada estrella
-	const generatePaths = (stars) => {
-		const paths = [];
-		for (let i = 0; i < stars.length - 1; i++) {
-			const path = `M${stars[i].cx},${stars[i].cy} L${stars[i + 1].cx},${stars[i + 1].cy}`;
-			paths.push(path);
-		}
-		return paths;
-	};
-
-	const handleLineComplete = () => {
-		console.log(`La línea ha pasado por la estrella ${currentLineIndex + 1}`);
-		setTimeout(() => {
-			setCurrentLineIndex(currentLineIndex + 1);
-		}, 1000); // Espera 1 segundo antes de iniciar la siguiente línea
-	};
-
-	useEffect(() => {
-		if (currentLineIndex < stars.length - 1) {
-			setTimeout(() => {
-				handleLineComplete();
-			}, 4000); // Espera 4 segundos para completar cada línea
-		}
-	}, [currentLineIndex]);
-
 	return (
 		<Container>
-			<svg
-				width='100%'
-				height='100%'
-				viewBox='0 0 100 100'
-				preserveAspectRatio='none'
-				style={{
-					display: 'block',
-				}}
-			>
-				{/* Líneas de la constelación */}
-				{stars.length > 1 &&
-					generatePaths(stars).map((path, index) => (
-						<motion.path
-							key={`path-${index}`}
-							d={path}
-							fill='none'
-							stroke='#FFFFFF'
-							strokeWidth='1'
-							initial={{ pathLength: 0 }}
-							animate={{ pathLength: 1 }}
-							transition={{ duration: 4, ease: 'linear' }}
-							onAnimationComplete={handleLineComplete}
-							style={{ visibility: index === currentLineIndex ? 'visible' : 'hidden' }}
-						/>
-					))}
-				{/* Estrellas */}
-				{stars.map((star, index) => (
-					<motion.circle
-						key={`star-${index}`}
-						cx={`${star.cx}%`}
-						cy={`${star.cy}%`}
-						r={star.r}
-						fill='#9e1212'
-						initial={{ opacity: 0, scale: 0 }}
-						animate={{ opacity: 1, scale: 1 }}
-						transition={{ duration: 0.5, delay: index * 0.4 }}
-					/>
-				))}
-			</svg>
+			<Card>
+				<Title>Lorem, ipsum dolor.</Title>
+				<Description>
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem perferendis deserunt, consectetur eum
+					natus aperiam quo dolorem fugit? Nisi, illum. Dolor in atque cupiditate qui unde praesentium ipsa
+					ullam facilis.
+				</Description>
+				<ImageContainer>
+					<Image src='src/assets/images/galaxy.png'></Image>
+				</ImageContainer>
+			</Card>
 		</Container>
 	);
 };
