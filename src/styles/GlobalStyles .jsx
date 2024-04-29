@@ -24,7 +24,7 @@ export const GlobalStyles = () => (
 				font-size: 100%;
 				/* padding: 100rem 0; */
 				/* min-height: 100vh; */
-				background-image: url('src/assets/images/background.png');
+				/* background-image: url('src/assets/images/background.png'); */
 				background-attachment: fixed;
 				background-repeat: repeat;
 				/* background-size: cover; */

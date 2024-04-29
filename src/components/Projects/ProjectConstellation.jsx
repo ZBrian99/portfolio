@@ -1,7 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
 import styled from '@emotion/styled';
 import { motion, useAnimation, useScroll } from 'framer-motion';
-
+	const [galaxies] = useState([
+		{ x: 28, y: 13, size: 5, color: '#FFB6C1' },
+		{ x: 80, y: 17, size: 10, color: '#87CEFA' },
+		{ x: 32, y: 45, size: 3, color: '#98FB98' },
+		{ x: 78, y: 71, size: 8, color: '#FFD700' },
+		{ x: 19, y: 82, size: 6, color: '#ffa784' },
+	]);
 const Container = styled(motion.div)`
 	/* background-color: #333; */
 	width: 100%;
@@ -34,7 +40,7 @@ const mapRange = (value, [fromStart, fromEnd], [toStart, toEnd]) => {
 	return ((value - fromStart) * (toEnd - toStart)) / (fromEnd - fromStart) + toStart;
 };
 
-export const TestSVG = () => {
+export const ProjectConstellation = () => {
 	const controlsCircle = Array(5)
 		.fill()
 		.map(() => useAnimation());
@@ -88,50 +94,49 @@ export const TestSVG = () => {
 	}, []);
 
 	useEffect(() => {
-		const handleScroll = () => {
-			const scroll = scrollYProgress.get();
+		const totalElements = controlsCircle.length + controlsCard.length + controlsLine.length;
 
-			const totalElements = controlsCircle.length + controlsCard.length + controlsLine.length;
+		const scrollPerCircleAndLine = 0.3 / (controlsCircle.length + controlsLine.length);
 
-			const scrollPerCircleAndLine = 0.35 / (controlsCircle.length + controlsLine.length);
+		const scrollPerCard = 0.6 / controlsCard.length;
 
-			const scrollPerCard = 0.55 / controlsCard.length;
+		let scrollStartPerElement = 0.05;
 
-			let scrollStartPerElement = 0.05;
-
-			// const scrollPerElement = 0.8 / totalElements;
-			// const scrollStart = 0.1;
-
-			const intercalatedArray = [];
-			for (let i = 0; i < totalElements / 3; i++) {
-				if (controlsCircle[i]) {
-					intercalatedArray.push({
-						type: 'circle',
-						control: controlsCircle[i],
-						startScroll: scrollStartPerElement,
-						endScroll: scrollStartPerElement + scrollPerCircleAndLine,
-					});
-					scrollStartPerElement = scrollStartPerElement + scrollPerCircleAndLine;
-				}
-				if (controlsCard[i]) {
-					intercalatedArray.push({
-						type: 'card',
-						control: controlsCard[i],
-						startScroll: scrollStartPerElement,
-						endScroll: scrollStartPerElement + scrollPerCard,
-					});
-					scrollStartPerElement = scrollStartPerElement + scrollPerCard;
-				}
-				if (controlsLine[i]) {
-					intercalatedArray.push({
-						type: 'line',
-						control: controlsLine[i],
-						startScroll: scrollStartPerElement,
-						endScroll: scrollStartPerElement + scrollPerCircleAndLine,
-					});
-					scrollStartPerElement = scrollStartPerElement + scrollPerCircleAndLine;
-				}
+		const intercalatedArray = [];
+		for (let i = 0; i < totalElements / 3; i++) {
+			if (controlsCircle[i]) {
+				intercalatedArray.push({
+					type: 'circle',
+					control: controlsCircle[i],
+					startScroll: scrollStartPerElement,
+					endScroll: scrollStartPerElement + scrollPerCircleAndLine,
+				});
+				scrollStartPerElement = scrollStartPerElement + scrollPerCircleAndLine;
 			}
+			if (controlsCard[i]) {
+				intercalatedArray.push({
+					type: 'card',
+					control: controlsCard[i],
+					startScroll: scrollStartPerElement,
+					endScroll: scrollStartPerElement + scrollPerCard,
+				});
+				scrollStartPerElement = scrollStartPerElement + scrollPerCard;
+			}
+			if (controlsLine[i]) {
+				intercalatedArray.push({
+					type: 'line',
+					control: controlsLine[i],
+					startScroll: scrollStartPerElement,
+					endScroll: scrollStartPerElement + scrollPerCircleAndLine,
+				});
+				scrollStartPerElement = scrollStartPerElement + scrollPerCircleAndLine;
+			}
+		}
+
+		console.log('useEffect');
+		const handleScroll = () => {
+			console.log('handleScroll');
+			const scroll = scrollYProgress.get();
 
 			intercalatedArray.forEach((element, i) => {
 				if (element.type === 'card') {
@@ -145,7 +150,6 @@ export const TestSVG = () => {
 					const endScrollCard = midScrollEnd + scrollSegment;
 
 					if (scroll >= element.startScroll && scroll < midScrollStart) {
-						console.log(element.type);
 						// start
 						const progress = mapRange(scroll, [element.startScroll, midScrollStart], [0, 1]);
 						element.control.start({ scale: progress, transition: { duration: 0 } });
