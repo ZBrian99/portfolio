@@ -157,12 +157,11 @@ export const Project = () => {
 			}
 		}
 		setElements(intercalatedArray);
-	}, [stars, cards, lines]);
 
-	useEffect(() => {
 		const handleScroll = () => {
 			const scroll = scrollYProgress.get();
-			elements.forEach((element, i) => {
+
+			intercalatedArray.forEach((element, i) => {
 				if (element.type === 'card') {
 					const scrollPerCard = 0.6 / cards.length;
 
@@ -256,10 +255,13 @@ export const Project = () => {
 				}
 			});
 		};
+
+		handleScroll();
+
 		window.addEventListener('scroll', handleScroll);
 
 		return () => window.removeEventListener('scroll', handleScroll);
-	}, [elements, scrollYProgress]);
+	}, [stars, cards, lines]);
 
 	return (
 		<Container ref={ref}>
@@ -271,8 +273,8 @@ export const Project = () => {
 								key={index}
 								initial={{ x: `${element.position.x}vw`, y: `${element.position.y}vh`, scale: 0 }}
 								animate={{
-									scale: 1,
-									// scale: element.scale,
+									// scale: 1,
+									scale: element.scale,
 								}}
 								transition={{ duration: 0.2 }}
 							/>
@@ -300,8 +302,8 @@ export const Project = () => {
 							<SVG width='100%' height='100vh' key={index}>
 								<Line
 									d={element.path}
-									initial={{ pathLength: 1 }}
-									// initial={{ pathLength: 0 }}
+									// initial={{ pathLength: 1 }}
+									initial={{ pathLength: 0 }}
 									animate={{ pathLength: element.pathLength }}
 									transition={{
 										duration: 0,
