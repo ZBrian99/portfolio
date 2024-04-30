@@ -7,7 +7,7 @@ const StarContainer = styled(motion.div)`
 	height: ${({ size }) => (size ? `${size}rem` : '3rem')};
 	margin-top: ${({ size }) => (size ? `-${size / 2}rem` : '-1.5rem')};
 	margin-left: ${({ size }) => (size ? `-${size / 2}rem` : '-1.5rem')};
-	position: fixed;
+	position: absolute;
 `;
 
 const Star = styled(motion.svg)`
@@ -33,7 +33,7 @@ export const ProjectStar = ({
 	animate = {},
 	transition = {},
 }) => {
-  console.log("render")
+  // console.log("render")
 	return (
 		<StarContainer size={size} initial={initial} animate={animate} transition={transition}>
 			<StarShadow size={size} color={color} />

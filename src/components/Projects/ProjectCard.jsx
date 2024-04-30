@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 
 const CardContainer = styled(motion.div)`
-	position: fixed;
+	position: absolute;
 	width: 90%;
 	height: 90%;
 	left: 5%;

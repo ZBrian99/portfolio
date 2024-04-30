@@ -7,15 +7,20 @@ import { ProjectStar } from './ProjectStar';
 const Container = styled(motion.div)`
 	width: 100%;
 	color: white;
-	position: sticky;
-	top: 0;
+	position: relative;
 	height: 2000vh;
 	scroll-behavior: smooth;
 `;
-
+const StickyContainer = styled(motion.div)`
+	position: sticky;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+`;
 const SVG = styled(motion.svg)`
 	display: block;
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 `;
@@ -42,8 +47,9 @@ const generateRandomPosition = (minX = 0, maxX = 100, minY = 0, maxY = 100) => {
 
 export const Project = () => {
 	const ref = useRef(null);
-	const { scrollYProgress } = useScroll(ref);
-
+	const { scrollYProgress } = useScroll({
+		target: ref,
+	});
 	const [dimensions, setDimensions] = useState({
 		vw: Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) / 100,
 		vh: Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0) / 100,
@@ -64,21 +70,25 @@ export const Project = () => {
 			}))
 	);
 
-	const [lines, setLines] = useState(Array(stars.length - 1).fill().map((_, index) => {
-			const startX = stars[index].position.x * dimensions.vw;
-			const startY = stars[index].position.y * dimensions.vh;
-			const endX = stars[index + 1].position.x * dimensions.vw;
-			const endY = stars[index + 1].position.y * dimensions.vh;
-			const path = `M ${startX} ${startY} L ${endX} ${endY}`;
-			return {
-				type: 'line',
-				startPosition: { x: startX, y: startY },
-				endPosition: { x: endX, y: endY },
-				path: path,
-			};
-		}));
+	const [lines, setLines] = useState(
+		Array(stars.length - 1)
+			.fill()
+			.map((_, index) => {
+				const startX = stars[index].position.x * dimensions.vw;
+				const startY = stars[index].position.y * dimensions.vh;
+				const endX = stars[index + 1].position.x * dimensions.vw;
+				const endY = stars[index + 1].position.y * dimensions.vh;
+				const path = `M ${startX} ${startY} L ${endX} ${endY}`;
+				return {
+					type: 'line',
+					startPosition: { x: startX, y: startY },
+					endPosition: { x: endX, y: endY },
+					path: path,
+				};
+			})
+	);
 
-  const [elements, setElements] = useState([]);
+	const [elements, setElements] = useState([]);
 
 	useEffect(() => {
 		const totalElements = stars.length + cards.length + lines.length;
@@ -233,51 +243,53 @@ export const Project = () => {
 
 	return (
 		<Container ref={ref}>
-			{elements.map((element, index) => {
-				if (element.type === 'star') {
-					return (
-						<ProjectStar
-							key={index}
-							initial={{ x: `${element.position.x}vw`, y: `${element.position.y}vh`, scale: 0 }}
-							animate={{
-								scale: element.scale,
-							}}
-							transition={{ duration: 0.2 }}
-						/>
-					);
-				}
-				if (element.type === 'card') {
-					return (
-						<ProjectCard
-							key={index}
-							initial={{
-								scale: 0,
-							}}
-							animate={{
-								scale: element.scale,
-							}}
-							transition={{
-								duration: 0,
-							}}
-							project={projects[element.project]}
-						/>
-					);
-				}
-				if (element.type === 'line') {
-					return (
-						<SVG width='100%' height='100vh' key={index}>
-							<Line
-								d={element.path}
-								initial={{ pathLength: 0 }}
-								animate={{ pathLength: element.pathLength }}
+			<StickyContainer>
+				{elements.map((element, index) => {
+					if (element.type === 'star') {
+						return (
+							<ProjectStar
+								key={index}
+								initial={{ x: `${element.position.x}vw`, y: `${element.position.y}vh`, scale: 0 }}
+								animate={{
+									scale: element.scale,
+								}}
+								transition={{ duration: 0.2 }}
+							/>
+						);
+					}
+					if (element.type === 'card') {
+						return (
+							<ProjectCard
+								key={index}
+								initial={{
+									scale: 0,
+								}}
+								animate={{
+									scale: element.scale,
+								}}
 								transition={{
 									duration: 0,
 								}}
+								project={projects[element.project]}
 							/>
-						</SVG>
-					);
-				}
-			})}
+						);
+					}
+					if (element.type === 'line') {
+						return (
+							<SVG width='100%' height='100vh' key={index}>
+								<Line
+									d={element.path}
+									initial={{ pathLength: 0 }}
+									animate={{ pathLength: element.pathLength }}
+									transition={{
+										duration: 0,
+									}}
+								/>
+							</SVG>
+						);
+					}
+				})}
+			</StickyContainer>
 		</Container>
 	);
 };
