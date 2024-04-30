@@ -11,6 +11,7 @@ const Container = styled(motion.div)`
 	height: 2000vh;
 	scroll-behavior: smooth;
 `;
+
 const StickyContainer = styled(motion.div)`
 	position: sticky;
 	top: 0;
@@ -50,45 +51,64 @@ export const Project = () => {
 	const { scrollYProgress } = useScroll({
 		target: ref,
 	});
-	const [dimensions, setDimensions] = useState({
-		vw: Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) / 100,
-		vh: Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0) / 100,
-	});
 
-	const [cards, setCards] = useState(
-		Array(projects.length).fill({
-			type: 'card',
-		})
-	);
+	const [cards, setCards] = useState([]);
 
-	const [stars, setStars] = useState(
-		Array(cards.length)
+	const [stars, setStars] = useState([]);
+
+	const [lines, setLines] = useState([]);
+
+	const [elements, setElements] = useState([]);
+
+	useEffect(() => {
+		const newStars = Array(projects.length)
 			.fill()
 			.map(() => ({
 				type: 'star',
 				position: generateRandomPosition(10, 90, 10, 90),
-			}))
-	);
+			}));
 
-	const [lines, setLines] = useState(
-		Array(stars.length - 1)
-			.fill()
-			.map((_, index) => {
-				const startX = stars[index].position.x * dimensions.vw;
-				const startY = stars[index].position.y * dimensions.vh;
-				const endX = stars[index + 1].position.x * dimensions.vw;
-				const endY = stars[index + 1].position.y * dimensions.vh;
-				const path = `M ${startX} ${startY} L ${endX} ${endY}`;
-				return {
-					type: 'line',
-					startPosition: { x: startX, y: startY },
-					endPosition: { x: endX, y: endY },
-					path: path,
-				};
-			})
-	);
+		setStars(newStars);
 
-	const [elements, setElements] = useState([]);
+		const newCards = Array(projects.length).fill({
+			type: 'card',
+		});
+
+		setCards(newCards);
+
+		const handleResize = () => {
+			const newDimensions = {
+				vw: window.innerWidth / 100,
+				vh: window.innerHeight / 100,
+			};
+
+			const newLines = Array(projects.length - 1)
+				.fill()
+				.map((_, index) => {
+					const startX = newStars[index].position.x * newDimensions.vw;
+					const startY = newStars[index].position.y * newDimensions.vh;
+					const endX = newStars[index + 1].position.x * newDimensions.vw;
+					const endY = newStars[index + 1].position.y * newDimensions.vh;
+					const path = `M ${startX} ${startY} L ${endX} ${endY}`;
+					return {
+						type: 'line',
+						startPosition: { x: startX, y: startY },
+						endPosition: { x: endX, y: endY },
+						path: path,
+					};
+				});
+
+			setLines(newLines);
+		};
+
+		handleResize();
+
+		window.addEventListener('resize', handleResize);
+
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
+	}, []);
 
 	useEffect(() => {
 		const totalElements = stars.length + cards.length + lines.length;
@@ -251,7 +271,8 @@ export const Project = () => {
 								key={index}
 								initial={{ x: `${element.position.x}vw`, y: `${element.position.y}vh`, scale: 0 }}
 								animate={{
-									scale: element.scale,
+									scale: 1,
+									// scale: element.scale,
 								}}
 								transition={{ duration: 0.2 }}
 							/>
@@ -279,7 +300,8 @@ export const Project = () => {
 							<SVG width='100%' height='100vh' key={index}>
 								<Line
 									d={element.path}
-									initial={{ pathLength: 0 }}
+									initial={{ pathLength: 1 }}
+									// initial={{ pathLength: 0 }}
 									animate={{ pathLength: element.pathLength }}
 									transition={{
 										duration: 0,
