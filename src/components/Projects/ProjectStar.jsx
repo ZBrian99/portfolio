@@ -14,10 +14,10 @@ const Star = styled(motion.svg)`
 	width: 100%;
 	height: 100%;
 	filter: blur(1px);
-  /* filter: blur(${({ animate }) => `${animate.scale}px`}); */
+	/* filter: blur(${({ animate }) => `${animate.scale}px`}); */
 `;
 
-const StarShadow = styled.div`
+const StarShadow = styled(motion.div)`
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -26,9 +26,16 @@ const StarShadow = styled.div`
 	box-shadow: ${({ size, color }) => `0 0 ${15 * (size || 3)}px ${5 * (size || 3)}px ${color}`};
 `;
 
-export const ProjectStar = ({ size = '3', color = '#fff', initial = {}, animate = {}, transition = {} }) => {
+export const ProjectStar = ({
+	size = '3',
+	color = '#fff',
+	initial = {},
+	animate = {},
+	transition = {},
+}) => {
+  console.log("render")
 	return (
-		<StarContainer size={size} initial={{ ...initial }}>
+		<StarContainer size={size} initial={initial} animate={animate} transition={transition}>
 			<StarShadow size={size} color={color} />
 			<Star
 				width='800'
@@ -38,10 +45,7 @@ export const ProjectStar = ({ size = '3', color = '#fff', initial = {}, animate 
 				fill={color}
 				size={size}
 				animate={{
-					// scale: [0.7, 1, 0.7],
-					// opacity: [0.7, 1, 0.7],
 					rotate: [0, -360],
-					...animate,
 				}}
 				transition={{
 					rotate: {
@@ -49,14 +53,6 @@ export const ProjectStar = ({ size = '3', color = '#fff', initial = {}, animate 
 						ease: 'linear',
 						repeat: Infinity,
 					},
-					opacity: {
-						duration: 0,
-					},
-					scale: {
-						duration: 0,
-					},
-
-					// ...transition,
 				}}
 			>
 				<path

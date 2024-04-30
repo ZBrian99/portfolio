@@ -94,11 +94,11 @@ const StatusText = styled.p`
 	color: #ccc;
 `;
 
-export const ProjectCard = ({ project, initial, animate }) => {
+export const ProjectCard = ({ project, initial, animate, transition }) => {
 	const { name, description, date, link, repository, images, image, technologies, status } = project;
 
 	return (
-		<CardContainer initial={initial} animate={animate}>
+		<CardContainer initial={initial} animate={animate} transition={transition}>
 			{images && images.length > 0 && (
 				<ImageContainer>
 					<Image src={images[0]} alt={name} />
@@ -110,8 +110,6 @@ export const ProjectCard = ({ project, initial, animate }) => {
 				</ImageContainer>
 			)}
 			<CardInfo>
-				
-
 				<CardTitle>{name}</CardTitle>
 				<CardDescription>{description}</CardDescription>
 				<CardDate>{date}</CardDate>
