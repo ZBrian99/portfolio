@@ -5,10 +5,10 @@ import styled from '@emotion/styled';
 const CardContainer = styled(motion.div)`
 	position: absolute;
 	width: 90%;
-	height: 90%;
-	left: 5%;
-	top: 5%;
-	border-radius: 0.5rem;
+	height: 100%;
+	/* left: 5%; */
+	/* top: 5%; */
+	/* border-radius: 0.5rem; */
 	overflow: hidden;
 	background-color: #1a1a1a;
 	box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.3);

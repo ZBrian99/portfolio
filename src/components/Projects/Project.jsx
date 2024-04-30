@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import styled from '@emotion/styled';
-import { motion, useAnimation, useScroll } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 import { ProjectCard } from './ProjectCard';
 import { projects } from '../../data/projects';
 import { ProjectStar } from './ProjectStar';
@@ -18,6 +18,7 @@ const StickyContainer = styled(motion.div)`
 	left: 0;
 	width: 100%;
 	height: 100vh;
+	overflow: hidden;
 `;
 const SVG = styled(motion.svg)`
 	display: block;
@@ -165,35 +166,59 @@ export const Project = () => {
 				if (element.type === 'card') {
 					const scrollPerCard = 0.6 / cards.length;
 
-					const scrollSegment = scrollPerCard / 5;
-					const midScroll = scrollSegment * 3;
+					const scrollSegment = scrollPerCard / 4;
+					const midScroll = scrollSegment * 2;
 					const midScrollStart = element.startScroll + scrollSegment;
 					const midScrollEnd = midScrollStart + midScroll;
 					const endScrollCard = midScrollEnd + scrollSegment;
 
 					if (scroll >= element.startScroll && scroll < midScrollStart) {
 						const progress = mapRange(scroll, [element.startScroll, midScrollStart], [0, 1]);
+						const progressStar = mapRange(scroll, [element.startScroll, midScrollStart], [0.7, 1.2]);
 						const updatedElement = { ...element, scale: progress };
-						setElements((prevElements) => {
-							const allElements = [...prevElements];
-							allElements[i] = updatedElement;
-							return allElements;
-						});
+
+						setElements((prevElements) =>
+							prevElements.map((element, index) => {
+								if (index === i) {
+									return updatedElement;
+								} else if (index === i - 1) {
+									return { ...element, scale: progressStar };
+								} else {
+									return element;
+								}
+							})
+						);
 					} else if (scroll >= midScrollStart && scroll < midScrollEnd) {
 						const updatedElement = { ...element, scale: 1 };
-						setElements((prevElements) => {
-							const allElements = [...prevElements];
-							allElements[i] = updatedElement;
-							return allElements;
-						});
+
+						setElements((prevElements) =>
+							prevElements.map((element, index) => {
+								if (index === i) {
+									return updatedElement;
+								} else if (index === i - 1) {
+									return { ...element, scale: 1.2 };
+								} else {
+									return element;
+								}
+							})
+						);
 					} else if (scroll >= midScrollEnd && scroll <= endScrollCard) {
 						const progress = mapRange(scroll, [midScrollEnd, endScrollCard], [1, 0]);
+						const progressStar = mapRange(scroll, [midScrollEnd, endScrollCard], [1.2, 0.7]);
+
 						const updatedElement = { ...element, scale: progress };
-						setElements((prevElements) => {
-							const allElements = [...prevElements];
-							allElements[i] = updatedElement;
-							return allElements;
-						});
+
+						setElements((prevElements) =>
+							prevElements.map((element, index) => {
+								if (index === i) {
+									return updatedElement;
+								} else if (index === i - 1) {
+									return { ...element, scale: progressStar };
+								} else {
+									return element;
+								}
+							})
+						);
 					} else {
 						const updatedElement = { ...element, scale: 0 };
 						setElements((prevElements) => {
@@ -228,8 +253,7 @@ export const Project = () => {
 					}
 				} else if (element.type === 'star') {
 					if (scroll >= element.startScroll && scroll <= element.endScroll) {
-						const progress = mapRange(scroll, [element.startScroll, element.endScroll], [0, 1]);
-						// const progressRotate = mapRange(scroll, [element.startScroll, element.endScroll], [0, -360]);
+						const progress = mapRange(scroll, [element.startScroll, element.endScroll], [0, 0.7]);
 
 						const updatedElement = { ...element, scale: progress };
 						setElements((prevElements) => {
@@ -238,7 +262,7 @@ export const Project = () => {
 							return allElements;
 						});
 					} else if (scroll > element.endScroll) {
-						const updatedElement = { ...element, scale: 1 };
+						const updatedElement = { ...element, scale: 0.7 };
 						setElements((prevElements) => {
 							const allElements = [...prevElements];
 							allElements[i] = updatedElement;
@@ -276,22 +300,30 @@ export const Project = () => {
 									// scale: 1,
 									scale: element.scale,
 								}}
-								transition={{ duration: 0.2 }}
+								transition={{ duration: 0 }}
+								// transition={{ duration: 0.2 }}
 							/>
 						);
 					}
 					if (element.type === 'card') {
+						console.log(elements[index - 1].position);
 						return (
 							<ProjectCard
 								key={index}
 								initial={{
-									scale: 0,
+									x: '-100vh',
+									// clipPath: `circle(1% at ${elements[index - 1].position.x}vw ${
+									// 	elements[index - 1].position.y
+									// }vh)`,
 								}}
 								animate={{
-									scale: element.scale,
+									x: `${(element.scale - 1) * 100}vw`,
+									// clipPath: `circle(${element.scale * 100*1.5}% at ${elements[index - 1].position.x}vw ${
+									// 	elements[index - 1].position.y
+									// }vh)`,
 								}}
 								transition={{
-									duration: 0,
+									duration: 0.2,
 								}}
 								project={projects[element.project]}
 							/>
