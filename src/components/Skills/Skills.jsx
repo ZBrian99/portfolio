@@ -1,20 +1,20 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import {Sun} from './Sun';
+import { Sun } from './Sun';
 import skillsData from '../../data/skills.json';
 import { Star } from './Star';
-import {Planet} from './Planet';
+import { Planet } from './Planet';
 
 const SkillsSection = styled.div`
 	width: 100%;
-	height: 120dvh;
+	height: 120vh;
 	overflow: hidden;
 
 	position: relative;
 	@media screen and (min-width: 60rem) {
 		height: 120vh;
-		border-top: 1px dashed rgba(255, 255, 255, 0.3);
-		border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+		/* border-top: 1px dashed rgba(255, 255, 255, 0.3); */
+		/* border-bottom: 1px dashed rgba(255, 255, 255, 0.3); */
 	}
 `;
 
@@ -50,17 +50,16 @@ export const Skills = () => {
 	return (
 		<SkillsSection>
 			<StartContainer>
-				{skillsData.secondaySkills.map((skill, index) => (
+				{/* {skillsData.secondaySkills.map((skill, index) => (
 					<Star key={index} {...skill} sun={skillsData.main.size} />
-				))}
+				))} */}
 			</StartContainer>
 			<PlanetContainer size={skillsData.main.size}>
 				<Sun {...skillsData.main} />
 				{skillsData.skills.map((skill, index) => (
-					<Planet key={index} {...skill} />
+					<Planet key={index} {...skill} orbit={false} />
 				))}
 			</PlanetContainer>
 		</SkillsSection>
 	);
 };
-

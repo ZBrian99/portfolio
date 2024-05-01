@@ -20,13 +20,14 @@ export const GlobalStyles = () => (
 			}
 			body {
 				scroll-behavior: smooth;
-				background-color: #333;
+				background-color: #000;
+        height: min-content;
 				font-size: 100%;
 				/* padding: 100rem 0; */
 				/* min-height: 100vh; */
 				/* background-image: url('src/assets/images/background.png'); */
-				background-attachment: fixed;
-				background-repeat: repeat;
+				/* background-attachment: fixed; */
+				/* background-repeat: repeat; */
 				/* background-size: cover; */
 				font-family: var(--font-body);
 				color: var(--color-secondary);

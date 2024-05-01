@@ -6,7 +6,8 @@ const PlanetOrbitStyled = styled(motion.div)`
 	width: ${({ size }) => `${size}vw`};
 	height: ${({ size }) => `${size}vw`};
 	background-color: transparent;
-	border: 1px dashed rgba(255, 255, 255, 0.3);
+	/* border: 1px dashed rgba(255, 255, 255, 0.3); */
+  border: ${({ orbit }) => (orbit ? '1px dashed rgba(255, 255, 255, 0.3)' : 'none')};
 	border-radius: 50%;
 	position: absolute;
 
@@ -16,7 +17,11 @@ const PlanetOrbitStyled = styled(motion.div)`
 	}
 `;
 
-export const PlanetOrbit = ({ size, children }) => {
-	return <PlanetOrbitStyled size={size}>{children}</PlanetOrbitStyled>;
+export const PlanetOrbit = ({ size,orbit=true, children }) => {
+	return (
+		<PlanetOrbitStyled size={size} orbit={orbit}>
+			{children}
+		</PlanetOrbitStyled>
+	);
 };
 

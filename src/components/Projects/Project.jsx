@@ -10,6 +10,8 @@ const Container = styled(motion.div)`
 	position: relative;
 	height: 2000vh;
 	scroll-behavior: smooth;
+	/* background-color: #111; */
+	
 `;
 
 const StickyContainer = styled.div`
@@ -17,8 +19,12 @@ const StickyContainer = styled.div`
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100dvh;
-	/* height: ${({ height }) => `${height}px`}; */
+	height: 120vh;
+	background-image: url('src/assets/images/background.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
 	/* overflow: hidden; */
 `;
 
@@ -44,10 +50,10 @@ const mapRange = (value, [fromStart, fromEnd], [toStart, toEnd]) => {
 };
 
 const generateRandomPosition = (minX = 0, maxX = 100, minY = 0, maxY = 100) => {
-	// const windowWidth = window.innerWidth;
-	// const windowHeight = window.innerHeight;
-	const windowWidth = window.visualViewport ? window.visualViewport.width : window.innerWidth;
-	const windowHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+	const windowWidth = window.innerWidth;
+	const windowHeight = window.innerHeight;
+	// const windowWidth = window.visualViewport ? window.visualViewport.width : window.innerWidth;
+	// const windowHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
 
 	const xMin = (minX / 100) * windowWidth;
 	const xMax = (maxX / 100) * windowWidth;
@@ -79,11 +85,7 @@ export const Project = () => {
 
 	const [isMobile, setIsMobile] = useState(true);
 
-	const [height, setHeight] = useState(0);
 	useEffect(() => {
-		const windowHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
-
-		setHeight(windowHeight);
 		const newStars = Array(projects.length)
 			.fill()
 			.map(() => ({
@@ -100,12 +102,12 @@ export const Project = () => {
 		setCards(newCards);
 
 		const handleResize = () => {
-			// const windowWidth = window.innerWidth;
-			// const windowHeight = window.innerHeight;
-			const windowWidth = window.visualViewport ? window.visualViewport.width : window.innerWidth;
-			const windowHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+			const windowWidth = window.innerWidth;
+			const windowHeight = window.innerHeight;
+			// const windowWidth = window.visualViewport ? window.visualViewport.width : window.innerWidth;
+			// const windowHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+
 			const mobile = windowWidth <= 960;
-			setHeight(windowHeight);
 
 			setIsMobile(mobile);
 			const resizedStars = newStars.map((star) => ({
@@ -215,7 +217,7 @@ export const Project = () => {
 					if (scroll >= element.startScroll && scroll < midScrollStart) {
 						const progress = mapRange(scroll, [element.startScroll, midScrollStart], [0, 1]);
 						const progressStar = mapRange(scroll, [element.startScroll, midScrollStart], [0.7, 1.2]);
-						const updatedElement = { ...element, scale: progress };
+						const updatedElement = { ...element, x: progress };
 
 						setElements((prevElements) =>
 							prevElements.map((element, index) => {
@@ -229,7 +231,7 @@ export const Project = () => {
 							})
 						);
 					} else if (scroll >= midScrollStart && scroll < midScrollEnd) {
-						const updatedElement = { ...element, scale: 1 };
+						const updatedElement = { ...element, x: 1 };
 
 						setElements((prevElements) =>
 							prevElements.map((element, index) => {
@@ -246,7 +248,7 @@ export const Project = () => {
 						const progress = mapRange(scroll, [midScrollEnd, endScrollCard], [1, 0]);
 						const progressStar = mapRange(scroll, [midScrollEnd, endScrollCard], [1.2, 0.7]);
 
-						const updatedElement = { ...element, scale: progress };
+						const updatedElement = { ...element, x: progress };
 
 						setElements((prevElements) =>
 							prevElements.map((element, index) => {
@@ -260,7 +262,7 @@ export const Project = () => {
 							})
 						);
 					} else {
-						const updatedElement = { ...element, scale: 0 };
+						const updatedElement = { ...element, x: 0 };
 						setElements((prevElements) => {
 							const allElements = [...prevElements];
 							allElements[i] = updatedElement;
@@ -332,13 +334,11 @@ export const Project = () => {
 			<StickyContainer>
 				{elements.map((element, index) => {
 					if (element.type === 'star') {
-						// console.log(element.position)
 						return (
 							<ProjectStar
 								key={index}
 								initial={{ x: `${element.x}px`, y: `${element.y}px`, scale: 0 }}
 								animate={{
-									// scale: 1,
 									x: `${element.x}px`,
 									y: `${element.y}px`,
 									scale: element.scale,
@@ -346,22 +346,19 @@ export const Project = () => {
 								transition={{
 									duration: 0,
 								}}
-								// transition={{ duration: 0.2 }}
 							/>
 						);
 					}
 					if (element.type === 'card') {
-						console.log(element.scale > 0 ? 1 : 0);
+						// console.log(element.scale > 0 ? 1 : 0);
 						return (
 							<ProjectCard
 								key={index}
 								initial={{
-									x: '-100vh',
-									// scale: 0,
+									x: '-100vw',
 								}}
 								animate={{
-									x: `${(isMobile ? (element.scale === 1 ? 0 : -1) : element.scale - 1) * 100}vw`,
-									// scale: `${element.scale > 0 ? 1 : 0}`,
+									x: `${(isMobile ? (element.x === 1 ? 0 : -1) : element.x - 1) * 100}vw`,
 								}}
 								transition={{
 									ease: 'linear',
@@ -376,7 +373,6 @@ export const Project = () => {
 							<SVG width='100%' height='100vh' key={index}>
 								<Line
 									d={element.path}
-									// initial={{ pathLength: 1 }}
 									initial={{ pathLength: 0 }}
 									animate={{ pathLength: element.pathLength }}
 									transition={{

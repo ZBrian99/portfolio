@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
-import {PlanetOrbit} from './PlanetOrbit';
-import {PlanetRotation} from './PlanetRotation';
+import { PlanetOrbit } from './PlanetOrbit';
+import { PlanetRotation } from './PlanetRotation';
 import { motion } from 'framer-motion';
-import {useWindowSize} from '../../hooks/useWindowSize';
+import { useWindowSize } from '../../hooks/useWindowSize';
 
 const PlanetStyled = styled(motion.div)`
 	width: ${({ size }) => `${size}vw`};
@@ -26,11 +26,11 @@ const PlanetIcon = styled.img`
 	height: 100%;
 `;
 
-export const Planet = ({ size, src, name, moons, speed, angle, orbitSize }) => {
+export const Planet = ({ size, src, name, moons, speed, angle, orbit, orbitSize }) => {
 	const isMobile = useWindowSize();
 
 	return (
-		<PlanetOrbit size={orbitSize}>
+		<PlanetOrbit size={orbitSize} orbit={orbit}>
 			<PlanetRotation rotate={isMobile ? [180 - angle, 180 + angle] : [90 - angle, 90 + angle]} speed={speed}>
 				<PlanetStyled
 					size={size}
@@ -68,4 +68,3 @@ export const Planet = ({ size, src, name, moons, speed, angle, orbitSize }) => {
 		</PlanetOrbit>
 	);
 };
-

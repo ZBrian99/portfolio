@@ -6,7 +6,7 @@ export const App = () => {
 	return (
 		<>
 			<GlobalStyles />
-			{/* <Skills /> */}
+			<Skills />
 			{/* <TestSVG /> */}
 			{/* <Constellation /> */}
 			<Project />
