@@ -13,7 +13,7 @@ const StarContainer = styled(motion.div)`
 const Star = styled(motion.svg)`
 	width: 100%;
 	height: 100%;
-	filter: blur(1px);
+	filter: blur(.5px);
 	/* filter: blur(${({ animate }) => `${animate.scale}px`}); */
 `;
 

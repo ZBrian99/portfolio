@@ -1,3 +1,6 @@
+<!-- !Bug mobile: Probar medidas porcentuales, probar no usar framer motion, probar actualizar dimensions con otra formula, probar animacion de scroll parcial card automatica
+
+
 Proyects, recorte de la pagina con forma de planeta o asteroide con la tipica señalizacion espacial de cuadrado linea y descripción
 
 
@@ -56,4 +59,4 @@ Incluir services
 Boton de agujero negro al final que debora toda la página y ponga fin del juego restart
 
 
-Efecto expansión de universo al entrar a la página que tenga coerencia con el boton de agujero negro del final
+Efecto expansión de universo al entrar a la página que tenga coerencia con el boton de agujero negro del final -->

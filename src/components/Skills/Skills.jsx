@@ -7,7 +7,7 @@ import {Planet} from './Planet';
 
 const SkillsSection = styled.div`
 	width: 100%;
-	height: 120vh;
+	height: 120dvh;
 	overflow: hidden;
 
 	position: relative;

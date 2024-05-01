@@ -20,7 +20,7 @@ export const GlobalStyles = () => (
 			}
 			body {
 				scroll-behavior: smooth;
-				background-color: #000;
+				background-color: #333;
 				font-size: 100%;
 				/* padding: 100rem 0; */
 				/* min-height: 100vh; */

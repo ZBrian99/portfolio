@@ -10,10 +10,10 @@ const CardContainer = styled(motion.div)`
 	/* top: 5%; */
 	/* border-radius: 0.5rem; */
 	overflow: hidden;
-	background-color: #1a1a1a;
 	box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.3);
 	display: flex;
 	flex-direction: column;
+  z-index: 50;
 	@media screen and (min-width: 60rem) {
 		flex-direction: row;
 	}
