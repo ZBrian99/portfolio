@@ -15,7 +15,7 @@ const Container = styled(motion.div)`
 	position: sticky;
 	top: 0;
 	height: 2000vh;
-	scroll-behavior: smooth;
+	/* scroll-behavior: smooth; */
 `;
 
 const SVG = styled(motion.svg)`

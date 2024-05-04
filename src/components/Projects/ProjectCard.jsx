@@ -5,13 +5,13 @@ import styled from '@emotion/styled';
 const CardContainer = styled(motion.div)`
 	position: absolute;
 	width: 90%;
-	height: 100vh;
+	height: 100%;
 	overflow: hidden;
 	box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.3);
 	display: flex;
 	flex-direction: column;
-  z-index: 50;
-  background-color: #151515;
+	z-index: 50;
+	background-color: #151515;
 	@media screen and (min-width: 60rem) {
 		flex-direction: row;
 	}

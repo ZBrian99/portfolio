@@ -4,14 +4,14 @@ import { motion, useScroll } from 'framer-motion';
 import { ProjectCard } from './ProjectCard';
 import { projects } from '../../data/projects';
 import { ProjectStar } from './ProjectStar';
-const Container = styled(motion.div)`
+const Container = styled.div`
 	width: 100%;
 	color: white;
 	position: relative;
-	height: 2000vh;
+	height: 2000svh;
+	/* height: 2000lvh; */
+
 	scroll-behavior: smooth;
-	/* background-color: #111; */
-	
 `;
 
 const StickyContainer = styled.div`
@@ -19,13 +19,16 @@ const StickyContainer = styled.div`
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 120vh;
+	height: 100dvh;
+	/* height: 100lvh; */
+	display: flex;
+	/* background-image: url('src/assets/images/galaxy.png'); */
+
 	background-image: url('src/assets/images/background.png');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
-	/* overflow: hidden; */
+	/* background-repeat: no-repeat;  */
+	/* background-size: cover; */
+	/* background-position: center; */
+	/* background-attachment: fixed; */
 `;
 
 const SVG = styled(motion.svg)`
@@ -104,12 +107,12 @@ export const Project = () => {
 		const handleResize = () => {
 			const windowWidth = window.innerWidth;
 			const windowHeight = window.innerHeight;
+
 			// const windowWidth = window.visualViewport ? window.visualViewport.width : window.innerWidth;
 			// const windowHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
 
-			const mobile = windowWidth <= 960;
+			setIsMobile(windowWidth <= 960);
 
-			setIsMobile(mobile);
 			const resizedStars = newStars.map((star) => ({
 				...star,
 				x: star.relativeX * windowWidth,
@@ -151,14 +154,14 @@ export const Project = () => {
 				window.visualViewport.removeEventListener('resize', handleResize);
 			}
 		};
-	}, [projects]);
+	}, []);
 
 	useEffect(() => {
 		const totalElements = stars.length + cards.length + lines.length;
 
-		const scrollPerCircleAndLine = 0.3 / (stars.length + lines.length);
+		const scrollPerCircleAndLine = 0.2 / (stars.length + lines.length);
 
-		const scrollPerCard = 0.6 / cards.length;
+		const scrollPerCard = 0.7 / cards.length;
 
 		let scrollStartPerElement = 0.05;
 
@@ -208,8 +211,8 @@ export const Project = () => {
 				if (element.type === 'card') {
 					const scrollPerCard = 0.6 / cards.length;
 
-					const scrollSegment = scrollPerCard / 4;
-					const midScroll = scrollSegment * 2;
+					const scrollSegment = scrollPerCard / 5;
+					const midScroll = scrollSegment * 3;
 					const midScrollStart = element.startScroll + scrollSegment;
 					const midScrollEnd = midScrollStart + midScroll;
 					const endScrollCard = midScrollEnd + scrollSegment;
@@ -332,6 +335,15 @@ export const Project = () => {
 	return (
 		<Container ref={ref}>
 			<StickyContainer>
+				<div
+					style={{
+						position: 'absolute',
+						left: '50%',
+						fontSize: '3rem',
+						color: 'white',
+						zIndex: 1000,
+					}}
+				></div>
 				{elements.map((element, index) => {
 					if (element.type === 'star') {
 						return (
@@ -350,7 +362,6 @@ export const Project = () => {
 						);
 					}
 					if (element.type === 'card') {
-						// console.log(element.scale > 0 ? 1 : 0);
 						return (
 							<ProjectCard
 								key={index}
@@ -370,7 +381,7 @@ export const Project = () => {
 					}
 					if (element.type === 'line') {
 						return (
-							<SVG width='100%' height='100vh' key={index}>
+							<SVG key={index} width='100%' height='100%'>
 								<Line
 									d={element.path}
 									initial={{ pathLength: 0 }}

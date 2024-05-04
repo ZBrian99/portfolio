@@ -69,15 +69,6 @@
 	],
 	"secondaySkills": [
 		{
-			"src": "src/assets/icons/git.svg",
-			"name": "Github",
-			"size": 7,
-			"speed": 15,
-			"x": 15,
-			"y": 95,
-			"learned": true
-		},
-		{
 			"src": "src/assets/icons/react-router.svg",
 			"name": "React Router",
 			"size": 8,
@@ -86,6 +77,17 @@
 			"y": 40,
 			"learned": true
 		},
+		{
+			"src": "src/assets/icons/git.svg",
+			"name": "Github",
+			"size": 7,
+			"speed": 15,
+			"x": 15,
+			"y": 95,
+			"learned": true
+    }
+	],
+	"futureSkills": [
 		{
 			"src": "src/assets/icons/redux.svg",
 			"name": "Redux",
@@ -141,8 +143,8 @@
 			"learned": false
 		},
 		{
-			"src": "src/assets/icons/aws.svg",
-			"name": "Amazon Web Services",
+			"src": "src/assets/icons/next-js.svg",
+			"name": "Next JS",
 			"size": 5,
 			"speed": 15,
 			"x": 12,
