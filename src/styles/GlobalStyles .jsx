@@ -23,6 +23,7 @@ export const GlobalStyles = () => (
 				scroll-behavior: smooth;
 				background-color: #000;
 				font-size: 100%;
+
 				/* padding: 100rem 0; */
 				/* min-height: 100vh; */
 				/* background-image: url('src/assets/images/background.png'); */
