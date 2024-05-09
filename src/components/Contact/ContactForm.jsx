@@ -6,17 +6,22 @@ const FormContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 100%;
+  justify-content: center;
+	width: 90%;
 	max-width: 50rem;
 	height: 100%;
 	margin: auto;
-	@media screen and (min-width: 60rem) {
+  background-color: #000;
+  border-radius: 1rem;
+  box-shadow: 0 0 .5rem rgba(255, 255, 255, 0.5);
+	/* @media screen and (min-width: 60rem) {
 		justify-content: center;
-	}
+	} */
 `;
 
 const FormTitle = styled.h2`
 	font-size: 2em;
+  color: white;
 `;
 
 const Form = styled.form`

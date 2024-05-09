@@ -7,10 +7,10 @@ export const App = () => {
 		<>
 			<GlobalStyles />
 			
-			{/* <Skills /> */}
-			{/* <Project /> */}
+			<Skills />
+			<Project />
 
-      <Contact></Contact>
+      <Contact/>
 		</>
 	);
 };

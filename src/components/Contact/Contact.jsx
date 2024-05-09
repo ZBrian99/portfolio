@@ -6,16 +6,17 @@ const ContactContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	height: 100svh;
-  
-	@media screen and (min-width: 60rem) {
+	background-image: url('src/assets/images/background.png');
+  padding: 10svh 5vw;
+	/* @media screen and (min-width: 60rem) {
     flex-direction: row;
-	}
+	} */
 `;
 
 export const Contact = () => {
 	return (
 		<ContactContainer>
-			<ContactMeteor />
+			{/* <ContactMeteor /> */}
 			<ContactForm />
 		</ContactContainer>
 	);
