@@ -26,9 +26,10 @@ const NavMenu = styled(motion.div)`
 	width: auto;
 	height: 100%;
 	gap: 1rem;
+	left: 100%;
 	@media screen and (max-width: 60rem) {
-		flex-direction: column;
 		position: absolute;
+		flex-direction: column;
 		top: 4rem;
 		width: 80%;
 		padding: 3rem;
@@ -73,36 +74,29 @@ const MenuToggle = styled(motion.div)`
 
 const mobileVariant = {
 	open: {
-		x: '20%',
+		x: '-100%',
 		transition: {
 			duration: 0.5,
 		},
 	},
 	closed: {
-		x: '120%',
+		x: '0%',
 		transition: {
 			duration: 0.5,
 		},
 	},
 };
 
-const desktopVariant = {
-	open: {
-		x: ['110%', '0%'],
-		transition: {
-			duration: 1,
-			type: 'spring',
-		},
-	},
-};
+const desktopVariant = {};
 
 export const Navbar = () => {
-	const [isOpen, setIsOpen] = useState(false);
+	const [isOpen, setIsOpen] = useState(null);
 	const [isMobile, setIsMobile] = useState(window.innerWidth <= 960);
 
 	useEffect(() => {
 		const handleResize = () => {
 			setIsMobile(window.innerWidth <= 960);
+			setIsOpen(null);
 		};
 
 		window.addEventListener('resize', handleResize);
@@ -112,19 +106,23 @@ export const Navbar = () => {
 		};
 	}, []);
 	const toggleMenu = () => {
-		setIsOpen(!isOpen);
+		setIsOpen(isOpen === 'open' ? 'closed' : 'open');
 	};
-
+	console.log(isOpen);
 	const variant = isMobile ? mobileVariant : desktopVariant;
 
 	return (
 		<NavbarContainer initial={{ y: -100 }} animate={{ y: 0 }} transition={{ ease: 'easeOut', duration: 0.5 }}>
 			<NavBrand>Portfolio</NavBrand>
 
-			{isMobile && <MenuToggle onClick={toggleMenu}>{isOpen ? 'X' : '☰'}</MenuToggle>}
+			{isMobile && <MenuToggle onClick={toggleMenu}>{isOpen === 'open' ? 'X' : '☰'}</MenuToggle>}
 
-			<NavMenu animate={isMobile ? (isOpen ? 'open' : 'closed') : 'open'} variants={variant}>
+			<NavMenu
+				animate={isOpen === 'open' ? 'open' : isOpen === 'closed' ? 'closed' : ''}
+				variants={isMobile ? variant : ''}
+			>
 				<NavLink
+					onClick={() => setIsOpen('closed')}
 					whileHover={{
 						borderRight: '2px solid #eee',
 						borderBottom: '2px solid #eee',
@@ -138,6 +136,7 @@ export const Navbar = () => {
 					<NavItem>Home</NavItem>
 				</NavLink>
 				<NavLink
+					onClick={() => setIsOpen('closed')}
 					whileHover={{
 						borderRight: '2px solid #eee',
 						borderBottom: '2px solid #eee',
@@ -151,6 +150,7 @@ export const Navbar = () => {
 					<NavItem>About</NavItem>
 				</NavLink>
 				<NavLink
+					onClick={() => setIsOpen('closed')}
 					whileHover={{
 						borderRight: '2px solid #eee',
 						borderBottom: '2px solid #eee',
@@ -164,6 +164,7 @@ export const Navbar = () => {
 					<NavItem>Projects</NavItem>
 				</NavLink>
 				<NavLink
+					onClick={() => setIsOpen('closed')}
 					whileHover={{
 						borderRight: '2px solid #eee',
 						borderBottom: '2px solid #eee',
