@@ -32,6 +32,7 @@ const NavMenu = styled(motion.div)`
 		flex-direction: column;
 		top: 4rem;
 		width: 80%;
+		max-width: 30rem;
 		padding: 3rem;
 		height: 100lvh;
 		background-color: #111;
@@ -69,6 +70,7 @@ const MenuToggle = styled(motion.div)`
 		font-size: 1.5rem;
 		color: #fff;
 		cursor: pointer;
+		user-select: none;
 	}
 `;
 
@@ -87,7 +89,14 @@ const mobileVariant = {
 	},
 };
 
-const desktopVariant = {};
+const desktopVariant = {
+	initial: {
+		x: '0%',
+		transition: {
+			duration: 0,
+		},
+	},
+};
 
 export const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(null);
@@ -108,7 +117,6 @@ export const Navbar = () => {
 	const toggleMenu = () => {
 		setIsOpen(isOpen === 'open' ? 'closed' : 'open');
 	};
-	console.log(isOpen);
 	const variant = isMobile ? mobileVariant : desktopVariant;
 
 	return (
@@ -118,8 +126,8 @@ export const Navbar = () => {
 			{isMobile && <MenuToggle onClick={toggleMenu}>{isOpen === 'open' ? 'X' : '☰'}</MenuToggle>}
 
 			<NavMenu
-				animate={isOpen === 'open' ? 'open' : isOpen === 'closed' ? 'closed' : ''}
-				variants={isMobile ? variant : ''}
+				animate={isOpen === 'open' ? 'open' : isOpen === 'closed' ? 'closed' : 'initial'}
+				variants={variant}
 			>
 				<NavLink
 					onClick={() => setIsOpen('closed')}
