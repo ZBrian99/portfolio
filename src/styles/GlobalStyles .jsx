@@ -31,6 +31,8 @@ export const GlobalStyles = () => (
 				/* background-position: center; */
 				/* background-attachment: fixed; */
 				/* background-repeat: no-repeat; */
+				background: url('src/assets/images/background.png') fixed;
+
 				font-family: var(--font-body);
 				color: var(--color-secondary);
 			}
