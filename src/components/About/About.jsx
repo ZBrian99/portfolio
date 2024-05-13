@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const AboutContainer = styled(motion.section)`
 	/* background-color: #000; */
 	border-radius: 1rem;
-	padding: 2.5rem;
+	padding: 2.5rem 1rem;
 	padding-top: 7.5rem;
 	color: white;
 	display: flex;
@@ -13,7 +13,6 @@ const AboutContainer = styled(motion.section)`
 	width: 100%;
 	max-width: 100rem;
 	margin: auto;
-  
 `;
 
 const AboutCard = styled.div`
@@ -26,14 +25,20 @@ const AboutCard = styled.div`
 
 const AboutInfo = styled.div`
 	display: flex;
-	/* flex-direction: column; */
 	flex-wrap: wrap;
 	gap: 1rem;
-	background-color: #111;
+	background-color: #333;
+	background: radial-gradient(at right bottom, #000000, #333);
+	box-shadow: 0 0 0.1rem 0.1rem #555 inset;
 	border-radius: 1rem;
+	padding: 2rem 1rem;
 	position: relative;
-	padding: 2rem;
 	padding-top: 6rem;
+	order: 1;
+	flex: 3;
+	@media screen and (min-width: 60rem) {
+		padding: 2rem;
+	}
 `;
 
 const InfoImage = styled.img`
@@ -41,7 +46,8 @@ const InfoImage = styled.img`
 	width: 10rem;
 	height: 10rem;
 	border-radius: 50%;
-	border: 0.5rem solid #333;
+	border: 0.2rem solid #555;
+
 	object-fit: cover;
 	object-position: center;
 	top: 0;
@@ -51,10 +57,9 @@ const InfoImage = styled.img`
 
 const AboutTitle = styled.h3`
 	font-size: 2em;
-	text-align: center;
+	/* text-align: center; */
 	width: 100%;
 	margin-bottom: 0.5rem;
-
 `;
 
 const AboutDescription = styled.p`
@@ -82,10 +87,14 @@ const Services = styled.div`
 	justify-content: space-evenly;
 	gap: 1rem;
 	padding: 2rem;
-	background-color: #111;
+	background-color: #333;
+	background: radial-gradient(at right bottom, #000000, #333);
+	box-shadow: 0 0 0.1rem 0.1rem #555 inset;
 	border-radius: 1rem;
+	padding: 2rem 1rem;
 	flex-wrap: wrap;
 	width: 100%;
+	order: 3;
 
 	@media screen and (min-width: 60rem) {
 		flex-direction: row;
@@ -93,7 +102,7 @@ const Services = styled.div`
 `;
 
 const ServicesTitle = styled.h3`
-	text-align: center;
+	/* text-align: center; */
 	font-size: 2em;
 	margin-bottom: 0.5rem;
 
@@ -107,10 +116,14 @@ const ServiceCard = styled.div`
 	padding: 1rem;
 	gap: 1rem;
 	border-radius: 1rem;
-	background-color: #222;
+	background-color: #111;
 	width: 100%;
 	min-height: 20rem;
 	text-align: center;
+	background-color: #222;
+	background: radial-gradient(at right bottom, #000000, #333);
+	box-shadow: 0 0 0.1rem 0.1rem #555 inset;
+
 	@media screen and (min-width: 55rem) {
 		max-width: 20rem;
 	}
@@ -138,28 +151,49 @@ const ServiceImage = styled.img`
 
 const Skills = styled.div`
 	display: flex;
-	background-color: #111;
-	padding: 1rem 2rem;
-	border-radius: 1rem;
-	align-items: center;
-	justify-content: center;
+	flex-direction: column;
 	flex-wrap: wrap;
-	gap: 0.5rem;
+	gap: 1rem;
+	background-color: #333;
+	background: radial-gradient(at right bottom, #000000, #333);
+	box-shadow: 0 0 0.1rem 0.1rem #555 inset;
+	border-radius: 1rem;
+	padding: 2rem 1rem;
+	height: content;
+	order: 2;
 	width: 100%;
+
+	@media screen and (min-width: 60rem) {
+		flex: 1;
+	}
 `;
 
 const SkillsTitle = styled.h3`
 	font-size: 2em;
-	text-align: center;
+	/* text-align: center; */
 	width: 100%;
 	margin-bottom: 0.5rem;
 `;
 
-const SkillContainer = styled.div`
-	position: relative;
-	width: 2.5rem;
-	height: 2.5rem;
+const SkillsContainer = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+	/* justify-content: center; */
+	gap: 1rem;
+`;
 
+const Skill = styled.div`
+	position: relative;
+	width: 3rem;
+	height: 3rem;
+	background-color: #333;
+	background: radial-gradient(at right bottom, #000000, #333);
+	box-shadow: 0 0 0.1rem 0.1rem #555 inset;
+	border-radius: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.5rem;
 	&:hover {
 		cursor: pointer;
 		& > .SkillTooltip {
@@ -176,20 +210,21 @@ const SkillImage = styled.img`
 const SkillTooltip = styled.span`
 	position: absolute;
 	left: 50%;
-	transform: translate(-50%, -2rem);
-	background-color: #111;
-	border: 1px solid #fff;
-	padding: 0.3rem 0.5rem;
+	transform: translate(-50%, -3rem);
+	padding: 0.5rem 1rem;
 	border-radius: 0.5rem;
 	font-size: 0.9em;
 	transition: opacity 0.2s ease;
 	pointer-events: none;
 	opacity: 0;
+	z-index: 100;
+	background-color: #333;
+	background: radial-gradient(at right bottom, #000000, #333);
+	box-shadow: 0 0 0.1rem 0.1rem #555 inset;
 `;
 
 const ContactButton = styled.button`
 	border: none;
-	background-color: #222;
 	color: white;
 	display: flex;
 	align-items: center;
@@ -198,9 +233,12 @@ const ContactButton = styled.button`
 	border-radius: 1rem;
 	gap: 0.5rem;
 	margin-top: 0.5rem;
-
+	background-color: #222;
+	background: radial-gradient(at right bottom, #000000, #333);
+	box-shadow: 0 0 0.1rem 0.1rem #555 inset;
 	&:hover {
 		cursor: pointer;
+		box-shadow: 0 0 0.1rem 0.1rem #5bcefa inset;
 	}
 `;
 
@@ -231,10 +269,10 @@ export const About = () => {
 					asperiores perspiciatis itaque officiis animi ut saepe ab fuga odio, consectetur, impedit beatae?
 					Molestias ipsum consequatur nihil.
 				</AboutDescription>
-				<ContactButton>
+				{/* <ContactButton>
 					<ButtonImage src='src/assets/icons/react.svg' alt='Contacto' />
 					Contacto
-				</ContactButton>
+				</ContactButton> */}
 				<ContactButton>
 					<ButtonImage src='src/assets/icons/react.svg' alt='Currículum' />
 					Currículum
@@ -282,19 +320,38 @@ export const About = () => {
 			</Services>
 			<Skills>
 				<SkillsTitle>Habilidades</SkillsTitle>
-				<SkillContainer>
-					<SkillTooltip className='SkillTooltip'>React</SkillTooltip>
-					<SkillImage src='src/assets/icons/react.svg' alt='React' />
-				</SkillContainer>
-				<SkillContainer>
-					<SkillTooltip className='SkillTooltip'>React</SkillTooltip>
-					<SkillImage src='src/assets/icons/react.svg' alt='React' />
-				</SkillContainer>
-				<SkillContainer>
-					<SkillTooltip className='SkillTooltip'>React</SkillTooltip>
-					<SkillImage src='src/assets/icons/react.svg' alt='React' />
-				</SkillContainer>
+				<SkillsContainer>
+					<Skill>
+						<SkillTooltip className='SkillTooltip'>React</SkillTooltip>
+						<SkillImage src='src/assets/icons/react.svg' alt='React' />
+					</Skill>
+					<Skill>
+						<SkillTooltip className='SkillTooltip'>React</SkillTooltip>
+						<SkillImage src='src/assets/icons/react.svg' alt='React' />
+					</Skill>
+					<Skill>
+						<SkillTooltip className='SkillTooltip'>React</SkillTooltip>
+						<SkillImage src='src/assets/icons/react.svg' alt='React' />
+					</Skill>
+					<Skill>
+						<SkillTooltip className='SkillTooltip'>React</SkillTooltip>
+						<SkillImage src='src/assets/icons/react.svg' alt='React' />
+					</Skill>
+					<Skill>
+						<SkillTooltip className='SkillTooltip'>React</SkillTooltip>
+						<SkillImage src='src/assets/icons/react.svg' alt='React' />
+					</Skill>
+					<Skill>
+						<SkillTooltip className='SkillTooltip'>React</SkillTooltip>
+						<SkillImage src='src/assets/icons/react.svg' alt='React' />
+					</Skill>
+					<Skill>
+						<SkillTooltip className='SkillTooltip'>React</SkillTooltip>
+						<SkillImage src='src/assets/icons/react.svg' alt='React' />
+					</Skill>
+				</SkillsContainer>
 			</Skills>
+
 			{/* <ContactContainer> */}
 
 			{/* </ContactContainer> */}

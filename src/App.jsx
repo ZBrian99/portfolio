@@ -12,11 +12,11 @@ export const App = () => {
 
 			<Navbar />
 
-			<Hero />
+			{/* <Hero /> */}
 			<About />
-			<Skills />
-			<Project />
-			<Contact/>
+			{/* <Skills /> */}
+			{/* <Project /> */}
+			{/* <Contact/> */}
 		</>
 	);
 };
