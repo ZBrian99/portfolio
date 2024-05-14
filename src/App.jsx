@@ -5,15 +5,18 @@ import { Contact } from './components/Contact/Contact';
 import { Navbar } from './components/Navbar/Navbar';
 import { Hero } from './components/Hero/Hero';
 import { About } from './components/About/About';
+import { Background } from './components/Background/Background';
 export const App = () => {
 	return (
 		<>
 			<GlobalStyles />
 
-			<Navbar />
+      <Background/>
+
+			{/* <Navbar /> */}
 
 			{/* <Hero /> */}
-			<About />
+			{/* <About /> */}
 			{/* <Skills /> */}
 			{/* <Project /> */}
 			{/* <Contact/> */}
