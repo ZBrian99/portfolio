@@ -82,12 +82,15 @@ const CardStyled = styled.div`
 	width: 20rem;
 	height: 30rem;
 	background-color: #555;
-	background-color: rgba(255, 255, 255, 0.1);
+	background-color: rgba(255, 255, 255, 0.2);
 
-	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-	box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.37);
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
+	/* box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.37); */
 	transform-style: preserve-3d;
 	perspective: 1000px;
+	/* border: 1px solid rgba(255, 255, 255, 0.15); */
+	border: 1px solid rgba(255, 255, 255, 0.1);
+
 	/* background-color: rgba(255, 255, 255, 0.25); */
 	/* background: linear-gradient(45deg, #f3ec78, #af4261, #577399, #2b4f81, #0b2f51); */
 	color: white;
@@ -103,9 +106,9 @@ const CardStyled = styled.div`
 		position: absolute;
 		top: ${({ y }) => y}px;
 		left: ${({ x }) => x}px;
-		background: radial-gradient(#888, transparent, transparent);
-		background: radial-gradient(#e72ea0, transparent, transparent);
-		background: radial-gradient(#f3ec78, #af4261, #577399, #2b4f81, transparent, transparent);
+		/* background: radial-gradient(#888, transparent, transparent); */
+		/* background: radial-gradient(#e72ea0, transparent, transparent); */
+		/* background: radial-gradient(#f3ec78, #af4261, #577399, #2b4f81, transparent, transparent); */
 		background: radial-gradient(rgba(255, 255, 255, 0.1), transparent, transparent);
 
 		width: 40rem;
@@ -163,7 +166,6 @@ export const TestCardPerspectiveGlare = () => {
 				}}
 			>
 				<Tilt
-					tiltReverse={true}
 					scale={1.1}
 					transitionSpeed={1000}
 					style={{

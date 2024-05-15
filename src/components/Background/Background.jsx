@@ -10,10 +10,12 @@ const BackgroundContainer = styled.div`
 `;
 export const Background = () => {
 	return (
-		// <BackgroundContainer>
+    // <BackgroundContainer>
 			// <StarsBackground />
     // {/* <WavesBackground /> */}
-    <NebulaBackground/>
+    <>
+    <NebulaBackground />
+    </>
 		// </BackgroundContainer>
 	);
 };

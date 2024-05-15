@@ -1,19 +1,24 @@
+import styled from '@emotion/styled';
 import { TestCardGlare } from './TestCardGlare';
 import { TestCardPerspective } from './TestCardPerspective';
 import { TestCardPerspectiveGlare } from './TestCardPerspectiveGlare';
 
+const CardContainer = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	@media screen and (min-width: 60rem) {
+		flex-direction: row;
+	}
+`;
+
 export const CardsView = () => {
 	return (
-		<div
-			style={{
-				display: 'flex',
-				justifyContent: 'center',
-				alignItems: 'center',
-			}}
-		>
+		<CardContainer>
 			<TestCardGlare />
 			<TestCardPerspective />
 			<TestCardPerspectiveGlare />
-		</div>
+		</CardContainer>
 	);
 };

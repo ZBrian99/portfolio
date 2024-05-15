@@ -21,17 +21,17 @@ export const GlobalStyles = () => (
 
 			body {
 				scroll-behavior: smooth;
-				background-color: #000;
+				background-color: #0a0a0a;
 				font-size: 100%;
-				background-color: #221830;
-				/* background: #443193;
-				background-image: radial-gradient(at 86% 83%, hsl(360, 26%, 53%) 0px, transparent 50%),
+				/* background-color: #221830; */
+				 /* background: #443193; */
+				/* background-image: radial-gradient(at 86% 83%, hsl(360, 26%, 53%) 0px, transparent 50%),
 					radial-gradient(at 73% 62%, hsl(307, 56%, 59%) 0px, transparent 50%),
 					radial-gradient(at 45% 25%, hsl(193, 23%, 22%) 0px, transparent 50%),
 					radial-gradient(at 5% 68%, hsl(234, 47%, 49%) 0px, transparent 50%),
-					radial-gradient(at 33% 73%, hsl(99, 98%, 46%) 0px, transparent 50%); */
+					radial-gradient(at 33% 73%, hsl(99, 98%, 46%) 0px, transparent 50%);  */
 				/* padding: 100rem 0; */
-				min-height: 200vh;
+				min-height: 500vh;
 				/* background-image: url('src/assets/images/background.png'); */
 				/* background-repeat: no-repeat; */
 				/* background-position: center; */

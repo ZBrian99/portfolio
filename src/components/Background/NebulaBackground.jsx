@@ -6,7 +6,7 @@ const BackgroundSVG = styled.svg`
 	width: 100%;
 	height: 100svh;
 	z-index: -1;
-	filter: blur(6rem);
+	filter: blur(6rem) brightness(.5);
 `;
 export const NebulaBackground = () => {
 	return (
@@ -20,7 +20,8 @@ export const NebulaBackground = () => {
 		>
 			<motion.path
 				animate={{
-					scale: [1, 1.1, 1],
+					scale: [.5, 1, .5],
+					// scale: [1, 1.1, 1],
 					rotate: [0, 10, 0],
 					x: [0, -50, 0],
 				}}
@@ -34,12 +35,13 @@ export const NebulaBackground = () => {
 			/>
 			<motion.path
 				animate={{
-					scale: [1, 1.1, 1],
+					scale: [.5, 1, .5],
+					// scale: [1, 1.1, 1],
 					rotate: [0, 20, 0],
 					x: [0, 100, 0],
 				}}
 				transition={{
-					duration: 15,
+					duration: 30,
 					repeat: Infinity,
 					ease: 'easeInOut',
 				}}
@@ -48,7 +50,8 @@ export const NebulaBackground = () => {
 			/>
 			<motion.path
 				animate={{
-					scale: [1, 1.1, 1],
+					scale: [.5, 1, .5],
+					// scale: [1, 1.1, 1],
 					rotate: [0, 10, 0],
 					x: [0, -100, 0],
 				}}

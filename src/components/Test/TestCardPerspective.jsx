@@ -3,6 +3,125 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import Tilt from 'react-parallax-tilt';
 
+const ParalaxText = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	font-size: 2rem;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+	position: absolute;
+	transform: translateZ(5rem);
+`;
+
+const TitleVariant1 = styled.span`
+	background: linear-gradient(to right, blue, red);
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+
+	font-size: 2em;
+	position: absolute;
+	transform: translateZ(6rem) translateX(-50%);
+	top: 50%;
+	left: 50%;
+`;
+
+const TitleVariant2 = styled.span`
+	background: linear-gradient(
+		to right,
+		#ff00cc,
+		#333399
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+
+	font-size: 2em;
+	position: absolute;
+	transform: translateZ(6rem) translateX(-50%);
+	top: 45%;
+	left: 50%;
+`;
+
+const TitleVariant3 = styled.span`
+	background: radial-gradient(circle at center center, #12c2e9 0%, #c471ed 50%, #f64f59 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+
+	font-size: 2em;
+	position: absolute;
+	transform: translateZ(7rem) translateX(-50%);
+	top: 40%;
+	left: 50%;
+	/* text-shadow: inset 2px 2px 4px rgba(0, 0, 0, 1); */
+	/* text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+	text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5),
+		0 0 15px rgba(255, 255, 255, 0.5);
+	text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+	text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5),
+		0 0 30px rgba(255, 255, 255, 0.5); */
+`;
+const TitleVariant4 = styled.span`
+	color: #cde592;
+	background-image: -webkit-linear-gradient(45deg, #cde592 5%, #fb5444 94%, #08dfa0 8%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+	font-size: 2em;
+	position: absolute;
+	transform: translateZ(5rem) translateX(-50%);
+	top: 35%;
+	left: 50%;
+`;
+const TitleVariant5 = styled.span`
+	background: linear-gradient(240.86deg, #ff8329 0%, #ff007a 66.41%);
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+
+	font-size: 2em;
+	position: absolute;
+	transform: translateZ(10rem) translateX(-50%);
+	top: 30%;
+	left: 50%;
+`;
+const TitleVariant6 = styled.span`
+	background-image: linear-gradient(60deg, #fffb00, #ff6124);
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+
+	text-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
+
+	font-size: 2em;
+	position: absolute;
+	transform: translateZ(9rem) translateX(-50%);
+	top: 30%;
+	left: 50%;
+`;
+const TitleVariant7 = styled.span`
+	background-image: linear-gradient(60deg, #8500ff, #ff8100);
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+	text-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
+
+	font-size: 2em;
+	position: absolute;
+	transform: translateZ(7rem) translateX(-50%);
+	top: 25%;
+	left: 50%;
+`;
+
 const CardContainer = styled.div`
 	width: 100%;
 	height: 100vh;
@@ -18,24 +137,24 @@ const CardStyled = styled.div`
 	width: 20rem;
 	height: 30rem;
 	/* background-color: #555; */
-	transform-style: preserve-3d;
-	perspective: 1000px;
+	/* transform-style: preserve-3d; */
+	/* perspective: 1000px; */
 	/* background-color: rgba(255, 255, 255, 0.25); */
 	/* background: linear-gradient(45deg, #f3ec78, #af4261, #577399, #2b4f81, #0b2f51); */
 	color: white;
-
 	border-radius: 1rem;
-	/* border: 1px solid rgba(255, 255, 255, 0.25); */
+	border: 1px solid rgba(255, 255, 255, 0.1);
 	overflow: hidden;
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: rgba(255, 255, 255, 0.1);
+	background-color: rgba(255, 255, 255, 0.2);
 
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
 	/* background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
-	box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.37);
+	/* box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.37); */
 
 	/* transform-style: 'preserve-3d'; */
 	/* &::before {
@@ -76,41 +195,8 @@ const Highlight = styled.span`
 	-webkit-text-fill-color: transparent;
 `;
 
-
 const generateTextShadow = (color) =>
 	`0 0 10px ${color}, 0 0 20px ${color}, 0 0 30px ${color}, 0 0 40px ${color}, 0 0 50px ${color}`;
-
-// Primera variante con sombra de texto
-const TitleVariant1 = styled.h1`
-	background: linear-gradient(to right, #ff00ff, #00ffff);
-	background-clip: text;
-	-webkit-background-clip: text;
-	color: transparent;
-	text-shadow: ${({ theme }) => generateTextShadow(theme.colors.nebulaPurple)};
-`;
-
-// Segunda variante con animación de brillo
-const TitleVariant2 = styled.h1`
-	background: linear-gradient(to bottom right, #ff8800, #0033ff);
-	background-clip: text;
-	-webkit-background-clip: text;
-	color: transparent;
-	animation: shine 1s infinite;
-	@keyframes shine {
-		50% {
-			background-position: 200% center;
-		}
-	}
-`;
-
-// Tercera variante con efecto de borde
-const TitleVariant3 = styled.h1`
-	background: linear-gradient(to bottom, #00ff00, #ff00ff);
-	background-clip: text;
-	-webkit-background-clip: text;
-	color: transparent;
-	-webkit-text-stroke: 1px ${({ theme }) => theme.colors.nebulaGreen};
-`;
 
 const handleMouseMove = (e, cardRef, setHoverEffect) => {
 	const rect = cardRef.current.getBoundingClientRect();
@@ -143,7 +229,7 @@ export const TestCardPerspective = () => {
 				}}
 			>
 				<Tilt
-					tiltReverse={true}
+					// tiltReverse={true}
 					scale={1.1}
 					transitionSpeed={1000}
 					style={{
@@ -159,46 +245,25 @@ export const TestCardPerspective = () => {
 				>
 					<CardStyled ref={cardRef} x={hoverEffect.x} y={hoverEffect.y}></CardStyled>
 
+					{/* <ParalaxText> */}
+					<TitleVariant1>Parallax Tilt</TitleVariant1>
+					<TitleVariant2> Parallax Tilt</TitleVariant2>
+					<TitleVariant3> Parallax Tilt</TitleVariant3>
 					<div
 						style={{
 							position: 'absolute',
-							fontSize: '2rem',
-							fontWeight: 'bold',
-							color: 'white',
-							marginBottom: '1rem',
-							top: '50%',
+							transform: 'translateZ(15rem) translateX(-50%) scale(2)',
+							top: '60%',
 							left: '50%',
-							transform: 'translateZ(5rem)',
-						}}
-					>
-						React
-					</div>
-					<div
-						style={{
-							position: 'absolute',
-							fontSize: '1.5rem',
-							color: 'white',
-							marginBottom: '1rem',
-							top: '50%',
-							left: '50%',
-							transform: 'translateZ(5rem)',
-						}}
-					>
-						<Highlight>Parallax</Highlight> Tilt
-					</div>
-					<div
-						style={{
-							position: 'absolute',
-							fontSize: '1rem',
-							color: 'white',
-							marginBottom: '1rem',
-							top: '50%',
-							left: '50%',
-							transform: 'translateZ(5rem)',
 						}}
 					>
 						👀
 					</div>
+					<TitleVariant4> Parallax Tilt</TitleVariant4>
+					<TitleVariant6> Parallax Tilt</TitleVariant6>
+					<TitleVariant7> Parallax Tilt</TitleVariant7>
+
+					{/* </ParalaxText> */}
 				</Tilt>
 			</div>
 		</CardContainer>

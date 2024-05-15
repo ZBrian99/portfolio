@@ -1,5 +1,9 @@
 import styled from '@emotion/styled';
 
+
+
+
+
 const CardStyled = styled.div`
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
 	box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.37);
