@@ -22,7 +22,7 @@ export const NebulaBackground = () => {
 				animate={{
 					scale: [1, 1.1, 1],
 					rotate: [0, 10, 0],
-					x: [0, 100, 0],
+					x: [0, -50, 0],
 				}}
 				transition={{
 					duration: 25,
@@ -50,7 +50,7 @@ export const NebulaBackground = () => {
 				animate={{
 					scale: [1, 1.1, 1],
 					rotate: [0, 10, 0],
-					x: [0, -50, 0],
+					x: [0, -100, 0],
 				}}
 				transition={{
 					duration: 20,
@@ -69,9 +69,9 @@ export const NebulaBackground = () => {
 					y2='269'
 					gradientUnits='userSpaceOnUse'
 				>
-					<stop stop-color='#e927bf' />
-					<stop offset='0.5' stop-color='#4132cc' />
-					<stop offset='1' stop-color='#69be4f' />
+					<stop stop-color='#d828b2' />
+					<stop offset='0.5' stop-color='#4136a1' />
+					<stop offset='1' stop-color='#39662b' />
 				</linearGradient>
 				<linearGradient
 					id='paint1_linear_2024_8'
@@ -81,8 +81,8 @@ export const NebulaBackground = () => {
 					y2='503'
 					gradientUnits='userSpaceOnUse'
 				>
-					<stop stop-color='#b8bb00' />
-					<stop offset='0.5' stop-color='#880066' />
+					<stop stop-color='#662255' />
+					<stop offset='0.5' stop-color='#631c51' />
 					<stop offset='1' stop-color='#382cdf' />
 				</linearGradient>
 				<linearGradient
@@ -93,9 +93,9 @@ export const NebulaBackground = () => {
 					y2='545.59'
 					gradientUnits='userSpaceOnUse'
 				>
-					<stop stop-color='#1c00bb' />
-					<stop offset='0.5' stop-color='#b6503d' />
-					<stop offset='1' stop-color='#a3da3e' />
+					<stop stop-color='#2f0fa1' />
+					<stop offset='0.5' stop-color='#703125' />
+					<stop offset='1' stop-color='#699121' />
 				</linearGradient>
 			</defs>
 		</BackgroundSVG>

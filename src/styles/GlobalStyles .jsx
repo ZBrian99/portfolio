@@ -23,7 +23,7 @@ export const GlobalStyles = () => (
 				scroll-behavior: smooth;
 				background-color: #000;
 				font-size: 100%;
-				background-color: #222;
+				background-color: #221830;
 				/* background: #443193;
 				background-image: radial-gradient(at 86% 83%, hsl(360, 26%, 53%) 0px, transparent 50%),
 					radial-gradient(at 73% 62%, hsl(307, 56%, 59%) 0px, transparent 50%),
