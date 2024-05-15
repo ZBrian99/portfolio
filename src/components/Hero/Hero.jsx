@@ -17,10 +17,10 @@ const HeroContainer = styled.section`
 	height: 100svh;
 	z-index: 1;
   gap: 10rem;
-	@media screen and (min-width: 60rem) {
+	/* @media screen and (min-width: 60rem) {
 		flex-direction: row;
-	}
-	&::before {
+	} */
+	/* &::before {
 		content: '';
 		position: absolute;
 		top: 0;
@@ -29,7 +29,7 @@ const HeroContainer = styled.section`
 		height: 100%;
 		background-color: rgba(0, 0, 0, 0.5);
 		z-index: 0;
-	}
+	} */
 `;
 const HeroInfoContainer = styled.div`
 	display: flex;
@@ -39,10 +39,10 @@ const HeroInfoContainer = styled.div`
 	text-align: center;
 	gap: 1rem;
 	padding: 3rem;
-	@media screen and (min-width: 60rem) {
+	/* @media screen and (min-width: 60rem) {
 		align-items: flex-start;
 		text-align: left;
-	}
+	} */
 	font-weight: 600;
 	z-index: 10;
 `;
@@ -118,7 +118,7 @@ export const Hero = () => {
 					/>
 				</HeroSocialContainer>
 			</HeroInfoContainer>
-			<HeroAnimation />
+			{/* <HeroAnimation /> */}
 		</HeroContainer>
 	);
 };

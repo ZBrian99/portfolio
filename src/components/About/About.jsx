@@ -1,3 +1,5 @@
+import { useState, useEffect, useRef } from 'react';
+
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 const AboutContainer = styled(motion.section)`
@@ -28,20 +30,56 @@ const AboutInfo = styled.div`
 	flex-wrap: wrap;
 	gap: 1rem;
 	background-color: #333;
-	background: radial-gradient(at right bottom, #000000, #333);
-	box-shadow: 0 0 0.1rem 0.1rem #555 inset;
+	/* background: radial-gradient(at right bottom, #111, #333); */
 	border-radius: 1rem;
 	padding: 2rem 1rem;
 	position: relative;
 	padding-top: 6rem;
 	order: 1;
 	flex: 3;
+	overflow: hidden;
 	@media screen and (min-width: 60rem) {
 		padding: 2rem;
+	}
+
+	background: #c33764;
+	background: linear-gradient(to left top, #1d2671, #c33764);
+	/* border: 0.2rem solid #c33764; */
+	/* background: #ff00cc;
+	background: linear-gradient(to right, #333399, #ff00cc); */
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: ${({ y }) => y}px;
+		left: ${({ x }) => x}px;
+		background: radial-gradient(#fff, transparent, transparent);
+		/* background: radial-gradient(#5bcefa, transparent, transparent); */
+		width: 40rem;
+		height: 40rem;
+		transform: translate(-50%, -50%);
+		opacity: 0;
+		transition: 0.5s, top 0s, left 0s;
+	}
+	&:hover::before {
+		opacity: 1;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset: 0.2rem;
+		border-radius: 1rem;
+		background-color: rgba(50, 50, 50, 1.5);
+		background: radial-gradient(at right bottom, #000, #222);
+		backdrop-filter: blur(16px) saturate(180%);
+		/* background-color: #111; */
+		/* background: linear-gradient(135deg, rgba(17, 25, 40, 1.55), rgba(17, 25, 40, 1.75)); */
 	}
 `;
 
 const InfoImage = styled.img`
+	z-index: 5;
 	position: absolute;
 	width: 10rem;
 	height: 10rem;
@@ -56,6 +94,7 @@ const InfoImage = styled.img`
 `;
 
 const AboutTitle = styled.h3`
+	z-index: 5;
 	font-size: 2em;
 	/* text-align: center; */
 	width: 100%;
@@ -63,6 +102,7 @@ const AboutTitle = styled.h3`
 `;
 
 const AboutDescription = styled.p`
+	z-index: 5;
 	font-size: 1em;
 `;
 
@@ -88,7 +128,7 @@ const Services = styled.div`
 	gap: 1rem;
 	padding: 2rem;
 	background-color: #333;
-	background: radial-gradient(at right bottom, #000000, #333);
+	background: radial-gradient(at right bottom, #111, #333);
 	box-shadow: 0 0 0.1rem 0.1rem #555 inset;
 	border-radius: 1rem;
 	padding: 2rem 1rem;
@@ -121,7 +161,7 @@ const ServiceCard = styled.div`
 	min-height: 20rem;
 	text-align: center;
 	background-color: #222;
-	background: radial-gradient(at right bottom, #000000, #333);
+	background: radial-gradient(at right bottom, #111, #333);
 	box-shadow: 0 0 0.1rem 0.1rem #555 inset;
 
 	@media screen and (min-width: 55rem) {
@@ -155,7 +195,7 @@ const Skills = styled.div`
 	flex-wrap: wrap;
 	gap: 1rem;
 	background-color: #333;
-	background: radial-gradient(at right bottom, #000000, #333);
+	background: radial-gradient(at right bottom, #111, #333);
 	box-shadow: 0 0 0.1rem 0.1rem #555 inset;
 	border-radius: 1rem;
 	padding: 2rem 1rem;
@@ -187,7 +227,7 @@ const Skill = styled.div`
 	width: 3rem;
 	height: 3rem;
 	background-color: #333;
-	background: radial-gradient(at right bottom, #000000, #333);
+	background: radial-gradient(at right bottom, #111, #333);
 	box-shadow: 0 0 0.1rem 0.1rem #555 inset;
 	border-radius: 1rem;
 	display: flex;
@@ -219,11 +259,12 @@ const SkillTooltip = styled.span`
 	opacity: 0;
 	z-index: 100;
 	background-color: #333;
-	background: radial-gradient(at right bottom, #000000, #333);
+	background: radial-gradient(at right bottom, #111, #333);
 	box-shadow: 0 0 0.1rem 0.1rem #555 inset;
 `;
 
 const ContactButton = styled.button`
+	z-index: 5;
 	border: none;
 	color: white;
 	display: flex;
@@ -234,7 +275,7 @@ const ContactButton = styled.button`
 	gap: 0.5rem;
 	margin-top: 0.5rem;
 	background-color: #222;
-	background: radial-gradient(at right bottom, #000000, #333);
+	background: radial-gradient(at right bottom, #111, #333);
 	box-shadow: 0 0 0.1rem 0.1rem #555 inset;
 	&:hover {
 		cursor: pointer;
@@ -247,11 +288,28 @@ const ButtonImage = styled.img`
 	height: 2rem;
 `;
 
+const handleMouseMove = (e, cardRef, setHoverEffect) => {
+	const rect = cardRef.current.getBoundingClientRect();
+	const x = e.clientX - rect.left;
+	const y = e.clientY - rect.top;
+	setHoverEffect({ x, y });
+};
+
 export const About = () => {
+	const [hoverEffect, setHoverEffect] = useState({ x: 0, y: 0 });
+	const cardRef = useRef(null);
+
+	useEffect(() => {
+		const handleMouseMoveBound = (e) => handleMouseMove(e, cardRef, setHoverEffect);
+		cardRef.current.addEventListener('mousemove', handleMouseMoveBound);
+		return () => {
+			cardRef.current.removeEventListener('mousemove', handleMouseMoveBound);
+		};
+	}, []);
 	return (
 		<AboutContainer>
 			{/* <AboutCard> */}
-			<AboutInfo>
+			<AboutInfo ref={cardRef} x={hoverEffect.x} y={hoverEffect.y}>
 				<InfoImage src='src/assets/images/photo.jpg' />
 				<AboutTitle>Sobre mí</AboutTitle>
 				<AboutDescription>

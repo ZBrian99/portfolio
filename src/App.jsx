@@ -6,15 +6,20 @@ import { Navbar } from './components/Navbar/Navbar';
 import { Hero } from './components/Hero/Hero';
 import { About } from './components/About/About';
 import { Background } from './components/Background/Background';
+import { TestCardPerspective } from './components/Test/TestCardPerspective';
+import { TestCardGlare } from './components/Test/TestCardGlare';
+import { TestCardPerspectiveGlare } from './components/Test/TestCardPerspectiveGlare';
+import { CardsView } from './components/Test/CardsView';
+import { GlassCard } from './components/Test/GlassCard';
 export const App = () => {
 	return (
 		<>
 			<GlobalStyles />
 
-      <Background/>
-
+			<Background/>
 			{/* <Navbar /> */}
-
+			<CardsView />
+      {/* <GlassCard/> */}
 			{/* <Hero /> */}
 			{/* <About /> */}
 			{/* <Skills /> */}
