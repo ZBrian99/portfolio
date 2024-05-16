@@ -24,8 +24,7 @@ export const App = () => {
 			{/* <Hero /> */}
 		
 			<HomePage />
-			{/* <Project /> */}
-			{/* <Contact/> */}
+			
 		</>
 	);
 };

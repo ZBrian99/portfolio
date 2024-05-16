@@ -7,7 +7,7 @@ const ContactContainer = styled.div`
 	flex-direction: column;
 	height: 100svh;
 	background-image: url('src/assets/images/background.png');
-  padding: 10svh 5vw;
+	padding: 10svh 5vw;
 	/* @media screen and (min-width: 60rem) {
     flex-direction: row;
 	} */
@@ -15,9 +15,11 @@ const ContactContainer = styled.div`
 
 export const Contact = () => {
 	return (
-		<ContactContainer>
-			{/* <ContactMeteor /> */}
-			<ContactForm />
-		</ContactContainer>
+		<>
+			{/* <ContactContainer> */}
+				{/* <ContactMeteor /> */}
+				<ContactForm />
+			{/* </ContactContainer> */}
+		</>
 	);
 };

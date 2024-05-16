@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 import { skills } from '../../data/skills';
 
-const SkillsContainer = styled.section`
+const SkillsContainer = styled(motion.section)`
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -23,7 +23,6 @@ const SkillsTitle = styled.h3`
 
 	/* background-image: linear-gradient(60deg, #fffb00, #ff6124); */
 	background-image: linear-gradient(60deg, #ff00ea, #ffd000);
-
 `;
 
 const SkillsWrapper = styled(motion.div)`
@@ -120,9 +119,9 @@ const item = {
 };
 export const Skills = () => {
 	return (
-		<SkillsContainer>
+		<SkillsContainer variants={container} initial='hidden' whileInView='show' viewport={{ once: true }}>
 			<SkillsTitle>Tecnologías</SkillsTitle>
-			<SkillsWrapper variants={container} initial='hidden' whileInView='show' viewport={{ once: true }}>
+			<SkillsWrapper>
 				{skills.map((skill, index) => (
 					<Skill
 						key={index}

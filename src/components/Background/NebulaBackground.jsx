@@ -20,8 +20,8 @@ export const NebulaBackground = () => {
 		>
 			<motion.path
 				animate={{
-					scale: [.5, 1, .5],
-					// scale: [1, 1.1, 1],
+					// scale: [.5, 1, .5],
+					scale: [1, 1.1, 1],
 					rotate: [0, 10, 0],
 					x: [0, -50, 0],
 				}}
@@ -35,8 +35,8 @@ export const NebulaBackground = () => {
 			/>
 			<motion.path
 				animate={{
-					scale: [.5, 1, .5],
-					// scale: [1, 1.1, 1],
+					// scale: [.5, 1, .5],
+					scale: [1, 1.1, 1],
 					rotate: [0, 20, 0],
 					x: [0, 100, 0],
 				}}
@@ -50,8 +50,8 @@ export const NebulaBackground = () => {
 			/>
 			<motion.path
 				animate={{
-					scale: [.5, 1, .5],
-					// scale: [1, 1.1, 1],
+					// scale: [.5, 1, .5],
+					scale: [1, 1.1, 1],
 					rotate: [0, 10, 0],
 					x: [0, -100, 0],
 				}}

@@ -2,41 +2,51 @@ import { useState, useRef, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 
-const FormContainer = styled.div`
+const FormContainer = styled(motion.section)`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-  justify-content: center;
-	width: 90%;
+	justify-content: center;
+	width: 100%;
 	max-width: 50rem;
 	height: 100%;
 	margin: auto;
-  background-color: #000;
-  border-radius: 1rem;
-  box-shadow: 0 0 .5rem rgba(255, 255, 255, 0.5);
-	/* @media screen and (min-width: 60rem) {
-		justify-content: center;
-	} */
+	gap: 3rem;
+	position: relative;
+
+	padding: 2rem;
+	border-radius: 1rem;
+	/* border: 1px solid rgba(255, 255, 255, 0.1);
+	background-color: rgba(255, 255, 255, 0.1);
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1)); */
 `;
 
 const FormTitle = styled.h2`
-	font-size: 2em;
-  color: white;
+	width: 100%;
+	text-align: center;
+	font-size: 3em;
+
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: transparent;
+	text-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
+	background-image: linear-gradient(60deg, #ff00ea, #ffd000);
 `;
 
 const Form = styled.form`
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	padding: 3rem;
 `;
 
-const FormInput = styled.input`
+const FormInput = styled(motion.input)`
 	background-color: transparent;
 	border: none;
 	border-bottom: 0.1rem solid #808080;
 	padding: 2rem 0;
+	font-size: 1em;
 	color: white;
+
 	&::placeholder {
 		color: #c9c9c9;
 	}
@@ -48,13 +58,15 @@ const FormInput = styled.input`
 	}
 `;
 
-const FormTextArea = styled.textarea`
+const FormTextArea = styled(motion.textarea)`
 	font-family: var(--font-body);
+	width: 100%;
 	background-color: transparent;
 	border: none;
-	margin: 2rem 0;
-
+	padding: 2rem 0;
+	font-size: 1em;
 	color: white;
+	border-bottom: 0.1rem solid #808080;
 
 	resize: none;
 	max-height: 10rem;
@@ -73,18 +85,8 @@ const FormTextArea = styled.textarea`
 	&:focus,
 	&:hover {
 		outline: none;
-
-		& ~ .textAreaLine {
-			border-bottom: 0.1rem solid #cccccc;
-		}
+		border-bottom: 0.1rem solid #cccccc;
 	}
-`;
-
-const TextAreaLine = styled.div`
-	width: 100%;
-	border-bottom: 0.1rem solid #808080;
-
-	background-color: #808080;
 `;
 
 const FormSubmit = styled(motion.input)`
@@ -92,11 +94,10 @@ const FormSubmit = styled(motion.input)`
 	margin-top: 2rem;
 	padding: 1rem 2rem;
 	background: transparent;
-	border: 1px solid #808080;
 	color: #c9c9c9;
-
+	border: 1px solid rgba(255, 255, 255, 0.5);
 	&:hover {
-		border: 1px solid #cccccc;
+		border: 1px solid white;
 		color: white;
 		cursor: pointer;
 	}
@@ -128,6 +129,16 @@ const SuccessMessage = styled.div`
 	font-size: 0.8rem;
 	margin-top: 1rem;
 `;
+const container = {
+	hidden: { opacity: 0, y: 100 },
+	show: {
+		opacity: 1,
+		y: 0,
+		transition: {
+			duration: 1,
+		},
+	},
+};
 
 export const ContactForm = () => {
 	const textareaRef = useRef(null);
@@ -186,7 +197,7 @@ export const ContactForm = () => {
 	};
 
 	return (
-		<FormContainer>
+		<FormContainer variants={container} initial='hidden' whileInView='show' viewport={{ once: true }}>
 			<FormTitle>Contactame</FormTitle>
 			<Form onSubmit={handleSubmit}>
 				<FormInput
@@ -210,7 +221,6 @@ export const ContactForm = () => {
 					onChange={(e) => handleInputChange(e, setMessage)}
 					rows={1}
 				/>
-				<TextAreaLine className='textAreaLine' />
 				{errors.message && <ErrorMessage>{errors.message}</ErrorMessage>}
 				<FormSubmit type='submit' value='Enviar' />
 				{formSubmitted && <SuccessMessage>Mensaje enviado con éxito</SuccessMessage>}
