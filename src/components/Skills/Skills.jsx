@@ -10,6 +10,7 @@ const SkillsContainer = styled(motion.section)`
 	justify-content: center;
 	align-items: center;
 	gap: 3rem;
+	margin: 0 2rem;
 `;
 
 const SkillsTitle = styled.h3`

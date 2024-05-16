@@ -6,7 +6,9 @@ import { motion } from 'framer-motion';
 const AboutContainer = styled(motion.section)`
 	width: 100%;
 	max-width: 68rem;
-	margin: 0 auto;
+	margin: 0 2rem;
+  background-color: red;
+
 	display: flex;
 	/* flex-direction: column; */
 	flex-wrap: wrap;
