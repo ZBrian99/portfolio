@@ -40,7 +40,8 @@ export const GlobalStyles = () => (
 				/* background: url('src/assets/images/background.png') fixed; */
 
 				font-family: var(--font-body);
-				color: var(--color-secondary);
+				/* color: var(--color-secondary); */
+				color: white;
 			}
 		`}
 	/>

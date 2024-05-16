@@ -1,103 +1,118 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import { Sun } from './Sun';
-import skillsData from '../../data/skills.json';
-import { Star } from './Star';
-import { Planet } from './Planet';
+import styled from "@emotion/styled";
 
-const SkillsSection = styled.div`
+const SkillsContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: 1rem;
+	/* background-color: #333; */
+	/* background: radial-gradient(at right bottom, #111, #333); */
+	/* box-shadow: 0 0 0.1rem 0.1rem #555 inset; */
+	border-radius: 1rem;
+	padding: 2rem 1rem;
+	height: content;
+	order: 2;
 	width: 100%;
-	height: 115lvh;
-	overflow: hidden;
-	background-image: url('src/assets/images/background.png');
-	position: relative;
-	@media screen and (min-width: 60rem) {
-		height: 115lvh;
-		/* border-top: 1px dashed rgba(255, 255, 255, 0.3); */
-		/* border-bottom: 1px dashed rgba(255, 255, 255, 0.3); */
-	}
+
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	background-color: rgba(255, 255, 255, 0.1);
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1));
+	/* background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1)); */
+
+	/* @media screen and (min-width: 60rem) {
+		flex: 1;
+	} */
 `;
 
-const StartContainer = styled.div`
+const SkillsTitle = styled.h3`
+	font-size: 2em;
+	/* text-align: center; */
 	width: 100%;
-	height: 100%;
-	position: absolute;
-
-	@media screen and (min-width: 60rem) {
-		margin-top: 10vh;
-	}
+	margin-bottom: 0.5rem;
 `;
 
-const PlanetContainer = styled.div`
-	width: 100%;
-	height: 120vh;
+const SkillsWrapper = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+	/* justify-content: center; */
+	gap: 1rem;
+`;
+
+const Skill = styled.div`
 	position: relative;
+	width: 3rem;
+	height: 3rem;
+	background-color: #333;
+	background: radial-gradient(at right bottom, #111, #333);
+	box-shadow: 0 0 0.1rem 0.1rem #555 inset;
+	border-radius: 1rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	top: -50%;
-	/* margin-top: 5vh; */
-	margin-top: calc(${({ size }) => `${size}vh`} + 5vh);
-
-	@media screen and (min-width: 60rem) {
-		height: 120vh;
-		top: 0;
-		margin-top: 0;
-		left: -50%;
-		margin-left: calc(${({ size }) => `${size}vw`} / 2 + 5vh);
+	padding: 0.5rem;
+	&:hover {
+		cursor: pointer;
+		& > .SkillTooltip {
+			opacity: 1;
+		}
 	}
 `;
 
-const SkillsDescription = styled.div`
-	display: flex;
-	align-items: center;
-  justify-content: center;
-	flex-wrap: wrap;
-	gap: 1rem;
-	background-color: #000;
-	padding: 2rem;
-`;
-const ImageContainer = styled.div`
-	width: 2rem;
-	height: 2rem;
-	${({ type }) => type === 'future' && ' filter: grayscale(100%);'}
-`;
-const Image = styled.img`
+const SkillImage = styled.img`
 	width: 100%;
 	height: 100%;
 `;
 
+const SkillTooltip = styled.span`
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -3rem);
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	font-size: 0.9em;
+	transition: opacity 0.2s ease;
+	pointer-events: none;
+	opacity: 0;
+	z-index: 100;
+	background-color: #333;
+	background: radial-gradient(at right bottom, #111, #333);
+	box-shadow: 0 0 0.1rem 0.1rem #555 inset;
+`;
+
 export const Skills = () => {
-	const allSkills = [
-		{ ...skillsData.main, type: 'main' },
-		...skillsData.skills.map((skill) => ({ ...skill, type: 'skill' })),
-		...skillsData.skills.flatMap((skill) => (skill.moons || []).map((moon) => ({ ...moon, type: 'moon' }))),
-		...skillsData.secondaySkills.map((skill) => ({ ...skill, type: 'secondary' })),
-		...skillsData.futureSkills.map((skill) => ({ ...skill, type: 'future' })),
-	];
 	return (
-		<>
-			<SkillsSection>
-				<StartContainer>
-					{/* {skillsData.secondaySkills.map((skill, index) => (
-					<Star key={index} {...skill} sun={skillsData.main.size} />
-				))} */}
-				</StartContainer>
-				<PlanetContainer size={skillsData.main.size}>
-					<Sun {...skillsData.main} />
-					{skillsData.skills.map((skill, index) => (
-						<Planet key={index} {...skill} orbit={true} />
-					))}
-				</PlanetContainer>
-			</SkillsSection>
-			<SkillsDescription>
-				{allSkills &&
-					allSkills.map((skill, index) => (
-						<ImageContainer key={index} type={skill.type}>
-							<Image src={skill.src} alt={skill.name} />
-						</ImageContainer>
-					))}
-			</SkillsDescription>
-		</>
+		<SkillsContainer>
+			<SkillsTitle>Habilidades</SkillsTitle>
+			<SkillsWrapper>
+				<Skill>
+					<SkillTooltip className='SkillTooltip'>React</SkillTooltip>
+					<SkillImage src='src/assets/icons/react.svg' alt='React' />
+				</Skill>
+				<Skill>
+					<SkillTooltip className='SkillTooltip'>React</SkillTooltip>
+					<SkillImage src='src/assets/icons/react.svg' alt='React' />
+				</Skill>
+				<Skill>
+					<SkillTooltip className='SkillTooltip'>React</SkillTooltip>
+					<SkillImage src='src/assets/icons/react.svg' alt='React' />
+				</Skill>
+				<Skill>
+					<SkillTooltip className='SkillTooltip'>React</SkillTooltip>
+					<SkillImage src='src/assets/icons/react.svg' alt='React' />
+				</Skill>
+				<Skill>
+					<SkillTooltip className='SkillTooltip'>React</SkillTooltip>
+					<SkillImage src='src/assets/icons/react.svg' alt='React' />
+				</Skill>
+				<Skill>
+					<SkillTooltip className='SkillTooltip'>React</SkillTooltip>
+					<SkillImage src='src/assets/icons/react.svg' alt='React' />
+				</Skill>
+				<Skill>
+					<SkillTooltip className='SkillTooltip'>React</SkillTooltip>
+					<SkillImage src='src/assets/icons/react.svg' alt='React' />
+				</Skill>
+			</SkillsWrapper>
+		</SkillsContainer>
 	);
 };

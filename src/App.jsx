@@ -11,18 +11,19 @@ import { TestCardGlare } from './components/Test/TestCardGlare';
 import { TestCardPerspectiveGlare } from './components/Test/TestCardPerspectiveGlare';
 import { CardsView } from './components/Test/CardsView';
 import { GlassCard } from './components/Test/GlassCard';
+import { Services } from './components/Services/Services';
+import { HomePage } from './pages/Home/HomePage';
 export const App = () => {
 	return (
 		<>
 			<GlobalStyles />
-
-			<Background/>
+			<Background />
 			{/* <Navbar /> */}
-			<CardsView />
-      {/* <GlassCard/> */}
+			{/* <CardsView /> */}
+			{/* <GlassCard/> */}
 			{/* <Hero /> */}
-			{/* <About /> */}
-			{/* <Skills /> */}
+		
+			<HomePage />
 			{/* <Project /> */}
 			{/* <Contact/> */}
 		</>
