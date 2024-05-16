@@ -246,9 +246,9 @@ export const TestCardPerspective = () => {
 					<CardStyled ref={cardRef} x={hoverEffect.x} y={hoverEffect.y}></CardStyled>
 
 					{/* <ParalaxText> */}
-					<TitleVariant1>Parallax Tilt</TitleVariant1>
-					<TitleVariant2> Parallax Tilt</TitleVariant2>
-					<TitleVariant3> Parallax Tilt</TitleVariant3>
+					<TitleVariant1>Parallax Tilt 1</TitleVariant1>
+					<TitleVariant2> Parallax Tilt 2</TitleVariant2>
+					<TitleVariant3> Parallax Tilt 3</TitleVariant3>
 					<div
 						style={{
 							position: 'absolute',
@@ -259,9 +259,9 @@ export const TestCardPerspective = () => {
 					>
 						👀
 					</div>
-					<TitleVariant4> Parallax Tilt</TitleVariant4>
-					<TitleVariant6> Parallax Tilt</TitleVariant6>
-					<TitleVariant7> Parallax Tilt</TitleVariant7>
+					<TitleVariant4> Parallax Tilt 4 </TitleVariant4>
+					<TitleVariant6> Parallax Tilt6 </TitleVariant6>
+					<TitleVariant7> Parallax Tilt 7</TitleVariant7>
 
 					{/* </ParalaxText> */}
 				</Tilt>
