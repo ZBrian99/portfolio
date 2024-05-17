@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import Tilt from 'react-parallax-tilt';
 
-const ServicesContainer = styled(motion.section)`
+const ServicesContainer = styled.section`
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -11,7 +11,7 @@ const ServicesContainer = styled(motion.section)`
 	gap: 3rem;
 `;
 
-const ServicesTitle = styled.h3`
+const ServicesTitle = styled(motion.h3)`
 	width: 100%;
 	text-align: center;
 	font-size: 3em;
@@ -23,7 +23,7 @@ const ServicesTitle = styled.h3`
 	background-image: linear-gradient(60deg, #ff00ea, #ffd000);
 `;
 
-const ServiceWrapper = styled.div`
+const ServiceWrapper = styled(motion.div)`
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -68,8 +68,11 @@ const ServiceCard = styled(motion.div)`
 	min-height: 20rem;
 	text-align: center;
 	border: 1px solid rgba(255, 255, 255, 0.1);
+	/* background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1)); */
+
 	background-color: rgba(255, 255, 255, 0.1);
-	background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1));
+
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
 `;
 
 const ServiceTitle = styled.h3`
@@ -85,35 +88,45 @@ const ServiceImage = styled.img`
 	height: 3.5rem;
 `;
 
-const container = {
+const title = {
 	hidden: { opacity: 0, y: 100 },
 	show: {
 		opacity: 1,
 		y: 0,
 		transition: {
 			duration: 1,
-			staggerChildren: 0.3,
 		},
 	},
 };
 
 const item = {
-	hidden: { opacity: 0 },
+	hidden: {
+		opacity: 0,
+		// scale: .5,
+
+		y: 100,
+	},
 	show: {
 		opacity: 1,
+		// scale: 1,
+		y: 0,
+
 		transition: {
 			duration: 1,
 		},
 	},
 };
+
 export const Services = () => {
 	return (
-		<ServicesContainer variants={container} initial='hidden' whileInView='show' viewport={{ once: true }}>
-			<ServicesTitle>Servicios</ServicesTitle>
+		<ServicesContainer>
+			<ServicesTitle variants={title} initial='hidden' whileInView='show' viewport={{ once: true }}>
+				Servicios
+			</ServicesTitle>
 			<ServiceWrapper>
-				<TiltContainer>
+				<TiltContainer variants={item} initial='hidden' whileInView='show' viewport={{ once: true }}>
 					<TiltCard scale={1.1} transitionSpeed={1000} tiltReverse={true}>
-						<ServiceCard variants={item}>
+						<ServiceCard>
 							<ServiceImage src='src/assets/icons/react.svg' alt='Web' />
 							<ServiceTitle>Lorem, ipsum dolor.</ServiceTitle>
 							<ServiceDescription>
@@ -124,9 +137,9 @@ export const Services = () => {
 						</ServiceCard>
 					</TiltCard>
 				</TiltContainer>
-				<TiltContainer>
+				<TiltContainer variants={item} initial='hidden' whileInView='show' viewport={{ once: true }}>
 					<TiltCard scale={1.1} transitionSpeed={1000} tiltReverse={true}>
-						<ServiceCard variants={item}>
+						<ServiceCard>
 							<ServiceImage src='src/assets/icons/react.svg' alt='Web' />
 							<ServiceTitle>Lorem, ipsum dolor.</ServiceTitle>
 							<ServiceDescription>
@@ -137,9 +150,9 @@ export const Services = () => {
 						</ServiceCard>
 					</TiltCard>
 				</TiltContainer>
-				<TiltContainer>
+				<TiltContainer variants={item} initial='hidden' whileInView='show' viewport={{ once: true }}>
 					<TiltCard scale={1.1} transitionSpeed={1000} tiltReverse={true}>
-						<ServiceCard variants={item}>
+						<ServiceCard>
 							<ServiceImage src='src/assets/icons/react.svg' alt='Web' />
 							<ServiceTitle>Lorem, ipsum dolor.</ServiceTitle>
 							<ServiceDescription>

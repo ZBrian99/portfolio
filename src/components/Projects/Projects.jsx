@@ -3,11 +3,12 @@ import { motion } from 'framer-motion';
 import Tilt from 'react-parallax-tilt';
 
 import { projects } from '../../data/projects';
+import { useState } from 'react';
 
-const ProjectsContainer = styled(motion.section)`
+const ProjectsContainer = styled.section`
 	width: 100%;
 	max-width: 120rem;
-  margin: auto;
+	margin: auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -15,7 +16,7 @@ const ProjectsContainer = styled(motion.section)`
 	gap: 3rem;
 `;
 
-const ProjectsTitle = styled.h3`
+const ProjectsTitle = styled(motion.h3)`
 	width: 100%;
 	text-align: center;
 	font-size: 3em;
@@ -47,7 +48,7 @@ const TiltContainer = styled(motion.div)`
 	/* background-color: blue; */
 	width: 100%;
 	height: 24rem;
-  margin-bottom: 3rem;
+	margin-bottom: 3rem;
 	@media screen and (min-width: 40rem) {
 		width: 34rem;
 		height: 24rem;
@@ -60,7 +61,6 @@ const TiltContainer = styled(motion.div)`
 		/* width: 39rem; */
 		/* height: 25rem; */
 	}
-
 `;
 
 const TiltCard = styled(Tilt)`
@@ -88,14 +88,14 @@ const TiltCard = styled(Tilt)`
 		height: 36rem;
 	}
 	@media screen and (min-width: 50rem) {
-		/* background-color: #ff0000; */
+		/* background-color: #ff000053; */
 
 		width: 52rem;
 		height: 43rem;
 	}
 `;
 
-const ProjectCard = styled(motion.div)`
+const ProjectCard = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -103,6 +103,8 @@ const ProjectCard = styled(motion.div)`
 	border-radius: 1rem;
 	width: 71%;
 	height: 20rem;
+	position: relative;
+	overflow: hidden;
 	@media screen and (min-width: 40rem) {
 		width: 30rem;
 		height: 20rem;
@@ -114,8 +116,12 @@ const ProjectCard = styled(motion.div)`
 	text-align: center;
 	/* border: 1px solid rgba(255, 255, 255, 0.1); */
 	background-color: rgba(255, 255, 255, 0.1);
-	background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1));
-	background-image: url(${projects[2].image});
+	/* background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1)); */
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+
+	background-image: url('src/assets/images/galaxy.png');
+	background-size: 100%;
+	background-position-y: 100%;
 	&::before {
 		content: '';
 		position: absolute;
@@ -131,30 +137,24 @@ const ProjectCard = styled(motion.div)`
 		}
 		background: rgba(0, 0, 0, 0.3);
 		border-radius: 1rem;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
 	}
 `;
 
-const ProjectTitle = styled.h3`
-	font-size: 1.5em;
-`;
-
-const ProjectDescription = styled.p`
-	font-size: 1em;
-`;
-
-const ProjectImage = styled.img`
-	width: 3.5rem;
-	height: 3.5rem;
-`;
-
-const ProjectImageZ = styled.img`
-	width: 64%;
-	height: 90%;
+const ProjectImageZ = styled(motion.img)`
+	width: 100%;
+	height: auto;
 	position: absolute;
-	transform: translateZ(3rem);
-
-	top: 17%;
-	left: 17%;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	border-radius: 1rem;
+	/* background-color: #ff0000; */
+	/* background-image: url(${projects[0].image}); */
+	/* background-size: 100%; */
+	/* background-position-y: 100%; */
 `;
 
 const ProjectTitleZ = styled.h3`
@@ -193,7 +193,7 @@ const ProjectTechnologies = styled.div`
 	justify-content: center;
 	width: 60%;
 	gap: 0.5rem;
-  
+
 	top: 62%;
 	@media screen and (min-width: 50rem) {
 		top: 65%;
@@ -212,13 +212,13 @@ const ProjectLinks = styled.div`
 	transform: translate(-50%, -50%) translateZ(3rem);
 	position: absolute;
 	left: 50%;
-  top: 70%;
+	top: 70%;
 	display: flex;
 	justify-content: center;
 	width: 60%;
 	gap: 0.5rem;
 	@media screen and (min-width: 50rem) {
-    top: 72%;
+		top: 72%;
 	}
 `;
 const WebLink = styled.a`
@@ -236,469 +236,157 @@ const LinkImage = styled.img`
 	width: 100%;
 	height: auto;
 `;
-const container = {
+
+const title = {
 	hidden: { opacity: 0, y: 100 },
 	show: {
 		opacity: 1,
 		y: 0,
 		transition: {
 			duration: 1,
-			staggerChildren: 0.3,
 		},
 	},
 };
 
 const item = {
-	hidden: { opacity: 0 },
+	hidden: {
+		opacity: 0,
+		// scale: 0,
+
+		y: 100,
+	},
 	show: {
 		opacity: 1,
+		// scale: 1,
+		y: 0,
+
 		transition: {
 			duration: 1,
 		},
 	},
 };
-export const Projects = () => {
-	return (
-		<ProjectsContainer variants={container} initial='hidden' whileInView='show' viewport={{ once: true }}>
-			<ProjectsTitle>Proyectos</ProjectsTitle>
-			<ProjectWrapper>
-				<TiltContainer variants={item}>
-					<TiltCard transitionSpeed={2000} tiltReverse={true}>
-						<ProjectCard></ProjectCard>
-						{/* <ProjectImageZ src='src/assets/images/galaxy.png' alt='Web' /> */}
-						<ProjectTitleZ>Lorem, ipsum dolor.</ProjectTitleZ>
-						<ProjectDescriptionZ>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, est! Maiores iste consequatur
-							incidunt delectus consectetur, nemo in voluptatum voluptas quae, repellat fugit facilis ut.
-							Vitae amet molestiae totam eum!
-						</ProjectDescriptionZ>
-						<ProjectTechnologies>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-						</ProjectTechnologies>
-						<ProjectLinks>
-							<WebLink href='#'>
-								<LinkImage src='src/assets/icons/globe.svg' alt='Web' />
-							</WebLink>
-							<GithubLink href='#'>
-								<LinkImage src='src/assets/icons/github-icon.svg' alt='Github' />
-							</GithubLink>
-						</ProjectLinks>
-					</TiltCard>
-				</TiltContainer>
-				<TiltContainer variants={item}>
-					<TiltCard transitionSpeed={2000} tiltReverse={true}>
-						<ProjectCard></ProjectCard>
-						{/* <ProjectImageZ src='src/assets/images/galaxy.png' alt='Web' /> */}
-						<ProjectTitleZ>Lorem, ipsum dolor.</ProjectTitleZ>
-						<ProjectDescriptionZ>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, est! Maiores iste consequatur
-							incidunt delectus consectetur, nemo in voluptatum voluptas quae, repellat fugit facilis ut.
-							Vitae amet molestiae totam eum!
-						</ProjectDescriptionZ>
-						<ProjectTechnologies>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-						</ProjectTechnologies>
-						<ProjectLinks>
-							<WebLink href='#'>
-								<LinkImage src='src/assets/icons/globe.svg' alt='Web' />
-							</WebLink>
-							<GithubLink href='#'>
-								<LinkImage src='src/assets/icons/github-icon.svg' alt='Github' />
-							</GithubLink>
-						</ProjectLinks>
-					</TiltCard>
-				</TiltContainer>
-				<TiltContainer variants={item}>
-					<TiltCard transitionSpeed={2000} tiltReverse={true}>
-						<ProjectCard></ProjectCard>
-						{/* <ProjectImageZ src='src/assets/images/galaxy.png' alt='Web' /> */}
-						<ProjectTitleZ>Lorem, ipsum dolor.</ProjectTitleZ>
-						<ProjectDescriptionZ>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, est! Maiores iste consequatur
-							incidunt delectus consectetur, nemo in voluptatum voluptas quae, repellat fugit facilis ut.
-							Vitae amet molestiae totam eum!
-						</ProjectDescriptionZ>
-						<ProjectTechnologies>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-						</ProjectTechnologies>
-						<ProjectLinks>
-							<WebLink href='#'>
-								<LinkImage src='src/assets/icons/globe.svg' alt='Web' />
-							</WebLink>
-							<GithubLink href='#'>
-								<LinkImage src='src/assets/icons/github-icon.svg' alt='Github' />
-							</GithubLink>
-						</ProjectLinks>
-					</TiltCard>
-				</TiltContainer>
-				<TiltContainer variants={item}>
-					<TiltCard transitionSpeed={2000} tiltReverse={true}>
-						<ProjectCard></ProjectCard>
-						{/* <ProjectImageZ src='src/assets/images/galaxy.png' alt='Web' /> */}
-						<ProjectTitleZ>Lorem, ipsum dolor.</ProjectTitleZ>
-						<ProjectDescriptionZ>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, est! Maiores iste consequatur
-							incidunt delectus consectetur, nemo in voluptatum voluptas quae, repellat fugit facilis ut.
-							Vitae amet molestiae totam eum!
-						</ProjectDescriptionZ>
-						<ProjectTechnologies>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-						</ProjectTechnologies>
-						<ProjectLinks>
-							<WebLink href='#'>
-								<LinkImage src='src/assets/icons/globe.svg' alt='Web' />
-							</WebLink>
-							<GithubLink href='#'>
-								<LinkImage src='src/assets/icons/github-icon.svg' alt='Github' />
-							</GithubLink>
-						</ProjectLinks>
-					</TiltCard>
-				</TiltContainer>
-				<TiltContainer variants={item}>
-					<TiltCard transitionSpeed={2000} tiltReverse={true}>
-						<ProjectCard></ProjectCard>
-						{/* <ProjectImageZ src='src/assets/images/galaxy.png' alt='Web' /> */}
-						<ProjectTitleZ>Lorem, ipsum dolor.</ProjectTitleZ>
-						<ProjectDescriptionZ>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, est! Maiores iste consequatur
-							incidunt delectus consectetur, nemo in voluptatum voluptas quae, repellat fugit facilis ut.
-							Vitae amet molestiae totam eum!
-						</ProjectDescriptionZ>
-						<ProjectTechnologies>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-						</ProjectTechnologies>
-						<ProjectLinks>
-							<WebLink href='#'>
-								<LinkImage src='src/assets/icons/globe.svg' alt='Web' />
-							</WebLink>
-							<GithubLink href='#'>
-								<LinkImage src='src/assets/icons/github-icon.svg' alt='Github' />
-							</GithubLink>
-						</ProjectLinks>
-					</TiltCard>
-				</TiltContainer>
-				<TiltContainer variants={item}>
-					<TiltCard transitionSpeed={2000} tiltReverse={true}>
-						<ProjectCard></ProjectCard>
-						{/* <ProjectImageZ src='src/assets/images/galaxy.png' alt='Web' /> */}
-						<ProjectTitleZ>Lorem, ipsum dolor.</ProjectTitleZ>
-						<ProjectDescriptionZ>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, est! Maiores iste consequatur
-							incidunt delectus consectetur, nemo in voluptatum voluptas quae, repellat fugit facilis ut.
-							Vitae amet molestiae totam eum!
-						</ProjectDescriptionZ>
-						<ProjectTechnologies>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-						</ProjectTechnologies>
-						<ProjectLinks>
-							<WebLink href='#'>
-								<LinkImage src='src/assets/icons/globe.svg' alt='Web' />
-							</WebLink>
-							<GithubLink href='#'>
-								<LinkImage src='src/assets/icons/github-icon.svg' alt='Github' />
-							</GithubLink>
-						</ProjectLinks>
-					</TiltCard>
-				</TiltContainer>
-				<TiltContainer variants={item}>
-					<TiltCard transitionSpeed={2000} tiltReverse={true}>
-						<ProjectCard></ProjectCard>
-						{/* <ProjectImageZ src='src/assets/images/galaxy.png' alt='Web' /> */}
-						<ProjectTitleZ>Lorem, ipsum dolor.</ProjectTitleZ>
-						<ProjectDescriptionZ>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, est! Maiores iste consequatur
-							incidunt delectus consectetur, nemo in voluptatum voluptas quae, repellat fugit facilis ut.
-							Vitae amet molestiae totam eum!
-						</ProjectDescriptionZ>
-						<ProjectTechnologies>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-						</ProjectTechnologies>
-						<ProjectLinks>
-							<WebLink href='#'>
-								<LinkImage src='src/assets/icons/globe.svg' alt='Web' />
-							</WebLink>
-							<GithubLink href='#'>
-								<LinkImage src='src/assets/icons/github-icon.svg' alt='Github' />
-							</GithubLink>
-						</ProjectLinks>
-					</TiltCard>
-				</TiltContainer>
-				<TiltContainer variants={item}>
-					<TiltCard transitionSpeed={2000} tiltReverse={true}>
-						<ProjectCard></ProjectCard>
-						{/* <ProjectImageZ src='src/assets/images/galaxy.png' alt='Web' /> */}
-						<ProjectTitleZ>Lorem, ipsum dolor.</ProjectTitleZ>
-						<ProjectDescriptionZ>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, est! Maiores iste consequatur
-							incidunt delectus consectetur, nemo in voluptatum voluptas quae, repellat fugit facilis ut.
-							Vitae amet molestiae totam eum!
-						</ProjectDescriptionZ>
-						<ProjectTechnologies>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-						</ProjectTechnologies>
-						<ProjectLinks>
-							<WebLink href='#'>
-								<LinkImage src='src/assets/icons/globe.svg' alt='Web' />
-							</WebLink>
-							<GithubLink href='#'>
-								<LinkImage src='src/assets/icons/github-icon.svg' alt='Github' />
-							</GithubLink>
-						</ProjectLinks>
-					</TiltCard>
-				</TiltContainer>
-				<TiltContainer variants={item}>
-					<TiltCard transitionSpeed={2000} tiltReverse={true}>
-						<ProjectCard></ProjectCard>
-						{/* <ProjectImageZ src='src/assets/images/galaxy.png' alt='Web' /> */}
-						<ProjectTitleZ>Lorem, ipsum dolor.</ProjectTitleZ>
-						<ProjectDescriptionZ>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, est! Maiores iste consequatur
-							incidunt delectus consectetur, nemo in voluptatum voluptas quae, repellat fugit facilis ut.
-							Vitae amet molestiae totam eum!
-						</ProjectDescriptionZ>
-						<ProjectTechnologies>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-						</ProjectTechnologies>
-						<ProjectLinks>
-							<WebLink href='#'>
-								<LinkImage src='src/assets/icons/globe.svg' alt='Web' />
-							</WebLink>
-							<GithubLink href='#'>
-								<LinkImage src='src/assets/icons/github-icon.svg' alt='Github' />
-							</GithubLink>
-						</ProjectLinks>
-					</TiltCard>
-				</TiltContainer>
-				<TiltContainer variants={item}>
-					<TiltCard transitionSpeed={2000} tiltReverse={true}>
-						<ProjectCard></ProjectCard>
-						{/* <ProjectImageZ src='src/assets/images/galaxy.png' alt='Web' /> */}
-						<ProjectTitleZ>Lorem, ipsum dolor.</ProjectTitleZ>
-						<ProjectDescriptionZ>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, est! Maiores iste consequatur
-							incidunt delectus consectetur, nemo in voluptatum voluptas quae, repellat fugit facilis ut.
-							Vitae amet molestiae totam eum!
-						</ProjectDescriptionZ>
-						<ProjectTechnologies>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-						</ProjectTechnologies>
-						<ProjectLinks>
-							<WebLink href='#'>
-								<LinkImage src='src/assets/icons/globe.svg' alt='Web' />
-							</WebLink>
-							<GithubLink href='#'>
-								<LinkImage src='src/assets/icons/github-icon.svg' alt='Github' />
-							</GithubLink>
-						</ProjectLinks>
-					</TiltCard>
-				</TiltContainer>
-				<TiltContainer variants={item}>
-					<TiltCard transitionSpeed={2000} tiltReverse={true}>
-						<ProjectCard></ProjectCard>
-						{/* <ProjectImageZ src='src/assets/images/galaxy.png' alt='Web' /> */}
-						<ProjectTitleZ>Lorem, ipsum dolor.</ProjectTitleZ>
-						<ProjectDescriptionZ>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, est! Maiores iste consequatur
-							incidunt delectus consectetur, nemo in voluptatum voluptas quae, repellat fugit facilis ut.
-							Vitae amet molestiae totam eum!
-						</ProjectDescriptionZ>
-						<ProjectTechnologies>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-						</ProjectTechnologies>
-						<ProjectLinks>
-							<WebLink href='#'>
-								<LinkImage src='src/assets/icons/globe.svg' alt='Web' />
-							</WebLink>
-							<GithubLink href='#'>
-								<LinkImage src='src/assets/icons/github-icon.svg' alt='Github' />
-							</GithubLink>
-						</ProjectLinks>
-					</TiltCard>
-				</TiltContainer>
-				
-				
-				{/* <TiltContainer variants={item}>
-					<TiltCard scale={1.1} transitionSpeed={1000} tiltReverse={true}>
-						<ProjectCard></ProjectCard>
-						<ProjectImageZ src='src/assets/images/galaxy.png' alt='Web' />
-						<ProjectTitleZ>Lorem, ipsum dolor.</ProjectTitleZ>
-						<ProjectDescriptionZ>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, est! Maiores iste consequatur
-							incidunt delectus consectetur, nemo in voluptatum voluptas quae, repellat fugit facilis ut.
-							Vitae amet molestiae totam eum!
-						</ProjectDescriptionZ>
-					</TiltCard>
-				</TiltContainer>
-				<TiltContainer variants={item}>
-					<TiltCard scale={1.1} transitionSpeed={1000} tiltReverse={true}>
-						<ProjectCard></ProjectCard>
-						<ProjectImageZ src='src/assets/images/galaxy.png' alt='Web' />
-						<ProjectTitleZ>Lorem, ipsum dolor.</ProjectTitleZ>
-						<ProjectDescriptionZ>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, est! Maiores iste consequatur
-							incidunt delectus consectetur, nemo in voluptatum voluptas quae, repellat fugit facilis ut.
-							Vitae amet molestiae totam eum!
-						</ProjectDescriptionZ>
-					</TiltCard>
-				</TiltContainer>
-				<TiltContainer variants={item}>
-					<TiltCard scale={1.1} transitionSpeed={1000} tiltReverse={true}>
-						<ProjectCard></ProjectCard>
-						<ProjectImageZ src='src/assets/images/galaxy.png' alt='Web' />
-						<ProjectTitleZ>Lorem, ipsum dolor.</ProjectTitleZ>
-						<ProjectDescriptionZ>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, est! Maiores iste consequatur
-							incidunt delectus consectetur, nemo in voluptatum voluptas quae, repellat fugit facilis ut.
-							Vitae amet molestiae totam eum!
-						</ProjectDescriptionZ>
-					</TiltCard>
-				</TiltContainer> */}
 
-				{/* <TiltContainer>
-					<TiltCard scale={1.1} transitionSpeed={1000} tiltReverse={true}>
-						<ProjectCard variants={item}>
-							<ProjectImage src='src/assets/images/galaxy.png' alt='Web' />
-							<ProjectTitle>Lorem, ipsum dolor.</ProjectTitle>
-							<ProjectDescription>
-								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, est! Maiores iste
-								consequatur incidunt delectus consectetur, nemo in voluptatum voluptas quae, repellat fugit
-								facilis ut. Vitae amet molestiae totam eum!
-							</ProjectDescription>
+const image = {
+	start: {
+		y: '0%',
+		top: '0%',
+	},
+	scroll: {
+		y: '-100%',
+		top: '100%',
+
+		transition: {
+			duration: 8,
+			repeat: Infinity,
+			// repeatType: 'mirror',
+			repeatDelay: 2,
+		},
+	},
+};
+
+export const Projects = () => {
+const [clicked, setClicked] = useState(false);
+
+	return (
+		<ProjectsContainer>
+			<ProjectsTitle variants={title} initial='hidden' whileInView='show' viewport={{ once: true }}>
+				Proyectos
+			</ProjectsTitle>
+			<ProjectWrapper>
+				{projects.map((project, index) => (
+					<TiltContainer
+						variants={item}
+						key={index}
+						whileHover='scroll'
+						// onHoverStart={() => setClicked(true)}
+            // onHoverEnd={() => setClicked(false)}
+            // onTouchStart={() => setClicked(true)}
+            // onTouchEnd={() => setClicked(false)}
+						initial='hidden'
+						whileInView='show'
+						viewport={{ once: true }}
+					>
+						<TiltCard transitionSpeed={2000} tiltReverse={true}>
+							<ProjectCard>
+								<ProjectImageZ
+									src={project.image}
+									alt={project.name}
+									// animate={clicked ? 'scroll' : 'start'}
+									variants={image}
+									transition={{ duration: 0.5, ease: 'easeOut' }}
+								/>
+							</ProjectCard>
+							<ProjectTitleZ>{project.name}</ProjectTitleZ>
+							<ProjectDescriptionZ>{project.description}</ProjectDescriptionZ>
+							<ProjectTechnologies>
+								{project.technologies.map((technology, index) => (
+									<Technology key={index}>
+										<TechnologyImage src={`src/assets/icons/${technology}.svg`} alt={technology} />
+									</Technology>
+								))}
+							</ProjectTechnologies>
+							{/* <Technology>
+									<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
+								</Technology>
+								<Technology>
+									<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
+								</Technology>
+								<Technology>
+									<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
+								</Technology>
+								<Technology>
+									<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
+								</Technology>
+							</ProjectTechnologies> */}
+							<ProjectLinks>
+								<WebLink href={project.link}>
+									<LinkImage src='src/assets/icons/globe.svg' alt='Web' />
+								</WebLink>
+								<GithubLink href={project.repository}>
+									<LinkImage src='src/assets/icons/github-icon.svg' alt='Github' />
+								</GithubLink>
+							</ProjectLinks>
+						</TiltCard>
+					</TiltContainer>
+				))}
+
+				{/* <TiltContainer whileHover='scroll' initial='hidden' whileInView='show' viewport={{ once: true }}>
+					<TiltCard transitionSpeed={2000} tiltReverse={true}>
+						<ProjectCard>
+							<ProjectImageZ
+								src='src/assets/images/lol.webp'
+								alt='Web'
+								variants={image}
+								transition={{ duration: 0 }}
+							/>
 						</ProjectCard>
-					</TiltCard>
-				</TiltContainer>
-				<TiltContainer>
-					<TiltCard scale={1.1} transitionSpeed={1000} tiltReverse={true}>
-						<ProjectCard variants={item}>
-							<ProjectImage src='src/assets/images/galaxy.png' alt='Web' />
-							<ProjectTitle>Lorem, ipsum dolor.</ProjectTitle>
-							<ProjectDescription>
-								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, est! Maiores iste
-								consequatur incidunt delectus consectetur, nemo in voluptatum voluptas quae, repellat fugit
-								facilis ut. Vitae amet molestiae totam eum!
-							</ProjectDescription>
-						</ProjectCard>
+						<ProjectTitleZ>Lorem, ipsum dolor.</ProjectTitleZ>
+						<ProjectDescriptionZ>
+							Lorem ipsum dolor consectetur, adipisicing elit. Debitis, est! Maiores iste incidunt delectus
+							consectetur, nemo in Vitae amet molestiae eum!
+						</ProjectDescriptionZ>
+						<ProjectTechnologies>
+							<Technology>
+								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
+							</Technology>
+							<Technology>
+								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
+							</Technology>
+							<Technology>
+								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
+							</Technology>
+							<Technology>
+								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
+							</Technology>
+						</ProjectTechnologies>
+						<ProjectLinks>
+							<WebLink href='#'>
+								<LinkImage src='src/assets/icons/globe.svg' alt='Web' />
+							</WebLink>
+							<GithubLink href='#'>
+								<LinkImage src='src/assets/icons/github-icon.svg' alt='Github' />
+							</GithubLink>
+						</ProjectLinks>
 					</TiltCard>
 				</TiltContainer> */}
 			</ProjectWrapper>

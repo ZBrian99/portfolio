@@ -2,18 +2,15 @@ import { useState, useRef, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 
-const FormContainer = styled(motion.section)`
+const FormContainer = styled.section`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	max-width: 50rem;
 	height: 100%;
-	margin: auto;
 	gap: 3rem;
 	position: relative;
-
 	padding: 2rem;
 	border-radius: 1rem;
 	/* border: 1px solid rgba(255, 255, 255, 0.1);
@@ -21,7 +18,7 @@ const FormContainer = styled(motion.section)`
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1)); */
 `;
 
-const FormTitle = styled.h2`
+const FormTitle = styled(motion.h3)`
 	width: 100%;
 	text-align: center;
 	font-size: 3em;
@@ -33,10 +30,23 @@ const FormTitle = styled.h2`
 	background-image: linear-gradient(60deg, #ff00ea, #ffd000);
 `;
 
-const Form = styled.form`
-	width: 100%;
+const Form = styled(motion.form)`
 	display: flex;
 	flex-direction: column;
+	padding: 1rem 2rem 3rem;
+	border-radius: 1rem;
+	width: 100%;
+	max-width: 50rem;
+	text-align: center;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+
+	background-color: rgba(255, 255, 255, 0.1);
+
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+
+	@media screen and (min-width: 50rem) {
+		padding: 3rem 5rem 5rem;
+	}
 `;
 
 const FormInput = styled(motion.input)`
@@ -129,11 +139,41 @@ const SuccessMessage = styled.div`
 	font-size: 0.8rem;
 	margin-top: 1rem;
 `;
-const container = {
+
+const title = {
 	hidden: { opacity: 0, y: 100 },
 	show: {
 		opacity: 1,
 		y: 0,
+		transition: {
+			duration: 1,
+		},
+	},
+};
+
+const wrapper = {
+	hidden: { opacity: 0, y: 100 },
+	show: {
+		opacity: 1,
+		y: 0,
+		transition: {
+			duration: 1,
+		},
+	},
+};
+
+const item = {
+	hidden: {
+		opacity: 0,
+		// scale: .5,
+
+		y: 100,
+	},
+	show: {
+		opacity: 1,
+		// scale: 1,
+		y: 0,
+
 		transition: {
 			duration: 1,
 		},
@@ -197,9 +237,17 @@ export const ContactForm = () => {
 	};
 
 	return (
-		<FormContainer variants={container} initial='hidden' whileInView='show' viewport={{ once: true }}>
-			<FormTitle>Contactame</FormTitle>
-			<Form onSubmit={handleSubmit}>
+		<FormContainer>
+			<FormTitle variants={title} initial='hidden' whileInView='show' viewport={{ once: true }}>
+				Contactame
+			</FormTitle>
+			<Form
+				variants={wrapper}
+				initial='hidden'
+				whileInView='show'
+				viewport={{ once: true }}
+				onSubmit={handleSubmit}
+			>
 				<FormInput
 					type='text'
 					placeholder='Nombre'

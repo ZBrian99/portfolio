@@ -5,7 +5,8 @@
 			"description": "A web application to efficiently manage tasks and projects.",
 			"date": "2022-05-15",
 			"link": "https://example.com/task-management-system",
-			"images": ["src/assets/images/galaxy.png", "src/assets/images/galaxy.png"],
+			"image": "src/assets/images/lol.webp",
+
 			"video": "https://youtube.com/embed/video1",
 			"repository": "https://github.com/user/task-project",
 			"technologies": ["React", "Node.js", "MongoDB"],
@@ -16,7 +17,8 @@
 			"description": "A comprehensive platform for online sales, with payment integrations and inventory management.",
 			"date": "2022-09-30",
 			"link": "https://example.com/e-commerce-platform",
-			"images": ["src/assets/images/galaxy.png", "src/assets/images/galaxy.png"],
+			"image": "src/assets/images/lol.webp",
+
 			"video": "https://youtube.com/embed/video2",
 			"repository": "https://github.com/user/e-commerce-platform",
 			"technologies": ["React", "Redux", "Node.js", "MongoDB"],
@@ -27,7 +29,7 @@
 			"description": "A mobile application to search for travel destinations, book accommodations, and plan itineraries.",
 			"date": "2023-03-20",
 			"link": "https://example.com/travel-app",
-			"image": "src/assets/images/galaxy.png",
+			"image": "src/assets/images/lol.webp",
 			"video": "https://youtube.com/embed/video3",
 			"repository": "https://github.com/user/travel-app",
 			"technologies": ["React Native", "Firebase"],
@@ -38,7 +40,8 @@
 			"description": "A web platform for online courses with multimedia content and student progress tracking.",
 			"date": "2023-08-10",
 			"link": "https://example.com/learning-platform",
-			"images": ["src/assets/images/galaxy.png", "src/assets/images/galaxy.png"],
+			"image": "src/assets/images/lol.webp",
+
 			"repository": "https://github.com/user/learning-platform",
 			"technologies": ["React", "Django", "PostgreSQL"],
 			"status": "in progress"
@@ -48,7 +51,8 @@
 			"description": "An interactive quiz game with questions and answers on various topics.",
 			"date": "2024-01-05",
 			"link": "https://example.com/quiz-game",
-			"image": "src/assets/images/galaxy.png",
+			"image": "src/assets/images/lol.webp",
+
 			"repository": "https://github.com/user/quiz-game",
 			"technologies": ["HTML", "CSS", "JavaScript"],
 			"status": "completed"

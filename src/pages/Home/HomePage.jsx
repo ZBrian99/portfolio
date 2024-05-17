@@ -12,7 +12,7 @@ const HomeWrapper = styled.div`
 	width: 100%;
 	max-width: 80rem;
 	margin: auto;
-	gap: 10rem;
+	gap: 15rem;
 	overflow: hidden;
 	padding-top: 10rem;
 	@media screen and (min-width: 60rem) {
@@ -24,11 +24,11 @@ const HomeWrapper = styled.div`
 export const HomePage = () => {
 	return (
 		<HomeWrapper>
-			<About />
-			<Skills />
-			<Services />
+			{/* <About /> */}
+			{/* <Skills /> */}
+			{/* <Services /> */}
 			<Projects />
-			<Contact />
+			{/* <Contact /> */}
 		</HomeWrapper>
 	);
 };

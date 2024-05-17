@@ -18,10 +18,10 @@ export const App = () => {
 		<>
 			<GlobalStyles />
 			<Background />
-			<Navbar />
+			{/* <Navbar /> */}
 			{/* <CardsView /> */}
 			{/* <GlassCard/> */}
-			<Hero />
+			{/* <Hero /> */}
 		
 			<HomePage />
 			

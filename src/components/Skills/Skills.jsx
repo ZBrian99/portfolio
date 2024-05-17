@@ -1,10 +1,11 @@
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
+import { delay, motion } from 'framer-motion';
 
 import { skills } from '../../data/skills';
 
-const SkillsContainer = styled(motion.section)`
+const SkillsContainer = styled.section`
 	width: 100%;
+	/* min-height: 20rem; */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -13,7 +14,7 @@ const SkillsContainer = styled(motion.section)`
 	margin: 0 2rem;
 `;
 
-const SkillsTitle = styled.h3`
+const SkillsTitle = styled(motion.h3)`
 	font-size: 3em;
 	text-align: center;
 	width: 100%;
@@ -45,7 +46,10 @@ const Skill = styled(motion.div)`
 	border-radius: 1rem;
 	border: 1px solid rgba(255, 255, 255, 0.1);
 	background-color: rgba(255, 255, 255, 0.1);
-	background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1));
+	/* background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1)); */
+
+	/* background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 
 	display: flex;
 	flex-direction: column;
@@ -53,6 +57,7 @@ const Skill = styled(motion.div)`
 	justify-content: center;
 	gap: 0.5rem;
 	/* background-color: red; */
+	opacity: 0.9;
 	&:hover {
 		& > .SkillTooltip {
 			opacity: 1;
@@ -99,8 +104,24 @@ const SkillTooltip = styled.span`
 		border-color: #222 transparent transparent transparent;
 	}
 `;
-const container = {
+
+
+const title = {
 	hidden: { opacity: 0, y: 100 },
+	show: {
+		opacity: 1,
+		y: 0,
+		transition: {
+			duration: 1,
+		},
+	},
+};
+
+const wrapper = {
+	hidden: {
+		opacity: 0,
+		y: 100,
+	},
 	show: {
 		opacity: 1,
 		y: 0,
@@ -112,19 +133,31 @@ const container = {
 };
 
 const item = {
-	hidden: { scale: 0 },
+	hidden: {
+		scale: 0,
+		// opacity: 0,
+		// y: 30,
+	},
 	show: {
+		// y: 0,
 		scale: 1,
-		opacity: 0.9,
+
+		// transition: {
+		// 	duration: 1,
+		// },
 	},
 };
+
 export const Skills = () => {
 	return (
-		<SkillsContainer variants={container} initial='hidden' whileInView='show' viewport={{ once: true }}>
-			<SkillsTitle>Tecnologías</SkillsTitle>
-			<SkillsWrapper>
+		<SkillsContainer>
+			<SkillsTitle variants={title} initial='hidden' whileInView='show' viewport={{ once: true }}>
+				Tecnologías
+			</SkillsTitle>
+			<SkillsWrapper variants={wrapper} initial='hidden' whileInView='show' viewport={{ once: true }}>
 				{skills.map((skill, index) => (
 					<Skill
+						viewport={{ once: true }}
 						key={index}
 						variants={item}
 						whileHover={{
