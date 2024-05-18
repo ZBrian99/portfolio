@@ -6,6 +6,9 @@ import { HeroSocialButton } from './HeroSocialButton';
 import { HeroAnimation } from './HeroAnimation';
 import { GlowButton } from './GlowButton';
 import { GlowButtonTextAlt } from './GlowButtonTextAlt';
+import { BaseGlowButton } from './BaseGlowButton';
+import { GlowButtonFullColor } from './GlowButtonFullColor';
+import { GlowButtonAlt } from './GlowButtonAlt';
 
 const HeroContainer = styled.section`
 	/* background-image: url('src/assets/images/background.png'); */
@@ -108,16 +111,12 @@ export const Hero = () => {
 				</HeroExtra>
 				<HeroContactContainer>
 					<GlowButton>🚀 Contacto </GlowButton>
-					<GlowButton gradientColors={'#ff00ea, #ffd000, #ff00ea'} padding={'1rem'} fontSize={'1em'}>
-						🚀
-					</GlowButton>
-					<GlowButton blur={'none'} gradientColors={'#ff00ea, #ffd000, #ff00ea'} fontSize={'.9em'}>
-						🚀 Contacto
-					</GlowButton>
-					<GlowButton gradientType={'conic'}>🚀 Contacto </GlowButton>
-					<GlowButton>🚀 Contacto </GlowButton>
+					<GlowButtonFullColor>🚀 Contacto </GlowButtonFullColor>
+					<GlowButtonAlt>🚀 Contacto </GlowButtonAlt>
 					<GlowButton>📂 Proyectos </GlowButton>
 					<GlowButton>📄 Currículum </GlowButton>
+					<GlowButtonTextAlt>📄 Currículum </GlowButtonTextAlt>
+					<BaseGlowButton>📄 Currículum </BaseGlowButton>
 				</HeroContactContainer>
 				<HeroSocialContainer>
 					<HeroSocialButton

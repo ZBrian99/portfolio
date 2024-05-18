@@ -2,11 +2,8 @@ import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 
 const glowing = keyframes`
-  from {
-    background-position: 400% center;
-  }
   to {
-    background-position: 0% center;
+    background-position: 400% center;
   }
 `;
 
@@ -38,46 +35,46 @@ const ButtonStyled = styled.button`
 	position: relative;
 	border-radius: 2rem;
 	color: #fff;
+	text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
 	padding: 1rem 2rem;
 	font-size: 1em;
-	background: transparent;
-
-	background: conic-gradient(from var(--angle), ${gradientColors});
+	background-image: linear-gradient(60deg, ${gradientColors});
+	background-size: 400%;
 
 	font-weight: bold;
 	transition: transform 0.1s ease;
-	animation: ${rotating} 5s linear infinite;
+	animation: ${glowing} 10s linear infinite;
 	animation-play-state: paused;
 
 	&:before {
 		content: '';
 		position: absolute;
 		inset: -1px;
-		background: conic-gradient(from var(--angle), ${gradientColors});
+		background-image: linear-gradient(60deg, ${gradientColors});
+		background-size: 400%;
+
 		border-radius: 2rem;
 		filter: blur(1rem);
-		opacity: 0;
+		/* opacity: 0; */
 		transition: opacity 0.3s ease;
-		animation: ${rotating} 5s linear infinite;
+		animation: ${glowing} 10s linear infinite;
 		animation-play-state: paused;
 	}
 
 	&:after {
 		content: attr(data-content);
 		display: flex;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
+    justify-content: center;
+    align-items: center;
 		position: absolute;
-		inset: 1px;
+		inset: 0;
 		border-radius: 2rem;
 		background-size: 400%;
-		background-clip: text;
-		background-image: linear-gradient(60deg, ${gradientColors});
-		backdrop-filter: brightness(0%);
-		transition: color 0.3s ease, -webkit-text-fill-color 0.3s ease;
-		animation: ${glowing} 10s linear infinite;
-		animation-play-state: paused;
+		/* background-image: linear-gradient(60deg, ${gradientColors}); */
+		/* backdrop-filter: brightness(0%); */
+		/* transition: color 0.3s ease, -webkit-text-fill-color 0.3s ease; */
+		/* animation: ${glowing} 10s linear infinite; */
+		/* animation-play-state: paused; */
 	}
 
 	&:hover {
@@ -90,8 +87,6 @@ const ButtonStyled = styled.button`
 	}
 
 	&:hover:after {
-		color: transparent;
-		-webkit-text-fill-color: transparent;
 		animation-play-state: running;
 	}
 
@@ -104,7 +99,7 @@ const ButtonStyled = styled.button`
 	}
 `;
 
-export const GlowButton = ({ children, ...props }) => {
+export const GlowButtonFullColor = ({ children, ...props }) => {
 	return (
 		<ButtonStyled data-content={children} {...props}>
 			{children}
