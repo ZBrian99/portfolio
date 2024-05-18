@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { HeroButton } from './HeroButton';
 import { HeroSocialButton } from './HeroSocialButton';
 import { HeroAnimation } from './HeroAnimation';
+import { GlowButton } from './GlowButton';
+import { GlowButtonTextAlt } from './GlowButtonTextAlt';
 
 const HeroContainer = styled.section`
 	/* background-image: url('src/assets/images/background.png'); */
@@ -16,7 +18,7 @@ const HeroContainer = styled.section`
 	width: 100%;
 	height: 100svh;
 	z-index: 1;
-  gap: 10rem;
+	gap: 10rem;
 	/* @media screen and (min-width: 60rem) {
 		flex-direction: row;
 	} */
@@ -64,7 +66,10 @@ const HeroExtra = styled.p`
 `;
 
 const HeroContactContainer = styled.div`
+	margin: 5rem 0;
 	display: flex;
+	flex-wrap: wrap;
+	place-content: center;
 	gap: 1rem;
 `;
 
@@ -102,8 +107,17 @@ export const Hero = () => {
 					<HighlightText> unicos y funcionales</HighlightText>
 				</HeroExtra>
 				<HeroContactContainer>
-					<HeroButton>Contactame</HeroButton>
-					<HeroButton>Curriculum</HeroButton>
+					<GlowButton>🚀 Contacto </GlowButton>
+					<GlowButton gradientColors={'#ff00ea, #ffd000, #ff00ea'} padding={'1rem'} fontSize={'1em'}>
+						🚀
+					</GlowButton>
+					<GlowButton blur={'none'} gradientColors={'#ff00ea, #ffd000, #ff00ea'} fontSize={'.9em'}>
+						🚀 Contacto
+					</GlowButton>
+					<GlowButton gradientType={'conic'}>🚀 Contacto </GlowButton>
+					<GlowButton>🚀 Contacto </GlowButton>
+					<GlowButton>📂 Proyectos </GlowButton>
+					<GlowButton>📄 Currículum </GlowButton>
 				</HeroContactContainer>
 				<HeroSocialContainer>
 					<HeroSocialButton

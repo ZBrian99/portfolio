@@ -19,8 +19,8 @@ const ServicesTitle = styled(motion.h3)`
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	color: transparent;
-	text-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
 	background-image: linear-gradient(60deg, #ff00ea, #ffd000);
+	text-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
 `;
 
 const ServiceWrapper = styled(motion.div)`

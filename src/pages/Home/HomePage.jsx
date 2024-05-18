@@ -24,11 +24,11 @@ const HomeWrapper = styled.div`
 export const HomePage = () => {
 	return (
 		<HomeWrapper>
-			{/* <About /> */}
-			{/* <Skills /> */}
-			{/* <Services /> */}
+			<About />
+			<Skills />
+			<Services />
 			<Projects />
-			{/* <Contact /> */}
+			<Contact />
 		</HomeWrapper>
 	);
 };
