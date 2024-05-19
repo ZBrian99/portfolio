@@ -32,9 +32,9 @@ const ProjectWrapper = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	/* background-color: #efff0b7a; */
+	background-color: #efff0b7a;
 	width: 100%;
-	overflow: hidden;
+	/* overflow: hidden; */
 
 	/* gap: 3rem; */
 `;
@@ -43,9 +43,9 @@ const TiltContainer = styled(motion.div)`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	overflow: hidden;
+	/* overflow: hidden; */
 	position: relative;
-	/* background-color: blue; */
+	background-color: blue;
 	width: 100%;
 	height: 24rem;
 	margin-bottom: 3rem;
@@ -76,19 +76,19 @@ const TiltCard = styled(Tilt)`
 	justify-content: center;
 	align-items: center;
 	transform-style: preserve-3d;
-	/* background-color: #fbff0085; */
+	background-color: #fbff0085;
 
 	text-align: center;
 	width: 129%;
 	height: 36rem;
 
 	@media screen and (min-width: 40rem) {
-		/* background-color: #33ff0085; */
+		background-color: #33ff0085;
 		width: 44rem;
 		height: 36rem;
 	}
 	@media screen and (min-width: 50rem) {
-		/* background-color: #ff000053; */
+		background-color: #ff000053;
 
 		width: 52rem;
 		height: 43rem;
@@ -237,11 +237,12 @@ const LinkImage = styled.img`
 	height: auto;
 `;
 
+
 const title = {
-	hidden: { opacity: 0, y: 100 },
+	hidden: { opacity: 0, x: -100 },
 	show: {
 		opacity: 1,
-		y: 0,
+		x: 0,
 		transition: {
 			duration: 1,
 		},

@@ -89,10 +89,10 @@ const ServiceImage = styled.img`
 `;
 
 const title = {
-	hidden: { opacity: 0, y: 100 },
+	hidden: { opacity: 0, x: -100 },
 	show: {
 		opacity: 1,
-		y: 0,
+		x: 0,
 		transition: {
 			duration: 1,
 		},

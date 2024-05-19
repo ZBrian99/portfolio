@@ -1,4 +1,3 @@
-import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 
 const ButtonStyled = styled.button`
@@ -13,28 +12,21 @@ const ButtonStyled = styled.button`
 	padding: 1rem 2rem;
 	font-size: 1em;
 	background-color: transparent;
-	border: 1px solid #fff;
 	box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-	transition: border 0.2s ease;
+	transition: border 0.1s ease, transform 0.1s ease;
 	position: relative;
 	&:before {
-		transition: clip-path 0.5s ease;
+		transition: border 0.1s ease, transform 0.1s ease;
 		content: '';
 		z-index: -1;
 		inset: 0;
 		position: absolute;
 		border-radius: 2rem;
-		/* background-color: #111; */
-		background-image: linear-gradient(60deg, #fd004c, #fe9000, #fff020, #3edf4b, #3363ff, #b102b7, #fd004c);
-		background-size: 400%;
-		clip-path: circle(0% at 50% 50%);
+		border: 1px solid rgba(255, 255, 255, 0.1);
 	}
 
-	&:hover {
-		border: 1px solid transparent;
-		&:before {
-			clip-path: circle(150% at 50% 50%);
-		}
+	&:hover:before {
+		border: 1px solid rgba(255, 255, 255, 0.2);
 	}
 
 	&:active {
@@ -43,5 +35,9 @@ const ButtonStyled = styled.button`
 `;
 
 export const GlowButtonAlt = ({ children, ...props }) => {
-	return <ButtonStyled {...props}>{children}</ButtonStyled>;
+	return (
+		<>
+			<ButtonStyled {...props}>{children}</ButtonStyled>
+		</>
+	);
 };

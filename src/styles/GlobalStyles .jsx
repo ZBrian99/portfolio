@@ -4,6 +4,8 @@ import { theme } from './theme';
 export const GlobalStyles = () => (
 	<Global
 		styles={css`
+			@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+
 			:root {
 				--color-primary: ${theme.colors.primary};
 				--color-secondary: ${theme.colors.secondary};
@@ -20,6 +22,8 @@ export const GlobalStyles = () => (
 			}
 
 			body {
+				font-family: 'Bricolage Grotesque', sans-serif;
+
 				scroll-behavior: smooth;
 				background-color: #0a0a0a;
 				font-size: 100%;
@@ -39,7 +43,7 @@ export const GlobalStyles = () => (
 				/* background-repeat: no-repeat; */
 				/* background: url('src/assets/images/background.png') fixed; */
 
-				font-family: var(--font-body);
+				/* font-family: var(--font-body); */
 				/* color: var(--color-secondary); */
 				color: white;
 				/* font-family: 'Poppins', sans-serif; */

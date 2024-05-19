@@ -15,6 +15,7 @@ const ButtonStyled = styled.button`
 	border: none;
 	outline: none;
 	color: ${({ color }) => color || '#fff'};
+	font-weight: bold;
 
 	background: ${({ background }) => background || '#111'};
 	cursor: pointer;
@@ -36,7 +37,6 @@ const ButtonStyled = styled.button`
 
 	z-index: 10;
 	/* transition: opacity 1.2s ease-out; */
-
 	&:before {
 		/* transition: opacity 0.3s ease-out; */
 		/* animation: ${glowing} 10s linear infinite; */
@@ -54,6 +54,8 @@ const ButtonStyled = styled.button`
 		/* opacity: 0; */
 		border-radius: 2rem;
 	}
+	border: 1px solid transparent;
+
 	&:active {
 		&:after {
 			opacity: 0;
@@ -62,7 +64,7 @@ const ButtonStyled = styled.button`
 	}
 
 	&:hover {
-		border: 1px solid transparent;
+		/* border: 1px solid transparent; */
 
 		/* transform: scale(1.05); */
 	}
@@ -74,10 +76,18 @@ const ButtonStyled = styled.button`
 	&:hover:after {
 		animation: ${glowing} 5s linear infinite;
 		opacity: 1;
+
+		background: linear-gradient(60deg, #ffd000 20%, #ff00ea 40%, #ff00ea 60%, #ffd000 80%);
+
+		background-size: 200%;
+
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		color: transparent;
 	}
 	&:after {
 		z-index: 1;
-		content: 'GlowButton';
+		content: '🚀 Contacto';
 		position: absolute;
 		/* width: 100%; */
 		/* height: 100%; */
@@ -105,14 +115,6 @@ const ButtonStyled = styled.button`
 		/* background-image: linear-gradient(60deg, #ffd000, #ff00ea); */
 
 		/* background: linear-gradient(60deg, #ffd000, #ff00ea, #ffd000); */
-
-		background: linear-gradient(60deg, #ffd000 20%, #ff00ea 40%, #ff00ea 60%, #ffd000 80%);
-
-		background-size: 200%;
-
-		background-clip: text;
-		-webkit-text-fill-color: transparent;
-		color: transparent;
 	}
 `;
 
@@ -136,7 +138,7 @@ export const GlowButtonTextAlt = ({
 			glowColors={glowColors}
 			{...props}
 		>
-			{children || 'GlowButton'}
+			{children}
 		</ButtonStyled>
 	);
 };

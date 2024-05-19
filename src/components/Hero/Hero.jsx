@@ -10,115 +10,163 @@ import { BaseGlowButton } from './BaseGlowButton';
 import { GlowButtonFullColor } from './GlowButtonFullColor';
 import { GlowButtonAlt } from './GlowButtonAlt';
 
-const HeroContainer = styled.section`
-	/* background-image: url('src/assets/images/background.png'); */
-
+const HeroContainer = styled(motion.section)`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	color: #ffffff;
 	width: 100%;
+	max-width: 100rem;
 	height: 100svh;
 	z-index: 1;
-	gap: 10rem;
-	/* @media screen and (min-width: 60rem) {
+	padding: 0 3rem;
+	@media screen and (min-width: 60rem) {
 		flex-direction: row;
-	} */
-	/* &::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(0, 0, 0, 0.5);
-		z-index: 0;
-	} */
+		padding: 8rem;
+	}
 `;
+
 const HeroInfoContainer = styled.div`
+	width: 100%;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	gap: 1rem;
-	padding: 3rem;
-	/* @media screen and (min-width: 60rem) {
-		align-items: flex-start;
-		text-align: left;
-	} */
-	font-weight: 600;
+	text-align: left;
+	align-items: flex-start;
+  font-size: .6rem;
+	@media screen and (min-width: 60rem) {
+    font-size: 1rem;
+	}
 	z-index: 10;
+	letter-spacing: 1px;
+	gap: 0.5rem;
 `;
 
-const HeroWelcome = styled.span`
+const HeroWelcome = styled(motion.span)`
 	font-size: 2em;
+	font-weight: bold;
 `;
 
-const HeroTitle = styled.h1`
+const HeroTitle = styled(motion.h1)`
+	font-size: 4em;
+`;
+
+const HeroSubtitle = styled(motion.h2)`
 	font-size: 2.5em;
 `;
 
-const HeroSubtitle = styled.h2`
-	font-size: 1.5em;
-`;
-
-const HeroExtra = styled.p`
-	font-size: 1.2em;
-`;
-
-const HeroContactContainer = styled.div`
-	margin: 5rem 0;
+const HeroButtonsContainer = styled(motion.div)`
 	display: flex;
 	flex-wrap: wrap;
-	place-content: center;
+	margin-top: 1rem;
 	gap: 1rem;
+  font-size: 0.8rem;
+	@media screen and (min-width: 60rem) {
+		font-size: 1rem;
+	}
 `;
 
-const HeroSocialContainer = styled.div`
+const HeroSocialContainer = styled(motion.div)`
+	margin-top: 1rem;
+
 	display: flex;
 	gap: 1rem;
-`;
-
-const HeroDecoration = styled.div`
-	z-index: 9;
 `;
 
 const HighlightText = styled.span`
-	color: #5bcefa;
+	font-weight: 800;
+
+	color: #ffd000;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: transparent;
+	background-image: linear-gradient(60deg, #ff00ea, #ffd000);
+	text-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
+`;
+const HeroDecoration = styled(motion.div)`
+	display: none;
+	position: relative;
+	width: fit-content;
+	height: fit-content;
+	justify-content: flex-end;
+	align-items: center;
+  overflow: none;
+	@media screen and (min-width: 60rem) {
+		display: flex;
+	}
+`;
+
+const HeroImage = styled.img`
+	width: 30rem;
+	height: 30rem;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	object-fit: cover;
+	opacity: 0.9;
+	border-radius: 50%;
+	filter: grayscale(50%);
 `;
 
 export const Hero = () => {
+
+
+	const wrapper = {
+		show: {
+			transition: {
+				staggerChildren: .1,
+			},
+		},
+	};
+
+	const title = {
+		hidden: { opacity: 0, x: -100 },
+		show: {
+			opacity: 1,
+			x: 0,
+			transition: {
+        type: 'spring'
+			},
+		},
+	};
+	const item = {
+		hidden: {
+			opacity: 0,
+			scale: 0,
+
+			// y: 100,
+		},
+		show: {
+			opacity: 1,
+			scale: 1,
+			// y: 0,
+
+			transition: {
+        type: 'spring'
+			},
+		},
+	};
 	return (
-		<HeroContainer
-			initial={{ opacity: 0, y: -50 }}
-			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 1, delay: 0.5 }}
-		>
+		<HeroContainer variants={wrapper} initial='hidden' whileInView='show' viewport={{ once: true }}>
 			<HeroInfoContainer>
-				<HeroWelcome>Hola, soy</HeroWelcome>
-				<HeroTitle>
-					<HighlightText>Brian Zelada</HighlightText>
+				<HeroWelcome variants={title}>Hola, soy</HeroWelcome>
+
+				<HeroTitle variants={title}>
+					<HighlightText>Brian</HighlightText> Zelada
 				</HeroTitle>
-				<HeroSubtitle>
+
+				<HeroSubtitle variants={title}>
 					<HighlightText>Desarrollador web </HighlightText>especializado en
 					<HighlightText> React</HighlightText>
 				</HeroSubtitle>
-				<HeroExtra>
-					En resumen creo <HighlightText>paginas web</HighlightText> con diseños
-					<HighlightText> unicos y funcionales</HighlightText>
-				</HeroExtra>
-				<HeroContactContainer>
-					<GlowButton>🚀 Contacto </GlowButton>
+
+				<HeroButtonsContainer variants={item}>
 					<GlowButtonFullColor>🚀 Contacto </GlowButtonFullColor>
-					<GlowButtonAlt>🚀 Contacto </GlowButtonAlt>
-					<GlowButton>📂 Proyectos </GlowButton>
-					<GlowButton>📄 Currículum </GlowButton>
-					<GlowButtonTextAlt>📄 Currículum </GlowButtonTextAlt>
-					<BaseGlowButton>📄 Currículum </BaseGlowButton>
-				</HeroContactContainer>
-				<HeroSocialContainer>
+					<GlowButtonAlt>📂 Proyectos </GlowButtonAlt>
+				</HeroButtonsContainer>
+
+				<HeroSocialContainer variants={item}>
 					<HeroSocialButton
 						url='https://github.com/ZBrian99'
 						src='src/assets/icons/linkedin-icon.svg'
@@ -131,6 +179,9 @@ export const Hero = () => {
 					/>
 				</HeroSocialContainer>
 			</HeroInfoContainer>
+			<HeroDecoration variants={item}>
+				<HeroImage src='src/assets/images/photo.webp'></HeroImage>
+			</HeroDecoration>
 			{/* <HeroAnimation /> */}
 		</HeroContainer>
 	);

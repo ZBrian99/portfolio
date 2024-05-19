@@ -13,6 +13,7 @@ import { CardsView } from './components/Test/CardsView';
 import { GlassCard } from './components/Test/GlassCard';
 import { Services } from './components/Services/Services';
 import { HomePage } from './pages/Home/HomePage';
+import { TestHero } from './components/Hero/TestHero';
 export const App = () => {
 	return (
 		<>
@@ -22,7 +23,7 @@ export const App = () => {
 			{/* <CardsView /> */}
 			{/* <GlassCard/> */}
 			<Hero />
-		
+      {/* <TestHero/> */}
 			<HomePage />
 			
 		</>

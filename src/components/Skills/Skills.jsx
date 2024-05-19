@@ -79,7 +79,7 @@ const SkillTooltip = styled.span`
 	position: absolute;
 	left: 50%;
 	top: 0%;
-	transform: translate(-50%, -132%);
+	transform: translate(-50%, -140%);
 	padding: 0.5rem 1rem;
 	border-radius: 0.5rem;
 	font-size: 0.9em;
@@ -107,10 +107,10 @@ const SkillTooltip = styled.span`
 
 
 const title = {
-	hidden: { opacity: 0, y: 100 },
+	hidden: { opacity: 0, x: -100 },
 	show: {
 		opacity: 1,
-		y: 0,
+		x: 0,
 		transition: {
 			duration: 1,
 		},

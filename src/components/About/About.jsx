@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 
 import styled from '@emotion/styled';
-import { motion, stagger } from 'framer-motion';
+import { delay, motion, stagger } from 'framer-motion';
 
 const AboutContainer = styled.section`
 	width: 100%;
@@ -154,25 +154,16 @@ const wrapper = {
 	},
 };
 const title = {
-	hidden: { opacity: 0, y: 100 },
+	hidden: { opacity: 0, x: -100 },
 	show: {
 		opacity: 1,
-		y: 0,
+		x: 0,
 		transition: {
 			duration: 1,
 		},
 	},
 };
-const text = {
-	hidden: { opacity: 0, y: 50 },
-	show: {
-		opacity: 1,
-		y: 0,
-		transition: {
-			duration: 1,
-		},
-	},
-};
+
 const image = {
 	hidden: { opacity: 0, x: 100 },
 	show: {
@@ -201,17 +192,17 @@ export const About = () => {
 						viewport={{ once: true }}
 					/>
 				</AboutImageContainer>
-				<AboutDescription variants={text} initial='hidden' whileInView='show' viewport={{ once: true }}>
+				<AboutDescription>
 					1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic repellat veritatis natus, eum facere
 					sit numquam perspiciatis, exercitationem maiores voluptatum ut distinctio quo et minus fugiat fugit
 					dicta sunt quaerat.
 				</AboutDescription>
-				<AboutDescription variants={text} initial='hidden' whileInView='show' viewport={{ once: true }}>
+				<AboutDescription>
 					2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt corporis dignissimos cumque
 					voluptates qui eius possimus animi. Soluta, odio quibusdam molestias ducimus labore aperiam alias
 					nisi, neque error, fugiat cumque.
 				</AboutDescription>
-				<AboutDescription variants={text} initial='hidden' whileInView='show' viewport={{ once: true }}>
+				<AboutDescription>
 					3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt corporis dignissimos cumque
 					voluptates qui eius possimus animi. Soluta, odio quibusdam molestias ducimus labore aperiam alias
 					nisi, neque error, fugiat cumque.

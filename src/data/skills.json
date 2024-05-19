@@ -6,14 +6,6 @@
 			"learned": true,
 			"type": "main"
 		},
-
-		{
-			"name": "Sass",
-			"src": "src/assets/icons/sass.svg",
-			"learned": true,
-			"type": "primary"
-		},
-
 		{
 			"name": "Styled Components",
 			"src": "src/assets/icons/styled-components.svg",
@@ -21,12 +13,11 @@
 			"type": "primary"
 		},
 		{
-			"name": "Framer Motion",
-			"src": "src/assets/icons/framer-motion.svg",
+			"name": "Sass",
+			"src": "src/assets/icons/sass.svg",
 			"learned": true,
 			"type": "primary"
 		},
-
 		{
 			"name": "JavaScript",
 			"src": "src/assets/icons/js.svg",
@@ -44,12 +35,6 @@
 			"src": "src/assets/icons/html.svg",
 			"learned": true,
 			"type": "primary"
-		},
-		{
-			"name": "Node",
-			"src": "src/assets/icons/nodejs.svg",
-			"learned": true,
-			"type": "secondary"
 		},
 		{
 			"name": "Github",
