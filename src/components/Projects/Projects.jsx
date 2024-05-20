@@ -34,18 +34,21 @@ const ProjectWrapper = styled.div`
 	justify-content: center;
 	/* background-color: #efff0b7a; */
 	width: 100%;
+
 	/* overflow: hidden; */
 
 	/* gap: 3rem; */
 `;
 
 const TiltContainer = styled(motion.div)`
+	text-decoration: none;
+	color: inherit;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	overflow: hidden;
 	position: relative;
-	background-color: blue;
+	/* background-color: blue; */
 	width: 100%;
 	height: calc(120vw * 9 / 16);
 	margin-bottom: 3rem;
@@ -63,16 +66,17 @@ const TiltCard = styled(Tilt)`
 	/* width: 100%;
 	width: 30rem;
 	height: 30rem;
-  
+
   */
 	/* text-align: center; */
+
 	position: absolute;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	transform-style: preserve-3d;
-	background-color: #ff260085;
+	/* background-color: #ff260085; */
 
 	text-align: center;
 	/* width: 129%; */
@@ -81,7 +85,6 @@ const TiltCard = styled(Tilt)`
 	height: calc(195vw * 9 / 16);
 
 	@media screen and (min-width: 40rem) {
-
 		width: 53rem;
 		height: 39rem;
 	}
@@ -113,6 +116,8 @@ const ProjectCard = styled.div`
 	/* background-image: url('src/assets/images/galaxy.png'); */
 	/* background-size: 100%; */
 	/* background-position-y: 100%; */
+	border: 1px solid rgba(255, 255, 255, 0.1);
+
 	&::before {
 		content: '';
 		position: absolute;
@@ -130,95 +135,147 @@ const ProjectCard = styled.div`
 		border-radius: 1rem;
 		width: 100%;
 		height: 100%;
-		z-index: 10;
 	}
 `;
 
-const ProjectImageZ = styled(motion.img)`
+const ProjectImage = styled(motion.img)`
 	width: 100%;
 	height: auto;
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 5;
 	border-radius: 1rem;
-	/* background-color: #ff0000; */
+	z-index: -1;
+	user-select: none;
+
 	/* background-image: url(${projects[0].image}); */
 	/* background-size: 100%; */
 	/* background-position-y: 100%; */
 `;
-
-const ProjectTitleZ = styled.h3`
-	font-size: 2em;
+const ProjectCardPerspective = styled.div`
+	width: 55%;
+	height: calc(80vw * 9 / 16);
+	/* width: 65%;
+	height: calc(100vw * 9 / 16); */
 	position: absolute;
-	width: 70%;
-	transform: translateX(-50%) translateZ(3rem);
+	/* background-color: #8000809b; */
+	transform: translateZ(5rem);
 
-	top: 32%;
-	left: 50%;
-
-	@media screen and (min-width: 50rem) {
-		top: 40%;
+	display: flex;
+	/* justify-content: space-between; */
+	flex-wrap: wrap;
+	/* justify-content: center; */
+	/* align-items: flex-start; */
+	/* flex-direction: column; */
+	text-shadow: 0 0 0.1rem rgba(0, 0, 0, 0.8), 0 0 0.5rem rgba(0, 0, 0, 0.6), 0 0 1.25rem rgba(0, 0, 0, 0.4);
+	@media screen and (min-width: 40rem) {
+		width: 30rem;
+		height: 16rem;
+		/* width: 35rem;
+		height: 20rem; */
+	}
+	font-size: 0.9rem;
+	@media screen and (min-width: 30rem) {
+		font-size: 1rem;
 	}
 `;
 
-const ProjectDescriptionZ = styled.p`
+const ProjectInfo = styled.div`
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+`;
+
+const ProjectTitle = styled.h3`
+	/* top: 32%; */
+	/* left: 50%; */
+	/* width: 80vw; */
+	/* position: absolute; */
+	/* transform: translateX(-50%) translateZ(3rem); */
+	font-size: 2em;
+
+	/* @media screen and (min-width: 50rem) {
+    top: 40%;
+	} */
+`;
+
+const ProjectDescription = styled.p`
+	/* top: 41%; */
+	/* left: 50%; */
+	/* width: 55%; */
+	/* position: absolute; */
+	/* transform: translateX(-50%) translateZ(3rem); */
 	font-size: 1em;
-	position: absolute;
-	width: 55%;
-	transform: translateX(-50%) translateZ(3rem);
+	/* text-shadow: 0 0 0.1rem rgba(0, 0, 0, 0.8), 0 0 0.5rem rgba(0, 0, 0, 0.6), 0 0 1.25rem rgba(0, 0, 0, 0.4); */
 
-	top: 41%;
-	left: 50%;
+	/* @media screen and (min-width: 50rem) {
+    top: 48%;
+	} */
+`;
 
-	@media screen and (min-width: 50rem) {
-		top: 48%;
-	}
+const PorjectBottom = styled.div`
+	width: 100%;
+	bottom: 0;
+	display: flex;
+	align-self: flex-end;
+	justify-content: space-between;
+	align-items: flex-end;
+	gap: 3rem;
+
+	/* display: none; */
 `;
 
 const ProjectTechnologies = styled.div`
-	transform: translate(-50%, -50%) translateZ(3rem);
-	position: absolute;
-	left: 27%;
+	/* top: 69%; */
+	/* left: 27%; */
+	/* width: 60%; */
+	/* background-color: #ffa60088; */
+
+	/* position: absolute; */
+	/* transform: translate(-50%, -50%) translateZ(3rem); */
 	display: flex;
 	justify-content: center;
-	width: 60%;
 	gap: 0.5rem;
-
-	top: 69%;
 	/* @media screen and (min-width: 50rem) {
-		top: 65%;
+    top: 65%;
 	} */
 `;
+
+const ProjectLinks = styled.div`
+	/* top: 69%; */
+	/* left: 75%; */
+	/* width: 60%; */
+	/* background-color: #71f37c89; */
+
+	/* position: absolute; */
+	/* transform: translate(-50%, -50%) translateZ(3rem); */
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	/* @media screen and (min-width: 50rem) {
+	} */
+`;
+
 const Technology = styled.div`
-	width: 2rem;
-	height: 2rem;
+	width: 1.5em;
+	height: 1.5em;
 `;
 const TechnologyImage = styled.img`
 	width: 100%;
 	height: auto;
 `;
 
-const ProjectLinks = styled.div`
-	transform: translate(-50%, -50%) translateZ(3rem);
-	position: absolute;
-	left: 75%;
-	top: 69%;
-	display: flex;
-	justify-content: center;
-	width: 60%;
-	gap: 0.5rem;
-	@media screen and (min-width: 50rem) {
-	}
-`;
 const WebLink = styled.a`
-	width: 2rem;
-	height: 2rem;
+	width: 2.2em;
+	height: 2.2em;
 	border-radius: 50%;
 `;
 const GithubLink = styled.a`
-	width: 2rem;
-	height: 2rem;
+	width: 2.2em;
+	height: 2.2em;
 	background-color: #0d1117;
 	border-radius: 50%;
 `;
@@ -285,6 +342,9 @@ export const Projects = () => {
 			<ProjectWrapper>
 				{projects.map((project, index) => (
 					<TiltContainer
+						href='https://projectwebsite.com'
+						target='_blank'
+						rel='noopener noreferrer'
 						variants={item}
 						key={index}
 						whileHover='scroll'
@@ -298,7 +358,7 @@ export const Projects = () => {
 					>
 						<TiltCard transitionSpeed={2000} tiltReverse={true}>
 							<ProjectCard>
-								<ProjectImageZ
+								<ProjectImage
 									src={project.image}
 									alt={project.name}
 									// animate={clicked ? 'scroll' : 'start'}
@@ -306,79 +366,32 @@ export const Projects = () => {
 									transition={{ duration: 0.5, ease: 'easeOut' }}
 								/>
 							</ProjectCard>
-							<ProjectTitleZ>{project.name}</ProjectTitleZ>
-							<ProjectDescriptionZ>{project.description}</ProjectDescriptionZ>
-							<ProjectTechnologies>
-								{project.technologies.map((technology, index) => (
-									<Technology key={index}>
-										<TechnologyImage src={`src/assets/icons/${technology}.svg`} alt={technology} />
-									</Technology>
-								))}
-							</ProjectTechnologies>
-							{/* <Technology>
-									<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-								</Technology>
-								<Technology>
-									<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-								</Technology>
-								<Technology>
-									<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-								</Technology>
-								<Technology>
-									<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-								</Technology>
-							</ProjectTechnologies> */}
-							<ProjectLinks>
-								<WebLink href={project.link}>
-									<LinkImage src='src/assets/icons/globe.svg' alt='Web' />
-								</WebLink>
-								<GithubLink href={project.repository}>
-									<LinkImage src='src/assets/icons/github-icon.svg' alt='Github' />
-								</GithubLink>
-							</ProjectLinks>
+							<ProjectCardPerspective>
+								<ProjectInfo>
+									<ProjectTitle>{project.name}</ProjectTitle>
+									<ProjectDescription>{project.description}</ProjectDescription>
+								</ProjectInfo>
+								<PorjectBottom>
+									<ProjectTechnologies>
+										{project.technologies.map((technology, index) => (
+											<Technology key={index}>
+												<TechnologyImage src={`src/assets/icons/${technology}.svg`} alt={technology} />
+											</Technology>
+										))}
+									</ProjectTechnologies>
+									<ProjectLinks>
+										<GithubLink href={project.repository}>
+											<LinkImage src='src/assets/icons/github-icon.svg' alt='Github' />
+										</GithubLink>
+										<WebLink href={project.link}>
+											<LinkImage src='src/assets/icons/globe.svg' alt='Web' />
+										</WebLink>
+									</ProjectLinks>
+								</PorjectBottom>
+							</ProjectCardPerspective>
 						</TiltCard>
 					</TiltContainer>
 				))}
-
-				{/* <TiltContainer whileHover='scroll' initial='hidden' whileInView='show' viewport={{ once: true }}>
-					<TiltCard transitionSpeed={2000} tiltReverse={true}>
-						<ProjectCard>
-							<ProjectImageZ
-								src='src/assets/images/lol.webp'
-								alt='Web'
-								variants={image}
-								transition={{ duration: 0 }}
-							/>
-						</ProjectCard>
-						<ProjectTitleZ>Lorem, ipsum dolor.</ProjectTitleZ>
-						<ProjectDescriptionZ>
-							Lorem ipsum dolor consectetur, adipisicing elit. Debitis, est! Maiores iste incidunt delectus
-							consectetur, nemo in Vitae amet molestiae eum!
-						</ProjectDescriptionZ>
-						<ProjectTechnologies>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-							<Technology>
-								<TechnologyImage src='src/assets/icons/globe.svg' alt='Web' />
-							</Technology>
-						</ProjectTechnologies>
-						<ProjectLinks>
-							<WebLink href='#'>
-								<LinkImage src='src/assets/icons/globe.svg' alt='Web' />
-							</WebLink>
-							<GithubLink href='#'>
-								<LinkImage src='src/assets/icons/github-icon.svg' alt='Github' />
-							</GithubLink>
-						</ProjectLinks>
-					</TiltCard>
-				</TiltContainer> */}
 			</ProjectWrapper>
 		</ProjectsContainer>
 	);
