@@ -13,7 +13,7 @@ const HomeWrapper = styled.div`
 	max-width: 80rem;
 	margin: auto;
 	gap: 15rem;
-	/* overflow: hidden; */
+	overflow: hidden;
 	padding-top: 10rem;
 	@media screen and (min-width: 60rem) {
 		/* padding: 1rem 5rem; */

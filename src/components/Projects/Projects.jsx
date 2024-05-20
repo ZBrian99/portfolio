@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Tilt from 'react-parallax-tilt';
 
 import { projects } from '../../data/projects';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const ProjectsContainer = styled.section`
 	width: 100%;
@@ -160,7 +160,7 @@ const ProjectCardPerspective = styled.div`
 	position: absolute;
 	/* background-color: #8000809b; */
 	transform: translateZ(5rem);
-
+	padding: 0 1rem;
 	display: flex;
 	/* justify-content: space-between; */
 	flex-wrap: wrap;
@@ -174,7 +174,7 @@ const ProjectCardPerspective = styled.div`
 		/* width: 35rem;
 		height: 20rem; */
 	}
-	font-size: 0.9rem;
+	font-size: 0.8rem;
 	@media screen and (min-width: 30rem) {
 		font-size: 1rem;
 	}
@@ -185,6 +185,7 @@ const ProjectInfo = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	justify-content: flex-end;
 	align-items: center;
 	gap: 0.5rem;
 `;
@@ -325,45 +326,84 @@ const image = {
 		transition: {
 			duration: 8,
 			repeat: Infinity,
-			// repeatType: 'mirror',
 			repeatDelay: 2,
 		},
 	},
 };
+const getTechnologyIcon = (technology) => {
+	switch (technology) {
+		case 'React':
+			return 'src/assets/icons/react.svg';
+		case 'Redux':
+			return 'src/assets/icons/redux.svg';
+		case 'Node':
+			return 'src/assets/icons/nodejs.svg';
+		case 'Sass':
+			return 'src/assets/icons/sass.svg';
+		case 'Styled Components':
+			return 'src/assets/icons/styled-components.svg';
+		case 'Framer Motion':
+			return 'src/assets/icons/framer-motion.svg';
+		case 'HTML':
+			return 'src/assets/icons/html.svg';
+		case 'CSS':
+			return 'src/assets/icons/css.svg';
+		case 'JavaScript':
+			return 'src/assets/icons/js.svg';
+
+		default:
+			return '';
+	}
+};
 
 export const Projects = () => {
-	const [clicked, setClicked] = useState(false);
+	const [activeCard, setActiveCard] = useState(null);
 
+	const projectContainerRef = useRef(null);
+
+	useEffect(() => {
+		const handleClickOutside = (event) => {
+			if (projectContainerRef.current && !projectContainerRef.current.contains(event.target)) {
+				setActiveCard(null);
+			}
+		};
+
+		document.addEventListener('touchstart', handleClickOutside);
+
+		return () => {
+			document.removeEventListener('touchstart', handleClickOutside);
+		};
+	}, []);
+
+	const handleImageClick = (index) => {
+		setActiveCard(index);
+	};
 	return (
-		<ProjectsContainer>
+		<ProjectsContainer ref={projectContainerRef}>
 			<ProjectsTitle variants={title} initial='hidden' whileInView='show' viewport={{ once: true }}>
 				Proyectos
 			</ProjectsTitle>
 			<ProjectWrapper>
 				{projects.map((project, index) => (
 					<TiltContainer
-						href='https://projectwebsite.com'
-						target='_blank'
-						rel='noopener noreferrer'
-						variants={item}
 						key={index}
-						whileHover='scroll'
-						// onHoverStart={() => setClicked(true)}
-						// onHoverEnd={() => setClicked(false)}
-						// onTouchStart={() => setClicked(true)}
-						// onTouchEnd={() => setClicked(false)}
+						variants={item}
 						initial='hidden'
+						whileHover='scroll'
 						whileInView='show'
+						animate={activeCard === index ? 'scroll' : 'start'}
 						viewport={{ once: true }}
+						onTouchStart={() => handleImageClick(index)}
 					>
 						<TiltCard transitionSpeed={2000} tiltReverse={true}>
 							<ProjectCard>
 								<ProjectImage
 									src={project.image}
 									alt={project.name}
-									// animate={clicked ? 'scroll' : 'start'}
 									variants={image}
-									transition={{ duration: 0.5, ease: 'easeOut' }}
+									transition={{
+										duration: 0.5,
+									}}
 								/>
 							</ProjectCard>
 							<ProjectCardPerspective>
@@ -375,7 +415,7 @@ export const Projects = () => {
 									<ProjectTechnologies>
 										{project.technologies.map((technology, index) => (
 											<Technology key={index}>
-												<TechnologyImage src={`src/assets/icons/${technology}.svg`} alt={technology} />
+												<TechnologyImage src={getTechnologyIcon(technology)} alt={technology} />
 											</Technology>
 										))}
 									</ProjectTechnologies>

@@ -19,9 +19,12 @@ const HeroContainer = styled(motion.section)`
 	max-width: 100rem;
 	height: 100svh;
 	z-index: 1;
-	padding: 1rem 3rem 0;
+	padding: 1rem 2rem;
 	@media screen and (min-width: 60rem) {
 		flex-direction: row;
+		padding: 1rem 4rem 0;
+	}
+	@media screen and (min-width: 80rem) {
 		padding: 1rem 8rem 0;
 	}
 `;
@@ -45,7 +48,7 @@ const HeroInfoContainer = styled.div`
 	gap: 0.5rem;
 `;
 
-const HeroWelcome = styled(motion.span)`
+const HeroWelcome = styled(motion.p)`
 	font-size: 2em;
 	font-weight: bold;
 `;
@@ -100,8 +103,8 @@ const HeroDecoration = styled(motion.div)`
 `;
 
 const HeroImage = styled.img`
-	width: 30rem;
-	height: 30rem;
+	width: 20rem;
+	height: 20rem;
 	border: 1px solid rgba(255, 255, 255, 0.1);
 	object-fit: cover;
 	opacity: 0.9;

@@ -1,18 +1,6 @@
 {
 	"projects": [
 		{
-			"name": "Task Management System",
-			"description": "A web application to efficiently manage tasks and projects.",
-			"date": "2022-05-15",
-			"link": "https://example.com/task-management-system",
-			"image": "src/assets/images/lol.webp",
-
-			"video": "https://youtube.com/embed/video1",
-			"repository": "https://github.com/user/task-project",
-			"technologies": ["React", "Node.js", "MongoDB"],
-			"status": "completed"
-		},
-		{
 			"name": "E-commerce Platform",
 			"description": "A comprehensive platform for online sales, with payment integrations and inventory management.",
 			"date": "2022-09-30",
@@ -21,7 +9,7 @@
 
 			"video": "https://youtube.com/embed/video2",
 			"repository": "https://github.com/user/e-commerce-platform",
-			"technologies": ["React", "Redux", "Node.js", "MongoDB"],
+			"technologies": ["React", "Redux", "Node", "Sass"],
 			"status": "in progress"
 		},
 		{
@@ -32,7 +20,7 @@
 			"image": "src/assets/images/project_2.webp",
 			"video": "https://youtube.com/embed/video3",
 			"repository": "https://github.com/user/travel-app",
-			"technologies": ["React Native", "Firebase"],
+			"technologies": ["React", "Styled Components"],
 			"status": "completed"
 		},
 		{
@@ -43,7 +31,7 @@
 			"image": "src/assets/images/project_3.webp",
 
 			"repository": "https://github.com/user/learning-platform",
-			"technologies": ["React", "Django", "PostgreSQL"],
+			"technologies": ["React", "Styled Components", "Framer Motion"],
 			"status": "in progress"
 		},
 		{
@@ -62,10 +50,10 @@
 			"description": "A mobile application to search for travel destinations, book accommodations, and plan itineraries.",
 			"date": "2023-03-20",
 			"link": "https://example.com/travel-app",
-			"image": "src/assets/images/project_0.webp",
+			"image": "src/assets/images/project_5.webp",
 			"video": "https://youtube.com/embed/video3",
 			"repository": "https://github.com/user/travel-app",
-			"technologies": ["React Native", "Firebase"],
+			"technologies": ["React", "Redux", "Node", "Sass"],
 			"status": "completed"
 		}
 	]
