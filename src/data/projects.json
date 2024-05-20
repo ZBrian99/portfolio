@@ -17,7 +17,7 @@
 			"description": "A comprehensive platform for online sales, with payment integrations and inventory management.",
 			"date": "2022-09-30",
 			"link": "https://example.com/e-commerce-platform",
-			"image": "src/assets/images/lol.webp",
+			"image": "src/assets/images/project_1.webp",
 
 			"video": "https://youtube.com/embed/video2",
 			"repository": "https://github.com/user/e-commerce-platform",
@@ -29,7 +29,7 @@
 			"description": "A mobile application to search for travel destinations, book accommodations, and plan itineraries.",
 			"date": "2023-03-20",
 			"link": "https://example.com/travel-app",
-			"image": "src/assets/images/lol.webp",
+			"image": "src/assets/images/project_2.webp",
 			"video": "https://youtube.com/embed/video3",
 			"repository": "https://github.com/user/travel-app",
 			"technologies": ["React Native", "Firebase"],
@@ -40,7 +40,7 @@
 			"description": "A web platform for online courses with multimedia content and student progress tracking.",
 			"date": "2023-08-10",
 			"link": "https://example.com/learning-platform",
-			"image": "src/assets/images/lol.webp",
+			"image": "src/assets/images/project_3.webp",
 
 			"repository": "https://github.com/user/learning-platform",
 			"technologies": ["React", "Django", "PostgreSQL"],
@@ -51,10 +51,21 @@
 			"description": "An interactive quiz game with questions and answers on various topics.",
 			"date": "2024-01-05",
 			"link": "https://example.com/quiz-game",
-			"image": "src/assets/images/lol.webp",
+			"image": "src/assets/images/project_4.webp",
 
 			"repository": "https://github.com/user/quiz-game",
 			"technologies": ["HTML", "CSS", "JavaScript"],
+			"status": "completed"
+		},
+		{
+			"name": "Travel App",
+			"description": "A mobile application to search for travel destinations, book accommodations, and plan itineraries.",
+			"date": "2023-03-20",
+			"link": "https://example.com/travel-app",
+			"image": "src/assets/images/project_0.webp",
+			"video": "https://youtube.com/embed/video3",
+			"repository": "https://github.com/user/travel-app",
+			"technologies": ["React Native", "Firebase"],
 			"status": "completed"
 		}
 	]

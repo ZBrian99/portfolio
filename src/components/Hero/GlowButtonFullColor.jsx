@@ -29,8 +29,11 @@ const ButtonStyled = styled.button`
 	position: relative;
 	border-radius: 2rem;
 	color: #fff;
-	text-shadow: 0 0 0.3rem rgba(0, 0, 0, .3);
-	padding: 1rem 2rem;
+	text-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.3);
+  padding: 0.75rem 1.5rem;
+	@media screen and (min-width: 60rem) {
+    padding: 1rem 2rem;
+	}
 	font-size: 1em;
 	background-image: linear-gradient(60deg, ${gradientColors});
 	background-size: 200%;
@@ -48,7 +51,7 @@ const ButtonStyled = styled.button`
 		background-size: 200%;
 
 		border-radius: 2rem;
-		filter: blur(.5rem);
+		filter: blur(0.5rem);
 		opacity: 0;
 		transition: opacity 0.3s ease;
 		animation: ${glowing} 2s linear infinite;
@@ -67,7 +70,6 @@ const ButtonStyled = styled.button`
 	}
 
 	&:hover {
-
 		animation-play-state: running;
 	}
 

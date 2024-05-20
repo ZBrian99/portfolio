@@ -32,7 +32,7 @@ const ProjectWrapper = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	background-color: #efff0b7a;
+	/* background-color: #efff0b7a; */
 	width: 100%;
 	/* overflow: hidden; */
 
@@ -43,23 +43,19 @@ const TiltContainer = styled(motion.div)`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* overflow: hidden; */
+	overflow: hidden;
 	position: relative;
 	background-color: blue;
 	width: 100%;
-	height: 24rem;
+	height: calc(120vw * 9 / 16);
 	margin-bottom: 3rem;
-	@media screen and (min-width: 40rem) {
+	/* @media screen and (min-width: 40rem) {
 		width: 34rem;
 		height: 24rem;
-		/* width: 30rem; */
-		/* height: 20rem; */
-	}
-	@media screen and (min-width: 50rem) {
+	} */
+	@media screen and (min-width: 40rem) {
 		width: 39rem;
-		height: 29rem;
-		/* width: 39rem; */
-		/* height: 25rem; */
+		height: 24rem;
 	}
 `;
 
@@ -76,22 +72,18 @@ const TiltCard = styled(Tilt)`
 	justify-content: center;
 	align-items: center;
 	transform-style: preserve-3d;
-	background-color: #fbff0085;
+	background-color: #ff260085;
 
 	text-align: center;
-	width: 129%;
-	height: 36rem;
+	/* width: 129%; */
+	/* height: 30rem; */
+	width: 135%;
+	height: calc(195vw * 9 / 16);
 
 	@media screen and (min-width: 40rem) {
-		background-color: #33ff0085;
-		width: 44rem;
-		height: 36rem;
-	}
-	@media screen and (min-width: 50rem) {
-		background-color: #ff000053;
 
-		width: 52rem;
-		height: 43rem;
+		width: 53rem;
+		height: 39rem;
 	}
 `;
 
@@ -101,45 +93,44 @@ const ProjectCard = styled.div`
 	align-items: center;
 	gap: 1rem;
 	border-radius: 1rem;
-	width: 71%;
-	height: 20rem;
+	width: 65%;
+	height: calc(100vw * 9 / 16);
+	/* height: 15rem; */
 	position: relative;
 	overflow: hidden;
+
 	@media screen and (min-width: 40rem) {
-		width: 30rem;
+		width: 35rem;
 		height: 20rem;
 	}
-	@media screen and (min-width: 50rem) {
-		width: 35rem;
-		height: 25rem;
-	}
+
 	text-align: center;
 	/* border: 1px solid rgba(255, 255, 255, 0.1); */
 	background-color: rgba(255, 255, 255, 0.1);
 	/* background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1)); */
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
 
-	background-image: url('src/assets/images/galaxy.png');
-	background-size: 100%;
-	background-position-y: 100%;
+	/* background-image: url('src/assets/images/galaxy.png'); */
+	/* background-size: 100%; */
+	/* background-position-y: 100%; */
 	&::before {
 		content: '';
 		position: absolute;
-		width: 71%;
-		height: 20rem;
+		width: 65%;
+		height: calc(100vw * 9 / 16);
 		@media screen and (min-width: 40rem) {
-			width: 30rem;
+			width: 35rem;
 			height: 20rem;
 		}
-		@media screen and (min-width: 50rem) {
+		/* @media screen and (min-width: 50rem) {
 			width: 35rem;
 			height: 25rem;
-		}
+		} */
 		background: rgba(0, 0, 0, 0.3);
 		border-radius: 1rem;
 		width: 100%;
 		height: 100%;
-		z-index: 1;
+		z-index: 10;
 	}
 `;
 
@@ -149,7 +140,7 @@ const ProjectImageZ = styled(motion.img)`
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 10;
+	z-index: 5;
 	border-radius: 1rem;
 	/* background-color: #ff0000; */
 	/* background-image: url(${projects[0].image}); */
@@ -167,7 +158,7 @@ const ProjectTitleZ = styled.h3`
 	left: 50%;
 
 	@media screen and (min-width: 50rem) {
-		top: 35%;
+		top: 40%;
 	}
 `;
 
@@ -181,23 +172,23 @@ const ProjectDescriptionZ = styled.p`
 	left: 50%;
 
 	@media screen and (min-width: 50rem) {
-		top: 43%;
+		top: 48%;
 	}
 `;
 
 const ProjectTechnologies = styled.div`
 	transform: translate(-50%, -50%) translateZ(3rem);
 	position: absolute;
-	left: 50%;
+	left: 27%;
 	display: flex;
 	justify-content: center;
 	width: 60%;
 	gap: 0.5rem;
 
-	top: 62%;
-	@media screen and (min-width: 50rem) {
+	top: 69%;
+	/* @media screen and (min-width: 50rem) {
 		top: 65%;
-	}
+	} */
 `;
 const Technology = styled.div`
 	width: 2rem;
@@ -211,14 +202,13 @@ const TechnologyImage = styled.img`
 const ProjectLinks = styled.div`
 	transform: translate(-50%, -50%) translateZ(3rem);
 	position: absolute;
-	left: 50%;
-	top: 70%;
+	left: 75%;
+	top: 69%;
 	display: flex;
 	justify-content: center;
 	width: 60%;
 	gap: 0.5rem;
 	@media screen and (min-width: 50rem) {
-		top: 72%;
 	}
 `;
 const WebLink = styled.a`
@@ -236,7 +226,6 @@ const LinkImage = styled.img`
 	width: 100%;
 	height: auto;
 `;
-
 
 const title = {
 	hidden: { opacity: 0, x: -100 },
@@ -286,7 +275,7 @@ const image = {
 };
 
 export const Projects = () => {
-const [clicked, setClicked] = useState(false);
+	const [clicked, setClicked] = useState(false);
 
 	return (
 		<ProjectsContainer>
@@ -300,9 +289,9 @@ const [clicked, setClicked] = useState(false);
 						key={index}
 						whileHover='scroll'
 						// onHoverStart={() => setClicked(true)}
-            // onHoverEnd={() => setClicked(false)}
-            // onTouchStart={() => setClicked(true)}
-            // onTouchEnd={() => setClicked(false)}
+						// onHoverEnd={() => setClicked(false)}
+						// onTouchStart={() => setClicked(true)}
+						// onTouchEnd={() => setClicked(false)}
 						initial='hidden'
 						whileInView='show'
 						viewport={{ once: true }}

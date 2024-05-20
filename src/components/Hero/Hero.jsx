@@ -19,10 +19,10 @@ const HeroContainer = styled(motion.section)`
 	max-width: 100rem;
 	height: 100svh;
 	z-index: 1;
-	padding: 0 3rem;
+	padding: 1rem 3rem 0;
 	@media screen and (min-width: 60rem) {
 		flex-direction: row;
-		padding: 8rem;
+		padding: 1rem 8rem 0;
 	}
 `;
 
@@ -36,9 +36,9 @@ const HeroInfoContainer = styled.div`
 	text-align: center;
 	text-align: left;
 	align-items: flex-start;
-  font-size: .6rem;
+	font-size: 0.7rem;
 	@media screen and (min-width: 60rem) {
-    font-size: 1rem;
+		font-size: 1rem;
 	}
 	z-index: 10;
 	letter-spacing: 1px;
@@ -51,11 +51,14 @@ const HeroWelcome = styled(motion.span)`
 `;
 
 const HeroTitle = styled(motion.h1)`
-	font-size: 4em;
+	font-size: 4.5em;
 `;
 
 const HeroSubtitle = styled(motion.h2)`
-	font-size: 2.5em;
+	font-size: 3em;
+`;
+const HeroExtra = styled(motion.h2)`
+	font-size: 1.5em;
 `;
 
 const HeroButtonsContainer = styled(motion.div)`
@@ -63,10 +66,7 @@ const HeroButtonsContainer = styled(motion.div)`
 	flex-wrap: wrap;
 	margin-top: 1rem;
 	gap: 1rem;
-  font-size: 0.8rem;
-	@media screen and (min-width: 60rem) {
-		font-size: 1rem;
-	}
+	font-size: 1rem;
 `;
 
 const HeroSocialContainer = styled(motion.div)`
@@ -93,7 +93,7 @@ const HeroDecoration = styled(motion.div)`
 	height: fit-content;
 	justify-content: flex-end;
 	align-items: center;
-  overflow: none;
+	overflow: none;
 	@media screen and (min-width: 60rem) {
 		display: flex;
 	}
@@ -110,12 +110,10 @@ const HeroImage = styled.img`
 `;
 
 export const Hero = () => {
-
-
 	const wrapper = {
 		show: {
 			transition: {
-				staggerChildren: .1,
+				staggerChildren: 0.1,
 			},
 		},
 	};
@@ -126,7 +124,7 @@ export const Hero = () => {
 			opacity: 1,
 			x: 0,
 			transition: {
-        type: 'spring'
+				type: 'spring',
 			},
 		},
 	};
@@ -143,7 +141,7 @@ export const Hero = () => {
 			// y: 0,
 
 			transition: {
-        type: 'spring'
+				type: 'spring',
 			},
 		},
 	};
@@ -157,9 +155,11 @@ export const Hero = () => {
 				</HeroTitle>
 
 				<HeroSubtitle variants={title}>
-					<HighlightText>Desarrollador web </HighlightText>especializado en
-					<HighlightText> React</HighlightText>
+					<HighlightText> Desarrollador web</HighlightText>
 				</HeroSubtitle>
+				<HeroExtra variants={title}>
+					Transformo <HighlightText>ideas</HighlightText> en sitios web<HighlightText> atractivos</HighlightText> y<HighlightText> funcionales</HighlightText>
+				</HeroExtra>
 
 				<HeroButtonsContainer variants={item}>
 					<GlowButtonFullColor>🚀 Contacto </GlowButtonFullColor>

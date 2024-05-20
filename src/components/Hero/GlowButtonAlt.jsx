@@ -9,7 +9,10 @@ const ButtonStyled = styled.button`
 	border-radius: 2rem;
 	color: #fff;
 	text-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-	padding: 1rem 2rem;
+  padding: 0.75rem 1.5rem;
+	@media screen and (min-width: 60rem) {
+    padding: 1rem 2rem;
+	}
 	font-size: 1em;
 	background-color: transparent;
 	box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
