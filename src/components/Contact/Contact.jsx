@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { ContactForm } from './ContactForm';
-import { ContactMeteor } from './ContactMeteor';
 
 const ContactContainer = styled.div`
 	display: flex;
@@ -17,8 +16,7 @@ export const Contact = () => {
 	return (
 		<>
 			{/* <ContactContainer> */}
-				{/* <ContactMeteor /> */}
-				<ContactForm />
+			<ContactForm />
 			{/* </ContactContainer> */}
 		</>
 	);

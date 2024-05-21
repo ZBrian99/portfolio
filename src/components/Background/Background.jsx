@@ -1,6 +1,4 @@
 import styled from '@emotion/styled';
-import { StarsBackground } from './StarsBackground';
-import { WavesBackground } from './WavesBackground';
 import { NebulaBackground } from './NebulaBackground';
 const BackgroundContainer = styled.div`
 	position: absolute;

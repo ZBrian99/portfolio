@@ -1,12 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { HeroButton } from './HeroButton';
 import { HeroSocialButton } from './HeroSocialButton';
-import { HeroAnimation } from './HeroAnimation';
-import { GlowButton } from './GlowButton';
-import { GlowButtonTextAlt } from './GlowButtonTextAlt';
-import { BaseGlowButton } from './BaseGlowButton';
 import { GlowButtonFullColor } from './GlowButtonFullColor';
 import { GlowButtonAlt } from './GlowButtonAlt';
 
