@@ -29,7 +29,7 @@ const AboutWrapper = styled(motion.div)`
 		padding: 3rem;
 	}
 	/* flex-direction: column; */
-	gap: 1rem;
+	gap: 5rem;
 	/* overflow: hidden; */
 
 	border-radius: 1rem;
@@ -58,7 +58,9 @@ const AboutInfo = styled.div`
 	flex-direction: column;
 	gap: 1rem;
 	padding-top: 6rem;
+  width: 70%;
 	@media screen and (min-width: 60rem) {
+    width: 100%;
 		padding: 0;
 	}
 
