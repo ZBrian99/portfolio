@@ -25,7 +25,7 @@ export const HomePage = () => {
 	return (
 		<HomeWrapper>
 			<About />
-			<Skills />
+			{/* <Skills /> */}
 			<Services />
 			<Projects />
 			<Contact />

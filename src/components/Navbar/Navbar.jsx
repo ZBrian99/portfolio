@@ -6,7 +6,7 @@ const NavbarContainer = styled(motion.nav)`
 	width: 100%;
 	height: 4rem;
 	padding: 0 2rem;
-	background-color: #111;
+	background-color: #111111;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;

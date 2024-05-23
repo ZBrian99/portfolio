@@ -29,18 +29,17 @@ const ButtonStyled = styled.button`
 	position: relative;
 	border-radius: 2rem;
 	color: #fff;
-	text-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.3);
-  padding: 0.75rem 1.5rem;
+	text-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.2);
+	padding: 0.75rem 1.5rem;
 	@media screen and (min-width: 60rem) {
-    padding: 1rem 2rem;
+		padding: 1rem 2rem;
 	}
 	font-size: 1em;
 	background-image: linear-gradient(60deg, ${gradientColors});
 	background-size: 200%;
-
+	animation: ${glowing} 3s linear infinite;
 	font-weight: bold;
-	transition: transform 0.1s ease;
-	animation: ${glowing} 2s linear infinite;
+	transition: transform 0.2s ease;
 	animation-play-state: paused;
 
 	&:before {
@@ -54,7 +53,7 @@ const ButtonStyled = styled.button`
 		filter: blur(0.5rem);
 		opacity: 0;
 		transition: opacity 0.3s ease;
-		animation: ${glowing} 2s linear infinite;
+		animation: ${glowing} 3s linear infinite;
 		animation-play-state: paused;
 	}
 
@@ -70,6 +69,7 @@ const ButtonStyled = styled.button`
 	}
 
 	&:hover {
+
 		animation-play-state: running;
 	}
 

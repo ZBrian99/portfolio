@@ -9,13 +9,16 @@ const ButtonStyled = styled.button`
 	border-radius: 2rem;
 	color: #fff;
 	text-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-  padding: 0.75rem 1.5rem;
+	padding: 0.75rem 1.5rem;
+	background-color: rgba(255, 255, 255, 0.1);
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
 	@media screen and (min-width: 60rem) {
-    padding: 1rem 2rem;
+		padding: 1rem 2rem;
 	}
 	font-size: 1em;
 	background-color: transparent;
-	box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.1);
+
 	transition: border 0.1s ease, transform 0.1s ease;
 	position: relative;
 	&:before {
@@ -25,11 +28,11 @@ const ButtonStyled = styled.button`
 		inset: 0;
 		position: absolute;
 		border-radius: 2rem;
-		border: 1px solid rgba(255, 255, 255, 0.1);
+		border: 1px solid rgba(255, 255, 255, 0.2);
 	}
 
 	&:hover:before {
-		border: 1px solid rgba(255, 255, 255, 0.2);
+		border: 1px solid rgba(255, 255, 255, 0.4);
 	}
 
 	&:active {

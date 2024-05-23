@@ -30,35 +30,42 @@ const SkillsTitle = styled(motion.h3)`
 const SkillsWrapper = styled(motion.div)`
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	/* justify-content: center; */
 	gap: 1rem;
+  padding: 1rem 0;
 `;
 
 const Skill = styled(motion.div)`
 	position: relative;
-	width: 4rem;
-	height: 4rem;
+	width: 2rem;
+	height: 2rem;
 	/* background-color: #333;
 	background: radial-gradient(at right bottom, #111, #333);
 	box-shadow: 0 0 0.1rem 0.1rem #555 inset;
 	 */
 
 	border-radius: 1rem;
-	border: 1px solid rgba(255, 255, 255, 0.1);
-	background-color: rgba(255, 255, 255, 0.1);
+	/* border: 1px solid rgba(255, 255, 255, 0.1); */
 	/* background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1)); */
 
 	/* background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
-	background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+	/* filter: grayscale(30%); */
+	opacity: 0.7;
+
+	/* background-color: rgba(255, 255, 255, 0.1); */
+	/* background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)); */
 
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	gap: 0.5rem;
+	/* gap: 0.5rem; */
 	/* background-color: red; */
-	opacity: 0.9;
+	/* opacity: 0.9; */
 	&:hover {
+		/* filter: grayscale(0%); */
+		opacity: 1;
+
 		& > .SkillTooltip {
 			opacity: 1;
 		}
@@ -72,7 +79,7 @@ const SkillImage = styled.img`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 0.7rem;
+	/* padding: 0.7rem; */
 `;
 
 const SkillTooltip = styled.span`
@@ -87,13 +94,12 @@ const SkillTooltip = styled.span`
 	transition: opacity 0.2s ease;
 	pointer-events: none;
 	opacity: 0;
-	z-index: 100;
-	box-shadow: 0 0 1rem rgba(255, 255, 255, 0.5);
+
+	box-shadow: 0 0 0.5rem 0.1rem rgba(255, 255, 255, 0.1);
 
 	border-radius: 0.5rem;
 	background-color: #222;
 	background: linear-gradient(135deg, #333, #111);
-
 	&::before {
 		content: '';
 		position: absolute;
@@ -104,7 +110,6 @@ const SkillTooltip = styled.span`
 		border-color: #222 transparent transparent transparent;
 	}
 `;
-
 
 const title = {
 	hidden: { opacity: 0, x: -100 },
@@ -150,26 +155,44 @@ const item = {
 
 export const Skills = () => {
 	return (
-		<SkillsContainer>
-			<SkillsTitle variants={title} initial='hidden' whileInView='show' viewport={{ once: true }}>
-				Tecnologías
-			</SkillsTitle>
-			<SkillsWrapper variants={wrapper} initial='hidden' whileInView='show' viewport={{ once: true }}>
-				{skills.map((skill, index) => (
-					<Skill
-						viewport={{ once: true }}
-						key={index}
-						variants={item}
-						whileHover={{
-							y: -5,
-							opacity: 1,
-						}}
-					>
-						<SkillTooltip className='SkillTooltip'>{skill.name}</SkillTooltip>
-						<SkillImage src={skill.src} alt={skill.name} />
-					</Skill>
-				))}
-			</SkillsWrapper>
-		</SkillsContainer>
+		<SkillsWrapper
+		// variants={wrapper} initial='hidden' whileInView='show' viewport={{ once: true }}
+		>
+			{skills.map((skill, index) => (
+				<Skill
+				key={index}
+				// viewport={{ once: true }}
+				// variants={item}
+				// whileHover={{
+				// 	y: -5,
+				// 	opacity: 1,
+				// }}
+				>
+					<SkillTooltip className='SkillTooltip'>{skill.name}</SkillTooltip>
+					<SkillImage src={skill.src} alt={skill.name} />
+				</Skill>
+			))}
+		</SkillsWrapper>
+		// <SkillsContainer>
+		// 	<SkillsTitle variants={title} initial='hidden' whileInView='show' viewport={{ once: true }}>
+		// 		Tecnologías
+		// 	</SkillsTitle>
+		// 	<SkillsWrapper variants={wrapper} initial='hidden' whileInView='show' viewport={{ once: true }}>
+		// 		{skills.map((skill, index) => (
+		// 			<Skill
+		// 				viewport={{ once: true }}
+		// 				key={index}
+		// 				variants={item}
+		// 				whileHover={{
+		// 					y: -5,
+		// 					opacity: 1,
+		// 				}}
+		// 			>
+		// 				<SkillTooltip className='SkillTooltip'>{skill.name}</SkillTooltip>
+		// 				<SkillImage src={skill.src} alt={skill.name} />
+		// 			</Skill>
+		// 		))}
+		// 	</SkillsWrapper>
+		// </SkillsContainer>
 	);
 };

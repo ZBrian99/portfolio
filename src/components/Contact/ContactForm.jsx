@@ -11,7 +11,7 @@ const FormContainer = styled.section`
 	height: 100%;
 	gap: 3rem;
 	position: relative;
-	padding: 1rem;
+	padding: 2rem;
 	border-radius: 1rem;
 	/* border: 1px solid rgba(255, 255, 255, 0.1);
 	background-color: rgba(255, 255, 255, 0.1);
@@ -139,7 +139,6 @@ const SuccessMessage = styled.div`
 	font-size: 0.8rem;
 	margin-top: 1rem;
 `;
-
 
 const title = {
 	hidden: { opacity: 0, x: -100 },
