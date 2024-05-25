@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
 
 const StyledLink = styled.a`
 	width: 3em;
@@ -25,6 +24,7 @@ const StyledLink = styled.a`
 const Image = styled.img`
 	width: 100%;
 	height: 100%;
+  /* border-radius: 50%; */
 `;
 
 export const HeroSocialButton = ({ src, name, url }) => {

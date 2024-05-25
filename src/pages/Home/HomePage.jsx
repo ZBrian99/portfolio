@@ -11,24 +11,37 @@ const HomeWrapper = styled.div`
 	flex-wrap: wrap;
 	width: 100%;
 	max-width: 80rem;
+	/* background-color: #faebd730; */
 	margin: auto;
-	gap: 15rem;
 	overflow: hidden;
-	padding-top: 10rem;
-	@media screen and (min-width: 60rem) {
-		/* padding: 1rem 5rem; */
-		padding-top: 10rem;
-	}
+	/* gap: 15rem; */
+	/* padding-top: 10rem; */
+	/* @media screen and (min-width: 60rem) { */
+	/* padding: 1rem 5rem; */
+	/* padding-top: 10rem; */
+	/* } */
 `;
 
 export const HomePage = () => {
 	return (
 		<HomeWrapper>
-			<About />
 			{/* <Skills /> */}
-			<Services />
-			<Projects />
-			<Contact />
+			{/* <Services /> */}
+
+			{/* <Projects />
+			<div
+				style={{
+					backgroundColor: '#d48217a7',
+					width: '100%',
+					height: '100vh',
+					margin: '0 2rem',
+          transform: 'translateY(-60%)',
+          zIndex: -1,
+          maxWidth: '84rem',
+				}}
+			></div> */}
+			<About />
+			{/* <Contact /> */}
 		</HomeWrapper>
 	);
 };

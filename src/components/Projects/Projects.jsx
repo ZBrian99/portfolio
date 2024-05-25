@@ -4,10 +4,11 @@ import { motion } from 'framer-motion';
 import { projects } from '../../data/projects';
 import { useEffect, useRef, useState } from 'react';
 import { ProjectCard } from './ProjectCard';
+import { ProjectCardTest } from './ProjectCardTest';
 
 const ProjectsContainer = styled.section`
 	width: 100%;
-	max-width: 120rem;
+	/* max-width: 120rem; */
 	margin: auto;
 	display: flex;
 	flex-direction: column;
@@ -31,8 +32,19 @@ const ProjectsTitle = styled(motion.h3)`
 const ProjectWrapper = styled.div`
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-between;
 	width: 100%;
+	position: relative;
+	gap: 1rem;
+	/* display: grid; */
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* @media screen and (min-width: 70rem){
+    
+    grid-template-columns: repeat(2, 1fr);
+  }
+	max-width: 84rem; */
+
+	/* background-color: purple; */
 `;
 
 const title = {
@@ -47,7 +59,6 @@ const title = {
 };
 
 export const Projects = () => {
-
 	const [activeCard, setActiveCard] = useState(null);
 
 	const projectContainerRef = useRef(null);

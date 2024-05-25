@@ -5,8 +5,11 @@ import { HeroSocialButton } from './HeroSocialButton';
 import { GlowButtonFullColor } from '../GlowButtonFullColor';
 import { GlowButtonAlt } from '../GlowButtonAlt';
 import { HeroPhoto } from './HeroPhoto';
+import { ProfileImage } from '../About/ProfileImage';
 
 const HeroContainer = styled(motion.section)`
+	/* background-color: #8b993e76; */
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -14,9 +17,8 @@ const HeroContainer = styled(motion.section)`
 	margin: 0 auto;
 	width: 100%;
 	margin-top: 4rem;
-	max-width: 100rem;
+	max-width: 80rem;
 	padding: 0rem 2rem;
-	gap: 1rem;
 	position: relative;
 	@media screen and (min-width: 60rem) {
 		flex-direction: row;
@@ -26,10 +28,11 @@ const HeroContainer = styled(motion.section)`
 `;
 
 const HeroInfoContainer = styled.div`
+	/* background-color: #3e789976; */
+	flex: 0.80;
 	width: 100%;
 	height: 100%;
 	min-height: calc(100svh - 4rem);
-	flex: 1;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -199,6 +202,7 @@ export const Hero = () => {
 				</HeroSocialContainer>
 			</HeroInfoContainer>
 			<HeroPhoto />
+			{/* <ProfileImage /> */}
 		</HeroContainer>
 	);
 };

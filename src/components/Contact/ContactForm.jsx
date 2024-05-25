@@ -2,47 +2,20 @@ import { useState, useRef, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 
-const FormContainer = styled.section`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	height: 100%;
-	gap: 3rem;
-	position: relative;
-	padding: 2rem;
-	border-radius: 1rem;
-	/* border: 1px solid rgba(255, 255, 255, 0.1);
-	background-color: rgba(255, 255, 255, 0.1);
-	background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1)); */
-`;
-
-const FormTitle = styled(motion.h3)`
-	width: 100%;
-	text-align: center;
-	font-size: 3em;
-
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
-	color: transparent;
-	text-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
-	background-image: linear-gradient(60deg, #ff00ea, #ffd000);
-`;
 
 const Form = styled(motion.form)`
 	display: flex;
 	flex-direction: column;
-	padding: 1rem 2rem 3rem;
+	/* padding: 1rem 2rem 3rem; */
 	border-radius: 1rem;
 	width: 100%;
 	max-width: 50rem;
 	text-align: center;
-	border: 1px solid rgba(255, 255, 255, 0.1);
+	/* border: 1px solid rgba(255, 255, 255, 0.1); */
 
-	background-color: rgba(255, 255, 255, 0.1);
+	/* background-color: rgba(255, 255, 255, 0.1); */
 
-	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+	/* background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
 
 	@media screen and (min-width: 50rem) {
 		padding: 3rem 5rem 5rem;
@@ -237,42 +210,39 @@ export const ContactForm = () => {
 	};
 
 	return (
-		<FormContainer>
-			<FormTitle variants={title} initial='hidden' whileInView='show' viewport={{ once: true }}>
-				Contactame
-			</FormTitle>
-			<Form
-				variants={wrapper}
-				initial='hidden'
-				whileInView='show'
-				viewport={{ once: true }}
-				onSubmit={handleSubmit}
-			>
-				<FormInput
-					type='text'
-					placeholder='Nombre'
-					value={name}
-					onChange={(e) => handleInputChange(e, setName)}
-				/>
-				{errors.name && <ErrorMessage>{errors.name}</ErrorMessage>}
-				<FormInput
-					type='text'
-					placeholder='Mail'
-					value={email}
-					onChange={(e) => handleInputChange(e, setEmail)}
-				/>
-				{errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
-				<FormTextArea
-					ref={textareaRef}
-					placeholder='Mensaje'
-					value={message}
-					onChange={(e) => handleInputChange(e, setMessage)}
-					rows={1}
-				/>
-				{errors.message && <ErrorMessage>{errors.message}</ErrorMessage>}
-				<FormSubmit type='submit' value='Enviar' />
-				{formSubmitted && <SuccessMessage>Mensaje enviado con éxito</SuccessMessage>}
-			</Form>
-		</FormContainer>
+
+				<Form
+					variants={wrapper}
+					initial='hidden'
+					whileInView='show'
+					viewport={{ once: true }}
+					onSubmit={handleSubmit}
+				>
+					<FormInput
+						type='text'
+						placeholder='Nombre'
+						value={name}
+						onChange={(e) => handleInputChange(e, setName)}
+					/>
+					{errors.name && <ErrorMessage>{errors.name}</ErrorMessage>}
+					<FormInput
+						type='text'
+						placeholder='Mail'
+						value={email}
+						onChange={(e) => handleInputChange(e, setEmail)}
+					/>
+					{errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
+					<FormTextArea
+						ref={textareaRef}
+						placeholder='Mensaje'
+						value={message}
+						onChange={(e) => handleInputChange(e, setMessage)}
+						rows={1}
+					/>
+					{errors.message && <ErrorMessage>{errors.message}</ErrorMessage>}
+					<FormSubmit type='submit' value='Enviar' />
+					{formSubmitted && <SuccessMessage>Mensaje enviado con éxito</SuccessMessage>}
+				</Form>
+	
 	);
 };

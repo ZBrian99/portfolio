@@ -12,7 +12,7 @@ export const Background = () => {
 			// <StarsBackground />
     // {/* <WavesBackground /> */}
     <>
-    <NebulaBackground />
+    {/* <NebulaBackground /> */}
     </>
 		// </BackgroundContainer>
 	);

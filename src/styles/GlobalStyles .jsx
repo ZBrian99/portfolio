@@ -35,7 +35,7 @@ export const GlobalStyles = () => (
 					radial-gradient(at 5% 68%, hsl(234, 47%, 49%) 0px, transparent 50%),
 					radial-gradient(at 33% 73%, hsl(99, 98%, 46%) 0px, transparent 50%);  */
 				/* padding: 100rem 0; */
-				min-height: 500vh;
+				min-height: 100vh;
 				/* background-image: url('src/assets/images/background.png'); */
 				/* background-repeat: no-repeat; */
 				/* background-position: center; */

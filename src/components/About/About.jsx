@@ -2,163 +2,139 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { GlowButtonAlt } from '../GlowButtonAlt';
 import { Skills } from '../Skills/Skills';
+import { HeroSocialButton } from '../Hero/HeroSocialButton';
+import { ContactForm } from '../Contact/ContactForm';
+import { ProfileImage } from './ProfileImage';
+import { HeroPhoto } from '../Hero/HeroPhoto';
 
 const AboutContainer = styled.section`
 	/* max-width: 68rem; */
-	padding: 0 1rem;
-
+	/* margin-top: 30rem; */
 	display: flex;
+	/* flex-wrap: wrap; */
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-
-	gap: 3rem;
+  width: 100%;
+	@media screen and (min-width: 30rem) {
+		padding: 0 2rem;
+	}
 	/* overflow: hidden; */
 `;
 
 const AboutWrapper = styled(motion.div)`
-	width: 100%;
+	/* background-color: rgba(255, 255, 255, 0.05); */
+	/* background-color: rgba(255, 255, 255, 0.05); */
+  /* overflow: hidden; */
 
 	display: flex;
-	justify-content: center;
-	align-items: center;
 	flex-direction: column;
-	padding: 2rem;
-	@media screen and (min-width: 60rem) {
-		flex-direction: row;
-		padding: 3rem;
-	}
+	/* background-color: cadetblue; */
+
 	/* flex-direction: column; */
-	gap: 5rem;
 	/* overflow: hidden; */
-
-	border-radius: 1rem;
-
+	/* position: relative; */
+	/* border-radius: 1rem; */
 	/* padding: 6rem 2rem 3rem; */
 	/* padding-bottom: 17rem; */
 
 	/* overflow: hidden; */
 
-	/* @media screen and (min-width: 60rem) {
-		padding: 3rem 2rem;
-		padding-right: 21rem;
-		width: 90%;
-	} */
 	/* @media screen and (min-width: 70rem) {
 		padding-right: 17rem;
 	} */
 
-	border: 1px solid rgba(255, 255, 255, 0.1);
-	background-color: rgba(255, 255, 255, 0.1);
-	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+	/* border: 1px solid rgba(255, 255, 255, 0.1); */
+	/* background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
+	position: relative;
+
+  padding: 10rem 2rem 2rem;
+  padding: 10rem 3rem 3rem;
+  @media screen and (min-width: 30rem) {
+    
+    border-radius: 1rem;
+
+  }
+	/* border: 1px solid rgba(255, 255, 255, 0.1); */
+	/* background-color: rgba(255, 255, 255, 0.1); */
+	/* background-color: rgba(255, 255, 255, 0.05); */
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+	
+	@media screen and (min-width: 60rem) {
+		padding: 3rem;
+		gap: 3rem;
+		/* background: transparent; */
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
 `;
+
+const AboutImageContainer = styled.div`
+	display: flex;
+  width: 100%;
+  max-width: 18rem;
+  /* background-color: #80008061; */
+  `;
 
 const AboutInfo = styled.div`
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	/* align-items: center; */
+	/* margin: 0 auto; */
 	gap: 1rem;
-	padding-top: 6rem;
-  width: 70%;
-	@media screen and (min-width: 60rem) {
-    width: 100%;
-		padding: 0;
-	}
+  flex: 1;
+	/* padding-top: 6rem; */
+	/* width: 70%; */
+	/* @media screen and (min-width: 60rem) { */
+	/* width: 100%; */
+	/* padding: 0; */
+	/* } */
 
-	/* border: 1px solid rgba(255, 255, 255, 0.1);
-	background-color: rgba(255, 255, 255, 0.1);
-	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
+	background-color: rgba(255, 255, 255, 0.05);
+	padding: 3rem;
+	border-radius: 1rem;
 `;
 
-const AboutCV = styled.div`
-	/* max-width: fit-content; */
+const AboutContact = styled.div`
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+
 	gap: 1rem;
-	margin-right: auto;
-	/* border: 1px solid rgba(255, 255, 255, 0.1); */
-	/* background-color: rgba(255, 255, 255, 0.1); */
-	/* background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
 `;
 
 const AboutTitle = styled(motion.h3)`
 	width: 100%;
 	text-align: center;
 	font-size: 3em;
+	margin-bottom: 10rem;
 
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	color: transparent;
 	text-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
 	background-image: linear-gradient(60deg, #ff00ea, #ffd000);
+
+  @media screen and (min-width: 60rem){
+    margin-bottom: 3rem;
+  }
 `;
 
 const AboutDescription = styled(motion.p)`
 	font-size: 1em;
-	width: 100%;
-	max-width: 60ch;
+	/* width: 100%; */
 `;
 
-const CircularImageContainer = styled.div`
-	display: none;
-
-	width: 10rem;
-	height: 10rem;
-	position: absolute;
-	top: -5rem;
-	left: 50%;
-	transform: translateX(-50%);
-	border: 1px solid rgba(255, 255, 255, 0.1);
-	border-radius: 50%;
-	filter: grayscale(30%);
-	backdrop-filter: blur(1rem);
-	overflow: hidden;
-`;
-
-const Image = styled.img`
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-`;
-
-const AboutImageContainer = styled.div`
-	width: 10rem;
-	height: 10rem;
+const AboutSide = styled.div`
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: relative;
-	user-select: none;
-	/* background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0)); */
-	/* background-color: red; */
-	&::before {
-		content: '';
-		position: absolute;
-		inset: -20%;
-
-		background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0));
-		border-radius: 50%;
-		z-index: -1;
-
-		box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.1);
-	}
-	border-radius: 50%;
-	/* border: 1px solid rgba(255, 255, 255, 0.1); */
+	flex-direction: column;
+	margin: 0 3rem;
+	/* justify-content: space-between; */
+	/* gap: 1rem; */
+	/* background-color: #15800060; */
+	/* flex: 0.4; */
 `;
 
-const HeroImage = styled.img`
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	border-radius: 50%;
-	/* backdrop-filter: blur(1rem); */
-	/* backdrop-filter: blur(1rem); */
-	/* background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
-	background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
-	/* background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)); */
-	box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.1);
-`;
 const wrapper = {
 	hidden: { opacity: 0, y: 100 },
 	show: {
@@ -196,13 +172,17 @@ const image = {
 export const About = () => {
 	return (
 		<AboutContainer>
-			{/* <AboutTitle variants={title} initial='hidden' whileInView='show' viewport={{ once: true }}> */}
-			{/* Sobre mí */}
-			{/* </AboutTitle> */}
-			<AboutWrapper variants={wrapper} initial='hidden' whileInView='show' viewport={{ once: true }}>
-				{/* <CircularImageContainer>
-					<Image src='src/assets/images/photo.webp' alt='Circular' />
-				</CircularImageContainer> */}
+			<AboutTitle
+        // variants={title} initial='hidden' whileInView='show' viewport={{ once: true }}
+      >
+			Sobre mí
+			</AboutTitle>
+			<AboutWrapper
+			// variants={wrapper} initial='hidden' whileInView='show' viewport={{ once: true }}
+			>
+				<AboutImageContainer>
+					<ProfileImage />
+				</AboutImageContainer>
 				<AboutInfo>
 					<AboutDescription>
 						1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic repellat veritatis natus, eum
@@ -222,17 +202,11 @@ export const About = () => {
 					<Skills />
 					<GlowButtonAlt>📄 Curriculum </GlowButtonAlt>
 				</AboutInfo>
-				<AboutCV>
-					<AboutImageContainer>
-						<HeroImage
-							src='src/assets/images/photo.webp'
-							variants={image}
-							initial='hidden'
-							whileInView='show'
-							viewport={{ once: true }}
-						/>
-					</AboutImageContainer>
-				</AboutCV>
+				{/* <AboutSide>
+					<HeroPhoto />
+
+				</AboutSide> */}
+				{/* <ContactForm /> */}
 			</AboutWrapper>
 		</AboutContainer>
 	);

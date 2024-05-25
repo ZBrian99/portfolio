@@ -10,14 +10,16 @@ const TiltContainer = styled(motion.div)`
 	align-items: center;
 	overflow: hidden;
 	position: relative;
-	/* background-color: #0000ff88; */
 	width: 100%;
 	height: calc(120vw * 9 / 16);
-	margin-bottom: 3rem;
+	margin-bottom: 2rem;
 
 	@media screen and (min-width: 40rem) {
 		width: 39rem;
 		height: 24rem;
+	}
+	@media screen and (max-width: 1247px) {
+		margin: auto;
 	}
 `;
 
@@ -60,7 +62,7 @@ const ProjectCardStyled = styled.div`
 	background-color: rgba(255, 255, 255, 0.1);
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
 
-	border: 1px solid rgba(255, 255, 255, 0.1);
+	/* border: 1px solid rgba(255, 255, 255, 0.1); */
 
 	&::before {
 		content: '';
