@@ -15,9 +15,13 @@ const AboutContainer = styled.section`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-  width: 100%;
+	width: 100%;
+	gap: 3rem;
 	@media screen and (min-width: 30rem) {
-		padding: 0 2rem;
+		/* padding: 0 1rem; */
+	}
+	@media screen and (min-width: 50rem) {
+		/* padding: 0; */
 	}
 	/* overflow: hidden; */
 `;
@@ -25,8 +29,8 @@ const AboutContainer = styled.section`
 const AboutWrapper = styled(motion.div)`
 	/* background-color: rgba(255, 255, 255, 0.05); */
 	/* background-color: rgba(255, 255, 255, 0.05); */
-  /* overflow: hidden; */
-
+	/* overflow: hidden; */
+	height: min-content;
 	display: flex;
 	flex-direction: column;
 	/* background-color: cadetblue; */
@@ -47,21 +51,25 @@ const AboutWrapper = styled(motion.div)`
 	/* border: 1px solid rgba(255, 255, 255, 0.1); */
 	/* background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
 	position: relative;
-
-  padding: 10rem 2rem 2rem;
-  padding: 10rem 3rem 3rem;
-  @media screen and (min-width: 30rem) {
-    
-    border-radius: 1rem;
-
-  }
+	padding: 0 2rem;
+	/* padding: 10rem 2rem 2rem; */
+	/* padding: 10rem 3rem 3rem; */
+	@media screen and (min-width: 30rem) {
+		/* padding: 2rem; */
+		border-radius: 1rem;
+	}
+	@media screen and (min-width: 45rem) {
+		padding: 0 3rem;
+	}
 	/* border: 1px solid rgba(255, 255, 255, 0.1); */
 	/* background-color: rgba(255, 255, 255, 0.1); */
+
 	/* background-color: rgba(255, 255, 255, 0.05); */
-	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-	
-	@media screen and (min-width: 60rem) {
-		padding: 3rem;
+	/* background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05)); */
+
+	@media screen and (min-width: 50rem) {
+		padding: 0 2rem;
+		/* background-color: rgba(255, 255, 255, 0.1); */
 		gap: 3rem;
 		/* background: transparent; */
 		flex-direction: row;
@@ -71,11 +79,27 @@ const AboutWrapper = styled(motion.div)`
 `;
 
 const AboutImageContainer = styled.div`
-	display: flex;
-  width: 100%;
-  max-width: 18rem;
-  /* background-color: #80008061; */
-  `;
+display: none;
+	@media screen and (min-width: 50rem) {
+		display: flex;
+		border-radius: 1rem;
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+		opacity: 0.9;
+		filter: grayscale(50%);
+		/* max-width: 18rem; */
+		background-color: #80008061;
+		/* flex: 1; */
+		flex: 0.5;
+	}
+`;
+
+const AboutImage = styled.img`
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+`;
 
 const AboutInfo = styled.div`
 	display: flex;
@@ -84,7 +108,9 @@ const AboutInfo = styled.div`
 	/* align-items: center; */
 	/* margin: 0 auto; */
 	gap: 1rem;
-  flex: 1;
+	flex: 1;
+
+	max-width: 65ch;
 	/* padding-top: 6rem; */
 	/* width: 70%; */
 	/* @media screen and (min-width: 60rem) { */
@@ -92,8 +118,8 @@ const AboutInfo = styled.div`
 	/* padding: 0; */
 	/* } */
 
-	background-color: rgba(255, 255, 255, 0.05);
-	padding: 3rem;
+	/* background-color: rgba(255, 255, 255, 0.05); */
+	/* padding: 3rem; */
 	border-radius: 1rem;
 `;
 
@@ -107,7 +133,7 @@ const AboutTitle = styled(motion.h3)`
 	width: 100%;
 	text-align: center;
 	font-size: 3em;
-	margin-bottom: 10rem;
+	/* margin-bottom: 10rem; */
 
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -115,9 +141,9 @@ const AboutTitle = styled(motion.h3)`
 	text-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
 	background-image: linear-gradient(60deg, #ff00ea, #ffd000);
 
-  @media screen and (min-width: 60rem){
-    margin-bottom: 3rem;
-  }
+	@media screen and (min-width: 60rem) {
+		/* margin-bottom: 3rem; */
+	}
 `;
 
 const AboutDescription = styled(motion.p)`
@@ -173,15 +199,17 @@ export const About = () => {
 	return (
 		<AboutContainer>
 			<AboutTitle
-        // variants={title} initial='hidden' whileInView='show' viewport={{ once: true }}
-      >
-			Sobre mí
+			// variants={title} initial='hidden' whileInView='show' viewport={{ once: true }}
+			>
+				Sobre mí
 			</AboutTitle>
 			<AboutWrapper
 			// variants={wrapper} initial='hidden' whileInView='show' viewport={{ once: true }}
 			>
 				<AboutImageContainer>
-					<ProfileImage />
+					{/* <AboutImage src='src/assets/images/about_20.jpg' /> */}
+					<AboutImage src='src/assets/images/about_4.jpg' />
+					{/* <ProfileImage /> */}
 				</AboutImageContainer>
 				<AboutInfo>
 					<AboutDescription>

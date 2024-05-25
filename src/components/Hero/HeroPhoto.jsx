@@ -170,7 +170,14 @@ export const HeroPhoto = () => {
 			</PhotoLink>
 			{/* <AboutImage src='src/assets/images/photo.webp' alt='photo' /> */}
 			{/* <AboutImage src='src/assets/images/ai (2).jpg' alt='photo' /> */}
-			<AboutImage src='src/assets/images/finalr2.png' alt='photo' />
+			{/* <AboutImage src='src/assets/images/finalr2.png' alt='photo' /> */}
+			{/* <AboutImage src='src/assets/images/finalr_1.png' alt='photo' /> */}
+			{/* <AboutImage src='src/assets/images/finalr_2.png' alt='photo' /> */}
+			{/* <AboutImage src='src/assets/images/fr1.jpg' alt='photo' /> */}
+			<AboutImage src='src/assets/images/ffrr.png' alt='photo' />
+
+
+			{/* <AboutImage src='src/assets/images/ffrrh.png' alt='photo' /> */}
 		</HeroImageContainer>
 	);
 };
