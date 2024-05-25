@@ -5,22 +5,33 @@ import { HeroSocialButton } from './HeroSocialButton';
 import { GlowButtonFullColor } from '../GlowButtonFullColor';
 import { GlowButtonAlt } from '../GlowButtonAlt';
 import { HeroPhoto } from './HeroPhoto';
-import { ProfileImage } from '../About/ProfileImage';
 
 const HeroContainer = styled(motion.section)`
 	/* background-color: #8b993e76; */
 
 	display: flex;
-	justify-content: center;
 	align-items: center;
-	flex-direction: column;
+	justify-content: flex-end;
+	/* justify-content: center; */
+	flex-direction: column-reverse;
+	text-align: center;
 	margin: 0 auto;
 	width: 100%;
-	margin-top: 4rem;
+	/* margin-top: 4rem; */
+	/* gap: 1rem; */
+	/* margin-top: 8rem; */
 	max-width: 80rem;
-	padding: 0rem 2rem;
+	padding: 4rem 2rem 0;
 	position: relative;
+	min-height: 100svh;
+	/* min-height: calc(100svh - 4rem); */
+	@media screen and (min-width: 50rem) {
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+  }
 	@media screen and (min-width: 60rem) {
+		/* margin-top: 4rem; */
 		flex-direction: row;
 	}
 	@media screen and (min-width: 80rem) {
@@ -29,34 +40,35 @@ const HeroContainer = styled(motion.section)`
 
 const HeroInfoContainer = styled.div`
 	/* background-color: #3e789976; */
-	flex: 0.80;
+	/* flex: 0.8; */
 	width: 100%;
 	height: 100%;
-	min-height: calc(100svh - 4rem);
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	/* justify-content: center; */
 	align-items: center;
-	text-align: center;
-	text-align: left;
-	align-items: flex-start;
+	/* text-align: center; */
+	/* text-align: left; */
+	/* align-items: flex-start; */
 	font-size: 0.7rem;
-
-	@media screen and (min-width: 32rem) {
-		font-size: 1rem;
-	}
-	@media screen and (min-width: 60rem) {
-		font-size: 1rem;
-		width: 50%;
-	}
 	z-index: 10;
 	letter-spacing: 1px;
 	gap: 0.5rem;
+	@media screen and (min-width: 50rem) {
+    align-items: flex-start;
+    font-size: 0.9rem;
+	}
+	@media screen and (min-width: 60rem) {
+		font-size: 1rem;
+
+		font-size: 1rem;
+	}
 `;
 
 const HeroWelcome = styled(motion.p)`
 	font-size: 2em;
 	font-weight: bold;
+	/* display: none; */
 `;
 
 const HeroTitle = styled(motion.h1)`
@@ -89,7 +101,6 @@ const HeroSocialContainer = styled(motion.div)`
 
 const HighlightText = styled.span`
 	font-weight: 800;
-
 	color: #ffd000;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -99,81 +110,20 @@ const HighlightText = styled.span`
 `;
 
 export const Hero = () => {
-	const wrapper = {
-		show: {
-			transition: {
-				staggerChildren: 0.1,
-			},
-		},
-	};
-
-	const title = {
-		// hidden: { opacity: 0, x: -100 },
-		// show: {
-		// 	opacity: 1,
-		// 	x: 0,
-		// 	transition: {
-		// 		type: 'spring',
-		// 	},
-		// },
-		hidden: {
-			// opacity: 0,
-			scale: 0,
-		},
-		show: {
-			// opacity: 1,
-			scale: 1,
-
-			transition: {
-				durarion: 1,
-				type: 'spring',
-			},
-		},
-	};
-	const item = {
-		hidden: {
-			// opacity: 0,
-			scale: 0,
-		},
-		show: {
-			// opacity: 1,
-			scale: 1,
-
-			transition: {
-				durarion: 1,
-				type: 'spring',
-			},
-		},
-	};
 	return (
-		<HeroContainer
-		// variants={wrapper} initial='hidden' whileInView='show' viewport={{ once: true }}
-		>
+		<HeroContainer>
 			<HeroInfoContainer>
-				<HeroWelcome
+				<HeroWelcome>Hola! Soy</HeroWelcome>
+				{/* <HeroWelcome>Hola, soy</HeroWelcome> */}
 
-				// variants={title}
-				>
-					Hola, soy
-				</HeroWelcome>
-
-				<HeroTitle
-
-				// variants={title}
-				>
+				<HeroTitle>
 					<HighlightText>Brian</HighlightText> Zelada
 				</HeroTitle>
 
-				<HeroSubtitle
-
-				// variants={title}
-				>
+				<HeroSubtitle>
 					<HighlightText> Desarrollador web</HighlightText>
 				</HeroSubtitle>
-				<HeroExtra
-
-				// variants={title}
-				>
+				<HeroExtra>
 					Transformo <HighlightText>ideas</HighlightText> en sitios web
 					<HighlightText> atractivos</HighlightText> y<HighlightText> funcionales</HighlightText>
 				</HeroExtra>
@@ -183,7 +133,7 @@ export const Hero = () => {
 					<GlowButtonAlt>📂 Proyectos </GlowButtonAlt>
 				</HeroButtonsContainer>
 
-				<HeroSocialContainer>
+				{/* <HeroSocialContainer>
 					<HeroSocialButton
 						url='https://github.com/ZBrian99'
 						src='src/assets/icons/linkedin-icon.svg'
@@ -194,15 +144,9 @@ export const Hero = () => {
 						src='src/assets/icons/github-icon.svg'
 						name='github'
 					/>
-					{/* <HeroSocialButton
-						url='https://github.com/ZBrian99'
-						src='src/assets/icons/cv_8.svg'
-						name='github'
-					/> */}
-				</HeroSocialContainer>
+				</HeroSocialContainer> */}
 			</HeroInfoContainer>
 			<HeroPhoto />
-			{/* <ProfileImage /> */}
 		</HeroContainer>
 	);
 };

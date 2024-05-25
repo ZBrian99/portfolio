@@ -5,15 +5,20 @@ import { useEffect, useState } from 'react';
 const NavbarContainer = styled(motion.nav)`
 	width: 100%;
 	height: 4rem;
-	padding: 0 2rem;
-	background-color: #111111;
 	display: flex;
-	justify-content: space-between;
+	/* justify-content: space-between; */
+	justify-content: flex-end;
 	align-items: center;
 	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 1000;
+	backdrop-filter: blur(1rem);
+	/* background-color: #111111; */
+	@media screen and (min-width: 60rem) {
+		padding: 0 2rem;
+		background-color: #111111;
+	}
 `;
 
 const NavBrand = styled(motion.a)`
@@ -65,12 +70,23 @@ const NavItem = styled(motion.div)`
 
 const MenuToggle = styled(motion.div)`
 	display: none;
+
 	@media screen and (max-width: 60rem) {
 		display: block;
 		font-size: 1.5rem;
 		color: #fff;
 		cursor: pointer;
 		user-select: none;
+		background-color: #222;
+		padding: 1rem;
+		width: 4rem;
+		height: 4rem;
+		margin: 2rem 1rem 0 0;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		/* border: 1px solid red; */
 	}
 `;
 
@@ -121,7 +137,7 @@ export const Navbar = () => {
 
 	return (
 		<NavbarContainer initial={{ y: -100 }} animate={{ y: 0 }} transition={{ ease: 'easeOut', duration: 0.5 }}>
-			<NavBrand>Portfolio</NavBrand>
+			{/* <NavBrand>Portfolio</NavBrand> */}
 
 			{isMobile && <MenuToggle onClick={toggleMenu}>{isOpen === 'open' ? 'X' : '☰'}</MenuToggle>}
 

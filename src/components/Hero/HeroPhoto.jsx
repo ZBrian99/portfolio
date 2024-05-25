@@ -2,18 +2,22 @@ import styled from '@emotion/styled';
 
 const HeroImageContainer = styled.div`
 	/* background-color: #993e9976; */
-	width: 100%;
-	margin: 3rem auto;
-	max-width: 15rem;
+	/* width: 100%; */
+	margin: 3rem;
+	/* max-width: 15rem; */
+	max-width: 25vh;
+	/* width: 30svh; */
 	aspect-ratio: 1 / 1;
+  @media screen and (min-width: 50rem) {
+      max-width: 25%;
+    }
 	/* width: 55%; */
-	/* height: 55%; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	position: relative;
 	user-select: none;
-  /* overflow: hidden; */
+	/* overflow: hidden; */
 	&::before {
 		content: '';
 		position: absolute;
@@ -89,7 +93,7 @@ const AboutImage = styled.img`
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-  /* object-position: center; */
+	/* object-position: center; */
 	/* object-position: top; */
 	border-radius: 50%;
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
