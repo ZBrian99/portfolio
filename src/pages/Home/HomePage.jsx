@@ -14,7 +14,7 @@ const HomeWrapper = styled.div`
 	/* background-color: #faebd730; */
 	margin: auto;
 	overflow: hidden;
-  /* gap: 10rem; */
+  gap: 10rem;
 	/* gap: 15rem; */
 	/* padding-top: 10rem; */
 	/* @media screen and (min-width: 60rem) { */
@@ -28,7 +28,7 @@ export const HomePage = () => {
 		<HomeWrapper>
 			{/* <Skills /> */}
 			{/* <Services /> */}
-			<Projects />
+			{/* <Projects /> */}
 			{/*
 			<div
 				style={{
@@ -42,6 +42,8 @@ export const HomePage = () => {
 				}}
 			></div> */}
 			<About />
+			<Projects />
+
 			<Contact />
 		</HomeWrapper>
 	);

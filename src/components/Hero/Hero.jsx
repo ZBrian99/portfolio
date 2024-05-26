@@ -17,19 +17,22 @@ const HeroContainer = styled(motion.section)`
 	text-align: center;
 	margin: 0 auto;
 	width: 100%;
-	/* margin-top: 4rem; */
+	margin-top: 4rem;
 	/* gap: 1rem; */
 	/* margin-top: 8rem; */
 	max-width: 80rem;
-	padding: 4rem 2rem 0;
+	padding: 0 2rem;
+	/* padding: 4rem 2rem 0; */
 	position: relative;
 	min-height: 100svh;
+	margin-bottom: 10rem;
 	/* min-height: calc(100svh - 4rem); */
 	@media screen and (min-width: 50rem) {
-    flex-direction: row;
-    justify-content: flex-start;
-    text-align: left;
-  }
+    margin-top: 0rem;
+		flex-direction: row;
+		justify-content: flex-start;
+		text-align: left;
+	}
 	@media screen and (min-width: 60rem) {
 		/* margin-top: 4rem; */
 		flex-direction: row;
@@ -55,8 +58,8 @@ const HeroInfoContainer = styled.div`
 	letter-spacing: 1px;
 	gap: 0.5rem;
 	@media screen and (min-width: 50rem) {
-    align-items: flex-start;
-    font-size: 0.9rem;
+		align-items: flex-start;
+		font-size: 0.9rem;
 	}
 	@media screen and (min-width: 60rem) {
 		font-size: 1rem;

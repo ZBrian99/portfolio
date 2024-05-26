@@ -73,6 +73,7 @@ const AboutWrapper = styled(motion.div)`
 		gap: 3rem;
 		/* background: transparent; */
 		flex-direction: row;
+		/* flex-direction: row-reverse; */
 		justify-content: center;
 		align-items: center;
 	}

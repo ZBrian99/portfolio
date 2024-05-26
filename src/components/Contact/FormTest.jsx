@@ -31,8 +31,6 @@ const Container = styled.div`
 	} */
 		padding: 0 1rem;
 
-		/* background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
-
 		/* gap: 3rem; */
 
 		flex-direction: row;
@@ -41,6 +39,9 @@ const Container = styled.div`
 	}
 	@media (min-width: 50rem) {
 		padding: 0rem;
+	}
+	@media (min-width: 60rem) {
+		/* background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
 	}
 `;
 
@@ -69,8 +70,8 @@ const ContactInfo = styled.div`
 		flex-wrap: wrap;
 	}
 	@media (min-width: 60rem) {
-		padding: 3rem;
-		background-color: rgba(255, 255, 255, 0.05);
+		/* padding: 3rem; */
+		/* background-color: rgba(255, 255, 255, 0.05); */
 	}
   /* background-color: rgba(255, 255, 255, 0.05); */
 `;
@@ -170,9 +171,9 @@ const FormContainer = styled.div`
 	}
 	@media (min-width: 60rem) {
     max-width: 40rem;
-		padding: 3rem;
+		/* padding: 3rem; */
 
-		background-color: rgba(255, 255, 255, 0.05);
+		/* background-color: rgba(255, 255, 255, 0.05); */
 	}
 `;
 
