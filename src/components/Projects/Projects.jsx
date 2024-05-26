@@ -35,7 +35,7 @@ const ProjectWrapper = styled.div`
 	justify-content: space-between;
 	width: 100%;
 	position: relative;
-	gap: 1rem;
+	gap: 3rem;
 	/* display: grid; */
   /* grid-template-columns: repeat(3, 1fr); */
   /* @media screen and (min-width: 70rem){

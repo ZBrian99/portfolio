@@ -63,6 +63,9 @@ const Skill = styled(motion.div)`
 	/* gap: 0.5rem; */
 	/* background-color: red; */
 	/* opacity: 0.9; */
+
+	box-shadow: 0 0 .5rem .3rem rgba(0, 0, 0, .1);
+
 	&:hover {
 		/* filter: grayscale(0%); */
 		opacity: 1;
@@ -80,6 +83,7 @@ const SkillImage = styled.img`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
 	/* padding: 0.7rem; */
 `;
 

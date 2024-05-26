@@ -110,7 +110,7 @@ const HighlightText = styled.span`
 	-webkit-text-fill-color: transparent;
 	color: transparent;
 	background-image: linear-gradient(60deg, #ff00ea, #ffd000);
-	text-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
+
 `;
 
 export const Hero = () => {
@@ -118,7 +118,6 @@ export const Hero = () => {
 		<HeroContainer>
 			<HeroInfoContainer>
 				<HeroWelcome>Hola! Soy</HeroWelcome>
-				{/* <HeroWelcome>Hola, soy</HeroWelcome> */}
 
 				<HeroTitle>
 					<HighlightText>Brian</HighlightText> Zelada

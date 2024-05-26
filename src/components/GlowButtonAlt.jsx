@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 const ButtonStyled = styled.button`
+	text-decoration: none;
 	border: none;
 	outline: none;
 	cursor: pointer;

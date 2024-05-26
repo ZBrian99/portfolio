@@ -9,7 +9,7 @@ const Container = styled.div`
 	flex-direction: column;
 	/* justify-content: space-evenly; */
 	/* align-items: center; */
-	gap: 3rem;
+	gap: 2rem;
 
 	/* @media screen and (min-width: 30rem) {
     padding: 2rem;
@@ -30,6 +30,7 @@ const Container = styled.div`
 		padding: 2rem;
 	} */
 		padding: 0 1rem;
+		gap: 3rem;
 
 		/* gap: 3rem; */
 
@@ -56,6 +57,7 @@ const ContactInfo = styled.div`
 
 	padding: 0 2rem;
 	border-radius: 1rem;
+	flex-wrap: wrap;
 	max-width: 40rem;
 	@media (min-width: 30rem) {
 		/* background-color: transparent; */
@@ -67,13 +69,14 @@ const ContactInfo = styled.div`
 		/* padding: 3rem; */
 	}
 	@media (min-width: 45rem) {
-		flex-wrap: wrap;
+		/* flex-wrap: wrap; */
 	}
 	@media (min-width: 60rem) {
+
 		/* padding: 3rem; */
 		/* background-color: rgba(255, 255, 255, 0.05); */
 	}
-  /* background-color: rgba(255, 255, 255, 0.05); */
+	/* background-color: rgba(255, 255, 255, 0.05); */
 `;
 
 const ContactItemsContainer = styled.div`
@@ -88,7 +91,7 @@ const ContactItemsContainer = styled.div`
 	@media (min-width: 50rem) {
 		/* flex-direction: column; */
 		flex-basis: 100%;
-    /* max-width: 20rem; */
+		/* max-width: 20rem; */
 		flex-direction: column;
 	}
 `;
@@ -98,9 +101,12 @@ const ContactSocialContainer = styled.div`
 	border-radius: 1rem;
 	display: flex;
 	align-items: center;
-	flex-direction: column;
+	flex-wrap: wrap;
 	gap: 1rem;
 	/* width: 100%; */
+	@media (min-width: 30rem) {
+		flex-direction: column;
+	}
 	@media (min-width: 45rem) {
 		flex-direction: row;
 		margin-top: auto;
@@ -110,21 +116,11 @@ const ContactSocialContainer = styled.div`
 const ContactItem = styled.div`
 	/* text-align: center; */
 	display: flex;
-	flex: 1;
-
-	/* flex-direction: column; */
-	/* align-items: center; */
-	/* justify-content: center; */
+	flex-basis: 100%;
 	border-radius: 1rem;
 	background-color: rgba(255, 255, 255, 0.05);
 	padding: 1rem;
-	/* flex-shrink: 0; */
-	/* background-color: purple; */
-	@media (min-width: 45rem) {
-		/* background-color: transparent; */
-    /* width: 100%; */
-    /* flex: 1; */
-	}
+	box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.1);
 `;
 
 const Icon = styled.div`
@@ -140,6 +136,7 @@ const Icon = styled.div`
 const ContactItemInfo = styled.div`
 	display: flex;
 	flex-direction: column;
+  
 `;
 
 const Title = styled.div`
@@ -163,16 +160,16 @@ const FormContainer = styled.div`
 	padding: 0 2rem;
 
 	border-radius: 1rem;
+  /* background-color: rgba(255, 255, 255, 0.05); */
 	@media (min-width: 30rem) {
-    background-color: transparent;
-		/* background-color: rgba(255, 255, 255, 0.05); */
+		background-color: transparent;
 		padding: 0rem;
+		flex: 1.5;
 		/* padding: 3rem; */
 	}
 	@media (min-width: 60rem) {
-    max-width: 40rem;
+		max-width: 40rem;
 		/* padding: 3rem; */
-
 		/* background-color: rgba(255, 255, 255, 0.05); */
 	}
 `;
@@ -205,6 +202,7 @@ const Input = styled.input`
 	border: 1px solid transparent;
 
 	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.1);
 
 	font-size: 1em;
 	color: white;
@@ -234,7 +232,7 @@ const Textarea = styled.textarea`
 	border: 1px solid transparent;
 
 	background-color: rgba(255, 255, 255, 0.05);
-
+	box-shadow: 0 .25rem 1.5rem rgba(0, 0, 0, 0.1);
 	&::placeholder {
 		color: #c9c9c9;
 	}
@@ -260,6 +258,38 @@ const Button = styled.input`
 	}
 `;
 
+const PhotoLink = styled.a`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 3rem;
+	max-height: 3rem;
+	box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.1);
+
+	border-radius: 50%;
+	backdrop-filter: blur(1rem);
+	aspect-ratio: 1 / 1;
+	background-color: rgba(255, 255, 255, 0.1);
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+	transition: transform 0.1s ease;
+
+	&:hover {
+		transform: scale(1.05);
+
+		cursor: pointer;
+	}
+
+	&:active {
+		transform: scale(0.95);
+	}
+`;
+const PhotoIcon = styled.img`
+	width: 70%;
+	height: 70%;
+
+	${({ rounded }) => rounded && `border-radius: 50%;`}
+	${({ fit }) => fit && `object-fit: cover;`}
+`;
 export const FormTest = () => {
 	return (
 		<Container>
@@ -291,16 +321,18 @@ export const FormTest = () => {
 				</ContactItemsContainer>
 
 				<ContactSocialContainer>
-					<HeroSocialButton
-						url='https://github.com/ZBrian99'
-						src='src/assets/icons/linkedin-icon.svg'
-						name='linkedin'
-					/>
-					<HeroSocialButton
-						url='https://github.com/ZBrian99'
-						src='src/assets/icons/github-icon.svg'
-						name='github'
-					/>
+					<PhotoLink href={'#'} target='_blank' rel='noopener noreferrer'>
+						<PhotoIcon src={'src/assets/icons/linkedin-icon.svg'} alt='linkedin' />
+					</PhotoLink>
+					<PhotoLink href={'#'} target='_blank' rel='noopener noreferrer'>
+						<PhotoIcon src={'src/assets/icons/github-icon.svg'} alt='linkedin' />
+					</PhotoLink>
+					<PhotoLink href={'#'} target='_blank' rel='noopener noreferrer'>
+						<PhotoIcon rounded src={'src/assets/icons/ig.svg'} alt='linkedin' />
+					</PhotoLink>
+					<PhotoLink href={'#'} target='_blank' rel='noopener noreferrer'>
+						<PhotoIcon src={'src/assets/icons/wpp.svg'} alt='linkedin' />
+					</PhotoLink>
 				</ContactSocialContainer>
 			</ContactInfo>
 			<FormContainer>

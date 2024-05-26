@@ -143,6 +143,7 @@ const AboutTitle = styled(motion.h3)`
 const AboutDescription = styled(motion.p)`
 	font-size: 1em;
 	/* width: 100%; */
+	color: #ccc;
 `;
 
 const AboutSide = styled.div`
@@ -154,7 +155,18 @@ const AboutSide = styled.div`
 	/* background-color: #15800060; */
 	/* flex: 0.4; */
 `;
-
+const TextHighlight = styled.span`
+	font-weight: bold;
+	/* color: #f1f1f1; */
+	color: white;
+	/* color: #ff8800; */
+	/* color: #ffd000; */
+	/* background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: transparent;
+	text-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
+	background-image: linear-gradient(60deg, #cc00ff, #ff8800); */
+`;
 const wrapper = {
 	hidden: { opacity: 0, y: 100 },
 	show: {
@@ -207,22 +219,42 @@ export const About = () => {
 				</AboutImageContainer>
 				<AboutInfo>
 					<AboutDescription>
-						1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic repellat veritatis natus, eum
-						facere sit numquam perspiciatis, exercitationem maiores voluptatum ut distinctio quo et minus
-						fugiat fugit
+						Comencé modificando pequeñas aplicaciones, A lo largo de los años he aprendido múltiples
+						tecnologías, para finalmente especializarme en React.
+						<TextHighlight> hoy en día desarrollo aplicaciones completas.</TextHighlight>
 					</AboutDescription>
+
 					<AboutDescription>
-						2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt corporis dignissimos cumque
-						voluptates qui eius possimus animi. Soluta, odio quibusdam molestias ducimus labore aperiam alias
-						nisi, neque error, fugiat cumque.
+						Mi enfoque está en el diseño UI/UX,{' '}
+						<TextHighlight>
+							garantizando que mis aplicaciones se adapten y funcionen en cualquier dispositivo
+						</TextHighlight>{' '}
+						, brindando una experiencia de usuario coherente y fluida sin dejar de lado el diseño y la
+						funcionalidad.
 					</AboutDescription>
+
 					<AboutDescription>
-						3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt corporis dignissimos cumque
-						voluptates qui eius possimus animi. Soluta, odio quibusdam molestias ducimus labore aperiam alias
-						nisi, neque error, fugiat cumque.
+						Además de mis habilidades técnicas, soy una persona que ha superado multiples obstaculos en mi
+						vida,
+						<TextHighlight>
+							{' '}
+							Esto me ha enseñado a controlar mis emociones, ser persistente y nunca rendirme.
+						</TextHighlight>{' '}
+						Mi capacidad de automotivación y gran adaptabilidad me permite superar cualquier obstáculo que se
+						me presente.{' '}
+						<TextHighlight>
+							Actualmente estoy en el mejor momento de mi vida y listo para enfrentar cualquier desafío.
+						</TextHighlight>
 					</AboutDescription>
+
 					<Skills />
-					<GlowButtonAlt>📄 Curriculum </GlowButtonAlt>
+					<a
+						href='https://drive.google.com/file/d/1cnpVAz6phvFaQCKsCJ2iowrBxdvftCYb/view?usp=sharing'
+						target='_blank'
+						rel='noreferrer'
+					>
+						<GlowButtonAlt>📄 Curriculum</GlowButtonAlt>
+					</a>
 				</AboutInfo>
 				{/* <AboutSide>
 					<HeroPhoto />

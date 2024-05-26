@@ -39,45 +39,7 @@
 			"repository": "https://github.com/user/travel-app",
 			"technologies": ["React", "Styled Components"],
 			"status": "completed"
-		},
-		{
-			"name": "Online Learning Platform",
-			"description": "A web platform for online courses with multimedia content and student progress tracking.",
-			"date": "2023-08-10",
-			"link": "https://example.com/learning-platform",
-			"image": "src/assets/images/card.webp",
-			"preview": "src/assets/images/project_3.webp",
-			"speed": 25,
-
-			"repository": "https://github.com/user/learning-platform",
-			"technologies": ["React", "Styled Components", "Framer Motion"],
-			"status": "in progress"
-		},
-		{
-			"name": "Quiz Game",
-			"description": "An interactive quiz game with questions and answers on various topics.",
-			"date": "2024-01-05",
-			"link": "https://example.com/quiz-game",
-			"image": "src/assets/images/card.webp",
-			"preview": "src/assets/images/project_4.webp",
-			"speed": 35,
-
-			"repository": "https://github.com/user/quiz-game",
-			"technologies": ["HTML", "CSS", "JavaScript"],
-			"status": "completed"
-		},
-		{
-			"name": "Travel App",
-			"description": "A mobile application to search for travel destinations, book accommodations, and plan itineraries.",
-			"date": "2023-03-20",
-			"link": "https://example.com/travel-app",
-			"image": "src/assets/images/card.webp",
-			"preview": "src/assets/images/project_5.webp",
-			"speed": 6,
-			"video": "https://youtube.com/embed/video3",
-			"repository": "https://github.com/user/travel-app",
-			"technologies": ["React", "Redux", "Node", "Sass"],
-			"status": "completed"
 		}
+		
 	]
 }

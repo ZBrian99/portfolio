@@ -22,10 +22,12 @@ const TiltContainer = styled(motion.div)`
 	}
   */
 	margin: 0 auto;
-	max-width: 39rem;
-	@media screen and (min-width: 65rem) {
-		max-width: calc(50% - 0.5rem);
-	}
+	max-width: 45rem;
+
+	// para cuando tenga mas proyectos
+	/* @media screen and (min-width: 65rem) { */
+	/* max-width: calc(50% - 0.5rem); */
+	/* } */
 `;
 
 const TiltCard = styled(Tilt)`
@@ -72,6 +74,7 @@ const ProjectCardStyled = styled.div`
 		width: 35rem;
 		height: 20rem;
 	} */
+	box-shadow: 0 0 .5rem 0.5rem rgba(0, 0, 0, 0.1);
 
 	&::before {
 		content: '';
@@ -112,7 +115,7 @@ const ProjectCardPerspective = styled.div`
 	/* width: 55%; */
 	/* height: calc(80vw * 9 / 16); */
 	width: calc(74% - 5rem);
-	padding: 1rem 2rem;
+	padding: 1.5rem;
 	/* background-color: #0080008f; */
 	aspect-ratio: 16 / 10;
 	position: absolute;
@@ -125,14 +128,18 @@ const ProjectCardPerspective = styled.div`
     width: 30rem;
 		height: 16rem;
 	} */
-  font-size: 0.9em;
+	font-size: 0.9em;
 	/* font-size: 0.8em;
-
+  
 	@media screen and (min-width: 20rem) {
-	} */
-	@media screen and (min-width: 35rem) {
+  } */
+	@media screen and (min-width: 30rem) {
+		padding: 1.5rem 2rem;
 		font-size: 1em;
 		align-items: normal;
+	}
+	@media screen and (min-width: 60rem) {
+		padding: 2rem 2rem;
 	}
 `;
 
@@ -166,6 +173,10 @@ const PorjectBottom = styled.div`
 	align-self: flex-end;
 	justify-content: space-between;
 	align-items: flex-end;
+	font-size: 0.8em;
+	@media screen and (min-width: 35rem) {
+		font-size: 1em;
+	}
 `;
 
 const ProjectTechnologies = styled.div`
@@ -283,9 +294,6 @@ export const ProjectCard = ({ project, index, activeCard, setActiveCard }) => {
 	return (
 		<TiltContainer
 			variants={item}
-			// initial='hidden'
-			// whileInView='show'
-			viewport={{ once: true }}
 			onHoverStart={() => setActiveCard(index)}
 			onHoverEnd={() => setActiveCard(null)}
 			onTouchStart={() => setActiveCard(index)}
