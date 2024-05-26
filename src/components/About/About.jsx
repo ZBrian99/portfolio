@@ -80,7 +80,7 @@ const AboutWrapper = styled(motion.div)`
 `;
 
 const AboutImageContainer = styled.div`
-display: none;
+	display: none;
 	@media screen and (min-width: 50rem) {
 		display: flex;
 		border-radius: 1rem;
@@ -124,14 +124,7 @@ const AboutInfo = styled.div`
 	border-radius: 1rem;
 `;
 
-const AboutContact = styled.div`
-	display: flex;
-
-	gap: 1rem;
-`;
-
 const AboutTitle = styled(motion.h3)`
-	width: 100%;
 	text-align: center;
 	font-size: 3em;
 	/* margin-bottom: 10rem; */

@@ -192,8 +192,8 @@ const TechnologyImage = styled.img`
 `;
 
 const WebLink = styled(motion.a)`
-	width: 2.5em;
-	height: 2.5em;
+	width: 2.4em;
+	height: 2.4em;
 
 	filter: drop-shadow(0 0 0.1rem rgba(0, 0, 0, 0.3));
 `;
@@ -347,7 +347,7 @@ export const ProjectCard = ({ project, index, activeCard, setActiveCard }) => {
 								target='_blank'
 								rel='noopener noreferrer'
 							>
-								<LinkImage src='src/assets/icons/external-link_2.svg' alt='Web' />
+								<LinkImage src='src/assets/icons/external-link_5.svg' alt='Web' />
 							</WebLink>
 						</ProjectLinks>
 					</PorjectBottom>

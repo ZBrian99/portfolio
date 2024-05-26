@@ -24,7 +24,6 @@ const FormContainer = styled.section`
 `;
 
 const FormTitle = styled(motion.h3)`
-	width: 100%;
 	text-align: center;
 	font-size: 3em;
 
@@ -90,8 +89,10 @@ const item = {
 export const Contact = () => {
 	return (
 		<FormContainer>
-			<FormTitle variants={title} initial='hidden' whileInView='show' viewport={{ once: true }}>
-				Contactame
+      <FormTitle
+        // variants={title} initial='hidden' whileInView='show' viewport={{ once: true }}
+      >
+				Contáctame
 			</FormTitle>
 			<FormTest />
 			{/* <FromWrapper>

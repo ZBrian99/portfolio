@@ -20,6 +20,31 @@ export const GlobalStyles = () => (
 				padding: 0;
 				margin: 0;
 			}
+			html {
+				&::-webkit-scrollbar {
+					width: 0.5rem;
+					height: 0.5rem;
+				}
+
+				&::-webkit-scrollbar-track {
+					background: #0e0e0e;
+					border-radius: 0.25rem;
+				}
+
+				&::-webkit-scrollbar-thumb {
+					background-color: #333;
+					border-radius: 0.25rem;
+					border: 0.1rem solid #0e0e0e;
+				}
+				&::-webkit-scrollbar-thumb:hover {
+					background-color: #444;
+					border-color: #000;
+				}
+				&::-webkit-scrollbar-button {
+					display: none;
+				}
+			}
+
 
 			body {
 				font-family: 'Bricolage Grotesque', sans-serif;
@@ -27,21 +52,8 @@ export const GlobalStyles = () => (
 				scroll-behavior: smooth;
 				background-color: #0a0a0a;
 				font-size: 100%;
-				/* background-color: #221830; */
-				/* background: #443193; */
-				/* background-image: radial-gradient(at 86% 83%, hsl(360, 26%, 53%) 0px, transparent 50%),
-					radial-gradient(at 73% 62%, hsl(307, 56%, 59%) 0px, transparent 50%),
-					radial-gradient(at 45% 25%, hsl(193, 23%, 22%) 0px, transparent 50%),
-					radial-gradient(at 5% 68%, hsl(234, 47%, 49%) 0px, transparent 50%),
-					radial-gradient(at 33% 73%, hsl(99, 98%, 46%) 0px, transparent 50%);  */
-				/* padding: 100rem 0; */
+
 				min-height: 100vh;
-				/* background-image: url('src/assets/images/background.png'); */
-				/* background-repeat: no-repeat; */
-				/* background-position: center; */
-				/* background-attachment: fixed; */
-				/* background-repeat: no-repeat; */
-				/* background: url('src/assets/images/background.png') fixed; */
 
 				/* font-family: var(--font-body); */
 				/* color: var(--color-secondary); */

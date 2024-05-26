@@ -18,15 +18,15 @@ const ProjectsContainer = styled.section`
 `;
 
 const ProjectsTitle = styled(motion.h3)`
-	width: 100%;
 	text-align: center;
 	font-size: 3em;
 
+	color: #ffd000;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	color: transparent;
-	text-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
 	background-image: linear-gradient(60deg, #ff00ea, #ffd000);
+	text-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
 `;
 
 const ProjectWrapper = styled.div`

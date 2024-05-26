@@ -227,7 +227,7 @@ export const ContactForm = () => {
 					{errors.name && <ErrorMessage>{errors.name}</ErrorMessage>}
 					<FormInput
 						type='text'
-						placeholder='Mail'
+						placeholder='Correo electrónico'
 						value={email}
 						onChange={(e) => handleInputChange(e, setEmail)}
 					/>

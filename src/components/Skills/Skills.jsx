@@ -51,8 +51,10 @@ const Skill = styled(motion.div)`
 	opacity: 0.7;
 
 	/* background-color: rgba(255, 255, 255, 0.05); */
-	padding:.7rem;
-	background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+	padding: 0.7rem;
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+	/* background-color: rgba(255, 255, 255, 0.05); */
+	/* background-color: rgba(255, 255, 255, 0.1); */
 
 	display: flex;
 	flex-direction: column;
@@ -94,11 +96,8 @@ const SkillTooltip = styled.span`
 	pointer-events: none;
 	opacity: 0;
 
-	box-shadow: 0 0 0.5rem 0.1rem rgba(255, 255, 255, 0.1);
-
 	border-radius: 0.5rem;
 	background-color: #222;
-	background: linear-gradient(135deg, #333, #111);
 	&::before {
 		content: '';
 		position: absolute;

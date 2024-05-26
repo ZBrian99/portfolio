@@ -8,9 +8,9 @@ const HeroImageContainer = styled.div`
 	max-width: 25vh;
 	/* width: 30svh; */
 	aspect-ratio: 1 / 1;
-  @media screen and (min-width: 50rem) {
-      max-width: 25%;
-    }
+	@media screen and (min-width: 50rem) {
+		max-width: 25%;
+	}
 	/* width: 55%; */
 	display: flex;
 	justify-content: center;
@@ -108,8 +108,6 @@ const PhotoLink = styled.a`
 	max-width: 15rem;
 	max-height: 15rem;
 	box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.1);
-	padding: 0.7rem;
-	padding: 0.5rem;
 	transform: translate(-50%, -50%);
 	border-radius: 50%;
 	backdrop-filter: blur(1rem);
@@ -132,7 +130,7 @@ const PhotoLink = styled.a`
 	}
 
 	&:nth-of-type(1) {
-		top: 90%;
+		top: 87.5%;
 		left: 20%;
 		/* top: 100%; */
 	}
@@ -142,17 +140,18 @@ const PhotoLink = styled.a`
 		left: 50%;
 	}
 	&:nth-of-type(3) {
-		top: 90%;
+		top: 87.5%;
 		/* top: 100%; */
 
 		left: 80%;
 	}
 `;
 const PhotoIcon = styled.img`
-	width: 100%;
-	height: 100%;
+	width: 70%;
+	height: 70%;
+
 	${({ rounded }) => rounded && `border-radius: 50%;`}
-	${({ fit }) => fit && `object-fit: cover;`} /* object-fit: cover; */
+	${({ fit }) => fit && `object-fit: cover;`}
 `;
 
 export const HeroPhoto = () => {
@@ -175,7 +174,6 @@ export const HeroPhoto = () => {
 			{/* <AboutImage src='src/assets/images/finalr_2.png' alt='photo' /> */}
 			{/* <AboutImage src='src/assets/images/fr1.jpg' alt='photo' /> */}
 			<AboutImage src='src/assets/images/ffrr.png' alt='photo' />
-
 
 			{/* <AboutImage src='src/assets/images/ffrrh.png' alt='photo' /> */}
 		</HeroImageContainer>

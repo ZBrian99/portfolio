@@ -268,24 +268,24 @@ export const FormTest = () => {
 					<ContactItem>
 						<Icon>📞</Icon>
 						<ContactItemInfo>
-							<Title>Phone</Title>
-							<Text>+0098 9893 5647</Text>
+							<Title>Teléfono</Title>
+							<Text>+123 9893 5647</Text>
 						</ContactItemInfo>
 					</ContactItem>
 
 					<ContactItem>
 						<Icon>📍</Icon>
 						<ContactItemInfo>
-							<Title>Address</Title>
-							<Text>Argentina, Buenos Aires</Text>
+							<Title>Ubicación</Title>
+							<Text>Argentina - Buenos Aires</Text>
 						</ContactItemInfo>
 					</ContactItem>
 
 					<ContactItem>
 						<Icon>📧</Icon>
 						<ContactItemInfo>
-							<Title>Email</Title>
-							<Text>codinglab@gmail.com</Text>
+							<Title>Correo electrónico</Title>
+							<Text>mail@gmail.com</Text>
 						</ContactItemInfo>
 					</ContactItem>
 				</ContactItemsContainer>
@@ -306,7 +306,7 @@ export const FormTest = () => {
 			<FormContainer>
 				<Form action='#'>
 					<Input type='text' placeholder='Nombre' />
-					<Input type='email' placeholder='Mail' />
+					<Input type='email' placeholder='Correo electrónico' />
 					<Textarea placeholder='Mensaje'></Textarea>
 					<Button type='submit' value='Enviar' />
 				</Form>

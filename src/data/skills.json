@@ -37,7 +37,7 @@
 			"type": "primary"
 		},
 		{
-			"name": "Github",
+			"name": "Git",
 			"src": "src/assets/icons/git.svg",
 			"learned": true,
 			"type": "secondary"
