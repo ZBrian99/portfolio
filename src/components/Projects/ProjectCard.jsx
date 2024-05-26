@@ -9,17 +9,22 @@ const TiltContainer = styled(motion.div)`
 	justify-content: center;
 	align-items: center;
 	overflow: hidden;
+	/* background-color: #0000ff6a; */
 	position: relative;
 	width: 100%;
-	height: calc(120vw * 9 / 16);
+	aspect-ratio: 16 / 10;
+	/* height: calc(120vw * 9 / 16); */
 	margin-bottom: 2rem;
-
-	@media screen and (min-width: 40rem) {
+	/* 
+  @media screen and (min-width: 40rem) {
 		width: 39rem;
 		height: 24rem;
 	}
-	@media screen and (max-width: 1247px) {
-		margin: auto;
+  */
+	margin: 0 auto;
+	max-width: 39rem;
+	@media screen and (min-width: 65rem) {
+		max-width: calc(50% - 0.5rem);
 	}
 `;
 
@@ -30,16 +35,18 @@ const TiltCard = styled(Tilt)`
 	justify-content: center;
 	align-items: center;
 	transform-style: preserve-3d;
-	/* background-color: #ff260085; */
+	/* background-color: #ff080084; */
 
 	text-align: center;
+	/* width: 135%; */
 	width: 135%;
-	height: calc(195vw * 9 / 16);
+	/* height: calc(195vw * 9 / 16); */
+	aspect-ratio: 16 / 12;
 
-	@media screen and (min-width: 40rem) {
+	/* @media screen and (min-width: 40rem) {
 		width: 53rem;
 		height: 39rem;
-	}
+	} */
 `;
 
 const ProjectCardStyled = styled.div`
@@ -48,36 +55,37 @@ const ProjectCardStyled = styled.div`
 	align-items: center;
 	gap: 1rem;
 	border-radius: 1rem;
-	width: 65%;
-	height: calc(100vw * 9 / 16);
+	width: calc(74% - 4rem);
+	aspect-ratio: 16 / 10;
+	/* height: calc(100vw * 9 / 16); */
+
 	position: relative;
 	overflow: hidden;
-
-	@media screen and (min-width: 40rem) {
-		width: 35rem;
-		height: 20rem;
-	}
 
 	text-align: center;
 	background-color: rgba(255, 255, 255, 0.1);
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-
+	/* background-color: #ffc0cb39; */
 	/* border: 1px solid rgba(255, 255, 255, 0.1); */
+
+	/* @media screen and (min-width: 40rem) {
+		width: 35rem;
+		height: 20rem;
+	} */
 
 	&::before {
 		content: '';
 		position: absolute;
-		width: 65%;
-		height: calc(100vw * 9 / 16);
-		@media screen and (min-width: 40rem) {
+		/* width: 65%; */
+		/* height: calc(100vw * 9 / 16); */
+		/* @media screen and (min-width: 40rem) {
 			width: 35rem;
 			height: 20rem;
-		}
-
-		background: rgba(0, 0, 0, 0.3);
-		border-radius: 1rem;
+		} */
 		width: 100%;
 		height: 100%;
+		border-radius: 1rem;
+		background: rgb(0, 0, 0, 0.3);
 	}
 `;
 
@@ -101,20 +109,30 @@ const ProjectPreview = styled(motion.img)`
 	opacity: 0;
 `;
 const ProjectCardPerspective = styled.div`
-	width: 55%;
-	height: calc(80vw * 9 / 16);
+	/* width: 55%; */
+	/* height: calc(80vw * 9 / 16); */
+	width: calc(74% - 5rem);
+	padding: 1rem 2rem;
+	/* background-color: #0080008f; */
+	aspect-ratio: 16 / 10;
 	position: absolute;
 	transform: translateZ(5rem);
 	display: flex;
 	flex-wrap: wrap;
+	align-items: center;
 	text-shadow: 0 0 0.1rem rgba(0, 0, 0, 0.8), 0 0 0.5rem rgba(0, 0, 0, 0.6), 0 0 1.25rem rgba(0, 0, 0, 0.4);
-	@media screen and (min-width: 40rem) {
-		width: 30rem;
+	/* @media screen and (min-width: 40rem) {
+    width: 30rem;
 		height: 16rem;
-	}
-	font-size: 0.8rem;
-	@media screen and (min-width: 30rem) {
-		font-size: 1rem;
+	} */
+  font-size: 0.9em;
+	/* font-size: 0.8em;
+
+	@media screen and (min-width: 20rem) {
+	} */
+	@media screen and (min-width: 35rem) {
+		font-size: 1em;
+		align-items: normal;
 	}
 `;
 
@@ -129,11 +147,16 @@ const ProjectInfo = styled.div`
 `;
 
 const ProjectTitle = styled.h3`
-	font-size: 2em;
+	font-size: 1.8em;
+	width: 100%;
 `;
 
 const ProjectDescription = styled.p`
+	display: none;
 	font-size: 1em;
+	@media screen and (min-width: 35rem) {
+		display: block;
+	}
 `;
 
 const PorjectBottom = styled.div`
@@ -260,8 +283,8 @@ export const ProjectCard = ({ project, index, activeCard, setActiveCard }) => {
 	return (
 		<TiltContainer
 			variants={item}
-			initial='hidden'
-			whileInView='show'
+			// initial='hidden'
+			// whileInView='show'
 			viewport={{ once: true }}
 			onHoverStart={() => setActiveCard(index)}
 			onHoverEnd={() => setActiveCard(null)}
@@ -270,6 +293,7 @@ export const ProjectCard = ({ project, index, activeCard, setActiveCard }) => {
 		>
 			<TiltCard
 				transitionSpeed={5000}
+				perspective={2000}
 				// tiltReverse={true}
 			>
 				<ProjectCardStyled>

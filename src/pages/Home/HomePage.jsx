@@ -13,7 +13,7 @@ const HomeWrapper = styled.div`
 	max-width: 80rem;
 	/* background-color: #faebd730; */
 	margin: auto;
-	overflow: hidden;
+	/* overflow: hidden; */
   gap: 10rem;
 	/* gap: 15rem; */
 	/* padding-top: 10rem; */
@@ -29,8 +29,8 @@ export const HomePage = () => {
 			{/* <Skills /> */}
 			{/* <Services /> */}
 			{/* <Projects /> */}
-			{/*
-			<div
+			
+			{/* <div
 				style={{
 					backgroundColor: '#d48217a7',
 					width: '100%',
@@ -41,10 +41,11 @@ export const HomePage = () => {
           maxWidth: '84rem',
 				}}
 			></div> */}
-			<About />
 			<Projects />
+			<About />
 
 			<Contact />
+
 		</HomeWrapper>
 	);
 };

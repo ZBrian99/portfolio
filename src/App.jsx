@@ -9,7 +9,6 @@ export const App = () => {
 		<>
 			<GlobalStyles />
 			<Background />
-			{/* <Navbar /> */}
 			<NavbarTest />
 			<Hero />
 			<HomePage />

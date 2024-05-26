@@ -11,7 +11,8 @@ const NavbarToggle = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #0e0e0e;
+	background-color: rgba(14, 14, 14, 0.7);
+  backdrop-filter: blur(1rem);
 	border-radius: 50%;
 	z-index: 100;
 	user-select: none;

@@ -9,7 +9,7 @@ import { ProjectCardTest } from './ProjectCardTest';
 const ProjectsContainer = styled.section`
 	width: 100%;
 	/* max-width: 120rem; */
-	margin: auto;
+	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -79,7 +79,9 @@ export const Projects = () => {
 
 	return (
 		<ProjectsContainer ref={projectContainerRef}>
-			<ProjectsTitle variants={title} initial='hidden' whileInView='show' viewport={{ once: true }}>
+      <ProjectsTitle
+        // variants={title} initial='hidden' whileInView='show' viewport={{ once: true }}
+      >
 				Proyectos
 			</ProjectsTitle>
 			<ProjectWrapper>
