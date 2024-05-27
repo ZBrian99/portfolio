@@ -1,4 +1,3 @@
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useEffect, useRef, useState } from 'react';
 
@@ -12,9 +11,8 @@ const NavbarToggle = styled.div`
 	justify-content: center;
 	align-items: center;
 	background-color: rgba(14, 14, 14, 0.7);
-  backdrop-filter: blur(1rem);
+	backdrop-filter: blur(1rem);
 	border-radius: 50%;
-	z-index: 100;
 	user-select: none;
 	cursor: pointer;
 	z-index: 101;
@@ -24,7 +22,6 @@ const NavbarToggle = styled.div`
 const NavbarContainer = styled.div`
 	position: fixed;
 	top: 0rem;
-
 	right: 0rem;
 	width: 100%;
 	aspect-ratio: 1 / 1;
@@ -40,14 +37,12 @@ const NavbarContainer = styled.div`
 
 	transition-delay: ${({ isActive }) => (isActive ? '0s' : '0.2s')};
 	visibility: ${({ isActive }) => (isActive ? 'visible' : 'hidden')};
-
 	z-index: 100;
 `;
 
 const NavbarCircle = styled.div`
 	position: absolute;
 	background-color: #0e0e0e;
-
 	right: 0;
 	top: 0;
 	width: 200%;
@@ -58,12 +53,9 @@ const NavbarCircle = styled.div`
 	align-items: center;
 	overflow: hidden;
 	transition: clip-path 0.2s ease-out;
-
 	padding-right: 100%;
 	padding-top: 100%;
-
 	transform: translate(50%, -50%);
-
 	transition-delay: ${({ isActive }) => (isActive ? '0s' : '0.2s')};
 	clip-path: ${({ isActive }) => (isActive ? ' circle(50% at 50% 50%)' : 'circle(0% at 50% 50%)')};
 `;
@@ -89,7 +81,6 @@ const NavbarItem = styled.a`
 	border-radius: 1rem;
 	padding: 0.5rem 1rem;
 	text-decoration: none;
-	color: inherit;
 	color: #ccc;
 	transition: color 0.2s ease-out;
 
@@ -111,6 +102,7 @@ export const NavbarTest = () => {
 			setIsActive(false);
 		}
 	};
+
 	useEffect(() => {
 		document.addEventListener('mousedown', handleClickOutside);
 		document.addEventListener('touchstart', handleClickOutside);
@@ -120,6 +112,7 @@ export const NavbarTest = () => {
 			document.removeEventListener('touchstart', handleClickOutside);
 		};
 	}, []);
+
 	return (
 		<div ref={navbarRef}>
 			<NavbarToggle onClick={handleClick}>{isActive ? 'X' : '☰'}</NavbarToggle>

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { animate, delay, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 const NavbarContainer = styled(motion.nav)`

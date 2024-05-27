@@ -9,25 +9,13 @@ const TiltContainer = styled(motion.div)`
 	justify-content: center;
 	align-items: center;
 	overflow: hidden;
-	/* background-color: #0000ff6a; */
 	position: relative;
 	width: 100%;
 	aspect-ratio: 16 / 10;
-	/* height: calc(120vw * 9 / 16); */
 	margin-bottom: 2rem;
-	/* 
-  @media screen and (min-width: 40rem) {
-		width: 39rem;
-		height: 24rem;
-	}
-  */
+
 	margin: 0 auto;
 	max-width: 45rem;
-
-	// para cuando tenga mas proyectos
-	/* @media screen and (min-width: 65rem) { */
-	/* max-width: calc(50% - 0.5rem); */
-	/* } */
 `;
 
 const TiltCard = styled(Tilt)`
@@ -37,18 +25,10 @@ const TiltCard = styled(Tilt)`
 	justify-content: center;
 	align-items: center;
 	transform-style: preserve-3d;
-	/* background-color: #ff080084; */
 
 	text-align: center;
-	/* width: 135%; */
 	width: 135%;
-	/* height: calc(195vw * 9 / 16); */
 	aspect-ratio: 16 / 12;
-
-	/* @media screen and (min-width: 40rem) {
-		width: 53rem;
-		height: 39rem;
-	} */
 `;
 
 const ProjectCardStyled = styled.div`
@@ -59,7 +39,6 @@ const ProjectCardStyled = styled.div`
 	border-radius: 1rem;
 	width: calc(74% - 4rem);
 	aspect-ratio: 16 / 10;
-	/* height: calc(100vw * 9 / 16); */
 
 	position: relative;
 	overflow: hidden;
@@ -67,24 +46,12 @@ const ProjectCardStyled = styled.div`
 	text-align: center;
 	background-color: rgba(255, 255, 255, 0.1);
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-	/* background-color: #ffc0cb39; */
-	/* border: 1px solid rgba(255, 255, 255, 0.1); */
 
-	/* @media screen and (min-width: 40rem) {
-		width: 35rem;
-		height: 20rem;
-	} */
-	box-shadow: 0 0 .5rem 0.5rem rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
 
 	&::before {
 		content: '';
 		position: absolute;
-		/* width: 65%; */
-		/* height: calc(100vw * 9 / 16); */
-		/* @media screen and (min-width: 40rem) {
-			width: 35rem;
-			height: 20rem;
-		} */
 		width: 100%;
 		height: 100%;
 		border-radius: 1rem;
@@ -100,6 +67,7 @@ const ProjectImage = styled(motion.img)`
 	z-index: -1;
 	user-select: none;
 `;
+
 const ProjectPreview = styled(motion.img)`
 	width: 100%;
 	height: auto;
@@ -112,32 +80,24 @@ const ProjectPreview = styled(motion.img)`
 	opacity: 0;
 `;
 const ProjectCardPerspective = styled.div`
-	/* width: 55%; */
-	/* height: calc(80vw * 9 / 16); */
 	width: calc(74% - 5rem);
 	padding: 1.5rem;
-	/* background-color: #0080008f; */
 	aspect-ratio: 16 / 10;
 	position: absolute;
 	transform: translateZ(5rem);
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	text-shadow: 0 0 0.1rem rgba(0, 0, 0, 0.8), 0 0 0.5rem rgba(0, 0, 0, 0.6), 0 0 1.25rem rgba(0, 0, 0, 0.4);
-	/* @media screen and (min-width: 40rem) {
-    width: 30rem;
-		height: 16rem;
-	} */
+	text-shadow: 0 0 0.1rem rgba(0, 0, 0, 0.8), 0 0 0.5rem rgba(0, 0, 0, 0.6);
+
 	font-size: 0.9em;
-	/* font-size: 0.8em;
-  
-	@media screen and (min-width: 20rem) {
-  } */
+
 	@media screen and (min-width: 30rem) {
 		padding: 1.5rem 2rem;
 		font-size: 1em;
 		align-items: normal;
 	}
+
 	@media screen and (min-width: 60rem) {
 		padding: 2rem 2rem;
 	}
@@ -174,6 +134,7 @@ const PorjectBottom = styled.div`
 	justify-content: space-between;
 	align-items: flex-end;
 	font-size: 0.8em;
+
 	@media screen and (min-width: 35rem) {
 		font-size: 1em;
 	}
@@ -197,6 +158,7 @@ const Technology = styled.div`
 	width: 1.5em;
 	height: 1.5em;
 `;
+
 const TechnologyImage = styled.img`
 	width: 100%;
 	height: auto;
@@ -208,16 +170,19 @@ const WebLink = styled(motion.a)`
 
 	filter: drop-shadow(0 0 0.1rem rgba(0, 0, 0, 0.3));
 `;
+
 const GithubLink = styled(motion.a)`
 	width: 2.5em;
 	height: 2.5em;
 
 	filter: drop-shadow(0 0 0.1rem rgba(0, 0, 0, 0.3));
 `;
+
 const LinkImage = styled.img`
 	width: 100%;
 	height: 100%;
 `;
+
 const getTechnologyIcon = (technology) => {
 	switch (technology) {
 		case 'React':
@@ -243,6 +208,7 @@ const getTechnologyIcon = (technology) => {
 			return '';
 	}
 };
+
 export const ProjectCard = ({ project, index, activeCard, setActiveCard }) => {
 	const item = {
 		hidden: {

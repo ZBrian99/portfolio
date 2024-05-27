@@ -1,14 +1,11 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-
 import { projects } from '../../data/projects';
 import { useEffect, useRef, useState } from 'react';
 import { ProjectCard } from './ProjectCard';
-import { ProjectCardTest } from './ProjectCardTest';
 
-const ProjectsContainer = styled.section`
+const ProjectsContainer = styled(motion.section)`
 	width: 100%;
-	/* max-width: 120rem; */
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
@@ -17,7 +14,7 @@ const ProjectsContainer = styled.section`
 	gap: 3rem;
 `;
 
-const ProjectsTitle = styled(motion.h3)`
+const ProjectsTitle = styled.h3`
 	text-align: center;
 	font-size: 3em;
 
@@ -36,22 +33,13 @@ const ProjectWrapper = styled.div`
 	width: 100%;
 	position: relative;
 	gap: 3rem;
-	/* display: grid; */
-  /* grid-template-columns: repeat(3, 1fr); */
-  /* @media screen and (min-width: 70rem){
-    
-    grid-template-columns: repeat(2, 1fr);
-  }
-	max-width: 84rem; */
-
-	/* background-color: purple; */
 `;
 
-const title = {
-	hidden: { opacity: 0, x: -100 },
+const projectVariant = {
+	hidden: { opacity: 0, y: 100 },
 	show: {
 		opacity: 1,
-		x: 0,
+		y: 0,
 		transition: {
 			duration: 1,
 		},
@@ -78,12 +66,14 @@ export const Projects = () => {
 	}, []);
 
 	return (
-		<ProjectsContainer ref={projectContainerRef}>
-      <ProjectsTitle
-        // variants={title} initial='hidden' whileInView='show' viewport={{ once: true }}
-      >
-				Proyectos
-			</ProjectsTitle>
+		<ProjectsContainer
+			ref={projectContainerRef}
+			variants={projectVariant}
+			initial='hidden'
+			whileInView='show'
+			viewport={{ once: true }}
+		>
+			<ProjectsTitle>Proyectos</ProjectsTitle>
 			<ProjectWrapper>
 				{projects.map((project, index) => (
 					<ProjectCard

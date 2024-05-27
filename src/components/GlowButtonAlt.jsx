@@ -19,7 +19,7 @@ const ButtonStyled = styled.button`
 	transition: border 0.1s ease, transform 0.1s ease background-color 0.1s ease;
 	position: relative;
 
-	@media screen and (min-width: 30rem) {
+	@media screen and (min-width: 40rem) {
 		padding: 1rem 2rem;
 	}
 

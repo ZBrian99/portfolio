@@ -5,7 +5,7 @@ const BackgroundSVG = styled.svg`
 	position: fixed;
 	width: 100%;
 	height: 100svh;
-	z-index: -1;
+	z-index: -100;
 	filter: blur(6rem) brightness(0.5);
 `;
 export const NebulaBackground = () => {
@@ -20,7 +20,6 @@ export const NebulaBackground = () => {
 		>
 			<motion.path
 				animate={{
-					// scale: [.5, 1, .5],
 					scale: [1, 1.5, 1],
 					x: [0, -50, 0],
 				}}
@@ -34,7 +33,6 @@ export const NebulaBackground = () => {
 			/>
 			<motion.path
 				animate={{
-					// scale: [.5, 1, .5],
 					scale: [1, 1.5, 1],
 					x: [0, 100, 0],
 				}}
@@ -48,7 +46,6 @@ export const NebulaBackground = () => {
 			/>
 			<motion.path
 				animate={{
-					// scale: [.5, 1, .5],
 					scale: [1, 1.5, 1],
 					x: [0, -100, 0],
 				}}
@@ -62,7 +59,6 @@ export const NebulaBackground = () => {
 			/>
 			<motion.path
 				animate={{
-					// scale: [.5, 1, .5],
 					scale: [1, 1.5, 1],
 					y: [0, -50, 0],
 				}}
@@ -119,9 +115,9 @@ export const NebulaBackground = () => {
 					y2='475.888'
 					gradientUnits='userSpaceOnUse'
 				>
-					<stop stop-color='#581a33' />
-					<stop offset='0.5' stop-color='#6b156bf8' />
-					<stop offset='1' stop-color='#464e97' />
+					<stop stopColor='#581a33' />
+					<stop offset='0.5' stopColor='#6b156bf8' />
+					<stop offset='1' stopColor='#464e97' />
 				</linearGradient>
 			</defs>
 		</BackgroundSVG>

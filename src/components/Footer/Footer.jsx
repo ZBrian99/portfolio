@@ -20,9 +20,7 @@ const Copyright = styled.p`
 export const Footer = () => {
 	return (
 		<FooterContainer>
-			<Copyright>
-				© 2024 Diseñado y Desarrollado por Brian Zelada. Casi todos los derechos reservados.
-			</Copyright>
+			<Copyright>© 2024 Diseñado y Desarrollado por Brian Zelada.</Copyright>
 		</FooterContainer>
 	);
 };

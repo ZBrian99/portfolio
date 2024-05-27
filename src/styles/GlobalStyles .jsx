@@ -1,17 +1,9 @@
 import { Global, css } from '@emotion/react';
-import { theme } from './theme';
 
 export const GlobalStyles = () => (
 	<Global
 		styles={css`
 			@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
-
-			:root {
-				--color-primary: ${theme.colors.primary};
-				--color-secondary: ${theme.colors.secondary};
-				--font-body: ${theme.fonts.body};
-				--font-heading: ${theme.fonts.heading};
-			}
 
 			*,
 			*::before,
@@ -20,6 +12,7 @@ export const GlobalStyles = () => (
 				padding: 0;
 				margin: 0;
 			}
+
 			html {
 				&::-webkit-scrollbar {
 					width: 0.5rem;
@@ -45,20 +38,13 @@ export const GlobalStyles = () => (
 				}
 			}
 
-
 			body {
 				font-family: 'Bricolage Grotesque', sans-serif;
-
 				scroll-behavior: smooth;
 				background-color: #0a0a0a;
 				font-size: 100%;
-
 				min-height: 100vh;
-
-				/* font-family: var(--font-body); */
-				/* color: var(--color-secondary); */
 				color: white;
-				/* font-family: 'Poppins', sans-serif; */
 			}
 		`}
 	/>

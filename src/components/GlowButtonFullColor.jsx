@@ -17,7 +17,7 @@ const ButtonStyled = styled.button`
 	transition: transform 0.2s ease;
 	box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.1);
 
-	@media screen and (min-width: 30rem) {
+	@media screen and (min-width: 40rem) {
 		padding: 1rem 2rem;
 	}
 	&:before {
