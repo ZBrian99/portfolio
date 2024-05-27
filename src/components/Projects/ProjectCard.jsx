@@ -274,7 +274,6 @@ export const ProjectCard = ({ project, index, activeCard, setActiveCard }) => {
 					<ProjectImage
 						src={project.image}
 						alt={project.name}
-						loading='lazy'
 						variants={image}
 						transition={{
 							duration: 0.5,
@@ -284,7 +283,6 @@ export const ProjectCard = ({ project, index, activeCard, setActiveCard }) => {
 					<ProjectPreview
 						src={project.preview}
 						alt={project.name}
-						loading='lazy'
 						variants={preview}
 						transition={{
 							opacity: {

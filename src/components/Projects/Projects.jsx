@@ -1,10 +1,9 @@
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
 import { projects } from '../../data/projects';
 import { useEffect, useRef, useState } from 'react';
 import { ProjectCard } from './ProjectCard';
 
-const ProjectsContainer = styled(motion.section)`
+const ProjectsContainer = styled.section`
 	width: 100%;
 	margin: 0 auto;
 	display: flex;
@@ -35,17 +34,6 @@ const ProjectWrapper = styled.div`
 	gap: 3rem;
 `;
 
-const projectVariant = {
-	hidden: { opacity: 0, y: 100 },
-	show: {
-		opacity: 1,
-		y: 0,
-		transition: {
-			duration: 1,
-		},
-	},
-};
-
 export const Projects = () => {
 	const [activeCard, setActiveCard] = useState(null);
 
@@ -66,13 +54,7 @@ export const Projects = () => {
 	}, []);
 
 	return (
-		<ProjectsContainer
-			ref={projectContainerRef}
-			variants={projectVariant}
-			initial='hidden'
-			whileInView='show'
-			viewport={{ once: true }}
-		>
+		<ProjectsContainer id='projects' ref={projectContainerRef}>
 			<ProjectsTitle>Proyectos</ProjectsTitle>
 			<ProjectWrapper>
 				{projects.map((project, index) => (

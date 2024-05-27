@@ -124,16 +124,16 @@ export const Navbar = () => {
 			<NavbarContainer isActive={isActive}>
 				<NavbarCircle isActive={isActive}>
 					<NavbarMenu isActive={isActive}>
-						<NavbarItem href='#' onClick={() => setIsActive(false)}>
+						<NavbarItem href='#home' onClick={() => setIsActive(false)}>
 							Inicio
 						</NavbarItem>
-						<NavbarItem href='#' onClick={() => setIsActive(false)}>
+						<NavbarItem href='#about' onClick={() => setIsActive(false)}>
 							Sobre Mi
 						</NavbarItem>
-						<NavbarItem href='#' onClick={() => setIsActive(false)}>
+						<NavbarItem href='#projects' onClick={() => setIsActive(false)}>
 							Proyectos
 						</NavbarItem>
-						<NavbarItem href='#' onClick={() => setIsActive(false)}>
+						<NavbarItem href='#contact' onClick={() => setIsActive(false)}>
 							Contacto
 						</NavbarItem>
 					</NavbarMenu>

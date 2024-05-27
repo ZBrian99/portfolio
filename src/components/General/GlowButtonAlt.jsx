@@ -1,9 +1,10 @@
 import styled from '@emotion/styled';
 
-const ButtonStyled = styled.button`
+const ButtonStyled = styled.a`
 	text-decoration: none;
 	border: none;
 	outline: none;
+
 	cursor: pointer;
 	width: fit-content;
 	height: fit-content;
@@ -12,8 +13,7 @@ const ButtonStyled = styled.button`
 	text-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
 	padding: 0.75rem 1.5rem;
 	background-color: rgba(255, 255, 255, 0.05);
-
-	font-size: 1em;
+	font-weight: normal;
 	box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.1);
 
 	transition: border 0.1s ease, transform 0.1s ease background-color 0.1s ease;
@@ -40,6 +40,6 @@ const ButtonStyled = styled.button`
 	}
 `;
 
-export const GlowButtonAlt = ({ children }) => {
-	return <ButtonStyled>{children}</ButtonStyled>;
+export const GlowButtonAlt = ({ children, ...props }) => {
+	return <ButtonStyled {...props}>{children}</ButtonStyled>;
 };

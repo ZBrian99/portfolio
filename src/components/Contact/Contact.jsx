@@ -1,9 +1,8 @@
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
 import { ContactInfo } from './ContactInfo';
 import { ContactForm } from './ContactForm';
 
-const ContactContainer = styled(motion.section)`
+const ContactContainer = styled.section`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -50,20 +49,10 @@ const ContactTitle = styled.h3`
 	background-image: linear-gradient(60deg, #ff00ea, #ffd000);
 `;
 
-const contactVariant = {
-	hidden: { opacity: 0, y: 100 },
-	show: {
-		opacity: 1,
-		y: 0,
-		transition: {
-			duration: 1,
-		},
-	},
-};
 
 export const Contact = () => {
 	return (
-		<ContactContainer variants={contactVariant} initial='hidden' whileInView='show' viewport={{ once: true }}>
+		<ContactContainer id='contact'>
 			<ContactTitle>Contáctame</ContactTitle>
 			<ContactWrapper>
 				<ContactInfo />

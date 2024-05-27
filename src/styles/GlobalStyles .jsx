@@ -36,6 +36,7 @@ export const GlobalStyles = () => (
 				&::-webkit-scrollbar-button {
 					display: none;
 				}
+				scroll-behavior: smooth;
 			}
 
 			body {

@@ -1,9 +1,8 @@
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
 import { GlowButtonAlt } from '../General/GlowButtonAlt';
 import { Skills } from '../Skills/Skills';
 
-const AboutContainer = styled(motion.section)`
+const AboutContainer = styled.section`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -82,20 +81,9 @@ const TextHighlight = styled.span`
 	color: #fff;
 `;
 
-const aboutVariant = {
-	hidden: { opacity: 0, y: 100 },
-	show: {
-		opacity: 1,
-		y: 0,
-		transition: {
-			duration: 1,
-		},
-	},
-};
-
 export const About = () => {
 	return (
-		<AboutContainer variants={aboutVariant} initial='hidden' whileInView='show' viewport={{ once: true }}>
+		<AboutContainer id='about'>
 			<AboutTitle>Sobre mí</AboutTitle>
 			<AboutWrapper>
 				<AboutImageContainer>
@@ -132,13 +120,13 @@ export const About = () => {
 					</AboutDescription>
 
 					<Skills />
-					<a
+					<GlowButtonAlt
 						href='https://drive.google.com/file/d/1cnpVAz6phvFaQCKsCJ2iowrBxdvftCYb/view?usp=sharing'
 						target='_blank'
 						rel='noreferrer'
 					>
-						<GlowButtonAlt>📄 Curriculum</GlowButtonAlt>
-					</a>
+						📄 Curriculum
+					</GlowButtonAlt>
 				</AboutInfo>
 			</AboutWrapper>
 		</AboutContainer>

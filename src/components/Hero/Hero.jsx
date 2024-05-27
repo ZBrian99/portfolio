@@ -68,13 +68,12 @@ const HeroButtonsContainer = styled.div`
 	justify-content: center;
 	margin-top: 1rem;
 	gap: 1rem;
-	font-size: 1.1rem;
+	font-size: 1rem;
 `;
 
 const HighlightText = styled.span`
 	color: #ffd000;
 
-  
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	color: transparent;
@@ -83,7 +82,7 @@ const HighlightText = styled.span`
 
 export const Hero = () => {
 	return (
-		<HeroContainer>
+		<HeroContainer id='home'>
 			<HeroInfoContainer>
 				<HeroWelcome>Hola! Soy</HeroWelcome>
 				<HeroTitle>
@@ -97,8 +96,8 @@ export const Hero = () => {
 					<HighlightText> atractivos</HighlightText> y<HighlightText> funcionales</HighlightText>
 				</HeroExtra>
 				<HeroButtonsContainer>
-					<GlowButtonFullColor>🚀 Contacto </GlowButtonFullColor>
-					<GlowButtonAlt>📂 Proyectos </GlowButtonAlt>
+					<GlowButtonFullColor href='#contact'>🚀 Contacto </GlowButtonFullColor>
+					<GlowButtonAlt href='#projects'>📂 Proyectos </GlowButtonAlt>
 				</HeroButtonsContainer>
 			</HeroInfoContainer>
 			<HeroPhoto />
