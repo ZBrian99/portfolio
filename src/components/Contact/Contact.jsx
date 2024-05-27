@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { FormTest } from './FormTest';
+import { ContactInfo } from './ContactInfo';
+import { ContactForm } from './ContactForm';
 
-const FormContainer = styled(motion.section)`
+const ContactContainer = styled(motion.section)`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -16,7 +17,29 @@ const FormContainer = styled(motion.section)`
 	}
 `;
 
-const FormTitle = styled.h3`
+const ContactWrapper = styled.div`
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	align-items: center;
+
+	@media (min-width: 45rem) {
+		align-items: stretch;
+
+		padding: 0 1rem;
+		gap: 3rem;
+
+		flex-direction: row;
+		justify-content: space-between;
+		justify-content: space-evenly;
+	}
+	@media (min-width: 50rem) {
+		padding: 0rem;
+	}
+`;
+
+const ContactTitle = styled.h3`
 	text-align: center;
 	font-size: 3em;
 
@@ -40,9 +63,12 @@ const contactVariant = {
 
 export const Contact = () => {
 	return (
-		<FormContainer variants={contactVariant} initial='hidden' whileInView='show' viewport={{ once: true }}>
-			<FormTitle>Contáctame</FormTitle>
-			<FormTest />
-		</FormContainer>
+		<ContactContainer variants={contactVariant} initial='hidden' whileInView='show' viewport={{ once: true }}>
+			<ContactTitle>Contáctame</ContactTitle>
+			<ContactWrapper>
+				<ContactInfo />
+				<ContactForm />
+			</ContactWrapper>
+		</ContactContainer>
 	);
 };

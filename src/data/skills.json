@@ -2,43 +2,43 @@
 	"skills": [
 		{
 			"name": "React",
-			"src": "src/assets/icons/react2.svg",
+			"src": "/icons/react.svg",
 			"learned": true,
 			"type": "main"
 		},
 		{
 			"name": "Styled Components",
-			"src": "src/assets/icons/styled-components.svg",
+			"src": "/icons/styled-components.svg",
 			"learned": true,
 			"type": "primary"
 		},
 		{
 			"name": "Sass",
-			"src": "src/assets/icons/sass.svg",
+			"src": "/icons/sass.svg",
 			"learned": true,
 			"type": "primary"
 		},
 		{
 			"name": "JavaScript",
-			"src": "src/assets/icons/js.svg",
+			"src": "/icons/js.svg",
 			"learned": true,
 			"type": "primary"
 		},
 		{
 			"name": "CSS",
-			"src": "src/assets/icons/css.svg",
+			"src": "/icons/css.svg",
 			"learned": true,
 			"type": "primary"
 		},
 		{
 			"name": "HTML",
-			"src": "src/assets/icons/html.svg",
+			"src": "/icons/html.svg",
 			"learned": true,
 			"type": "primary"
 		},
 		{
 			"name": "Git",
-			"src": "src/assets/icons/git.svg",
+			"src": "/icons/git.svg",
 			"learned": true,
 			"type": "secondary"
 		}

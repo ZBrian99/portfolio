@@ -1,57 +1,154 @@
-import React from 'react';
 import styled from '@emotion/styled';
 
-const ContactContainer = styled.div`
+const ContactInfoContainer = styled.div`
 	display: flex;
-	flex-direction: column;
+	align-items: flex-start;
+	flex: 1;
+	gap: 2rem;
+	flex-wrap: nowrap;
+
+	padding: 0 2rem;
+	flex-wrap: wrap;
+	max-width: 40rem;
+	@media (min-width: 30rem) {
+		padding: 0rem;
+		gap: 2rem;
+	}
+`;
+
+const ContactItemsContainer = styled.div`
+	display: flex;
+	flex-wrap: wrap;
 	gap: 1rem;
-	width: 100%;
+	flex: 1;
+	@media (min-width: 50rem) {
+		flex-basis: 100%;
+		flex-direction: column;
+	}
+`;
+
+const ContactSocialContainer = styled.div`
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+	@media (min-width: 30rem) {
+		flex-direction: column;
+	}
+	@media (min-width: 45rem) {
+		flex-direction: row;
+		margin-top: auto;
+	}
 `;
 
 const ContactItem = styled.div`
 	display: flex;
-	align-items: center;
-	gap: 0.5rem;
-	cursor: pointer;
-	padding: 0.5rem 1rem;
-	border-radius: 0.5rem;
+	flex-basis: 100%;
+	border-radius: 1rem;
+	background-color: rgba(255, 255, 255, 0.05);
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+
+	padding: 1rem;
+	box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.1);
 `;
 
-const ContactText = styled.span`
-	font-size: 1em;
-	color: #fff;
+const Icon = styled.div`
+	font-size: 1.5em;
+	width: 3rem;
+	display: flex;
+	align-items: center;
+`;
+
+const ContactItemInfo = styled.div`
+	display: flex;
+	flex-direction: column;
+`;
+
+const Title = styled.div`
+	font-size: 1.1em;
+	font-weight: 500;
+`;
+
+const Text = styled.div`
+	font-size: 0.9rem;
+	color: #afafb6;
+	white-space: nowrap;
+`;
+
+const PhotoLink = styled.a`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 3rem;
+	height: 3rem;
+	box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.1);
+	border-radius: 50%;
+	backdrop-filter: blur(1rem);
+	background-color: rgba(255, 255, 255, 0.1);
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+	transition: transform 0.1s ease;
 
 	&:hover {
-		color: #0073b1;
+		transform: scale(1.05);
+
+		cursor: pointer;
+	}
+
+	&:active {
+		transform: scale(0.95);
 	}
 `;
+const PhotoIcon = styled.img`
+	width: 70%;
+	height: 70%;
 
-const copyToClipboard = (text) => {
-	navigator.clipboard.writeText(text).then(
-		() => {
-			alert(`${text} copiado al portapapeles!`);
-		},
-		() => {
-			alert('Error al copiar al portapapeles.');
-		}
-	);
-};
+	${({ rounded }) => rounded && `border-radius: 50%;`}
+	${({ fit }) => fit && `object-fit: cover;`}
+`;
 
 export const ContactInfo = () => {
 	return (
-		<ContactContainer>
-			<ContactItem onClick={() => copyToClipboard('123-456-7890')}>
-				📞
-				<ContactText>123-456-7890</ContactText>
-			</ContactItem>
-			<ContactItem onClick={() => copyToClipboard('Calle Falsa 123, Springfield')}>
-				📍
-				<ContactText>Argentina - Buenos Aires</ContactText>
-			</ContactItem>
-			<ContactItem onClick={() => copyToClipboard('email@ejemplo.com')}>
-				📧
-				<ContactText>email@ejemplo.com</ContactText>
-			</ContactItem>
-		</ContactContainer>
+		<ContactInfoContainer>
+			<ContactItemsContainer>
+				<ContactItem>
+					<Icon>📞</Icon>
+					<ContactItemInfo>
+						<Title>Teléfono</Title>
+						<Text>+123 9893 5647</Text>
+					</ContactItemInfo>
+				</ContactItem>
+
+				<ContactItem>
+					<Icon>📍</Icon>
+					<ContactItemInfo>
+						<Title>Ubicación</Title>
+						<Text>Argentina - Buenos Aires</Text>
+					</ContactItemInfo>
+				</ContactItem>
+
+				<ContactItem>
+					<Icon>📧</Icon>
+					<ContactItemInfo>
+						<Title>Correo electrónico</Title>
+						<Text>mail@gmail.com</Text>
+					</ContactItemInfo>
+				</ContactItem>
+			</ContactItemsContainer>
+
+			<ContactSocialContainer>
+				<PhotoLink href={'#'} target='_blank' rel='noopener noreferrer'>
+					<PhotoIcon src={'/icons/linkedin-icon.svg'} alt='linkedin' />
+				</PhotoLink>
+				<PhotoLink href={'#'} target='_blank' rel='noopener noreferrer'>
+					<PhotoIcon src={'/icons/github-icon.svg'} alt='linkedin' />
+				</PhotoLink>
+				<PhotoLink href={'#'} target='_blank' rel='noopener noreferrer'>
+					<PhotoIcon rounded src={'/icons/ig.svg'} alt='linkedin' />
+				</PhotoLink>
+				<PhotoLink href={'#'} target='_blank' rel='noopener noreferrer'>
+					<PhotoIcon src={'/icons/wpp.svg'} alt='linkedin' />
+				</PhotoLink>
+			</ContactSocialContainer>
+		</ContactInfoContainer>
 	);
 };

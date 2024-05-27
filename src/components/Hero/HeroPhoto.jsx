@@ -2,16 +2,18 @@ import styled from '@emotion/styled';
 
 const HeroImageContainer = styled.div`
 	margin: 3rem;
-	max-width: 25vh;
+	width: 25vh;
 	aspect-ratio: 1 / 1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	position: relative;
 	user-select: none;
+  
 	@media screen and (min-width: 50rem) {
-		max-width: 25%;
+		flex: 0.3;
 	}
+
 	&::before {
 		content: '';
 		position: absolute;
@@ -23,7 +25,7 @@ const HeroImageContainer = styled.div`
 	}
 `;
 
-const AboutImage = styled.img`
+const HeroImage = styled.img`
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -85,15 +87,15 @@ export const HeroPhoto = () => {
 	return (
 		<HeroImageContainer>
 			<PhotoLink href={'#'} target='_blank' rel='noopener noreferrer'>
-				<PhotoIcon src={'src/assets/icons/linkedin-icon.svg'} alt='linkedin' />
+				<PhotoIcon src={'/icons/linkedin-icon.svg'} alt='linkedin' />
 			</PhotoLink>
 			<PhotoLink href={'#'} target='_blank' rel='noopener noreferrer'>
-				<PhotoIcon rounded src={'src/assets/icons/ig.svg'} alt='linkedin' />
+				<PhotoIcon rounded src={'/icons/ig.svg'} alt='linkedin' />
 			</PhotoLink>
 			<PhotoLink href={'#'} target='_blank' rel='noopener noreferrer'>
-				<PhotoIcon src={'src/assets/icons/github-icon.svg'} alt='linkedin' />
+				<PhotoIcon src={'/icons/github-icon.svg'} alt='linkedin' />
 			</PhotoLink>
-			<AboutImage src='src/assets/images/rf2.png' alt='photo' />
+			<HeroImage src='/images/rf2low.webp' alt='photo' />
 		</HeroImageContainer>
 	);
 };

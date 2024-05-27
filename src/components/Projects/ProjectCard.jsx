@@ -161,7 +161,7 @@ const Technology = styled.div`
 
 const TechnologyImage = styled.img`
 	width: 100%;
-	height: auto;
+	height: 100%;
 `;
 
 const WebLink = styled(motion.a)`
@@ -186,23 +186,23 @@ const LinkImage = styled.img`
 const getTechnologyIcon = (technology) => {
 	switch (technology) {
 		case 'React':
-			return 'src/assets/icons/react.svg';
+			return '/icons/react.svg';
 		case 'Redux':
-			return 'src/assets/icons/redux.svg';
+			return '/icons/redux.svg';
 		case 'Node':
-			return 'src/assets/icons/nodejs.svg';
+			return '/icons/nodejs.svg';
 		case 'Sass':
-			return 'src/assets/icons/sass.svg';
+			return '/icons/sass.svg';
 		case 'Styled Components':
-			return 'src/assets/icons/styled-components.svg';
+			return '/icons/styled-components.svg';
 		case 'Framer Motion':
-			return 'src/assets/icons/framer-motion.svg';
+			return '/icons/framer-motion.svg';
 		case 'HTML':
-			return 'src/assets/icons/html.svg';
+			return '/icons/html.svg';
 		case 'CSS':
-			return 'src/assets/icons/css.svg';
+			return '/icons/css.svg';
 		case 'JavaScript':
-			return 'src/assets/icons/js.svg';
+			return '/icons/js.svg';
 
 		default:
 			return '';
@@ -274,6 +274,7 @@ export const ProjectCard = ({ project, index, activeCard, setActiveCard }) => {
 					<ProjectImage
 						src={project.image}
 						alt={project.name}
+						loading='lazy'
 						variants={image}
 						transition={{
 							duration: 0.5,
@@ -283,6 +284,7 @@ export const ProjectCard = ({ project, index, activeCard, setActiveCard }) => {
 					<ProjectPreview
 						src={project.preview}
 						alt={project.name}
+						loading='lazy'
 						variants={preview}
 						transition={{
 							opacity: {
@@ -313,7 +315,7 @@ export const ProjectCard = ({ project, index, activeCard, setActiveCard }) => {
 								target='_blank'
 								rel='noopener noreferrer'
 							>
-								<LinkImage src='src/assets/icons/github-icon.svg' alt='Github' />
+								<LinkImage src='/icons/github-icon.svg' alt='Github' />
 							</GithubLink>
 							<WebLink
 								whileHover={{ scale: 1.2 }}
@@ -321,7 +323,7 @@ export const ProjectCard = ({ project, index, activeCard, setActiveCard }) => {
 								target='_blank'
 								rel='noopener noreferrer'
 							>
-								<LinkImage src='src/assets/icons/external-link_5.svg' alt='Web' />
+								<LinkImage src='/icons/external-link_5.svg' alt='Web' />
 							</WebLink>
 						</ProjectLinks>
 					</PorjectBottom>

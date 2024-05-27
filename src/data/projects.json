@@ -3,43 +3,32 @@
 		{
 			"name": "E-commerce Platform",
 			"description": "A comprehensive platform for online sales, with payment integrations and inventory management.",
-			"date": "2022-09-30",
 			"link": "https://example.com/e-commerce-platform",
-			"image": "src/assets/images/card.webp",
-			"preview": "src/assets/images/project_1.webp",
+			"image": "/images/card.webp",
+			"preview": "/images/project_1.webp",
 			"speed": 15,
-
-			"video": "https://youtube.com/embed/video2",
 			"repository": "https://github.com/user/e-commerce-platform",
-			"technologies": ["React", "Redux", "Node", "Sass"],
-			"status": "in progress"
+			"technologies": ["React", "HTML", "CSS", "JavaScript"]
 		},
 		{
 			"name": "Travel App",
 			"description": "A mobile application to search for travel destinations, book accommodations, and plan itineraries.",
-			"date": "2023-03-20",
 			"link": "https://example.com/travel-app",
-			"image": "src/assets/images/card.webp",
-			"preview": "src/assets/images/lol.webp",
+			"image": "/images/card.webp",
+			"preview": "/images/lol.webp",
 			"speed": 12,
-			"video": "https://youtube.com/embed/video3",
 			"repository": "https://github.com/user/travel-app",
-			"technologies": ["React", "Styled Components"],
-			"status": "completed"
+			"technologies": ["React", "Styled Components"]
 		},
 		{
 			"name": "Travel App",
 			"description": "A mobile application to search for travel destinations, book accommodations, and plan itineraries.",
-			"date": "2023-03-20",
 			"link": "https://example.com/travel-app",
-			"image": "src/assets/images/card.webp",
-			"preview": "src/assets/images/project_2.webp",
+			"image": "/images/card.webp",
+			"preview": "/images/project_2.webp",
 			"speed": 14,
-			"video": "https://youtube.com/embed/video3",
 			"repository": "https://github.com/user/travel-app",
-			"technologies": ["React", "Styled Components"],
-			"status": "completed"
+			"technologies": ["React", "Styled Components"]
 		}
-		
 	]
 }

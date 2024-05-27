@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import { GlowButtonFullColor } from '../GlowButtonFullColor';
-import { GlowButtonAlt } from '../GlowButtonAlt';
+import { GlowButtonFullColor } from '../General/GlowButtonFullColor';
+import { GlowButtonAlt } from '../General/GlowButtonAlt';
 import { HeroPhoto } from './HeroPhoto';
 
 const HeroContainer = styled.section`
@@ -34,10 +34,9 @@ const HeroInfoContainer = styled.div`
 	font-size: 0.7em;
 	letter-spacing: 1px;
 	gap: 0.5rem;
-
 	font-weight: 800;
-
 	@media screen and (min-width: 50rem) {
+		flex: 1;
 		align-items: flex-start;
 		font-size: 0.9em;
 	}

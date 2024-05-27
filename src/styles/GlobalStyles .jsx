@@ -39,9 +39,10 @@ export const GlobalStyles = () => (
 			}
 
 			body {
-				font-family: 'Bricolage Grotesque', sans-serif;
+				font-family: 'Bricolage Grotesque', 'Verdana', sans-serif;
+
 				scroll-behavior: smooth;
-				background-color: #0a0a0a;
+				background-color: #111;
 				font-size: 100%;
 				min-height: 100vh;
 				color: white;

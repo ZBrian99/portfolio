@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { GlowButtonAlt } from '../GlowButtonAlt';
+import { GlowButtonAlt } from '../General/GlowButtonAlt';
 import { Skills } from '../Skills/Skills';
 
 const AboutContainer = styled(motion.section)`
@@ -99,7 +99,7 @@ export const About = () => {
 			<AboutTitle>Sobre mí</AboutTitle>
 			<AboutWrapper>
 				<AboutImageContainer>
-					<AboutImage src='src/assets/images/about_4.jpg' />
+					<AboutImage src='/images/about_4.webp' />
 				</AboutImageContainer>
 				<AboutInfo>
 					<AboutDescription>
