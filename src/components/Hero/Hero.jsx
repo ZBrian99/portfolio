@@ -73,6 +73,8 @@ const HeroButtonsContainer = styled.div`
 
 const HighlightText = styled.span`
 	color: #ffd000;
+
+  
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	color: transparent;
