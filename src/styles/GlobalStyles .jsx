@@ -3,7 +3,23 @@ import { Global, css } from '@emotion/react';
 export const GlobalStyles = () => (
 	<Global
 		styles={css`
-			@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+			@font-face {
+				font-family: 'Bricolage Grotesque';
+				src: url('/fonts/BricolageGrotesque-Bold.woff2') format('woff2'),
+					url('/fonts/BricolageGrotesque-Bold.woff') format('woff');
+				font-weight: bold;
+				font-style: normal;
+				font-display: swap;
+			}
+
+			@font-face {
+				font-family: 'Bricolage Grotesque';
+				src: url('/fonts/BricolageGrotesque-Regular.woff2') format('woff2'),
+					url('/fonts/BricolageGrotesque-Regular.woff') format('woff');
+				font-weight: normal;
+				font-style: normal;
+				font-display: swap;
+			}
 
 			*,
 			*::before,
@@ -40,7 +56,7 @@ export const GlobalStyles = () => (
 			}
 
 			body {
-				font-family: 'Bricolage Grotesque', 'Verdana', sans-serif;
+				font-family: 'Bricolage Grotesque', sans-serif;
 
 				scroll-behavior: smooth;
 				background-color: #111;

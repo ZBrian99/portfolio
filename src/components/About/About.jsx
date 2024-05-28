@@ -87,7 +87,7 @@ export const About = () => {
 			<AboutTitle>Sobre mí</AboutTitle>
 			<AboutWrapper>
 				<AboutImageContainer>
-					<AboutImage src='/images/about_4.webp' />
+					<AboutImage src='/images/about_4.webp' alt='about' />
 				</AboutImageContainer>
 				<AboutInfo>
 					<AboutDescription>

@@ -66,7 +66,6 @@ const ContactItemInfo = styled.div`
 
 const Title = styled.div`
 	font-size: 1.1em;
-	font-weight: 500;
 `;
 
 const Text = styled.div`

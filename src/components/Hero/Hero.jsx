@@ -32,9 +32,8 @@ const HeroInfoContainer = styled.div`
 	text-align: left;
 	align-items: flex-start;
 	font-size: 0.7em;
-	letter-spacing: 1px;
 	gap: 0.5rem;
-	font-weight: 800;
+	font-weight: bold;
 	@media screen and (min-width: 50rem) {
 		flex: 1;
 		align-items: flex-start;
@@ -50,12 +49,10 @@ const HeroWelcome = styled.p`
 `;
 
 const HeroTitle = styled.h1`
-	font-weight: inherit;
 	font-size: 4.5em;
 `;
 
 const HeroSubtitle = styled.h2`
-	font-weight: inherit;
 	font-size: 3em;
 `;
 const HeroExtra = styled.p`
