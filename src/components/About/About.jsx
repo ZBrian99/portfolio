@@ -91,34 +91,20 @@ export const About = () => {
 				</AboutImageContainer>
 				<AboutInfo>
 					<AboutDescription>
-						Comencé modificando pequeñas aplicaciones, A lo largo de los años he aprendido múltiples
-						tecnologías, para finalmente especializarme en React.
-						<TextHighlight> hoy en día desarrollo aplicaciones completas.</TextHighlight>
+						Comencé modificando pequeñas aplicaciones. Con el tiempo, he aprendido diversas tecnologías para
+						finalmente especializarme en React, con el que hoy en día desarrollo aplicaciones completas.
 					</AboutDescription>
-
 					<AboutDescription>
-						Mi enfoque está en el diseño UI/UX,{' '}
-						<TextHighlight>
-							garantizando que mis aplicaciones se adapten y funcionen en cualquier dispositivo
-						</TextHighlight>{' '}
-						, brindando una experiencia de usuario coherente y fluida sin dejar de lado el diseño y la
-						funcionalidad.
+						Mi enfoque está en garantizar que mis aplicaciones se adapten y funcionen en cualquier
+						dispositivo, brindando una experiencia de usuario coherente y fluida sin dejar de lado el diseño y
+						la funcionalidad.
 					</AboutDescription>
-
 					<AboutDescription>
-						Además de mis habilidades técnicas, soy una persona que ha superado multiples obstaculos en mi
-						vida,
-						<TextHighlight>
-							{' '}
-							Esto me ha enseñado a controlar mis emociones, ser persistente y nunca rendirme.
-						</TextHighlight>{' '}
-						Mi capacidad de automotivación y gran adaptabilidad me permite superar cualquier obstáculo que se
-						me presente.{' '}
-						<TextHighlight>
-							Actualmente estoy en el mejor momento de mi vida y listo para enfrentar cualquier desafío.
-						</TextHighlight>
+						Además de mis habilidades técnicas, soy una persona que ha superado múltiples obstáculos en mi
+						vida. Lo que me ha enseñado a controlar mis emociones, ser persistente y nunca rendirme. Mi
+						capacidad de automotivación y gran adaptabilidad me permite superar cualquier situación.
+						Actualmente, estoy en el mejor momento de mi vida y listo para enfrentar cualquier desafío .
 					</AboutDescription>
-
 					<Skills />
 					<GlowButtonAlt
 						href='https://drive.google.com/file/d/1cnpVAz6phvFaQCKsCJ2iowrBxdvftCYb/view?usp=sharing'
