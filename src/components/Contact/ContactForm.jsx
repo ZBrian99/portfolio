@@ -1,4 +1,5 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
+import { useEffect, useState } from 'react';
 
 const FormContainer = styled.div`
 	display: flex;
@@ -25,6 +26,7 @@ const Form = styled.form`
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 1rem;
+	position: relative;
 `;
 
 const Input = styled.input`
@@ -70,7 +72,7 @@ const Textarea = styled.textarea`
 	}
 `;
 
-const Button = styled.input`
+const Button = styled.button`
 	color: #fff;
 	font-size: 1em;
 	outline: none;
@@ -86,14 +88,94 @@ const Button = styled.input`
 	}
 `;
 
+const Message = styled.div`
+	${({ error }) => (error ? 'color:#ff0000;' : 'color: #ffffff;')}
+	background-color: rgba(255, 255, 255, 0.05);
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+	padding: 1rem;
+	border-radius: 1rem;
+	position: absolute;
+	bottom: -1rem;
+	transform: translateY(100%);
+`;
+
 export const ContactForm = () => {
+	const [formData, setFormData] = useState({
+		nombre: '',
+		correo: '',
+		mensaje: '',
+	});
+
+	const [status, setStatus] = useState(null);
+
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+		setFormData({
+			...formData,
+			[name]: value,
+		});
+	};
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+
+		try {
+			const response = await fetch('https://formspree.io/f/xdoqvrkj', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(formData),
+			});
+
+			if (response.ok) {
+				setStatus('success');
+				setFormData({ nombre: '', correo: '', mensaje: '' });
+			} else {
+				setStatus('error');
+			}
+		} catch (error) {
+			setStatus('error');
+		}
+	};
+	useEffect(() => {
+		if (status) {
+			const timer = setTimeout(() => {
+				setStatus(null);
+			}, 5000);
+
+			return () => clearTimeout(timer);
+		}
+	}, [status]);
 	return (
 		<FormContainer>
-			<Form action='#'>
-				<Input type='text' placeholder='Nombre' required />
-				<Input type='email' placeholder='Correo electrónico' required />
-				<Textarea placeholder='Mensaje' required></Textarea>
-				<Button type='submit' value='Enviar' />
+			<Form onSubmit={handleSubmit}>
+				<Input
+					type='text'
+					name='nombre'
+					placeholder='Nombre'
+					value={formData.nombre}
+					onChange={handleChange}
+					required
+				/>
+				<Input
+					type='email'
+					name='correo'
+					placeholder='Correo electrónico'
+					value={formData.correo}
+					onChange={handleChange}
+					required
+				/>
+				<Textarea
+					name='mensaje'
+					placeholder='Mensaje'
+					value={formData.mensaje}
+					onChange={handleChange}
+					required
+				/>
+				<Button type='submit'>Enviar</Button>
+				{status === 'success' && <Message>¡Mensaje enviado con éxito!</Message>}
+				{status === 'error' && <Message error>Hubo un error al enviar el mensaje.</Message>}
 			</Form>
 		</FormContainer>
 	);

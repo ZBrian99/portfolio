@@ -113,7 +113,7 @@ export const ContactInfo = () => {
 					<Icon>📞</Icon>
 					<ContactItemInfo>
 						<Title>Teléfono</Title>
-						<Text>+123 9893 5647</Text>
+						<Text>+54 9 223 603-2601</Text>
 					</ContactItemInfo>
 				</ContactItem>
 
@@ -129,22 +129,27 @@ export const ContactInfo = () => {
 					<Icon>📧</Icon>
 					<ContactItemInfo>
 						<Title>Correo electrónico</Title>
-						<Text>mail@gmail.com</Text>
+						<Text>brian.zelada99@gmail.com</Text>
 					</ContactItemInfo>
 				</ContactItem>
 			</ContactItemsContainer>
 
 			<ContactSocialContainer>
-				<PhotoLink href={'#'} target='_blank' rel='noopener noreferrer'>
+				<PhotoLink
+					href={'https://www.linkedin.com/in/brian-zelada-ba544b310/'}
+					target='_blank'
+					rel='noopener noreferrer'
+				>
 					<PhotoIcon src={'/icons/linkedin-icon.svg'} alt='linkedin' />
 				</PhotoLink>
-				<PhotoLink href={'#'} target='_blank' rel='noopener noreferrer'>
+				<PhotoLink href={'https://github.com/ZBrian99'} target='_blank' rel='noopener noreferrer'>
 					<PhotoIcon src={'/icons/github-icon.svg'} alt='linkedin' />
 				</PhotoLink>
-				<PhotoLink href={'#'} target='_blank' rel='noopener noreferrer'>
+				<PhotoLink href={'https://www.instagram.com/zbrian99/'} target='_blank' rel='noopener noreferrer'>
 					<PhotoIcon rounded src={'/icons/ig.svg'} alt='linkedin' />
 				</PhotoLink>
-				<PhotoLink href={'#'} target='_blank' rel='noopener noreferrer'>
+
+				<PhotoLink href='https://wa.me/+5492236698045' target='_blank' rel='noopener noreferrer'>
 					<PhotoIcon src={'/icons/wpp.svg'} alt='linkedin' />
 				</PhotoLink>
 			</ContactSocialContainer>

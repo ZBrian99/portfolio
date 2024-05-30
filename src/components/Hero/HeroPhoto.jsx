@@ -9,7 +9,7 @@ const HeroImageContainer = styled.div`
 	align-items: center;
 	position: relative;
 	user-select: none;
-  
+
 	@media screen and (min-width: 50rem) {
 		flex: 0.3;
 	}
@@ -86,14 +86,18 @@ const PhotoIcon = styled.img`
 export const HeroPhoto = () => {
 	return (
 		<HeroImageContainer>
-			<PhotoLink href={'#'} target='_blank' rel='noopener noreferrer'>
+			<PhotoLink href={'https://github.com/ZBrian99'} target='_blank' rel='noopener noreferrer'>
+				<PhotoIcon src={'/icons/github-icon.svg'} alt='linkedin' />
+			</PhotoLink>
+			<PhotoLink
+				href={'https://www.linkedin.com/in/brian-zelada-ba544b310/'}
+				target='_blank'
+				rel='noopener noreferrer'
+			>
 				<PhotoIcon src={'/icons/linkedin-icon.svg'} alt='linkedin' />
 			</PhotoLink>
-			<PhotoLink href={'#'} target='_blank' rel='noopener noreferrer'>
+			<PhotoLink href={'https://www.instagram.com/zbrian99/'} target='_blank' rel='noopener noreferrer'>
 				<PhotoIcon rounded src={'/icons/ig.svg'} alt='linkedin' />
-			</PhotoLink>
-			<PhotoLink href={'#'} target='_blank' rel='noopener noreferrer'>
-				<PhotoIcon src={'/icons/github-icon.svg'} alt='linkedin' />
 			</PhotoLink>
 			<HeroImage src='/images/rf2low.webp' alt='photo' />
 		</HeroImageContainer>
