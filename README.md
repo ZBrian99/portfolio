@@ -1,8 +1,12 @@
+¡Claro! Aquí está el README actualizado con el enlace al portfolio funcional y algunos emojis para agregar un poco de vida:
+
+---
+
 # Portfolio de Brian Zelada
 
 ¡Bienvenido al repositorio de mi portfolio!
 
-## [Ver Portfolio]([#](https://brianzelada.vercel.app/))
+## [Ver Portfolio 👉](https://brianzelada.vercel.app/)
 
 ## Descripción
 
@@ -19,7 +23,7 @@ Este proyecto contiene el código fuente de mi portfolio personal, donde muestro
 
 El proyecto está estructurado de la siguiente manera:
 
-- **src:** Contiene el código fuente de la aplicación.
+  - **src:** Contiene el código fuente de la aplicación.
   - **components:** Componentes de la aplicación.
   - **pages:** Páginas principales del portfolio.
   - **styles:** Estilos globales.
@@ -32,4 +36,8 @@ El proyecto está estructurado de la siguiente manera:
 - **LinkedIn:** [Perfil de LinkedIn](https://www.linkedin.com/in/zbrian99/)
 - **GitHub:** [Perfil de GitHub](https://github.com/ZBrian99)
 
-¡Gracias por visitar mi portfolio!
+¡Gracias por visitar mi portfolio! 🚀
+
+--- 
+
+Este README debería ser más atractivo y proporcionar una experiencia mejorada para los visitantes. ¡Espero que te guste!
