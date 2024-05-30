@@ -2,7 +2,7 @@
 
 ¡Bienvenido al repositorio de mi portfolio!
 
-## [Ver Portfolio 👉](https://brianzelada.vercel.app/)
+## [Ver Portfolio 👉](https://brianzelada.vercel.app/){:target="_blank"}
 
 ## Descripción
 
@@ -19,7 +19,7 @@ Este proyecto contiene el código fuente de mi portfolio personal, donde muestro
 
 El proyecto está estructurado de la siguiente manera:
 
-  - **src:** Contiene el código fuente de la aplicación.
+- **src:** Contiene el código fuente de la aplicación.
   - **components:** Componentes de la aplicación.
   - **pages:** Páginas principales del portfolio.
   - **styles:** Estilos globales.
@@ -29,7 +29,7 @@ El proyecto está estructurado de la siguiente manera:
 ## Contacto
 
 - **Correo electrónico:** brian.zelada99@gmail.com
-- **LinkedIn:** [Perfil de LinkedIn](https://www.linkedin.com/in/zbrian99/)
-- **GitHub:** [Perfil de GitHub](https://github.com/ZBrian99)
+- **LinkedIn:** [Perfil de LinkedIn](https://www.linkedin.com/in/zbrian99/){:target="_blank"}
+- **GitHub:** [Perfil de GitHub](https://github.com/ZBrian99){:target="_blank"}
 
 ¡Gracias por visitar mi portfolio! 🚀
