@@ -1,8 +1,9 @@
+```markdown
 # Portfolio de Brian Zelada
 
 ¡Bienvenido al repositorio de mi portfolio!
 
-## [Ver Portfolio 👉](https://brianzelada.vercel.app/){:target="_blank"}
+## <a href="https://brianzelada.vercel.app/" target="_blank">Ver Portfolio 👉</a>
 
 ## Descripción
 
@@ -29,7 +30,8 @@ El proyecto está estructurado de la siguiente manera:
 ## Contacto
 
 - **Correo electrónico:** brian.zelada99@gmail.com
-- **LinkedIn:** [Perfil de LinkedIn](https://www.linkedin.com/in/zbrian99/){:target="_blank"}
-- **GitHub:** [Perfil de GitHub](https://github.com/ZBrian99){:target="_blank"}
+- **LinkedIn:** <a href="https://www.linkedin.com/in/zbrian99/" target="_blank">Perfil de LinkedIn</a>
+- **GitHub:** <a href="https://github.com/ZBrian99" target="_blank">Perfil de GitHub</a>
 
 ¡Gracias por visitar mi portfolio! 🚀
+```
