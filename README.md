@@ -1,7 +1,3 @@
-¡Claro! Aquí está el README actualizado con el enlace al portfolio funcional y algunos emojis para agregar un poco de vida:
-
----
-
 # Portfolio de Brian Zelada
 
 ¡Bienvenido al repositorio de mi portfolio!
@@ -37,7 +33,3 @@ El proyecto está estructurado de la siguiente manera:
 - **GitHub:** [Perfil de GitHub](https://github.com/ZBrian99)
 
 ¡Gracias por visitar mi portfolio! 🚀
-
---- 
-
-Este README debería ser más atractivo y proporcionar una experiencia mejorada para los visitantes. ¡Espero que te guste!
