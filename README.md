@@ -19,12 +19,12 @@ Este proyecto contiene el código fuente de mi portfolio personal, donde muestro
 
 El proyecto está estructurado de la siguiente manera:
 
-  - **src:** Contiene el código fuente de la aplicación.
-  - **components:** Componentes de la aplicación.
-  - **pages:** Páginas principales del portfolio.
-  - **styles:** Estilos globales.
-  - **data:** Archivos de datos estáticos, como información de proyectos y detalles personales.
-  - **public:**  Recursos multimedia, como imágenes y fuentes.
+- **src:** Contiene el código fuente de la aplicación.
+- **components:** Componentes de la aplicación.
+- **pages:** Páginas principales del portfolio.
+- **styles:** Estilos globales.
+- **data:** Archivos de datos estáticos, como información de proyectos y detalles personales.
+- **public:**  Recursos multimedia, como imágenes y fuentes.
 
 ## Contacto
 
