@@ -1,4 +1,3 @@
-```markdown
 # Portfolio de Brian Zelada
 
 ¡Bienvenido al repositorio de mi portfolio!
@@ -34,4 +33,3 @@ El proyecto está estructurado de la siguiente manera:
 - **GitHub:** <a href="https://github.com/ZBrian99" target="_blank">Perfil de GitHub</a>
 
 ¡Gracias por visitar mi portfolio! 🚀
-```
