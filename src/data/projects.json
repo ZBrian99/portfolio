@@ -1,34 +1,34 @@
 {
 	"projects": [
 		{
-			"name": "E-commerce Platform",
-			"description": "A comprehensive platform for online sales, with payment integrations and inventory management.",
-			"link": "https://example.com/e-commerce-platform",
-			"image": "/images/card.webp",
-			"preview": "/images/project_1.webp",
-			"speed": 15,
-			"repository": "https://github.com/user/e-commerce-platform",
-			"technologies": ["React", "HTML", "CSS", "JavaScript"]
+			"name": "League of Legends Rework",
+			"description": "Rework completo de la página de campeones de League of Legends.",
+			"link": "https://leagueoflegendsrework.vercel.app/champions/",
+			"image": "/projects/lol.webp",
+			"preview": "/projects/lol_preview.webp",
+			"speed": 18,
+			"repository": "https://github.com/ZBrian99/league_of_legends_rework",
+			"technologies": ["React", "Styled Components", "React Router"]
 		},
 		{
-			"name": "Travel App",
-			"description": "A mobile application to search for travel destinations, book accommodations, and plan itineraries.",
-			"link": "https://example.com/travel-app",
-			"image": "/images/card.webp",
-			"preview": "/images/lol.webp",
-			"speed": 12,
-			"repository": "https://github.com/user/travel-app",
-			"technologies": ["React", "Styled Components"]
+			"name": "Pipzum",
+			"description": "Página de una pizzería con menú, precios, datos de contacto, novedades y logros.",
+			"link": "https://pipzum.vercel.app/",
+			"image": "/projects/pipzum.webp",
+			"preview": "/projects/pipzum_preview.webp",
+			"speed": 50,
+			"repository": "https://github.com/ZBrian99/pizzeria",
+			"technologies": ["React", "Sass", "React Router"]
 		},
 		{
-			"name": "Travel App",
-			"description": "A mobile application to search for travel destinations, book accommodations, and plan itineraries.",
-			"link": "https://example.com/travel-app",
-			"image": "/images/card.webp",
-			"preview": "/images/project_2.webp",
-			"speed": 14,
-			"repository": "https://github.com/user/travel-app",
-			"technologies": ["React", "Styled Components"]
+			"name": "Nuestra Boda",
+			"description": "Galería de fotos y videos de boda con contenido y animaciones aleatorias.",
+			"link": "https://bmoda.vercel.app/",
+			"image": "/projects/bmoda.webp",
+			"preview": "/projects/bmoda_preview.webp",
+			"speed": 20,
+			"repository": "https://github.com/ZBrian99/bmoda",
+			"technologies": ["React", "Framer Motion", "Styled Components", "Sass", "React Router"]
 		}
 	]
 }

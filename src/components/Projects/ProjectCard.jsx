@@ -162,6 +162,7 @@ const Technology = styled.div`
 const TechnologyImage = styled.img`
 	width: 100%;
 	height: 100%;
+	filter: drop-shadow(0 0 0.1rem rgba(0, 0, 0, 0.5));
 `;
 
 const WebLink = styled(motion.a)`
@@ -203,7 +204,8 @@ const getTechnologyIcon = (technology) => {
 			return '/icons/css.svg';
 		case 'JavaScript':
 			return '/icons/js.svg';
-
+		case 'React Router':
+			return '/icons/router.svg';
 		default:
 			return '';
 	}

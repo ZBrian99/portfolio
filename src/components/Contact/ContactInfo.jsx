@@ -47,16 +47,17 @@ const ContactItem = styled.div`
 	border-radius: 1rem;
 	background-color: rgba(255, 255, 255, 0.05);
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-
 	padding: 1rem;
+  gap: 1rem;
 	box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.1);
 `;
 
 const Icon = styled.div`
 	font-size: 1.5em;
-	width: 3rem;
+	width: 2rem;
 	display: flex;
 	align-items: center;
+  justify-content: center;
 `;
 
 const ContactItemInfo = styled.div`
@@ -110,7 +111,7 @@ export const ContactInfo = () => {
 		<ContactInfoContainer>
 			<ContactItemsContainer>
 				<ContactItem>
-					<Icon>📞</Icon>
+					<Icon>📱</Icon>
 					<ContactItemInfo>
 						<Title>Teléfono</Title>
 						<Text>+54 9 223 603-2601</Text>
@@ -118,7 +119,7 @@ export const ContactInfo = () => {
 				</ContactItem>
 
 				<ContactItem>
-					<Icon>📍</Icon>
+					<Icon>🌎</Icon>
 					<ContactItemInfo>
 						<Title>Ubicación</Title>
 						<Text>Argentina - Buenos Aires</Text>
@@ -126,7 +127,7 @@ export const ContactInfo = () => {
 				</ContactItem>
 
 				<ContactItem>
-					<Icon>📧</Icon>
+					<Icon>✉️</Icon>
 					<ContactItemInfo>
 						<Title>Correo electrónico</Title>
 						<Text>brian.zelada99@gmail.com</Text>
