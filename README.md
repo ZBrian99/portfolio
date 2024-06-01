@@ -1,12 +1,10 @@
 # Portfolio Brian Zelada
 
-¡Bienvenido al repositorio de mi portfolio!
+¡Bienvenido a mi portfolio!
+
+En este proyecto podras ver una selección de mis proyectos, información sobre mí como desarrollador web y un seccion de contacto.
 
 ## [Ver Portfolio 👉](https://brianzelada.vercel.app/)
-
-## Descripción
-
-Este proyecto contiene el código fuente de mi portfolio personal, donde muestro una selección de mis proyectos y comparto información sobre mí como desarrollador web.
 
 ## Tecnologías Utilizadas
 
