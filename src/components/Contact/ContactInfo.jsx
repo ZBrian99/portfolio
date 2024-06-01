@@ -137,7 +137,7 @@ export const ContactInfo = () => {
 
 			<ContactSocialContainer>
 				<PhotoLink
-					href={'https://www.linkedin.com/in/brian-zelada-ba544b310/'}
+					href={'https://www.linkedin.com/in/brianzelada/'}
 					target='_blank'
 					rel='noopener noreferrer'
 				>

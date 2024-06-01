@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import { useEffect, useRef, useState } from 'react';
 
 const NavbarToggle = styled.div`
-
 	position: fixed;
 	top: 1rem;
 	right: 1rem;
@@ -21,7 +20,6 @@ const NavbarToggle = styled.div`
 `;
 
 const NavbarContainer = styled.div`
-
 	position: fixed;
 	top: 0rem;
 	right: 0rem;
@@ -43,7 +41,6 @@ const NavbarContainer = styled.div`
 `;
 
 const NavbarCircle = styled.div`
-
 	position: absolute;
 	background-color: #0e0e0e;
 	right: 0;
@@ -63,7 +60,6 @@ const NavbarCircle = styled.div`
 	clip-path: ${({ isActive }) => (isActive ? ' circle(50% at 50% 50%)' : 'circle(0% at 50% 50%)')};
 `;
 const NavbarMenu = styled.nav`
-
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
@@ -82,7 +78,6 @@ const NavbarMenu = styled.nav`
 	}
 `;
 const NavbarItem = styled.a`
-
 	border-radius: 1rem;
 	padding: 0.5rem 1rem;
 	text-decoration: none;
@@ -127,11 +122,11 @@ export const Navbar = () => {
 						<NavbarItem href='#home' onClick={() => setIsActive(false)}>
 							Inicio
 						</NavbarItem>
-						<NavbarItem href='#about' onClick={() => setIsActive(false)}>
-							Sobre Mi
-						</NavbarItem>
 						<NavbarItem href='#projects' onClick={() => setIsActive(false)}>
 							Proyectos
+						</NavbarItem>
+						<NavbarItem href='#about' onClick={() => setIsActive(false)}>
+							Sobre Mi
 						</NavbarItem>
 						<NavbarItem href='#contact' onClick={() => setIsActive(false)}>
 							Contacto

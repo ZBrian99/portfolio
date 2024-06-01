@@ -89,11 +89,7 @@ export const HeroPhoto = () => {
 			<PhotoLink href={'https://github.com/ZBrian99'} target='_blank' rel='noopener noreferrer'>
 				<PhotoIcon src={'/icons/github-icon.svg'} alt='linkedin' />
 			</PhotoLink>
-			<PhotoLink
-				href={'https://www.linkedin.com/in/brian-zelada-ba544b310/'}
-				target='_blank'
-				rel='noopener noreferrer'
-			>
+			<PhotoLink href={'https://www.linkedin.com/in/brianzelada/'} target='_blank' rel='noopener noreferrer'>
 				<PhotoIcon src={'/icons/linkedin-icon.svg'} alt='linkedin' />
 			</PhotoLink>
 			<PhotoLink href={'https://www.instagram.com/zbrian99/'} target='_blank' rel='noopener noreferrer'>

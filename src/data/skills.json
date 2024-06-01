@@ -19,6 +19,12 @@
 			"type": "primary"
 		},
 		{
+			"name": "React Router",
+			"src": "/icons/router.svg",
+			"learned": true,
+			"type": "primary"
+		},
+		{
 			"name": "JavaScript",
 			"src": "/icons/js.svg",
 			"learned": true,
