@@ -1,16 +1,16 @@
-# Portfolio Brian Zelada
+# Portfolio de Brian Zelada
 
 ¡Bienvenido a mi portfolio!
 
-En este proyecto podras ver una selección de mis proyectos, información sobre mí como desarrollador web y un seccion de contacto.
+En este proyecto, podrás ver una selección de mis trabajos, información sobre mí como desarrollador web y una sección de contacto.
 
-## [Ver Portfolio 👉](https://brianzelada.vercel.app/)
+## [👉 Ver Portfolio](https://brianzelada.vercel.app/)
 
 ## Tecnologías Utilizadas
 
 - **React:** Utilizado para la construcción de la interfaz de usuario y la lógica de la aplicación.
-- **Emotion/Styled:** Utilizado para el manejo de estilos y la creación de componentes con estilos.
-- **Framer Motion:** Utilizado para agregar animaciones y transiciones a la interfaz de usuario proximamente se reemplazara por css puro.
+- **Emotion/Styled Components:** Utilizado para el manejo de estilos y la creación de componentes con estilos.
+- **Framer Motion:** Utilizado para agregar animaciones y transiciones a la interfaz de usuario. Próximamente, se reemplazará por CSS puro.
 - **React-Parallax-Tilt:** Utilizado para la creación de efectos de paralaje en las tarjetas de proyectos.
 
 ## Contacto
