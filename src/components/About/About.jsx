@@ -107,7 +107,7 @@ export const About = () => {
 						Además de mis habilidades técnicas, soy una persona que ha superado múltiples obstáculos en mi
 						vida. Lo que me ha enseñado a controlar mis emociones, ser persistente y nunca rendirme. Mi
 						capacidad de automotivación y gran adaptabilidad me permite superar cualquier situación.
-						Actualmente, estoy en el mejor momento de mi vida y listo para enfrentar cualquier desafío .
+						Actualmente, estoy en el mejor momento de mi vida y listo para enfrentar cualquier desafío.
 					</AboutDescription>
 					<Skills />
 					<GlowButtonAlt

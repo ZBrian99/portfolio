@@ -11,13 +11,15 @@ const ButtonStyled = styled.a`
 	${({ fit }) => (fit ? 'width: fit-content;' : 'flex: 1;')}
 	height: fit-content;
 	white-space: nowrap;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	text-align: center;
 	text-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.7);
 	padding: 0.75rem 1.5rem;
 	background-color: rgba(255, 255, 255, 0.05);
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+
 	font-weight: normal;
 	box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.1);
 
