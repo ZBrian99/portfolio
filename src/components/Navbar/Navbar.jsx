@@ -10,8 +10,7 @@ const NavbarToggle = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: rgba(14, 14, 14, 0.7);
-	backdrop-filter: blur(1rem);
+	background-color: #0e0e0e;
 	border-radius: 50%;
 	user-select: none;
 	cursor: pointer;

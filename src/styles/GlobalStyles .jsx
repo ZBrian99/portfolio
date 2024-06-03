@@ -53,13 +53,13 @@ export const GlobalStyles = () => (
 					display: none;
 				}
 				scroll-behavior: smooth;
+
+				background: #1d0722;
 			}
 
 			body {
 				font-family: 'Bricolage Grotesque', sans-serif;
-
 				scroll-behavior: smooth;
-				background-color: #111;
 				font-size: 100%;
 				min-height: 100vh;
 				color: white;

@@ -83,7 +83,6 @@ const PhotoLink = styled.a`
 	height: 3rem;
 	box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.1);
 	border-radius: 50%;
-	backdrop-filter: blur(1rem);
 	background-color: rgba(255, 255, 255, 0.1);
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
 	transition: transform 0.1s ease;
@@ -114,7 +113,7 @@ export const ContactInfo = () => {
 					<Icon>📱</Icon>
 					<ContactItemInfo>
 						<Title>Teléfono</Title>
-						<Text>+54 9 223 603-2601</Text>
+						<Text>+54 9 223 669-8045</Text>
 					</ContactItemInfo>
 				</ContactItem>
 

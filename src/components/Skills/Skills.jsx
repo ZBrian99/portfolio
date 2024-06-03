@@ -56,7 +56,7 @@ const SkillTooltip = styled.span`
 	pointer-events: none;
 	opacity: 0;
 	border-radius: 0.5rem;
-	background-color: #222;
+	background-color: #111;
 
 	&::before {
 		content: '';
@@ -64,8 +64,8 @@ const SkillTooltip = styled.span`
 		bottom: 2%;
 		left: 50%;
 		transform: translate(-50%, 100%);
-		border: 0.5rem solid #222;
-		border-color: #222 transparent transparent transparent;
+		border: 0.5rem solid #111;
+		border-color: #111 transparent transparent transparent;
 	}
 `;
 

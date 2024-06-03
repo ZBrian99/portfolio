@@ -6,11 +6,16 @@ const ButtonStyled = styled.a`
 	outline: none;
 
 	cursor: pointer;
-	width: fit-content;
-	height: fit-content;
 	border-radius: 2rem;
 	color: #fff;
-	text-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+	${({ fit }) => (fit ? 'width: fit-content;' : 'flex: 1;')}
+	height: fit-content;
+	white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	text-align: center;
+	text-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.7);
 	padding: 0.75rem 1.5rem;
 	background-color: rgba(255, 255, 255, 0.05);
 	font-weight: normal;
@@ -19,7 +24,7 @@ const ButtonStyled = styled.a`
 	transition: border 0.1s ease, transform 0.1s ease background-color 0.1s ease;
 	position: relative;
 
-	@media screen and (min-width: 40rem) {
+	@media screen and (min-width: 30rem) {
 		padding: 1rem 2rem;
 	}
 

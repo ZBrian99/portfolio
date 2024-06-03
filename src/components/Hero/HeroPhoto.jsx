@@ -39,14 +39,12 @@ const PhotoLink = styled.a`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	max-width: 15rem;
-	max-height: 15rem;
 	box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.1);
 	transform: translate(-50%, -50%);
 	border-radius: 50%;
 	backdrop-filter: blur(1rem);
-	width: 25%;
-	height: 25%;
+	width: 30%;
+	height: 30%;
 	background-color: rgba(255, 255, 255, 0.1);
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
 	transition: transform 0.1s ease;
@@ -62,17 +60,16 @@ const PhotoLink = styled.a`
 	}
 
 	&:nth-of-type(1) {
-		top: 87.5%;
-		left: 20%;
+		top: 82.5%;
+		left: 15%;
 	}
 	&:nth-of-type(2) {
 		top: 100%;
-
 		left: 50%;
 	}
 	&:nth-of-type(3) {
-		top: 87.5%;
-		left: 80%;
+		top: 82.5%;
+		left: 85%;
 	}
 `;
 const PhotoIcon = styled.img`

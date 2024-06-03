@@ -16,7 +16,7 @@ const AboutWrapper = styled.div`
 	flex-direction: column;
 	position: relative;
 	padding: 0 2rem;
-
+	gap: 1rem;
 	@media screen and (min-width: 45rem) {
 		padding: 0 3rem;
 	}
@@ -31,16 +31,15 @@ const AboutWrapper = styled.div`
 `;
 
 const AboutImageContainer = styled.div`
-	display: none;
+	display: flex;
+	border-radius: 1rem;
+	overflow: hidden;
+	width: 100%;
+	opacity: 0.9;
+	filter: grayscale(30%);
+	box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.1);
 	@media screen and (min-width: 50rem) {
-		display: flex;
-		border-radius: 1rem;
-		overflow: hidden;
-		width: 100%;
 		height: 100%;
-		opacity: 0.9;
-		filter: grayscale(30%);
-		box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.1);
 		flex: 0.5;
 	}
 `;
@@ -81,6 +80,11 @@ const TextHighlight = styled.span`
 	color: #fff;
 `;
 
+const LinkImage = styled.img`
+	width: 1em;
+	height: 1em;
+	margin-left: 0.5rem;
+`;
 export const About = () => {
 	return (
 		<AboutContainer id='about'>
@@ -107,11 +111,13 @@ export const About = () => {
 					</AboutDescription>
 					<Skills />
 					<GlowButtonAlt
+						fit
 						href='https://drive.google.com/file/d/18MeoEvyBl-ukrqeceJgpx7yey8awDKYj/view?usp=sharing'
 						target='_blank'
 						rel='noreferrer'
 					>
-						📄 Curriculum
+						Curriculum
+						<LinkImage src='/icons/external-link_5.svg' alt='Web' />
 					</GlowButtonAlt>
 				</AboutInfo>
 			</AboutWrapper>

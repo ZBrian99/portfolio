@@ -2,12 +2,12 @@ import { GlobalStyles } from './styles/GlobalStyles ';
 import { HomePage } from './pages/Home/HomePage';
 import { Navbar } from './components/Navbar/Navbar';
 import { Footer } from './components/Footer/Footer';
-import { NebulaBackground } from './components/Background/NebulaBackground';
+import { Background } from './components/Background/Background';
 export const App = () => {
 	return (
 		<>
 			<GlobalStyles />
-			<NebulaBackground />
+			{/* <Background /> */}
 			<Navbar />
 			<HomePage />
 			<Footer />

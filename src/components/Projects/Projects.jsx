@@ -1,16 +1,22 @@
 import styled from '@emotion/styled';
 import { projects } from '../../data/projects';
-import { useEffect, useRef, useState } from 'react';
-import { ProjectCard } from './ProjectCard';
+import { ProjectSimpleCard } from './ProjectSimpleCard';
 
 const ProjectsContainer = styled.section`
 	width: 100%;
 	margin: 0 auto;
+	padding: 0 2rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	gap: 3rem;
+	@media screen and (min-width: 45rem) {
+		padding: 0 3rem;
+	}
+	@media screen and (min-width: 50rem) {
+		padding: 0 2rem;
+	}
 `;
 
 const ProjectsTitle = styled.h3`
@@ -35,36 +41,12 @@ const ProjectWrapper = styled.div`
 `;
 
 export const Projects = () => {
-	const [activeCard, setActiveCard] = useState(null);
-
-	const projectContainerRef = useRef(null);
-
-	useEffect(() => {
-		const handleClickOutside = (event) => {
-			if (projectContainerRef.current && !projectContainerRef.current.contains(event.target)) {
-				setActiveCard(null);
-			}
-		};
-
-		document.addEventListener('touchstart', handleClickOutside);
-
-		return () => {
-			document.removeEventListener('touchstart', handleClickOutside);
-		};
-	}, []);
-
 	return (
-		<ProjectsContainer id='projects' ref={projectContainerRef}>
+		<ProjectsContainer id='projects'>
 			<ProjectsTitle>Proyectos</ProjectsTitle>
 			<ProjectWrapper>
 				{projects.map((project, index) => (
-					<ProjectCard
-						key={index}
-						project={project}
-						index={index}
-						activeCard={activeCard}
-						setActiveCard={setActiveCard}
-					/>
+					<ProjectSimpleCard key={index} project={project} />
 				))}
 			</ProjectWrapper>
 		</ProjectsContainer>

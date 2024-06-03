@@ -1,8 +1,8 @@
 {
 	"projects": [
 		{
-			"name": "League of Legends Rework",
-			"description": "Rework completo de la página de campeones de League of Legends.",
+			"name": "League of Legends",
+			"description": "Rework completo de la página de campeones de selección League of Legends.",
 			"link": "https://leagueoflegendsrework.vercel.app/champions/",
 			"image": "/projects/lol.webp",
 			"preview": "/projects/lol_preview.webp",

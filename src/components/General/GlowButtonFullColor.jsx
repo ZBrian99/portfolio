@@ -5,20 +5,26 @@ const ButtonStyled = styled.a`
 	outline: none;
 	text-decoration: none;
 	cursor: pointer;
-	width: fit-content;
-	height: fit-content;
 	position: relative;
+	flex: 1;
+	height: fit-content;
+	text-align: center;
+	white-space: nowrap;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 	border-radius: 2rem;
 	color: #fff;
-	text-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.2);
+	text-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.7);
 	padding: 0.75rem 1.5rem;
 	background-image: linear-gradient(60deg, #ff00ea, #ffd000);
-	font-weight: bold;
+	font-weight: normal;
 
 	transition: transform 0.2s ease;
 	box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.1);
 
-	@media screen and (min-width: 40rem) {
+	@media screen and (min-width: 30rem) {
 		padding: 1rem 2rem;
 	}
 	&:before {
