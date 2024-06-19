@@ -112,7 +112,7 @@ export const About = () => {
 					<Skills />
 					<GlowButtonAlt
 						fit
-						href='https://drive.google.com/file/d/18MeoEvyBl-ukrqeceJgpx7yey8awDKYj/view?usp=sharing'
+						href='https://drive.google.com/file/d/18AUhlUorzZcVHJpAaqZD4berOZ9_WuXP/view?usp=sharing'
 						target='_blank'
 						rel='noreferrer'
 					>
