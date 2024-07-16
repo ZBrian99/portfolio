@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
-const Card = styled.a`
+const Card = styled.article`
 	text-decoration: none;
-
+	color: inherit;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -112,7 +112,6 @@ const Skill = styled.div`
 	width: 1.8em;
 	height: 1.8em;
 	opacity: 0.7;
-
 	&:hover {
 		opacity: 1;
 		& > .SkillTooltip {
@@ -180,7 +179,7 @@ const getTechnologyIcon = (technology) => {
 
 export const ProjectSimpleCard = ({ project }) => {
 	return (
-		<Card href={project.link} target='_blank' rel='noopener noreferrer'>
+		<Card>
 			<CardImageContainer>
 				<ProjectImage className='Img' src={project.image} alt={project.name} />
 			</CardImageContainer>

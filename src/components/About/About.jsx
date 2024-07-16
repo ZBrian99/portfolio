@@ -17,6 +17,7 @@ const AboutWrapper = styled.div`
 	position: relative;
 	padding: 0 2rem;
 	gap: 1rem;
+  width: 100%;
 	@media screen and (min-width: 45rem) {
 		padding: 0 3rem;
 	}
@@ -39,7 +40,7 @@ const AboutImageContainer = styled.div`
 	filter: grayscale(30%);
 	box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.1);
 	@media screen and (min-width: 50rem) {
-		height: 100%;
+    height: 100%;
 		flex: 0.5;
 	}
 `;

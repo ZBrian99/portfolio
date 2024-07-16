@@ -1,0 +1,28 @@
+{
+	"services": [
+		{
+			"title": "💻 Desarrollo",
+			"description": "Creación de sitios funcionales y atractivos utilizando tecnologías modernas para cumplir con tus requerimientos."
+		},
+		{
+			"title": "🎨 Diseño",
+			"description": "Creación de interfaces intuitivas y estéticamente agradables para mejorar la experiencia del usuario en tu sitio."
+		},
+    {
+      "title": "📱 Adaptabilidad",
+      "description": "Optimización y diseño responsivo para garantizar que tu sitio web funcione correctamente en dispositivos móviles."
+    },
+    {
+      "title": "📈 Optimización",
+      "description": "Mejora del rendimiento y velocidad de carga de tu sitio web para una mejor experiencia del usuario y SEO."
+    },
+		{
+      "title": "🚀 Integraciones",
+			"description": "Implementación de integraciones con APIs externas para mejorar la funcionalidad y conectividad de tu sitio web."
+		},
+    {
+      "title": "🔧 Mantenimiento",
+      "description": "Servicios de soporte y actualización regular para mantener tu sitio seguro y operativo."
+    }
+	]
+}

@@ -62,7 +62,7 @@ const NavbarMenu = styled.nav`
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
-	font-size: 1.5em;
+	font-size: 1.2em;
 
 	transition: transform 0.2s ease-out, opacity 0.2s ease-out;
 
@@ -72,6 +72,9 @@ const NavbarMenu = styled.nav`
 	transform: ${({ isActive }) =>
 		isActive ? 'translate(25%, -15%) scale(1)' : 'translate(25%, -15%) scale(0)'};
 
+	@media screen and (min-width: 30rem) {
+		font-size: 1.5em;
+	}
 	@media screen and (min-width: 50rem) {
 		font-size: 2em;
 	}
@@ -123,6 +126,9 @@ export const Navbar = () => {
 						</NavbarItem>
 						<NavbarItem href='#projects' onClick={() => setIsActive(false)}>
 							Proyectos
+						</NavbarItem>
+						<NavbarItem href='#services' onClick={() => setIsActive(false)}>
+							Soluciones
 						</NavbarItem>
 						<NavbarItem href='#about' onClick={() => setIsActive(false)}>
 							Sobre Mi
