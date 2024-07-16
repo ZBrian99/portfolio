@@ -7,7 +7,7 @@ export const App = () => {
 	return (
 		<>
 			<GlobalStyles />
-			{/* <Background /> */}
+			<Background />
 			<Navbar />
 			<HomePage />
 			<Footer />

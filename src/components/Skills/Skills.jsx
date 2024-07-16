@@ -51,12 +51,14 @@ const SkillTooltip = styled.span`
 	padding: 0.5rem 1rem;
 	border-radius: 0.5rem;
 	font-size: 0.9em;
-	white-space: nowrap;
+  text-align: center;
 	transition: opacity 0.2s ease;
 	pointer-events: none;
 	opacity: 0;
 	border-radius: 0.5rem;
 	background-color: #111;
+
+
 
 	&::before {
 		content: '';

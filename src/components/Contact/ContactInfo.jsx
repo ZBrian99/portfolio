@@ -5,7 +5,6 @@ const ContactInfoContainer = styled.div`
 	align-items: flex-start;
 	flex: 1;
 	gap: 2rem;
-	flex-wrap: nowrap;
 
 	padding: 0 2rem;
 	flex-wrap: wrap;
@@ -43,13 +42,21 @@ const ContactSocialContainer = styled.div`
 
 const ContactItem = styled.div`
 	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+
 	flex-basis: 100%;
 	border-radius: 1rem;
 	background-color: rgba(255, 255, 255, 0.05);
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
 	padding: 1rem;
-  gap: 1rem;
 	box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.1);
+	@media screen and (min-width: 20rem) {
+		text-align: left;
+		flex-direction: row;
+		gap: 1rem;
+	}
 `;
 
 const Icon = styled.div`
@@ -70,7 +77,7 @@ const Title = styled.div`
 `;
 
 const Text = styled.div`
-	font-size: 0.9rem;
+	font-size: 0.9em;
 	color: #afafb6;
 	white-space: nowrap;
 `;

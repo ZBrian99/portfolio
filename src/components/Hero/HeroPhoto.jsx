@@ -1,17 +1,22 @@
 import styled from '@emotion/styled';
 
 const HeroImageContainer = styled.div`
-	margin: 3rem;
-	width: 25vh;
 	aspect-ratio: 1 / 1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	position: relative;
 	user-select: none;
+	margin: 2.5rem;
+	/* @media screen and (min-width: 40rem) {
+	} */
+	width: 100%;
+	max-width: 12rem;
 
 	@media screen and (min-width: 50rem) {
-		flex: 0.3;
+		max-width: 100%;
+
+		flex: 0.35;
 	}
 
 	&::before {

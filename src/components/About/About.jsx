@@ -75,10 +75,10 @@ const AboutDescription = styled.p`
 	color: #f1f1f1;
 `;
 
-const TextHighlight = styled.span`
-	font-weight: bold;
-	color: #fff;
-`;
+// const TextHighlight = styled.span`
+// 	font-weight: bold;
+// 	color: #fff;
+// `;
 
 const LinkImage = styled.img`
 	width: 1em;

@@ -7,8 +7,38 @@
 			"type": "main"
 		},
 		{
+			"name": "Astro",
+			"src": "/icons/astro.svg",
+			"learned": true,
+			"type": "primary"
+		},
+		{
+			"name": "Redux",
+			"src": "/icons/redux.svg",
+			"learned": true,
+			"type": "primary"
+		},
+		{
+			"name": "TypeScript",
+			"src": "/icons/typescript.svg",
+			"learned": true,
+			"type": "primary"
+		},
+		{
+			"name": "React Router",
+			"src": "/icons/router.svg",
+			"learned": true,
+			"type": "primary"
+		},
+		{
 			"name": "Styled Components",
 			"src": "/icons/styled-components.svg",
+			"learned": true,
+			"type": "primary"
+		},
+		{
+			"name": "Tailwind CSS",
+			"src": "/icons/tailwindcss.svg",
 			"learned": true,
 			"type": "primary"
 		},
@@ -18,9 +48,10 @@
 			"learned": true,
 			"type": "primary"
 		},
+
 		{
-			"name": "React Router",
-			"src": "/icons/router.svg",
+			"name": "NodeJS",
+			"src": "/icons/nodejs.svg",
 			"learned": true,
 			"type": "primary"
 		},

@@ -60,9 +60,9 @@ export const GlobalStyles = () => (
 			body {
 				font-family: 'Bricolage Grotesque', sans-serif;
 				scroll-behavior: smooth;
-				font-size: 100%;
 				min-height: 100vh;
 				color: white;
+				font-size: 100%;
 			}
 		`}
 	/>

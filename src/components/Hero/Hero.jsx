@@ -5,7 +5,7 @@ import { HeroPhoto } from './HeroPhoto';
 
 const HeroContainer = styled.section`
 	display: flex;
-	align-items: center;
+  align-items: center;
 	justify-content: center;
 	flex-direction: column-reverse;
 	width: 100%;
@@ -13,9 +13,9 @@ const HeroContainer = styled.section`
 	padding: 0 2rem;
 	position: relative;
 	min-height: 100svh;
-
+  
 	@media screen and (min-width: 50rem) {
-		flex-direction: row;
+    flex-direction: row;
 		justify-content: flex-start;
 		text-align: left;
 	}
@@ -82,41 +82,41 @@ const HighlightText = styled.span`
 	background-image: linear-gradient(60deg, #ff00ea, #ffd000);
 `;
 
-const HeroDownChevron = styled.a`
-	display: none;
-	text-decoration: none;
-	position: absolute;
-	bottom: 1%;
-	width: 2em;
-	height: 2em;
-	left: calc(50% - 1rem);
-	display: block;
-	cursor: pointer;
-	animation: bounce 2s infinite;
-	@keyframes bounce {
-		0%,
-		20%,
-		50%,
-		80%,
-		100% {
-			transform: translateY(0);
-		}
-		40% {
-			transform: translateY(-0.5rem);
-		}
-		60% {
-			transform: translateY(-0.2rem);
-		}
-	}
-	@media screen and (min-width: 50rem) {
-		display: block;
-	}
-`;
+// const HeroDownChevron = styled.a`
+// 	display: none;
+// 	text-decoration: none;
+// 	position: absolute;
+// 	bottom: 1%;
+// 	width: 2em;
+// 	height: 2em;
+// 	left: calc(50% - 1rem);
+// 	display: block;
+// 	cursor: pointer;
+// 	animation: bounce 2s infinite;
+// 	@keyframes bounce {
+// 		0%,
+// 		20%,
+// 		50%,
+// 		80%,
+// 		100% {
+// 			transform: translateY(0);
+// 		}
+// 		40% {
+// 			transform: translateY(-0.5rem);
+// 		}
+// 		60% {
+// 			transform: translateY(-0.2rem);
+// 		}
+// 	}
+// 	@media screen and (min-width: 50rem) {
+// 		display: block;
+// 	}
+// `;
 
-const HeroDownChevronIcon = styled.img`
-	width: 100%;
-	height: 100%;
-`;
+// const HeroDownChevronIcon = styled.img`
+// 	width: 100%;
+// 	height: 100%;
+// `;
 
 export const Hero = () => {
 	return (

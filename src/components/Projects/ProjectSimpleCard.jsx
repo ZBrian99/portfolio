@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 
-const Card = styled.article`
+const Card = styled.a`
+	text-decoration: none;
+
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -18,10 +20,10 @@ const Card = styled.article`
 	transition: transform 0.3s ease-out;
 	&:hover {
 		transform: perspective(1000px) rotateY(10deg) rotateX(5deg);
-    &:nth-of-type(even){ 
-      transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
-    }
-  }
+		&:nth-of-type(even) {
+			transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
+		}
+	}
 `;
 
 const CardImageContainer = styled.div`
@@ -178,7 +180,7 @@ const getTechnologyIcon = (technology) => {
 
 export const ProjectSimpleCard = ({ project }) => {
 	return (
-		<Card>
+		<Card href={project.link} target='_blank' rel='noopener noreferrer'>
 			<CardImageContainer>
 				<ProjectImage className='Img' src={project.image} alt={project.name} />
 			</CardImageContainer>

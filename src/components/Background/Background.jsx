@@ -5,19 +5,19 @@ const BackgroundSVG = styled.svg`
 	width: 100%;
 	height: 100svh;
 	z-index: -100;
-	filter: blur(6rem) brightness(0.7);
+	filter: blur(6rem);
 `;
 const AnimatedPath = styled.path`
 	transform-origin: center;
 	${({ animation }) =>
 		animation === 1
-			? 'animation: moveX1 20s infinite ease-in-out;'
+			? 'animation: moveX1 20s infinite ;'
 			: animation === 2
-			? 'animation: moveX2 30s infinite ease-in-out;'
+			? 'animation: moveX2 30s infinite ;'
 			: animation === 3
-			? 'animation: moveX3 35s infinite ease-in-out;'
+			? 'animation: moveX3 35s infinite ;'
 			: animation === 4
-			? 'animation: moveY 25s infinite ease-in-out;'
+			? 'animation: moveY 25s infinite ;'
 			: ''}
 
 	@keyframes moveX1 {
@@ -99,9 +99,9 @@ export const Background = () => {
 					y2='226'
 					gradientUnits='userSpaceOnUse'
 				>
-					<stop stopColor='#d828b2' />
-					<stop offset='0.5' stopColor='#4136a1' />
-					<stop offset='1' stopColor='#782480' />
+					<stop stopColor='#aa218c' />
+					<stop offset='0.5' stopColor='#312a77' />
+					<stop offset='1' stopColor='#5b1b61' />
 				</linearGradient>
 				<linearGradient
 					id='paint1_linear_2024_8'
@@ -111,9 +111,9 @@ export const Background = () => {
 					y2='425'
 					gradientUnits='userSpaceOnUse'
 				>
-					<stop stopColor='#662255' />
-					<stop offset='0.5' stopColor='#631c51' />
-					<stop offset='1' stopColor='#382cdf' />
+					<stop stopColor='#47183c' />
+					<stop offset='0.5' stopColor='#49163c' />
+					<stop offset='1' stopColor='#2a2299' />
 				</linearGradient>
 				<linearGradient
 					id='paint2_linear_2024_8'
@@ -123,9 +123,9 @@ export const Background = () => {
 					y2='527'
 					gradientUnits='userSpaceOnUse'
 				>
-					<stop stopColor='#2f0fa1' />
-					<stop offset='0.5' stopColor='#703125' />
-					<stop offset='1' stopColor='#699121' />
+					<stop stopColor='#210d6d' />
+					<stop offset='0.5' stopColor='#421d16' />
+					<stop offset='1' stopColor='#425a16' />
 				</linearGradient>
 				<linearGradient
 					id='paint3_linear_2024_8'
@@ -135,9 +135,9 @@ export const Background = () => {
 					y2='475.888'
 					gradientUnits='userSpaceOnUse'
 				>
-					<stop stopColor='#581a33' />
-					<stop offset='0.5' stopColor='#6b156bf8' />
-					<stop offset='1' stopColor='#464e97' />
+					<stop stopColor='#3d1223' />
+					<stop offset='0.5' stopColor='#410d41f8' />
+					<stop offset='1' stopColor='#2d3364' />
 				</linearGradient>
 			</defs>
 		</BackgroundSVG>

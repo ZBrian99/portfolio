@@ -10,7 +10,7 @@ const NavbarToggle = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #0e0e0e;
+	background-color: #1d0722;
 	border-radius: 50%;
 	user-select: none;
 	cursor: pointer;
@@ -41,7 +41,7 @@ const NavbarContainer = styled.div`
 
 const NavbarCircle = styled.div`
 	position: absolute;
-	background-color: #0e0e0e;
+	background-color: #1d0722;
 	right: 0;
 	top: 0;
 	width: 200%;
