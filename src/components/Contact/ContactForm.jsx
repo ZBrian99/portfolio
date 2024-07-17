@@ -40,6 +40,7 @@ const Input = styled.input`
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
 
 	box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.05);
 
 	font-size: 1em;
 	color: white;
@@ -66,6 +67,7 @@ const Textarea = styled.textarea`
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
 
 	box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.05);
 
 	&::placeholder {
 		color: #c9c9c9;
@@ -79,6 +81,7 @@ const Button = styled.button`
 	border: none;
 	background-color: rgba(255, 255, 255, 0.05);
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+	border: 1px solid rgba(255, 255, 255, 0.05);
 
 	padding: 1rem 2rem;
 	border-radius: 0.5rem;
@@ -92,6 +95,7 @@ const Message = styled.div`
 	${({ error }) => (error ? 'color:#ff0000;' : 'color: #ffffff;')}
 	background-color: rgba(255, 255, 255, 0.05);
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+
 	padding: 1rem;
 	border-radius: 1rem;
 	position: absolute;

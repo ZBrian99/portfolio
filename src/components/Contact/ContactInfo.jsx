@@ -50,6 +50,8 @@ const ContactItem = styled.div`
 	border-radius: 1rem;
 	background-color: rgba(255, 255, 255, 0.05);
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+	border: 1px solid rgba(255, 255, 255, 0.05);
+
 	padding: 1rem;
 	box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.1);
 	@media screen and (min-width: 20rem) {

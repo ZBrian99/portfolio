@@ -15,10 +15,10 @@ const Skill = styled.div`
 	border-radius: 1rem;
 	opacity: 0.7;
 
-	padding: 0.7rem;
+	padding: 0.6rem;
 	background-color: rgba(255, 255, 255, 0.1);
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-
+	border: 1px solid rgba(255, 255, 255, 0.05);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
