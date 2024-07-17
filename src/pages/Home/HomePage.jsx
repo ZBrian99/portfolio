@@ -19,8 +19,8 @@ export const HomePage = () => {
 	return (
 		<HomeWrapper>
 			<Hero />
-      <Projects />
       <Services />
+      <Projects />
 			<About />
 			<Contact />
 		</HomeWrapper>

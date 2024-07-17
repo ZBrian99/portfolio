@@ -124,11 +124,11 @@ export const Navbar = () => {
 						<NavbarItem href='#home' onClick={() => setIsActive(false)}>
 							Inicio
 						</NavbarItem>
-						<NavbarItem href='#projects' onClick={() => setIsActive(false)}>
-							Proyectos
-						</NavbarItem>
 						<NavbarItem href='#services' onClick={() => setIsActive(false)}>
 							Soluciones
+						</NavbarItem>
+						<NavbarItem href='#projects' onClick={() => setIsActive(false)}>
+							Proyectos
 						</NavbarItem>
 						<NavbarItem href='#about' onClick={() => setIsActive(false)}>
 							Sobre Mi
