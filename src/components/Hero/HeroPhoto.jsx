@@ -95,7 +95,7 @@ export const HeroPhoto = () => {
 				<PhotoIcon src={'/icons/linkedin-icon.svg'} alt='linkedin' />
 			</PhotoLink>
 			<PhotoLink href={'https://x.com/ZBrian99'} target='_blank' rel='noopener noreferrer'>
-				<PhotoIcon rounded src={'/icons/x.svg'} alt='x' />
+				<PhotoIcon rounded src={'/icons/12.svg'} alt='x' />
 			</PhotoLink>
 			<HeroImage src='/images/rf2low.webp' alt='photo' />
 		</HeroImageContainer>

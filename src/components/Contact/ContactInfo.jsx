@@ -153,7 +153,7 @@ export const ContactInfo = () => {
 					<PhotoIcon src={'/icons/linkedin-icon.svg'} alt='linkedin' />
 				</PhotoLink>
 				<PhotoLink href={'https://x.com/ZBrian99'} target='_blank' rel='noopener noreferrer'>
-					<PhotoIcon rounded src={'/icons/x.svg'} alt='x' />
+					<PhotoIcon rounded src={'/icons/12.svg'} alt='x' />
 				</PhotoLink>
 
 				<PhotoLink href='https://wa.me/+5492236698045' target='_blank' rel='noopener noreferrer'>
