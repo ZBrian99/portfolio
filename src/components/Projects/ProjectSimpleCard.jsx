@@ -12,6 +12,8 @@ const Card = styled.article`
 	background: rgba(255, 255, 255, 0.05);
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
 	/* background-color: #0a0a0a; */
+	border: 1px solid rgba(255, 255, 255, 0.05);
+
 	@media screen and (min-width: 50rem) {
 		max-width: calc(50% - 1.5rem);
 		margin: 0 auto;

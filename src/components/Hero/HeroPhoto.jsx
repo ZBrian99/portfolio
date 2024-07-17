@@ -89,13 +89,13 @@ export const HeroPhoto = () => {
 	return (
 		<HeroImageContainer>
 			<PhotoLink href={'https://github.com/ZBrian99'} target='_blank' rel='noopener noreferrer'>
-				<PhotoIcon src={'/icons/github-icon.svg'} alt='linkedin' />
+				<PhotoIcon src={'/icons/github-icon.svg'} alt='github' />
 			</PhotoLink>
 			<PhotoLink href={'https://www.linkedin.com/in/brianzelada/'} target='_blank' rel='noopener noreferrer'>
 				<PhotoIcon src={'/icons/linkedin-icon.svg'} alt='linkedin' />
 			</PhotoLink>
-			<PhotoLink href={'https://www.instagram.com/zbrian99/'} target='_blank' rel='noopener noreferrer'>
-				<PhotoIcon rounded src={'/icons/ig.svg'} alt='linkedin' />
+			<PhotoLink href={'https://x.com/ZBrian99'} target='_blank' rel='noopener noreferrer'>
+				<PhotoIcon rounded src={'/icons/x.svg'} alt='x' />
 			</PhotoLink>
 			<HeroImage src='/images/rf2low.webp' alt='photo' />
 		</HeroImageContainer>

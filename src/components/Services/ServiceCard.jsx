@@ -12,6 +12,7 @@ const Card = styled.article`
 	box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.1);
 
 	border-radius: 0.5rem;
+	border: 1px solid rgba(255, 255, 255, 0.05);
 
 	@media screen and (min-width: 60rem) {
 		flex: 1;
