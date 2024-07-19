@@ -9,6 +9,7 @@ const AboutContainer = styled.section`
 	align-items: center;
 	width: 100%;
 	gap: 3rem;
+  overflow: hidden;
 `;
 
 const AboutWrapper = styled.div`
