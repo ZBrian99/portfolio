@@ -5,7 +5,7 @@ const BackgroundSVG = styled.svg`
 	width: 100%;
 	height: 100svh;
 	z-index: -100;
-  filter: blur(5rem);
+  /* filter: blur(5rem); */
 `;
 export const Background = () => {
 	return (

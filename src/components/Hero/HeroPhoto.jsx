@@ -23,7 +23,9 @@ const HeroImageContainer = styled.div`
 		content: '';
 		position: absolute;
 		inset: -20%;
-		background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0));
+		background-color: rgba(255, 255, 255, 0.05);
+
+		background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.05));
 		border-radius: 50%;
 		z-index: -1;
 		box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.1);

@@ -54,7 +54,8 @@ export const GlobalStyles = () => (
 				}
 				scroll-behavior: smooth;
 
-				background: #1d0722;
+				/* background: #1d0722; */
+				background: #2c0b33;
 			}
 
 			body {
