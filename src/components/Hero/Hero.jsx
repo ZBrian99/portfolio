@@ -5,19 +5,21 @@ import { HeroPhoto } from './HeroPhoto';
 
 const HeroContainer = styled.section`
 	display: flex;
-  align-items: center;
+	align-items: center;
 	justify-content: center;
 	flex-direction: column-reverse;
 	width: 100%;
 	max-width: 80rem;
-	padding: 0 2rem;
+	padding: 1rem 2rem 0;
+
 	position: relative;
 	min-height: 100svh;
-  
+
 	@media screen and (min-width: 50rem) {
-    flex-direction: row;
+		flex-direction: row;
 		justify-content: flex-start;
 		text-align: left;
+		padding-top: 4rem;
 	}
 	@media screen and (min-width: 60rem) {
 		flex-direction: row;
@@ -130,8 +132,7 @@ export const Hero = () => {
 					<HighlightText>Desarrollador web</HighlightText> 💻
 				</HeroSubtitle>
 				<HeroExtra>
-					Transformo ideas en sitios web <HighlightText>atractivos</HighlightText> y
-					<HighlightText> funcionales</HighlightText>
+					Transformo ideas en sitios web <>atractivos</> y<> funcionales</>
 				</HeroExtra>
 				<HeroButtonsContainer>
 					<GlowButtonFullColor href='#contact'>🚀 Contacto </GlowButtonFullColor>

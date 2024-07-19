@@ -13,14 +13,16 @@ const HomeWrapper = styled.main`
 	max-width: 80rem;
 	margin: auto;
 	gap: 10rem;
+
+
 `;
 
 export const HomePage = () => {
 	return (
 		<HomeWrapper>
 			<Hero />
-      <Services />
-      <Projects />
+			<Services />
+			<Projects />
 			<About />
 			<Contact />
 		</HomeWrapper>
