@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { GlowButtonAlt } from '../General/GlowButtonAlt';
 
 const Card = styled.article`
 	text-decoration: none;
@@ -93,21 +94,41 @@ const ProjectLinks = styled.div`
 	align-items: flex-end;
 	justify-content: center;
 	width: 100%;
-	gap: 1.5rem;
+	gap: 1rem;
+	flex-wrap: wrap;
 `;
 const Link = styled.a`
-	width: 2.2em;
-	height: 2.2em;
-	transition: transform 0.2s ease-out;
+	transition: transform 0.1s ease, background-color 0.1s ease;
+
+	flex: 1;
+	max-width: 10rem;
+	justify-content: center;
+	align-items: center;
+	border-radius: 2rem;
+	text-decoration: none;
+	color: inherit;
+	display: flex;
+	padding: 0.75rem;
+	gap: 0.5rem;
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+	box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.1);
+
 	&:hover {
-		transform: scale(1.1);
+		background-color: rgba(255, 255, 255, 0.1);
+	}
+	&:active {
+		transform: scale(0.95);
 	}
 `;
 
 const LinkIcon = styled.img`
-	width: 100%;
-	height: 100%;
+	/* width: 100%; */
+	/* height: 100%; */
+	width: 1.5em;
+	height: 1.5em;
 `;
+
+
 
 const Skill = styled.div`
 	position: relative;
@@ -126,6 +147,8 @@ const SkillImage = styled.img`
 	width: 100%;
 	height: 100%;
 `;
+
+
 
 const SkillTooltip = styled.span`
 	position: absolute;
@@ -151,6 +174,7 @@ const SkillTooltip = styled.span`
 		border-color: #111 transparent transparent transparent;
 	}
 `;
+
 
 const getTechnologyIcon = (technology) => {
 	switch (technology) {
@@ -199,9 +223,11 @@ export const ProjectSimpleCard = ({ project }) => {
 					</ProjectTechnologies>
 					<ProjectLinks>
 						<Link href={project.repository} target='_blank' rel='noopener noreferrer'>
+							GitHub
 							<LinkIcon src='/icons/github-icon.svg' alt='Github' />
 						</Link>
 						<Link href={project.link} target='_blank' rel='noopener noreferrer'>
+							Web
 							<LinkIcon src='/icons/external-link_5.svg' alt='Web' />
 						</Link>
 					</ProjectLinks>

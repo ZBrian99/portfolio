@@ -12,7 +12,7 @@
 		},
 		{
 			"name": "Pipzum",
-			"description": "Página de una pizzería con menú, precios, datos de contacto, novedades y logros.",
+			"description": "Pizzería Pipzum con menú, precios, datos de contacto, novedades y logros.",
 			"link": "https://pipzum.vercel.app/",
 			"image": "/projects/pipzum.webp",
 			"preview": "/projects/pipzum_preview.webp",
