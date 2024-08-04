@@ -28,7 +28,7 @@
 			"preview": "/projects/bmoda_preview.webp",
 			"speed": 20,
 			"repository": "https://github.com/ZBrian99/bmoda",
-			"technologies": ["React", "Framer Motion", "Styled Components", "Sass", "React Router"]
+			"technologies": ["React", "Framer Motion", "Styled Components"]
 		}
 	]
 }
