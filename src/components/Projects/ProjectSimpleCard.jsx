@@ -29,7 +29,7 @@ const Card = styled.article`
 	transition: transform 0.3s ease-out;
 	&:hover > div > img {
 		/* transform: perspective(1000px) rotateY(10deg) rotateX(5deg); */
-		transform: perspective(1000px) rotateY(-10deg) rotateX(5deg) scale(1.1) translateY(-.5rem);
+		transform: perspective(1000px) rotateY(10deg) rotateX(5deg) scale(1.1) translateY(-.5rem);
 		/* &:nth-of-type(even) {
 		} */
 	}
@@ -165,7 +165,7 @@ export const ProjectSimpleCard = ({ project }) => {
 							<LinkIcon src='/icons/github-icon.svg' alt='Github' />
 						</Link>
 						<Link href={project.link} target='_blank' rel='noopener noreferrer'>
-							Web
+							Demo
 							<LinkIcon src='/icons/external-link_5.svg' alt='Web' />
 						</Link>
 					</ProjectLinks>

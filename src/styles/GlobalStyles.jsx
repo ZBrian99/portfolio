@@ -31,39 +31,42 @@ export const GlobalStyles = () => (
 
 			html {
 				&::-webkit-scrollbar {
-					width: 0.5rem;
-					height: 0.5rem;
+					width: 0.25rem;
+					height: 0.25rem;
 				}
 
 				&::-webkit-scrollbar-track {
+					background: #2c0b33;
 					background: #0e0e0e;
+					background: #0f0a1f;
+
 					border-radius: 0.25rem;
 				}
 
 				&::-webkit-scrollbar-thumb {
 					background-color: #333;
 					border-radius: 0.25rem;
-					border: 0.1rem solid #0e0e0e;
+					/* border: 0.1rem solid #0e0e0e; */
 				}
 				&::-webkit-scrollbar-thumb:hover {
 					background-color: #444;
-					border-color: #000;
 				}
 				&::-webkit-scrollbar-button {
 					display: none;
 				}
 				scroll-behavior: smooth;
-
-				/* background: #1d0722; */
 				background: #2c0b33;
+				background: #1a0620;
+				isolation: isolate;
 			}
 
 			body {
 				font-family: 'Bricolage Grotesque', sans-serif;
 				scroll-behavior: smooth;
-				min-height: 100vh;
+				min-height: 100svh;
 				color: white;
 				font-size: 100%;
+				position: relative;
 			}
 		`}
 	/>

@@ -119,6 +119,13 @@ export const ContactInfo = () => {
 		<ContactInfoContainer>
 			<ContactItemsContainer>
 				<ContactItem>
+					<Icon>✉️</Icon>
+					<ContactItemInfo>
+						<Title>Correo electrónico</Title>
+						<Text>brian.zelada99@gmail.com</Text>
+					</ContactItemInfo>
+				</ContactItem>
+				<ContactItem>
 					<Icon>📱</Icon>
 					<ContactItemInfo>
 						<Title>Teléfono</Title>
@@ -126,19 +133,12 @@ export const ContactInfo = () => {
 					</ContactItemInfo>
 				</ContactItem>
 
+
 				<ContactItem>
 					<Icon>🌎</Icon>
 					<ContactItemInfo>
 						<Title>Ubicación</Title>
 						<Text>Argentina - Buenos Aires</Text>
-					</ContactItemInfo>
-				</ContactItem>
-
-				<ContactItem>
-					<Icon>✉️</Icon>
-					<ContactItemInfo>
-						<Title>Correo electrónico</Title>
-						<Text>brian.zelada99@gmail.com</Text>
 					</ContactItemInfo>
 				</ContactItem>
 			</ContactItemsContainer>

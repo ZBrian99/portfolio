@@ -1,7 +1,20 @@
 import styled from '@emotion/styled';
 import { useEffect, useRef, useState } from 'react';
+import { GlowButtonAlt } from '../General/GlowButtonAlt';
 
 const NavbarStyled = styled.div`
+	@media screen and (min-width: 50rem) {
+    background-color: rgba(26, 6, 32, 0.8);
+		backdrop-filter: blur(1rem);
+    height: 5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    
+	}
 `;
 
 const NavbarToggle = styled.div`
@@ -13,10 +26,10 @@ const NavbarToggle = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	/* background-color: #1d0722; */
 	background-color: #1d0722;
 	/* background-color: #3d1f44; */
-	/* border: 1px solid rgba(255, 255, 255, 0.05); */
-
 	border-radius: 50%;
 	user-select: none;
 	cursor: pointer;
@@ -47,7 +60,7 @@ const NavbarContainer = styled.div`
 
 const NavbarCircle = styled.div`
 	position: absolute;
-	background-color: #1d0722;
+	background-color: #17061b;
 
 	right: 0;
 	top: 0;
@@ -69,41 +82,52 @@ const NavbarMenu = styled.nav`
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
-	font-size: 1.2em;
+	font-size: 1em;
+  max-width: 80rem;
 
 	transition: transform 0.2s ease-out, opacity 0.2s ease-out;
 
 	transition-delay: ${({ isActive }) => (isActive ? '0.2s' : '0')};
 
 	opacity: ${({ isActive }) => (isActive ? '1' : '0')};
-	transform: ${({ isActive }) =>
-		isActive ? 'translate(25%, -15%) scale(1)' : 'translate(25%, -15%) scale(0)'};
+	transform: ${({ isActive }) => (isActive ? 'translate(25%, -15%) scale(1)' : 'translate(25%, -15%) scale(0)')};
+
+	@media screen and (min-width: 20rem) {
+		font-size: 1.2em;
+	}
 
 	@media screen and (min-width: 30rem) {
 		font-size: 1.5em;
 	}
 	@media screen and (min-width: 50rem) {
+		font-size: 1em;
 		position: fixed;
 		/* background-color: #1d0722; */
-		background-color: #3d1f44;
-		border: 1px solid rgba(255, 255, 255, 0.05);
+		
+		/* border: 1px solid rgba(255, 255, 255, 0.05); */
 		transform: none;
 		flex-direction: row;
 		justify-content: center;
-		width: max-content;
-		height: 4rem;
-		padding: 0 1rem;
+		align-items: center;
+		width: 100%;
+		/* width: max-content; */
+		height: 5rem;
+		padding: 0 2rem;
 		z-index: 1000;
-		border-radius: 0 0 3rem 3rem;
+		/* border-radius: 0 0 3rem 3rem; */
 		left: 50%;
 		transform: translateX(-50%);
 	}
+  @media screen and (min-width: 55rem) {
+    font-size: 1.2em;
+  }
 `;
 const NavbarItem = styled.a`
 	border-radius: 1rem;
 	padding: 0.5rem 1rem;
 	text-decoration: none;
 	color: #ccc;
+  white-space: nowrap;
 	transition: color 0.2s ease-out;
 	&:hover {
 		color: #fff;
@@ -113,6 +137,50 @@ const NavbarItem = styled.a`
 		justify-content: center;
 		align-items: center;
 	}
+`;
+
+const ResumeButton = styled(NavbarItem)`
+	background-color: rgba(255, 255, 255, 0.05);
+	border: 0.1rem solid rgba(255, 255, 255, 0.05);
+	transition: all 0.2s ease-out;
+	border-radius: 5rem;
+
+	&:hover {
+		background-color: rgba(255, 255, 255, 0.1);
+	}
+`;
+
+const NavbarMobile = styled.div`
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 5rem;
+	background-color: rgba(26, 6, 32, 0.8);
+	backdrop-filter: blur(1rem);
+	z-index: 1000;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 1rem;
+	gap: 1rem;
+`;
+
+const NavbarBrandName = styled.h1`
+	font-size: 2rem;
+	@media screen and (max-width: 30rem) {
+		font-size: 1.5rem;
+	}
+	font-weight: 600;
+	margin-right: auto;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+`;
+const LinkImage = styled.img`
+	width: 1em;
+	height: 1em;
+	margin-left: 0.5rem;
 `;
 
 export const Navbar = () => {
@@ -151,16 +219,11 @@ export const Navbar = () => {
 		<NavbarStyled ref={navbarRef}>
 			{isMobile ? (
 				<>
+					{/* <NavbarBrandName>Brian Zelada</NavbarBrandName> */}
 					<NavbarToggle onClick={handleClick}>{isActive ? 'X' : '☰'}</NavbarToggle>
 					<NavbarContainer isActive={isActive}>
 						<NavbarCircle isActive={isActive}>
 							<NavbarMenu isActive={isActive}>
-								<NavbarItem href='#home' onClick={() => setIsActive(false)}>
-									Inicio
-								</NavbarItem>
-								<NavbarItem href='#services' onClick={() => setIsActive(false)}>
-									Soluciones
-								</NavbarItem>
 								<NavbarItem href='#projects' onClick={() => setIsActive(false)}>
 									Proyectos
 								</NavbarItem>
@@ -170,17 +233,35 @@ export const Navbar = () => {
 								<NavbarItem href='#contact' onClick={() => setIsActive(false)}>
 									Contacto
 								</NavbarItem>
+								<GlowButtonAlt
+									fit
+									href='https://drive.google.com/file/d/1hmH9OKMmaDE71r7ZDjqIMVdHdqxybyDI/view?usp=sharing'
+									target='_blank'
+									rel='noreferrer'
+								>
+									Curriculum
+									<LinkImage src='/icons/external-link_5.svg' alt='Web' />
+								</GlowButtonAlt>
 							</NavbarMenu>
 						</NavbarCircle>
 					</NavbarContainer>
 				</>
 			) : (
 				<NavbarMenu isActive={true}>
-					<NavbarItem href='#home'>Inicio</NavbarItem>
-					<NavbarItem href='#services'>Soluciones</NavbarItem>
+					<NavbarBrandName>Brian Zelada</NavbarBrandName>
+
 					<NavbarItem href='#projects'>Proyectos</NavbarItem>
 					<NavbarItem href='#about'>Sobre Mi</NavbarItem>
 					<NavbarItem href='#contact'>Contacto</NavbarItem>
+					<GlowButtonAlt
+						fit
+						href='https://drive.google.com/file/d/1hmH9OKMmaDE71r7ZDjqIMVdHdqxybyDI/view?usp=sharing'
+						target='_blank'
+						rel='noreferrer'
+					>
+						Curriculum
+						<LinkImage src='/icons/external-link_5.svg' alt='Web' />
+					</GlowButtonAlt>
 				</NavbarMenu>
 			)}
 		</NavbarStyled>

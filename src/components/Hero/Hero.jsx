@@ -14,12 +14,12 @@ const HeroContainer = styled.section`
 
 	position: relative;
 	min-height: 100svh;
-
+  
 	@media screen and (min-width: 50rem) {
-		flex-direction: row;
+    padding-top: 5rem;
+    flex-direction: row;
 		justify-content: flex-start;
 		text-align: left;
-		padding-top: 4rem;
 	}
 	@media screen and (min-width: 60rem) {
 		flex-direction: row;
