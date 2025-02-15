@@ -6,7 +6,7 @@ const NavbarStyled = styled.div`
 	@media screen and (min-width: 50rem) {
     background-color: rgba(26, 6, 32, 0.8);
 		backdrop-filter: blur(1rem);
-    height: 5rem;
+    height: 4rem;
     position: fixed;
     top: 0;
     left: 0;
@@ -111,7 +111,7 @@ const NavbarMenu = styled.nav`
 		align-items: center;
 		width: 100%;
 		/* width: max-content; */
-		height: 5rem;
+		height: 4rem;
 		padding: 0 2rem;
 		z-index: 1000;
 		/* border-radius: 0 0 3rem 3rem; */
@@ -155,7 +155,7 @@ const NavbarMobile = styled.div`
 	top: 0;
 	right: 0;
 	width: 100%;
-	height: 5rem;
+	height: 4rem;
 	background-color: rgba(26, 6, 32, 0.8);
 	backdrop-filter: blur(1rem);
 	z-index: 1000;
