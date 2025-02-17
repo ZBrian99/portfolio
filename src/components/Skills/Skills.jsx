@@ -52,7 +52,7 @@ const SkillTooltip = styled.span`
 	border-radius: 0.5rem;
 	font-size: 0.9em;
   text-align: center;
-	transition: opacity 0.2s ease;
+	transition: opacity 0.2s ease-in-out;
 	pointer-events: none;
 	opacity: 0;
 	border-radius: 0.5rem;

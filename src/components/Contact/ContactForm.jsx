@@ -62,7 +62,6 @@ const Textarea = styled.textarea`
 
 	color: white;
 	border: none;
-
 	background-color: rgba(255, 255, 255, 0.05);
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
 
@@ -95,7 +94,6 @@ const Message = styled.div`
 	${({ error }) => (error ? 'color:#ff0000;' : 'color: #ffffff;')}
 	background-color: rgba(255, 255, 255, 0.05);
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-
 	padding: 1rem;
 	border-radius: 1rem;
 	position: absolute;

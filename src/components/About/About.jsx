@@ -114,6 +114,7 @@ export const About = () => {
 					<Skills />
 					<GlowButtonAlt
 						fit
+						stretch
 						href='https://drive.google.com/file/d/1hmH9OKMmaDE71r7ZDjqIMVdHdqxybyDI/view?usp=sharing'
 						target='_blank'
 						rel='noreferrer'

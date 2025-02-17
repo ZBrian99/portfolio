@@ -94,7 +94,7 @@ const PhotoLink = styled.a`
 	border-radius: 50%;
 	background-color: rgba(255, 255, 255, 0.1);
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
-	transition: transform 0.1s ease;
+	transition: transform 0.1s ease-in-out;
 
 	&:hover {
 		transform: scale(1.05);

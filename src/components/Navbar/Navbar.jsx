@@ -183,6 +183,14 @@ const LinkImage = styled.img`
 	margin-left: 0.5rem;
 `;
 
+const HighlightText = styled.span`
+	color: #ffd000;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: transparent;
+	background-image: linear-gradient(60deg, #ff00ea, #ffd000);
+`;
+
 export const Navbar = () => {
 	const [isActive, setIsActive] = useState(false);
 	const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
@@ -234,7 +242,8 @@ export const Navbar = () => {
 									Contacto
 								</NavbarItem>
 								<GlowButtonAlt
-									fit
+                  fit
+                  stretch
 									href='https://drive.google.com/file/d/1hmH9OKMmaDE71r7ZDjqIMVdHdqxybyDI/view?usp=sharing'
 									target='_blank'
 									rel='noreferrer'
@@ -248,13 +257,14 @@ export const Navbar = () => {
 				</>
 			) : (
 				<NavbarMenu isActive={true}>
-					<NavbarBrandName>Brian Zelada</NavbarBrandName>
+					<NavbarBrandName> <HighlightText>Brian</HighlightText> Zelada</NavbarBrandName>
 
 					<NavbarItem href='#projects'>Proyectos</NavbarItem>
 					<NavbarItem href='#about'>Sobre Mi</NavbarItem>
 					<NavbarItem href='#contact'>Contacto</NavbarItem>
 					<GlowButtonAlt
 						fit
+						stretch
 						href='https://drive.google.com/file/d/1hmH9OKMmaDE71r7ZDjqIMVdHdqxybyDI/view?usp=sharing'
 						target='_blank'
 						rel='noreferrer'

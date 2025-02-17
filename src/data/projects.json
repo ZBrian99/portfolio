@@ -1,34 +1,119 @@
 {
 	"projects": [
 		{
-			"name": "League of Legends",
-			"description": "Rework completo de la página de campeones de selección League of Legends.",
-			"link": "https://leagueoflegendsrework.vercel.app/champions/",
-			"image": "/projects/lol.webp",
-			"preview": "/projects/lol_preview.webp",
-			"speed": 18,
-			"repository": "https://github.com/ZBrian99/league_of_legends_rework",
-			"technologies": ["React", "Styled Components", "React Router"]
+			"name": "Gym App",
+			"description": "Aplicación para seguimiento de rutinas y progreso en el gimnasio.",
+			"link": "https://gymapp.vercel.app/",
+			"images": [
+				"/projects/gym/2_1.webp",
+				"/projects/gym/2_2.webp",
+				"/projects/gym/2_3.webp"
+			],
+			"repository": "https://github.com/ZBrian99/gym-app",
+			"technologies": ["React", "Tailwind", "Redux", "Node.js", "TypeScript"],
+			"type": "freelance",
+			"category": "fullstack",
+			"features": [
+				"Seguimiento de rutinas",
+				"Registro de progreso",
+				"Estadísticas personalizadas",
+				"Sincronización en la nube",
+				"Modo offline"
+			]
+		},
+		{
+			"name": "Cursos Online",
+			"description": "Plataforma de cursos online con sistema de progreso y certificaciones.",
+			"link": "https://cursosonline.vercel.app/",
+			"images": [
+				"/projects/cursos/1_1.webp",
+				"/projects/cursos/1_2.webp",
+				"/projects/cursos/1_3.webp"
+			],
+			"repository": "https://github.com/ZBrian99/cursos-online",
+			"technologies": ["Next.js", "React", "Nest.js", "PostgreSQL", "Prisma", "Redux", "Material UI", "TypeScript"],
+			"type": "freelance",
+			"category": "fullstack",
+			"features": [
+				"Sistema de autenticación",
+				"Progreso del estudiante",
+				"Certificaciones automáticas",
+				"Contenido multimedia",
+				"Panel de instructor",
+				"Pagos integrados"
+			]
+		},
+		{
+			"name": "InterUp",
+			"description": "Plataforma de gestión de entrevistas técnicas para desarrolladores.",
+			"link": "https://interup.vercel.app/",
+			"images": ["/projects/cursos/1_1.webp", "/projects/pipzum/3_2.webp", "/projects/gym/2_3.webp"],
+			"repository": "https://github.com/ZBrian99/interup",
+			"technologies": [
+				"React",
+				"Redux",
+				"Material UI",
+				"Node.js",
+				"PostgreSQL",
+				"TypeScript",
+				"Redux",
+				"Material UI",
+				"Styled Components",
+				"Node.js",
+				"Redux",
+				"Redux",
+				"Material UI",
+				"Node.js",
+				"PostgreSQL",
+				"TypeScript"
+			],
+			"type": "profesional",
+			"category": "fullstack",
+			"features": [
+				"Sistema de autenticación",
+				"Gestión de entrevistas",
+				"Panel de administración",
+				"Evaluación en tiempo real",
+				"Reportes y estadísticas"
+			]
 		},
 		{
 			"name": "Pipzum",
 			"description": "Pizzería Pipzum con menú, precios, datos de contacto, novedades y logros.",
 			"link": "https://pipzum.vercel.app/",
-			"image": "/projects/pipzum.webp",
-			"preview": "/projects/pipzum_preview.webp",
-			"speed": 50,
+			"images": ["/projects/pipzum/3_1.webp", "/projects/pipzum/3_2.webp", "/projects/pipzum/3_3.webp"],
 			"repository": "https://github.com/ZBrian99/pizzeria",
-			"technologies": ["React", "Sass", "React Router"]
+			"technologies": ["React", "Sass", "Redux", "React Router"],
+			"type": "profesional",
+			"category": "frontend",
+			"features": ["Menú interactivo", "Sistema de pedidos", "Galería de productos", "Integración con redes sociales"]
+		},
+		{
+			"name": "League of Legends",
+			"description": "Rework completo de la página de campeones de selección League of Legends.",
+			"link": "https://leagueoflegendsrework.vercel.app/champions/",
+			"images": ["/projects/cursos/1_1.webp", "/projects/pipzum/3_2.webp", "/projects/gym/2_3.webp"],
+			"repository": "https://github.com/ZBrian99/league_of_legends_rework",
+			"technologies": ["React", "Styled Components", "React Router"],
+			"type": "personal",
+			"category": "frontend",
+			"features": ["Filtrado dinámico de campeones", "Animaciones fluidas", "Diseño responsivo", "Modo oscuro/claro"]
 		},
 		{
 			"name": "Nuestra Boda",
 			"description": "Galería de fotos y videos de boda con contenido y animaciones aleatorias.",
 			"link": "https://bmoda.vercel.app/",
-			"image": "/projects/bmoda.webp",
-			"preview": "/projects/bmoda_preview.webp",
-			"speed": 20,
+			"images": ["/projects/cursos/1_1.webp", "/projects/pipzum/3_2.webp", "/projects/gym/2_3.webp"],
 			"repository": "https://github.com/ZBrian99/bmoda",
-			"technologies": ["React", "Framer Motion", "Styled Components"]
+			"technologies": ["React", "Styled Components"],
+			"type": "personal",
+			"category": "frontend",
+			"features": [
+				"Galería multimedia",
+				"Animaciones personalizadas",
+				"Contenido dinámico aleatorio",
+				"Diseño elegante"
+			]
 		}
 	]
 }

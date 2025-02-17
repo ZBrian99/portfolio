@@ -23,15 +23,15 @@ const ButtonStyled = styled.a`
 	font-weight: normal;
 	box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.1);
 
-	transition: border 0.1s ease, transform 0.1s ease, background-color 0.1s ease;
+	transition: border 0.1s ease, transform 0.1s ease, background-color 0.1s ease-in-out;
 	position: relative;
 
 	@media screen and (min-width: 30rem) {
-		padding: 1rem 2rem;
+		/* padding: 1rem 2rem; */
+		${({ stretch }) => (stretch ? 'padding: 0.75rem 1.5rem;' : 'padding: 1rem 2rem;')}
 	}
-
 	&:before {
-		transition: border 0.1s ease, transform 0.1s ease, background-color 0.1s ease;
+		transition: border 0.1s ease, transform 0.1s ease, background-color 0.1s ease-in-out;
 		content: '';
 		z-index: -1;
 		inset: 0;
