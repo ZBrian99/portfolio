@@ -10,9 +10,8 @@ const AboutContainer = styled.section`
 	gap: 3rem;
 	padding: 0rem 2rem;
 	overflow: hidden;
-
 	@media screen and (min-width: 48rem) {
-		padding: 0rem 3rem;
+		/* padding: 0rem 3rem; */
 	}
 `;
 
@@ -43,15 +42,18 @@ const AboutSection = styled.div`
 	flex-direction: column;
 	gap: 2rem;
 	background: rgba(255, 255, 255, 0.05);
-	backdrop-filter: blur(0.5rem);
+	/* backdrop-filter: blur(0.5rem); */
 	border-radius: 1rem;
-	padding: 2rem;
+	padding: 1.5rem;
 	border: 1px solid rgba(255, 255, 255, 0.1);
 `;
 
 const TechSection = styled(AboutSection)`
 	  @media screen and (min-width: 58rem) {
 		max-width: 30%;
+	}
+	  @media screen and (min-width: 65rem) {
+		max-width: 35%;
 	}
 `;
 

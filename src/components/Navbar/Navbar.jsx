@@ -139,35 +139,37 @@ const NavbarItem = styled.a`
 	}
 `;
 
-const ResumeButton = styled(NavbarItem)`
-	background-color: rgba(255, 255, 255, 0.05);
-	border: 0.1rem solid rgba(255, 255, 255, 0.05);
-	transition: all 0.2s ease-out;
-	border-radius: 5rem;
+// const ResumeButton = styled(NavbarItem)`
+// 	background-color: rgba(255, 255, 255, 0.05);
+// 	border: 0.1rem solid rgba(255, 255, 255, 0.05);
+// 	transition: all 0.2s ease-out;
+// 	border-radius: 5rem;
 
-	&:hover {
-		background-color: rgba(255, 255, 255, 0.1);
-	}
-`;
+// 	&:hover {
+// 		background-color: rgba(255, 255, 255, 0.1);
+// 	}
+// `;
 
-const NavbarMobile = styled.div`
-	position: fixed;
-	top: 0;
-	right: 0;
-	width: 100%;
-	height: 4rem;
-	background-color: rgba(26, 6, 32, 0.8);
-	backdrop-filter: blur(1rem);
-	z-index: 1000;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0 1rem;
-	gap: 1rem;
-`;
+// const NavbarMobile = styled.div`
+// 	position: fixed;
+// 	top: 0;
+// 	right: 0;
+// 	width: 100%;
+// 	height: 4rem;
+// 	background-color: rgba(26, 6, 32, 0.8);
+// 	backdrop-filter: blur(1rem);
+// 	z-index: 1000;
+// 	display: flex;
+// 	justify-content: space-between;
+// 	align-items: center;
+// 	padding: 0 1rem;
+// 	gap: 1rem;
+// `;
 
-const NavbarBrandName = styled.h1`
+const NavbarBrandName = styled.a`
 	font-size: 2rem;
+  text-decoration: none;
+  color: inherit;
 	@media screen and (max-width: 30rem) {
 		font-size: 1.5rem;
 	}
@@ -257,7 +259,7 @@ export const Navbar = () => {
 				</>
 			) : (
 				<NavbarMenu isActive={true}>
-					<NavbarBrandName> <HighlightText>Brian</HighlightText> Zelada</NavbarBrandName>
+					<NavbarBrandName href='#'> <HighlightText>Brian</HighlightText> Zelada</NavbarBrandName>
 
 					<NavbarItem href='#projects'>Proyectos</NavbarItem>
 					<NavbarItem href='#about'>Sobre Mi</NavbarItem>

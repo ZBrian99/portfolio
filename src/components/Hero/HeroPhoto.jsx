@@ -56,11 +56,10 @@ const PhotoLink = styled.a`
 	height: 30%;
 	background-color: rgba(255, 255, 255, 0.1);
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
-	transition: transform 0.1s ease-in-out;
+	transition: all 0.2s ease-in-out;
 	position: absolute;
-
 	&:hover {
-		transform: translate(-50%, -50%) scale(1.05);
+		transform: translate(-50%, calc(-50% - 0.25rem)) scale(1.05);
 		cursor: pointer;
 	}
 

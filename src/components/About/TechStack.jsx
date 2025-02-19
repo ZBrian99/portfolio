@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { technologyStyles, technologyIcons } from '../Projects/projectsConstants';
+import { technologyStyles } from '../Projects/projectsConstants';
 import skills from '../../data/skills';
 
 const StackContainer = styled.div`
@@ -30,14 +30,14 @@ const TechGrid = styled.div`
 	@media (min-width: 21rem) {
 		grid-template-columns: repeat(5, 1fr);
 	}
-	@media (min-width: 25rem) {
+	@media (min-width: 26rem) {
 		grid-template-columns: repeat(6, 1fr);
 	}
-	@media (min-width: 32rem) {
+	@media (min-width: 31rem) {
 		grid-template-columns: repeat(8, 1fr);
 	}
 	@media (min-width: 38rem) {
-		grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(10, 1fr);
 	}
 	@media (min-width: 45rem) {
 		grid-template-columns: repeat(12, 1fr);
@@ -45,18 +45,21 @@ const TechGrid = styled.div`
 	@media (min-width: 58rem) {
 		grid-template-columns: repeat(4, 1fr);
 	}
-	@media (min-width: 60rem) {
+	@media (min-width: 61rem) {
 		grid-template-columns: repeat(5, 1fr);
 	}
-	@media (min-width: 75rem) {
+	@media (min-width: 65rem) {
 		grid-template-columns: repeat(6, 1fr);
+	}
+	@media (min-width: 75rem) {
+		grid-template-columns: repeat(7, 1fr);
 	}
 `;
 
 const TechItem = styled.div`
 	position: relative;
 	width: 100%;
-  overflow: hidden;
+	/* overflow: hidden; */
 	aspect-ratio: 1;
 	display: flex;
 	color: #f3f8ff;
@@ -67,21 +70,6 @@ const TechItem = styled.div`
 	opacity: 0.85;
 	transition: all 0.3s ease-in-out;
 	cursor: default;
-
-	&:hover {
-		opacity: 1;
-		box-shadow: 0 0 0.8rem ${({ color }) => color?.background || 'rgba(255, 255, 255, 0.1)'};
-		/* background: ${({ color }) => {
-			color?.background || 'rgba(255, 255, 255, 0.1)';
-		}}; */
-		transform: translateY(-0.25rem);
-
-		&::before,
-		&::after {
-			opacity: 1;
-			visibility: visible;
-		}
-	}
 
 	&::before {
 		content: attr(data-tooltip);
@@ -107,13 +95,28 @@ const TechItem = styled.div`
 		position: absolute;
 		bottom: 110%;
 		left: 50%;
-		transform: translate(-50%, calc(50% - 0.25rem));
+		transform: translate(-50%, 35%);
 		border: 0.5rem solid transparent;
 		border-top: 0.5rem solid #000000;
 		opacity: 0;
 		visibility: hidden;
 		transition: all 0.2s ease-in-out;
 		z-index: 10;
+	}
+
+	&:hover {
+		opacity: 1;
+		box-shadow: 0 0 0.8rem ${({ color }) => color?.background || 'rgba(255, 255, 255, 0.1)'};
+		/* background: ${({ color }) => {
+			color?.background || 'rgba(255, 255, 255, 0.1)';
+		}}; */
+		transform: translateY(-0.25rem);
+
+		&::before,
+		&::after {
+			opacity: 1;
+			visibility: visible;
+		}
 	}
 `;
 
@@ -131,11 +134,7 @@ export const TechStack = () => {
 					<CategoryTitle>{category.name}</CategoryTitle>
 					<TechGrid>
 						{category.techs.map((tech) => (
-							<TechItem 
-								key={tech.name} 
-								color={technologyStyles[tech.name]} 
-								data-tooltip={tech.name}
-							>
+							<TechItem key={tech.name} color={technologyStyles[tech.name]} data-tooltip={tech.name}>
 								<TechIcon src={tech.icon} alt={tech.name} />
 							</TechItem>
 						))}

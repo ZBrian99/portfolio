@@ -13,17 +13,17 @@ const Bubble = styled.div`
 	position: absolute;
 	border-radius: 50%;
 	filter: blur(7rem);
-	opacity: 0.3;
-	animation: float linear infinite;
+	opacity: 0.5;
+	/* animation: float linear infinite; */
 	pointer-events: none;
 
 	&:nth-of-type(1) {
 		width: 40vw;
 		height: 40vw;
-		background: #d946ef;
+		background: #a935bb;
 		top: 15%;
 		left: 10%;
-		animation-duration: 10s;
+		/* animation-duration: 10s; */
 	}
 
 	&:nth-of-type(2) {
@@ -32,7 +32,7 @@ const Bubble = styled.div`
 		background: #7928ca;
 		top: 40%;
 		left: 50%;
-		animation-duration: 20s;
+		/* animation-duration: 20s; */
 	}
 
 	&:nth-of-type(3) {
@@ -41,10 +41,10 @@ const Bubble = styled.div`
 		background: #94105d;
 		top: 10%;
 		right: 10%;
-		animation-duration: 25s;
+		/* animation-duration: 25s; */
 	}
   @media screen and (max-width: 120rem) {
-    filter: blur(5rem);
+    /* filter: blur(5rem); */
   }
 	@media (max-width: 48rem) {
 		/* filter: blur(1rem); */
@@ -97,7 +97,7 @@ const Bubble = styled.div`
 		}
 	}
 
-	@keyframes float {
+	/* @keyframes float {
 		0% {
 			transform: translate(0, 0) rotate(0deg);
 		}
@@ -110,7 +110,7 @@ const Bubble = styled.div`
 		100% {
 			transform: translate(0, 0) rotate(360deg);
 		}
-	}
+	} */
 `;
 
 export const Background = () => {

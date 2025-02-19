@@ -12,7 +12,7 @@ const ContactContainer = styled.section`
 	gap: 3rem;
 	position: relative;
 	@media screen and (min-width: 30rem) {
-		padding: 0 2rem;
+    padding: 0 2rem;
 	}
 `;
 
@@ -26,7 +26,7 @@ const ContactWrapper = styled.div`
 	@media (min-width: 45rem) {
 		align-items: stretch;
 
-		padding: 0 1rem;
+		/* padding: 0 1rem; */
 		gap: 3rem;
 
 		flex-direction: row;

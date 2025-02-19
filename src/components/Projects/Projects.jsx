@@ -10,9 +10,9 @@ const ProjectsContainer = styled.section`
 	display: flex;
 	flex-direction: column;
 	gap: 3rem;
-	@media (min-width: 48rem) {
+	/* @media (min-width: 48rem) {
 		padding: 0 3rem;
-	}
+	} */
 `;
 
 const ProjectsTitle = styled.h3`

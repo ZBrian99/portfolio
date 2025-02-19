@@ -15,7 +15,6 @@ const HeroContainer = styled.section`
 	position: relative;
 	min-height: 100svh;
 	text-align: left;
-
 	@media screen and (min-width: 50rem) {
 		padding-top: 4rem;
 		flex-direction: row;

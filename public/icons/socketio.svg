@@ -1,5 +1,16 @@
-
-            <svg viewBox="0 0 128 128">
-            <g fill="#010101" fill-rule="evenodd"><path style="line-height:normal;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;text-orientation:mixed;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;isolation:auto;mix-blend-mode:normal;solid-color:#000;solid-opacity:1" d="M63.951.001C28.696.001.001 28.696.001 63.951s28.695 63.95 63.95 63.95 63.95-28.695 63.95-63.95S99.206.001 63.95.001zm0 10.679c29.484 0 53.272 23.787 53.272 53.271 0 29.485-23.788 53.272-53.272 53.272-29.484 0-53.272-23.787-53.272-53.272 0-29.484 23.788-53.271 53.272-53.271z" color="#000" font-weight="400" font-family="sans-serif" overflow="visible" fill-rule="nonzero"></path><path d="M48.39 60.716c14.004-11.44 27.702-23.278 42.011-34.384-7.505 11.533-15.224 22.913-22.729 34.445-6.437.03-12.875.03-19.282-.061zM60.228 67.092c6.468 0 12.905 0 19.342.092-14.095 11.38-27.732 23.309-42.071 34.384 7.505-11.533 15.224-22.943 22.729-34.476z"></path></g>
-            </svg>
-          
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_78_93)">
+<mask id="mask0_78_93" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="128" height="128">
+<path d="M128 0H0V128H128V0Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_78_93)">
+<path d="M63.952 0.00195312C28.697 0.00195312 0.00195312 28.697 0.00195312 63.952C0.00195312 99.207 28.697 127.902 63.952 127.902C99.207 127.902 127.902 99.207 127.902 63.952C127.902 28.697 99.208 0.00195312 63.952 0.00195312ZM63.952 10.681C93.436 10.681 117.224 34.468 117.224 63.952C117.224 93.437 93.436 117.224 63.952 117.224C34.468 117.224 10.68 93.437 10.68 63.952C10.68 34.468 34.468 10.681 63.952 10.681Z" fill="#fcfcfc"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M48.391 60.716C62.395 49.276 76.093 37.438 90.402 26.332C82.897 37.865 75.178 49.245 67.673 60.777C61.236 60.807 54.798 60.807 48.391 60.716ZM60.229 67.092C66.697 67.092 73.134 67.092 79.571 67.184C65.476 78.564 51.839 90.493 37.5 101.568C45.005 90.035 52.724 78.625 60.229 67.092Z" fill="#fcfcfc"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_78_93">
+<rect width="128" height="128" fill="white"/>
+</clipPath>
+</defs>
+</svg>

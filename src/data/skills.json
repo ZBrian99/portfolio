@@ -7,7 +7,7 @@
       { "name": "TypeScript", "icon": "/icons/typescript.svg" },
       { "name": "Redux Toolkit", "icon": "/icons/redux.svg" },
       { "name": "React Query", "icon": "/icons/react-query.svg" },
-      { "name": "Tailwind CSS", "icon": "/icons/tailwindcss.svg" },
+      { "name": "Tailwind", "icon": "/icons/tailwindcss.svg" },
       { "name": "Material UI", "icon": "/icons/mui.svg" },
       { "name": "Styled Components", "icon": "/icons/styled-components.svg" },
       { "name": "Framer Motion", "icon": "/icons/framer-motion.svg" },

@@ -48,7 +48,6 @@ const ContactItem = styled.div`
 
 	flex-basis: 100%;
 	border-radius: 1rem;
-	background-color: rgba(255, 255, 255, 0.05);
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
 	border: 1px solid rgba(255, 255, 255, 0.05);
 
@@ -66,7 +65,7 @@ const Icon = styled.div`
 	width: 2rem;
 	display: flex;
 	align-items: center;
-  justify-content: center;
+	justify-content: center;
 `;
 
 const ContactItemInfo = styled.div`
@@ -92,14 +91,13 @@ const PhotoLink = styled.a`
 	height: 3rem;
 	box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.1);
 	border-radius: 50%;
-	background-color: rgba(255, 255, 255, 0.1);
-	background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
-	transition: transform 0.1s ease-in-out;
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+	/* backdrop-filter: blur(10px); */
+	transition: all 0.2s ease-in-out;
 
 	&:hover {
-		transform: scale(1.05);
-
-		cursor: pointer;
+		transform: translateY(-2px);
+		background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
 	}
 
 	&:active {
@@ -158,9 +156,7 @@ export const ContactInfo = () => {
 					<PhotoIcon rounded src={'/icons/x.svg'} alt='x' />
 				</PhotoLink>
 
-				<PhotoLink href='https://wa.me/+5492236698045' target='_blank' rel='noopener noreferrer'>
-					<PhotoIcon src={'/icons/wpp.svg'} alt='WhatsApp' />
-				</PhotoLink>
+			
 			</ContactSocialContainer>
 		</ContactInfoContainer>
 	);

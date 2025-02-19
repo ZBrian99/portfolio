@@ -10,22 +10,28 @@ const TechnologiesContainer = styled.div`
 	@media (min-width: 20rem) {
 		grid-template-columns: repeat(6, 1fr);
 	}
-	@media (min-width: 30rem) {
-		grid-template-columns: repeat(7, 1fr);
+	@media (min-width: 28rem) {
+		grid-template-columns: repeat(8, 1fr);
 	}
-	@media (min-width: 40rem) {
+	@media (min-width: 34rem) {
 		grid-template-columns: repeat(10, 1fr);
 	}
+	@media (min-width: 40rem) {
+		grid-template-columns: repeat(12, 1fr);
+	}
 	@media (min-width: 48rem) {
-		grid-template-columns: repeat(6, 1fr);
+		grid-template-columns: repeat(7, 1fr);
+	}
+	@media (min-width: 54rem) {
+		grid-template-columns: repeat(8, 1fr);
 	}
 	@media (min-width: 64rem) {
-		grid-template-columns: repeat(8, 1fr);
+		grid-template-columns: repeat(9, 1fr);
 	}
 	@media (min-width: 70rem) {
 		grid-template-columns: repeat(6, 1fr);
 	}
-	@media (min-width: 80rem) {
+	@media (min-width: 75rem) {
 		grid-template-columns: repeat(7, 1fr);
 	}
 `;
@@ -82,7 +88,7 @@ const TechIcon = styled.div`
 		position: absolute;
 		bottom: 100%;
 		left: 50%;
-		transform: translate(-50%, calc(50% - 0.25rem));
+		transform: translate(-50%, 35%);
 		border: 0.5rem solid transparent;
 		border-top: 0.5rem solid #000000;
 		opacity: 0;
@@ -113,12 +119,14 @@ const MoreTechIcon = styled(TechIcon)`
 
 export const ProjectTechnologies = ({ technologies }) => {
 	const getVisibleLimit = () => {
-		if (window.innerWidth >= 1280) return 7;
+		if (window.innerWidth >= 1200) return 7;
 		if (window.innerWidth >= 1120) return 6;
-		if (window.innerWidth >= 1024) return 8;
-		if (window.innerWidth >= 768) return 6;
-		if (window.innerWidth >= 640) return 10;
-		if (window.innerWidth >= 480) return 7;
+		if (window.innerWidth >= 1024) return 9;
+		if (window.innerWidth >= 864) return 8;
+		if (window.innerWidth >= 768) return 7;
+		if (window.innerWidth >= 640) return 12;
+		if (window.innerWidth >= 544) return 10;
+		if (window.innerWidth >= 448) return 8;
 		if (window.innerWidth >= 320) return 6;
 		return 5;
 	};

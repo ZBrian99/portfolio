@@ -34,7 +34,7 @@ const ButtonStyled = styled.a`
 		border-radius: 2rem;
 		filter: blur(0.5rem);
 		opacity: 0;
-		transition: opacity 0.3s ease-in-out;
+		transition: opacity 0.2s ease-in-out;
 		z-index: -1;
 	}
 

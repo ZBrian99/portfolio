@@ -9,18 +9,19 @@ const Card = styled.article`
 	position: relative;
 	width: 100%;
 	min-height: 26rem;
-	background: rgba(255, 255, 255, 0.03);
-	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+	background: rgba(255, 255, 255, 0.05);
 	border: 1px solid rgba(255, 255, 255, 0.05);
 	border-radius: 1rem;
 	box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
 	transition: all 0.3s ease-in-out;
 	display: flex;
 	flex-direction: column;
-
+  
 	&:hover {
-		box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
-		background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    /* background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05)); */
+		/* background: linear-gradient(135deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.08)); */
 		border: 1px solid rgba(255, 255, 255, 0.1);
 		@media (min-width: 48rem) {
 			transform: translateY(-0.5rem);
@@ -39,8 +40,8 @@ const ProjectTypeTag = styled.span`
 	padding: 0.5rem 1rem;
 	border-radius: 2rem;
 	font-size: 0.9em;
-	background: rgba(0, 0, 0, 0.6);
-	background: ${({ type }) => ProjectTypeColors[type]?.background || 'rgba(0, 0, 0, 0.6)'};
+	background: rgba(0, 0, 0, 0.7);
+	background: ${({ type }) => ProjectTypeColors[type]?.background || 'rgba(0, 0, 0, 0.7)'};
 	color: ${({ type }) => ProjectTypeColors[type]?.color || 'white'};
 	font-weight: 600;
 	border: 1px solid ${({ type }) => ProjectTypeColors[type]?.border || 'white'};
@@ -62,7 +63,7 @@ const ContentContainer = styled.div`
 `;
 
 const ProjectTitle = styled.h3`
-	font-size: 1.5em;
+	font-size: 1.6em;
 	color: #ffffff;
 `;
 

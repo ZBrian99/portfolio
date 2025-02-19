@@ -3,7 +3,6 @@ import { About } from '../../components/About/About';
 import { Contact } from '../../components/Contact/Contact';
 import { Projects } from '../../components/Projects/Projects';
 import { Hero } from '../../components/Hero/Hero';
-// import { Services } from '../../components/Services/Services';
 
 const HomeWrapper = styled.main`
 	display: flex;
@@ -21,7 +20,6 @@ export const HomePage = () => {
 	return (
 		<HomeWrapper>
 			<Hero />
-			{/* <Services /> */}
 			<Projects />
 			<About />
 			<Contact />
