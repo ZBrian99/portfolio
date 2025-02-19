@@ -21,84 +21,112 @@ const FormContainer = styled.div`
 `;
 
 const Form = styled.form`
-	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 1rem;
+	width: 100%;
 	position: relative;
 `;
 
-const Input = styled.input`
+const InputBase = styled.input`
 	width: 100%;
-	outline: none;
-	border-radius: 0.5rem;
 	padding: 1rem;
-	border: none;
-
-	background-color: rgba(255, 255, 255, 0.05);
+	border-radius: 0.8rem;
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-
-	box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.1);
 	border: 1px solid rgba(255, 255, 255, 0.05);
-
-	font-size: 1em;
 	color: white;
+	box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.1);
+	font-size: 1rem;
+	transition: all 0.2s ease;
+
+	&:focus {
+		outline: none;
+		border-color: rgba(255, 255, 255, 0.2);
+		box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+	}
 
 	&::placeholder {
-		color: #c9c9c9;
+		color: rgba(255, 255, 255, 0.6);
 	}
 `;
 
 const Textarea = styled.textarea`
-	height: 12rem;
 	width: 100%;
-	outline: none;
-	font-size: inherit;
-	font-family: inherit;
-	border-radius: 0.5rem;
 	padding: 1rem;
-	resize: none;
-
-	color: white;
-	border: none;
-	background-color: rgba(255, 255, 255, 0.05);
+	border-radius: 0.8rem;
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-
-	box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.1);
 	border: 1px solid rgba(255, 255, 255, 0.05);
+	color: white;
+	font-size: 1rem;
+	transition: all 0.2s ease;
+	height: 12rem;
+	resize: none;
+	min-height: 8rem;
+	font-family: inherit;
+	box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.1);
+	&:focus {
+		outline: none;
+		border-color: rgba(255, 255, 255, 0.2);
+		box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+	}
 
 	&::placeholder {
-		color: #c9c9c9;
+		color: rgba(255, 255, 255, 0.6);
 	}
 `;
 
 const Button = styled.button`
-	color: #fff;
-	font-size: 1em;
-	outline: none;
-	border: none;
-	background-color: rgba(255, 255, 255, 0.05);
+	padding: 1rem 2rem;
+	border-radius: 0.8rem;
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
 	border: 1px solid rgba(255, 255, 255, 0.05);
-
-	padding: 1rem 2rem;
-	border-radius: 0.5rem;
+	color: white;
+	font-size: 1rem;
 	cursor: pointer;
+	transition: all 0.2s ease;
+	align-self: flex-start;
+
 	&:hover {
 		background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1));
+		transform: translateY(-2px);
+	}
+
+	&:active {
+		transform: translateY(0);
+	}
+
+	&:disabled {
+		opacity: 0.7;
+		cursor: not-allowed;
 	}
 `;
 
 const Message = styled.div`
-	${({ error }) => (error ? 'color:#ff0000;' : 'color: #ffffff;')}
-	background-color: rgba(255, 255, 255, 0.05);
-	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-	padding: 1rem;
-	border-radius: 1rem;
-	position: absolute;
-	bottom: -1rem;
-	transform: translateY(100%);
+	position: fixed;
+	bottom: 2rem;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 1rem 2rem;
+	border-radius: 0.8rem;
+	background: ${({ error }) =>
+		error
+			? 'linear-gradient(135deg, rgba(255, 0, 0, 0.2), rgba(255, 0, 0, 0.1))'
+			: 'linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.1))'};
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	color: white;
+	animation: slideUp 0.3s ease;
+
+	@keyframes slideUp {
+		from {
+			transform: translate(-50%, 100%);
+			opacity: 0;
+		}
+		to {
+			transform: translate(-50%, 0);
+			opacity: 1;
+		}
+	}
 `;
 
 export const ContactForm = () => {
@@ -152,7 +180,7 @@ export const ContactForm = () => {
 	return (
 		<FormContainer>
 			<Form onSubmit={handleSubmit}>
-				<Input
+				<InputBase
 					type='text'
 					name='nombre'
 					placeholder='Nombre'
@@ -160,7 +188,7 @@ export const ContactForm = () => {
 					onChange={handleChange}
 					required
 				/>
-				<Input
+				<InputBase
 					type='email'
 					name='correo'
 					placeholder='Correo electrónico'
@@ -169,7 +197,7 @@ export const ContactForm = () => {
 					required
 				/>
 				<Textarea
-					name='mensaje'
+          name='mensaje'
 					placeholder='Mensaje'
 					value={formData.mensaje}
 					onChange={handleChange}

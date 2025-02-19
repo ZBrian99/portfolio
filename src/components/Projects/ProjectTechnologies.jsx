@@ -47,17 +47,15 @@ const TechIcon = styled.div`
 	&:hover {
 		opacity: 1;
 		box-shadow: 0 0 0.8rem ${({ color }) => color?.background || 'rgba(255, 255, 255, 0.1)'};
-		background: ${({ color }) => {
+		/* background: ${({ color }) => {
 			color?.background || 'rgba(255, 255, 255, 0.1)';
-		}};
+		}}; */
 		&::before,
 		&::after {
 			opacity: 1;
 			visibility: visible;
 		}
-		@media (min-width: 48rem) {
-			transform: translateY(-0.25rem);
-		}
+		transform: translateY(-0.25rem);
 	}
 
 	&::before {
@@ -84,7 +82,7 @@ const TechIcon = styled.div`
 		position: absolute;
 		bottom: 100%;
 		left: 50%;
-		transform: translate(-50%, 45%);
+		transform: translate(-50%, calc(50% - 0.25rem));
 		border: 0.5rem solid transparent;
 		border-top: 0.5rem solid #000000;
 		opacity: 0;

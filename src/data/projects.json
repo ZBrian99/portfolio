@@ -31,7 +31,7 @@
 				"/projects/cursos/1_3.webp"
 			],
 			"repository": "https://github.com/ZBrian99/cursos-online",
-			"technologies": ["Next.js", "React", "Nest.js", "PostgreSQL", "Prisma", "Redux", "Material UI", "TypeScript"],
+			"technologies": ["React", "Nest.js", "PostgreSQL", "Prisma", "Redux", "Material UI", "TypeScript"],
 			"type": "freelance",
 			"category": "fullstack",
 			"features": [
@@ -61,7 +61,6 @@
 				"Styled Components",
 				"Node.js",
 				"Redux",
-				"Redux",
 				"Material UI",
 				"Node.js",
 				"PostgreSQL",
@@ -83,7 +82,7 @@
 			"link": "https://pipzum.vercel.app/",
 			"images": ["/projects/pipzum/3_1.webp", "/projects/pipzum/3_2.webp", "/projects/pipzum/3_3.webp"],
 			"repository": "https://github.com/ZBrian99/pizzeria",
-			"technologies": ["React", "Sass", "Redux", "React Router"],
+			"technologies": ["React", "Sass", "Redux"],
 			"type": "profesional",
 			"category": "frontend",
 			"features": ["Menú interactivo", "Sistema de pedidos", "Galería de productos", "Integración con redes sociales"]
@@ -94,7 +93,7 @@
 			"link": "https://leagueoflegendsrework.vercel.app/champions/",
 			"images": ["/projects/cursos/1_1.webp", "/projects/pipzum/3_2.webp", "/projects/gym/2_3.webp"],
 			"repository": "https://github.com/ZBrian99/league_of_legends_rework",
-			"technologies": ["React", "Styled Components", "React Router"],
+			"technologies": ["React", "Styled Components"],
 			"type": "personal",
 			"category": "frontend",
 			"features": ["Filtrado dinámico de campeones", "Animaciones fluidas", "Diseño responsivo", "Modo oscuro/claro"]

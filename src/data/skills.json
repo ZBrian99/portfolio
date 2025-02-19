@@ -1,83 +1,41 @@
-{
-	"skills": [
-		{
-			"name": "React",
-			"src": "/icons/react.svg",
-			"learned": true,
-			"type": "main"
-		},
-		{
-			"name": "Astro",
-			"src": "/icons/astro.svg",
-			"learned": true,
-			"type": "primary"
-		},
-		{
-			"name": "Redux",
-			"src": "/icons/redux.svg",
-			"learned": true,
-			"type": "primary"
-		},
-		{
-			"name": "TypeScript",
-			"src": "/icons/typescript.svg",
-			"learned": true,
-			"type": "primary"
-		},
-		{
-			"name": "React Router",
-			"src": "/icons/router.svg",
-			"learned": true,
-			"type": "primary"
-		},
-		{
-			"name": "Styled Components",
-			"src": "/icons/styled-components.svg",
-			"learned": true,
-			"type": "primary"
-		},
-		{
-			"name": "Tailwind CSS",
-			"src": "/icons/tailwindcss.svg",
-			"learned": true,
-			"type": "primary"
-		},
-		{
-			"name": "Sass",
-			"src": "/icons/sass.svg",
-			"learned": true,
-			"type": "primary"
-		},
-
-		{
-			"name": "NodeJS",
-			"src": "/icons/nodejs.svg",
-			"learned": true,
-			"type": "primary"
-		},
-		{
-			"name": "JavaScript",
-			"src": "/icons/js.svg",
-			"learned": true,
-			"type": "primary"
-		},
-		{
-			"name": "CSS",
-			"src": "/icons/css.svg",
-			"learned": true,
-			"type": "primary"
-		},
-		{
-			"name": "HTML",
-			"src": "/icons/html.svg",
-			"learned": true,
-			"type": "primary"
-		},
-		{
-			"name": "Git",
-			"src": "/icons/git.svg",
-			"learned": true,
-			"type": "secondary"
-		}
-	]
-}
+[
+	{
+		"name": "Frontend",
+		"techs": [
+			   { "name": "React", "icon": "/icons/react.svg" },
+      { "name": "Astro", "icon": "/icons/astro.svg" },
+      { "name": "TypeScript", "icon": "/icons/typescript.svg" },
+      { "name": "Redux Toolkit", "icon": "/icons/redux.svg" },
+      { "name": "React Query", "icon": "/icons/react-query.svg" },
+      { "name": "Tailwind CSS", "icon": "/icons/tailwindcss.svg" },
+      { "name": "Material UI", "icon": "/icons/mui.svg" },
+      { "name": "Styled Components", "icon": "/icons/styled-components.svg" },
+      { "name": "Framer Motion", "icon": "/icons/framer-motion.svg" },
+			{ "name": "Sass", "icon": "/icons/sass.svg" },
+			{ "name": "JavaScript", "icon": "/icons/js.svg" },
+			{ "name": "CSS", "icon": "/icons/css.svg" },
+			{ "name": "HTML", "icon": "/icons/html.svg" }
+		]
+	},
+	{
+		"name": "Backend",
+		"techs": [
+			{ "name": "Nest.js", "icon": "/icons/nestjs.svg" },
+			{ "name": "Prisma", "icon": "/icons/prisma.svg" },
+			{ "name": "PostgreSQL", "icon": "/icons/postgresql.svg" },
+			{ "name": "Socket.IO", "icon": "/icons/socketio.svg" },
+			{ "name": "MongoDB", "icon": "/icons/mongodb.svg" },
+			{ "name": "Express", "icon": "/icons/express.svg" },
+			{ "name": "Node.js", "icon": "/icons/nodejs.svg" }
+		]
+	},
+	{
+		"name": "Tools",
+		"techs": [
+			{ "name": "Git", "icon": "/icons/git.svg" },
+			{ "name": "GitHub", "icon": "/icons/githubweb.svg" },
+			{ "name": "Figma", "icon": "/icons/figma.svg" },
+			{ "name": "Postman", "icon": "/icons/postman.svg" }
+		]
+	}
+]

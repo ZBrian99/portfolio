@@ -25,7 +25,7 @@ const ButtonStyled = styled.a`
 
 	transition: border 0.1s ease, transform 0.1s ease, background-color 0.1s ease-in-out;
 	position: relative;
-
+	border: 1px solid rgba(255, 255, 255, 0.05);
 	@media screen and (min-width: 30rem) {
 		/* padding: 1rem 2rem; */
 		${({ stretch }) => (stretch ? 'padding: 0.75rem 1.5rem;' : 'padding: 1rem 2rem;')}

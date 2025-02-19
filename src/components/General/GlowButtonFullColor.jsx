@@ -22,7 +22,6 @@ const ButtonStyled = styled.a`
 
 	transition: transform 0.2s ease-in-out;
 	box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.1);
-
 	@media screen and (min-width: 30rem) {
 		/* padding: 1rem 2rem; */
 		${({ stretch }) => (stretch ? 'padding: 0.75rem 1.5rem;' : 'padding: 1rem 2rem;')}
