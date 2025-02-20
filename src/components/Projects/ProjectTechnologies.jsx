@@ -109,8 +109,8 @@ const MoreTechIcon = styled(TechIcon)`
 	color: white;
 	font-weight: 500;
 	font-size: 1rem;
-  line-height: 1.4;
-
+	line-height: 1.4;
+	z-index: 4;
 	&:hover {
 		background: rgba(255, 255, 255, 0.2);
 		box-shadow: 0 0 0.8rem rgba(255, 255, 255, 0.2);

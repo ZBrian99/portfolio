@@ -33,7 +33,7 @@ export const AboutContent = () => {
 			<Paragraph>
 				Mi stack principal incluye <Highlight>React, NestJS y PostgreSQL</Highlight>, con los que construyo aplicaciones
 				web completas. Mi experiencia abarca desde el diseño e implementación de interfaces intuitivas hasta el
-				desarrollo de APIs REST y la gestión de bases de datos.{' '}
+				desarrollo de APIs y la gestión de bases de datos.{' '}
 				<Highlight>
 					Me adapto rápidamente a nuevas tecnologías según las necesidades específicas de cada proyecto
 				</Highlight>
