@@ -43,10 +43,10 @@ const HeroInfoContainer = styled.div`
 		align-items: flex-start;
 		font-size: 0.75em;
 	}
-	@media screen and (min-width: 58rem) {
+	@media screen and (min-width: 60rem) {
 		font-size: 0.9em;
 	}
-	@media screen and (min-width: 64rem) {
+	@media screen and (min-width: 65rem) {
 		font-size: 1em;
 	}
 `;
@@ -69,18 +69,25 @@ const HeroTitle = styled.h1`
 `;
 
 const HeroSubtitle = styled.h2`
-	font-size: 2.2em;
+	font-size: 2em;
 	@media screen and (min-width: 24rem) {
+    white-space: nowrap;
+		font-size: 2.6em;
+	}
+	@media screen and (min-width: 25.5rem) {
 		font-size: 2.6em;
 	}
 	@media screen and (min-width: 50rem) {
+		font-size: 2.9em;
+	}
+	@media screen and (min-width: 52rem) {
 		font-size: 3em;
 	}
 `;
 const HeroExtra = styled.p`
   font-size: 1.6em;
 	@media screen and (min-width: 24rem) {
-    font-size: 2em;
+    font-size: 1.9em;
 	}
 	@media screen and (min-width: 34rem) {
     font-size: 1.6em;
@@ -155,7 +162,7 @@ export const Hero = () => {
 					Soy <HighlightText>Brian </HighlightText>Zelada
 				</HeroTitle>
 				<HeroSubtitle>
-					<HighlightText>Desarrollador FullStack</HighlightText> 💻
+					<HighlightText>Desarrollador Full Stack</HighlightText> 💻
 				</HeroSubtitle>
 				<HeroExtra>
 					Transformo ideas en <HighlightText>soluciones web a medida</HighlightText>

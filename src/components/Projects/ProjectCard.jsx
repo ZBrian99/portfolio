@@ -16,11 +16,11 @@ const Card = styled.article`
 	transition: all 0.3s ease-in-out;
 	display: flex;
 	flex-direction: column;
-  
+
 	&:hover {
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
-    background: rgba(255, 255, 255, 0.1);
-    /* background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05)); */
+		box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
+		background: rgba(255, 255, 255, 0.1);
+		/* background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05)); */
 		/* background: linear-gradient(135deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.08)); */
 		border: 1px solid rgba(255, 255, 255, 0.1);
 		@media (min-width: 48rem) {
@@ -108,11 +108,13 @@ export const ProjectCard = ({ project }) => {
             Demo
             <img src="/icons/external-link_5.svg" alt="Demo" />
           </Button> */}
-					<GlowButtonAlt stretch href={project.repository}>
-						GitHub <ButtonIcon src='/icons/github-icon.svg' alt='GitHub' />
-					</GlowButtonAlt>
-					<GlowButtonFullColor stretch href={project.link}>
-						Demo <ButtonIcon src='/icons/external-link_5.svg' alt='Demo' />
+					{project.repository && (
+						<GlowButtonAlt stretch href={project.repository} target='_blank' rel='noopener noreferrer'>
+							GitHub <ButtonIcon src='/icons/github-icon.svg' alt='GitHub' />
+						</GlowButtonAlt>
+					)}
+					<GlowButtonFullColor stretch only={!project.repository} href={project.link} target='_blank' rel='noopener noreferrer'>
+						Ver Demo <ButtonIcon src='/icons/external-link_5.svg' alt='Demo' />
 					</GlowButtonFullColor>
 				</ButtonsContainer>
 			</ContentContainer>

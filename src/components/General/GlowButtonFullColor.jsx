@@ -6,7 +6,7 @@ const ButtonStyled = styled.a`
 	text-decoration: none;
 	cursor: pointer;
 	position: relative;
-	${({ fit }) => (fit ? 'width: fit-content;' : 'flex: 1;')}
+	${({ fit, only }) => (fit ? 'width: fit-content;' : only ? 'width: calc(50% - 0.5rem); margin-left: auto;' : 'flex: 1;')}
 	height: fit-content;
 	text-align: center;
 	white-space: nowrap;

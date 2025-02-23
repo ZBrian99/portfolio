@@ -1,118 +1,82 @@
 {
 	"projects": [
 		{
-			"name": "Gym App",
-			"description": "Aplicación para seguimiento de rutinas y progreso en el gimnasio.",
-			"link": "https://gymapp.vercel.app/",
+			"name": "Control Acceso Gym",
+			"description": "Sistema completo de gestión de clientes con control de acceso IoT. Incluye registro de pagos, inscripciones y control automático de puerta.",
+			"link": "https://gym-access.up.railway.app/",
 			"images": [
-				"/projects/gym/2_1.webp",
-				"/projects/gym/2_2.webp",
-				"/projects/gym/2_3.webp"
+				"/projects/gym.webp"
 			],
-			"repository": "https://github.com/ZBrian99/gym-app",
-			"technologies": ["React", "Tailwind", "Redux", "Node.js", "TypeScript"],
+			"technologies": [
+				"React",
+				"Nest.js",
+				"PostgreSQL",
+				"Material UI",
+				"TypeScript",
+        "Redux",
+				"Prisma",
+				"Socket.IO"
+			],
 			"type": "freelance",
-			"category": "fullstack",
-			"features": [
-				"Seguimiento de rutinas",
-				"Registro de progreso",
-				"Estadísticas personalizadas",
-				"Sincronización en la nube",
-				"Modo offline"
-			]
+			"category": "fullstack"
 		},
 		{
-			"name": "Cursos Online",
-			"description": "Plataforma de cursos online con sistema de progreso y certificaciones.",
-			"link": "https://cursosonline.vercel.app/",
+			"name": "Gestión de Cursos",
+			"description": "Plataforma de gestión de cursos con formularios personalizables, inscripciones, sistema de referidos para vendedores y reportes en Excel.",
+			"link": "https://demo-cursos.up.railway.app/login",
 			"images": [
-				"/projects/cursos/1_1.webp",
-				"/projects/cursos/1_2.webp",
-				"/projects/cursos/1_3.webp"
+				"/projects/cursos.webp"
 			],
-			"repository": "https://github.com/ZBrian99/cursos-online",
-			"technologies": ["React", "Nest.js", "PostgreSQL", "Prisma", "Redux", "Material UI", "TypeScript"],
+			"technologies": [
+				"React",
+				"Nest.js",
+				"PostgreSQL",
+				"Material UI",
+				"TypeScript",
+				"Redux",
+				"Prisma"
+			],
 			"type": "freelance",
-			"category": "fullstack",
-			"features": [
-				"Sistema de autenticación",
-				"Progreso del estudiante",
-				"Certificaciones automáticas",
-				"Contenido multimedia",
-				"Panel de instructor",
-				"Pagos integrados"
-			]
+			"category": "fullstack"
 		},
 		{
 			"name": "InterUp",
-			"description": "Plataforma de gestión de entrevistas técnicas para desarrolladores.",
-			"link": "https://interup.vercel.app/",
-			"images": ["/projects/cursos/1_1.webp", "/projects/pipzum/3_2.webp", "/projects/gym/2_3.webp"],
-			"repository": "https://github.com/ZBrian99/interup",
-			"technologies": [
-				"React",
-				"Redux",
-				"Material UI",
-				"Node.js",
-				"PostgreSQL",
-				"TypeScript",
-				"Redux",
-				"Material UI",
-				"Styled Components",
-				"Node.js",
-				"Redux",
-				"Material UI",
-				"Node.js",
-				"PostgreSQL",
-				"TypeScript"
-			],
+			"description": "Página web personal para ofrecer servicios como desarrollador freelance. Diseño moderno con temática espacial y microinteracciones.",
+			"link": "https://interup.dev/",
+			"images": ["/projects/interup.webp"],
+			"technologies": ["Astro", "Tailwind","TypeScript"],
 			"type": "profesional",
-			"category": "fullstack",
-			"features": [
-				"Sistema de autenticación",
-				"Gestión de entrevistas",
-				"Panel de administración",
-				"Evaluación en tiempo real",
-				"Reportes y estadísticas"
-			]
+			"category": "frontend"
 		},
 		{
-			"name": "Pipzum",
-			"description": "Pizzería Pipzum con menú, precios, datos de contacto, novedades y logros.",
+			"name": "Sitio Web Pizzeria",
+			"description": "Landing page moderna para pizzería con diseño atractivo, animaciones y efectos parallax. Incluye menu, precios y logros.",
 			"link": "https://pipzum.vercel.app/",
-			"images": ["/projects/pipzum/3_1.webp", "/projects/pipzum/3_2.webp", "/projects/pipzum/3_3.webp"],
+			"images": [
+				"/projects/pipzum.webp"
+			],
 			"repository": "https://github.com/ZBrian99/pizzeria",
-			"technologies": ["React", "Sass", "Redux"],
-			"type": "profesional",
-			"category": "frontend",
-			"features": ["Menú interactivo", "Sistema de pedidos", "Galería de productos", "Integración con redes sociales"]
+			"technologies": [
+				"React",
+				"Sass"
+			],
+			"type": "personal",
+			"category": "frontend"
 		},
 		{
 			"name": "League of Legends",
-			"description": "Rework completo de la página de campeones de selección League of Legends.",
+			"description": "Rediseño de la página de campeones de league of legends con información detallada, filtros y visualización de historias, habilidades y skins.",
 			"link": "https://leagueoflegendsrework.vercel.app/champions/",
-			"images": ["/projects/cursos/1_1.webp", "/projects/pipzum/3_2.webp", "/projects/gym/2_3.webp"],
+			"images": [
+				"/projects/lol.webp"
+			],
 			"repository": "https://github.com/ZBrian99/league_of_legends_rework",
-			"technologies": ["React", "Styled Components"],
+			"technologies": [
+				"React",
+				"Styled Components"
+			],
 			"type": "personal",
-			"category": "frontend",
-			"features": ["Filtrado dinámico de campeones", "Animaciones fluidas", "Diseño responsivo", "Modo oscuro/claro"]
-		},
-		{
-			"name": "Nuestra Boda",
-			"description": "Galería de fotos y videos de boda con contenido y animaciones aleatorias.",
-			"link": "https://bmoda.vercel.app/",
-			"images": ["/projects/cursos/1_1.webp", "/projects/pipzum/3_2.webp", "/projects/gym/2_3.webp"],
-			"repository": "https://github.com/ZBrian99/bmoda",
-			"technologies": ["React", "Styled Components"],
-			"type": "personal",
-			"category": "frontend",
-			"features": [
-				"Galería multimedia",
-				"Animaciones personalizadas",
-				"Contenido dinámico aleatorio",
-				"Diseño elegante"
-			]
+			"category": "frontend"
 		}
 	]
 }
