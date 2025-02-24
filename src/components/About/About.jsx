@@ -67,14 +67,14 @@ export const About = () => {
 					<GlowButtonAlt
 						fit
 						stretch
-						href='https://drive.google.com/file/d/1hmH9OKMmaDE71r7ZDjqIMVdHdqxybyDI/view?usp=sharing'
+						href='https://drive.google.com/file/d/1ZOSN6uWMs0PgmbzF6gqygZWOKPazPpoC/view?usp=sharing'
 						target='_blank'
 						rel='noreferrer'
 					>
 						Curriculum
-						<img 
-							src='/icons/external-link_5.svg' 
-							alt='Web' 
+						<img
+							src='/icons/external-link_5.svg'
+							alt='Web'
 							style={{ width: '1em', height: '1em', marginLeft: '0.5rem' }}
 						/>
 					</GlowButtonAlt>

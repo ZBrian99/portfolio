@@ -10,7 +10,7 @@ const HomeWrapper = styled.main`
 	flex-wrap: wrap;
 	width: 100%;
 	max-width: 80rem;
-	margin: auto;
+	margin: 0 auto;
 	gap: 10rem;
 
 

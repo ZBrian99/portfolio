@@ -108,13 +108,13 @@ export const ProjectCard = ({ project }) => {
             Demo
             <img src="/icons/external-link_5.svg" alt="Demo" />
           </Button> */}
-					{project.repository && (
-						<GlowButtonAlt stretch href={project.repository} target='_blank' rel='noopener noreferrer'>
+					{/* {project.repository && ( */}
+						<GlowButtonAlt stretch href={project.repository} disabled={!project.repository} target='_blank' rel='noopener noreferrer'>
 							GitHub <ButtonIcon src='/icons/github-icon.svg' alt='GitHub' />
 						</GlowButtonAlt>
-					)}
-					<GlowButtonFullColor stretch only={!project.repository} href={project.link} target='_blank' rel='noopener noreferrer'>
-						Ver Demo <ButtonIcon src='/icons/external-link_5.svg' alt='Demo' />
+					{/* // )} */}
+					<GlowButtonFullColor stretch href={project.link} target='_blank' rel='noopener noreferrer'>
+						Web <ButtonIcon src='/icons/external-link_5.svg' alt='Demo' />
 					</GlowButtonFullColor>
 				</ButtonsContainer>
 			</ContentContainer>

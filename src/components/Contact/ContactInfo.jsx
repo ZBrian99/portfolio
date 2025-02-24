@@ -131,7 +131,6 @@ export const ContactInfo = () => {
 					</ContactItemInfo>
 				</ContactItem>
 
-
 				<ContactItem>
 					<Icon>🌎</Icon>
 					<ContactItemInfo>
@@ -145,18 +144,12 @@ export const ContactInfo = () => {
 				<PhotoLink href={'https://github.com/ZBrian99'} target='_blank' rel='noopener noreferrer'>
 					<PhotoIcon src={'/icons/github-icon.svg'} alt='github' />
 				</PhotoLink>
-				<PhotoLink
-					href={'https://www.linkedin.com/in/brianzelada/'}
-					target='_blank'
-					rel='noopener noreferrer'
-				>
+				<PhotoLink href={'https://www.linkedin.com/in/brianzelada/'} target='_blank' rel='noopener noreferrer'>
 					<PhotoIcon src={'/icons/linkedin-icon.svg'} alt='linkedin' />
 				</PhotoLink>
-				<PhotoLink href={'https://x.com/ZBrian99'} target='_blank' rel='noopener noreferrer'>
+				<PhotoLink href={'https://www.linkedin.com/in/brianzelada/'} target='_blank' rel='noopener noreferrer'>
 					<PhotoIcon rounded src={'/icons/x.svg'} alt='x' />
 				</PhotoLink>
-
-			
 			</ContactSocialContainer>
 		</ContactInfoContainer>
 	);

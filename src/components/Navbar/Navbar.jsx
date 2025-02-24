@@ -2,18 +2,33 @@ import styled from '@emotion/styled';
 import { useEffect, useRef, useState } from 'react';
 import { GlowButtonAlt } from '../General/GlowButtonAlt';
 
+const fadeIn = `
+  @keyframes fadeIn {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+`;
+
 const NavbarStyled = styled.div`
+	${fadeIn}
 	@media screen and (min-width: 50rem) {
-    background-color: rgba(26, 6, 32, 0.8);
+		background-color: rgba(26, 6, 32, 0.8);
 		backdrop-filter: blur(1rem);
-    height: 4rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    width: 100%;
-    
+		height: 4rem;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1000;
+		width: 100%;
+		opacity: 0;
+		animation: fadeIn 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 	}
 `;
 
@@ -35,6 +50,8 @@ const NavbarToggle = styled.div`
 	cursor: pointer;
 	z-index: 101;
 	font-size: 2em;
+	opacity: 0;
+	animation: fadeIn 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 `;
 
 const NavbarContainer = styled.div`
@@ -246,7 +263,7 @@ export const Navbar = () => {
 								<GlowButtonAlt
                   fit
                   stretch
-									href='https://drive.google.com/file/d/1hmH9OKMmaDE71r7ZDjqIMVdHdqxybyDI/view?usp=sharing'
+									href='https://drive.google.com/file/d/1ZOSN6uWMs0PgmbzF6gqygZWOKPazPpoC/view?usp=sharing'
 									target='_blank'
 									rel='noreferrer'
 								>
@@ -267,7 +284,7 @@ export const Navbar = () => {
 					<GlowButtonAlt
 						fit
 						stretch
-						href='https://drive.google.com/file/d/1hmH9OKMmaDE71r7ZDjqIMVdHdqxybyDI/view?usp=sharing'
+						href='https://drive.google.com/file/d/1ZOSN6uWMs0PgmbzF6gqygZWOKPazPpoC/view?usp=sharing'
 						target='_blank'
 						rel='noreferrer'
 					>

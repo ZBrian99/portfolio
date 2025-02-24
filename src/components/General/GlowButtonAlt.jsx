@@ -9,6 +9,7 @@ const ButtonStyled = styled.a`
 	border-radius: 2rem;
 	color: #fff;
 	${({ fit }) => (fit ? 'width: fit-content;' : 'flex: 1;')}
+	${({ disabled }) => (disabled ? 'opacity: 0.5; pointer-events: none;' : 'opacity: 1; pointer-events: auto;')}
 	height: fit-content;
 	white-space: nowrap;
 	display: flex;
