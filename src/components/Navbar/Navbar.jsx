@@ -261,9 +261,9 @@ export const Navbar = () => {
 									Contacto
 								</NavbarItem>
 								<GlowButtonAlt
-                  fit
-                  stretch
-									href='https://drive.google.com/file/d/1ZOSN6uWMs0PgmbzF6gqygZWOKPazPpoC/view?usp=sharing'
+									fit
+									stretch
+									href='https://drive.google.com/file/d/1ZOSN6uWMs0PgmbzF6gqygZWOKPazPpoC/view'
 									target='_blank'
 									rel='noreferrer'
 								>
@@ -276,7 +276,10 @@ export const Navbar = () => {
 				</>
 			) : (
 				<NavbarMenu isActive={true}>
-					<NavbarBrandName href='#'> <HighlightText>Brian</HighlightText> Zelada</NavbarBrandName>
+					<NavbarBrandName href='#'>
+						{' '}
+						<HighlightText>Brian</HighlightText> Zelada
+					</NavbarBrandName>
 
 					<NavbarItem href='#projects'>Proyectos</NavbarItem>
 					<NavbarItem href='#about'>Sobre Mi</NavbarItem>
@@ -284,7 +287,7 @@ export const Navbar = () => {
 					<GlowButtonAlt
 						fit
 						stretch
-						href='https://drive.google.com/file/d/1ZOSN6uWMs0PgmbzF6gqygZWOKPazPpoC/view?usp=sharing'
+						href='https://drive.google.com/file/d/1ZOSN6uWMs0PgmbzF6gqygZWOKPazPpoC/view'
 						target='_blank'
 						rel='noreferrer'
 					>
