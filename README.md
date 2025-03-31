@@ -10,8 +10,6 @@ En este proyecto, podrás ver una selección de mis trabajos, información sobre
 
 - **React:** Utilizado para la construcción de la interfaz de usuario y la lógica de la aplicación.
 - **Emotion/Styled Components:** Utilizado para el manejo de estilos y la creación de componentes con estilos.
-- **Framer Motion:** Utilizado para agregar animaciones y transiciones a la interfaz de usuario. Próximamente, se reemplazará por CSS puro.
-- **React-Parallax-Tilt:** Utilizado para la creación de efectos de paralaje en las tarjetas de proyectos.
 
 ## Contacto
 
