@@ -44,7 +44,8 @@
 			"description": "Página web personal para ofrecer servicios como desarrollador freelance. Diseño moderno con temática espacial y microinteracciones.",
 			"link": "https://interup.dev/",
 			"images": ["/projects/interup.webp"],
-			"technologies": ["Astro", "Tailwind","TypeScript"],
+			"repository": "https://github.com/ZBrian99/interup",
+			"technologies": ["Astro", "Tailwind", "TypeScript"],
 			"type": "profesional",
 			"category": "frontend"
 		},
