@@ -30,7 +30,7 @@
 		]
 	},
 	{
-		"name": "Tools",
+		"name": "Herramientas",
 		"techs": [
 			{ "name": "Git", "icon": "/icons/git.svg" },
 			{ "name": "GitHub", "icon": "/icons/githubweb.svg" },
