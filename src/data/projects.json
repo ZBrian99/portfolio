@@ -3,7 +3,7 @@
 		{
 			"name": "Control Acceso Gym",
 			"description": "Sistema completo de gestión de clientes con control de acceso IoT. Incluye registro de pagos, inscripciones y control automático de puerta.",
-			"link": "https://gym-access.up.railway.app/",
+			"link": "https://demo-gym.up.railway.app/",
 			"images": [
 				"/projects/gym.webp"
 			],
@@ -23,7 +23,7 @@
 		{
 			"name": "Gestión de Cursos",
 			"description": "Plataforma de gestión de cursos con formularios personalizables, inscripciones, sistema de referidos para vendedores y reportes en Excel.",
-			"link": "https://demo-cursos.up.railway.app/login",
+			"link": "https://demo-courses.up.railway.app/login",
 			"images": [
 				"/projects/cursos.webp"
 			],
