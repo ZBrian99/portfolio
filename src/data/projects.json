@@ -3,7 +3,7 @@
 		{
 			"name": "Control Acceso Gym",
 			"description": "Sistema completo de gestión de clientes con control de acceso IoT. Incluye registro de pagos, inscripciones y control automático de puerta.",
-			"link": "https://demo-gym.up.railway.app/",
+			"link": "https://gym-access.up.railway.app/",
 			"images": [
 				"/projects/gym.webp"
 			],
