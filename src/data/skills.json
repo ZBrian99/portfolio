@@ -2,16 +2,17 @@
 	{
 		"name": "Frontend",
 		"techs": [
-			   { "name": "React", "icon": "/icons/react.svg" },
-      { "name": "Astro", "icon": "/icons/astro.svg" },
-      { "name": "TypeScript", "icon": "/icons/typescript.svg" },
-      { "name": "Redux Toolkit", "icon": "/icons/redux.svg" },
-      { "name": "React Query", "icon": "/icons/react-query.svg" },
-      { "name": "Tailwind", "icon": "/icons/tailwindcss.svg" },
-      { "name": "Material UI", "icon": "/icons/mui.svg" },
-      { "name": "Styled Components", "icon": "/icons/styled-components.svg" },
-      { "name": "Framer Motion", "icon": "/icons/framer-motion.svg" },
-			{ "name": "Sass", "icon": "/icons/sass.svg" },
+			{ "name": "Next.js", "icon": "/icons/nextjs.svg" },
+			{ "name": "React", "icon": "/icons/react.svg" },
+			{ "name": "Astro", "icon": "/icons/astro.svg" },
+			{ "name": "TypeScript", "icon": "/icons/typescript.svg" },
+			{ "name": "Redux Toolkit", "icon": "/icons/redux.svg" },
+			{ "name": "React Query", "icon": "/icons/react-query.svg" },
+			{ "name": "Shadcn", "icon": "/icons/shadcn.svg" },
+			{ "name": "Tailwind", "icon": "/icons/tailwindcss.svg" },
+			{ "name": "Material UI", "icon": "/icons/mui.svg" },
+			{ "name": "Styled Components", "icon": "/icons/styled-components.svg" },
+			{ "name": "Framer Motion", "icon": "/icons/framer-motion.svg" },
 			{ "name": "JavaScript", "icon": "/icons/js.svg" },
 			{ "name": "CSS", "icon": "/icons/css.svg" },
 			{ "name": "HTML", "icon": "/icons/html.svg" }
@@ -21,17 +22,19 @@
 		"name": "Backend",
 		"techs": [
 			{ "name": "Nest.js", "icon": "/icons/nestjs.svg" },
+			{ "name": "Node.js", "icon": "/icons/nodejs.svg" },
 			{ "name": "Prisma", "icon": "/icons/prisma.svg" },
 			{ "name": "PostgreSQL", "icon": "/icons/postgresql.svg" },
 			{ "name": "Socket.IO", "icon": "/icons/socketio.svg" },
 			{ "name": "MongoDB", "icon": "/icons/mongodb.svg" },
-			{ "name": "Express", "icon": "/icons/express.svg" },
-			{ "name": "Node.js", "icon": "/icons/nodejs.svg" }
+			{ "name": "Express", "icon": "/icons/express.svg" }
 		]
 	},
 	{
 		"name": "Herramientas",
 		"techs": [
+      { "name": "VS Code", "icon": "/icons/vscode.svg" },
+			{ "name": "Cursor", "icon": "/icons/cursor.svg" },
 			{ "name": "Git", "icon": "/icons/git.svg" },
 			{ "name": "GitHub", "icon": "/icons/githubweb.svg" },
 			{ "name": "Figma", "icon": "/icons/figma.svg" },

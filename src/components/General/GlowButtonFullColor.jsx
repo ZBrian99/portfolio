@@ -7,6 +7,8 @@ const ButtonStyled = styled.a`
 	cursor: pointer;
 	position: relative;
 	${({ fit }) => (fit ? 'width: fit-content;' : 'flex: 1;')}
+	${({ disabled }) => (disabled ? 'opacity: 0.5; pointer-events: none;' : 'opacity: 1; pointer-events: auto;')}
+
 	height: fit-content;
 	text-align: center;
 	white-space: nowrap;
@@ -51,6 +53,6 @@ const ButtonStyled = styled.a`
 	}
 `;
 
-export const GlowButtonFullColor = ({ children, ...props }) => {
+export const GlowButtonFullColor = ({ children,  ...props }) => {
 	return <ButtonStyled {...props}>{children}</ButtonStyled>;
 };

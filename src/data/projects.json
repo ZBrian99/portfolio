@@ -1,43 +1,61 @@
 {
 	"projects": [
 		{
-			"name": "Control Acceso Gym",
+			"name": "Orgullo Pro",
+			"description": "Plataforma de empleo inclusiva que conecta profesionales y cliente en un solo lugar. Cuenta con perfiles de usuario y filtros de busqueda",
+			"images": ["/projects/orgullopro.webp"],
+			"technologies": [
+				"Next.js",
+				"Node.js",
+				"Prisma",
+				"Shadcn",
+				"Tailwind",
+				"React",
+				"TypeScript",
+				"Zustand",
+				"PostgreSQL"
+			],
+			"type": "en desarrollo",
+			"category": "fullstack"
+		},
+		{
+			"name": "Intima Estética",
+			"description": "Ecommerce de servicios de estética combinado con sitio informativo. Implementación de SSR/SSG/ISR para SEO optimizado.",
+			"link": "https://estetica-intima.vercel.app/",
+			"repository": "https://github.com/ZBrian99/estetica-intima",
+			"images": ["/projects/intima.webp"],
+			"technologies": [
+				"Next.js",
+				"Node.js",
+				"Prisma",
+				"Shadcn",
+				"Tailwind",
+				"React",
+				"TypeScript",
+				"Zustand",
+				"PostgreSQL"
+			],
+			"type": "en desarrollo",
+			"category": "fullstack"
+		},
+
+		{
+			"name": "Fit Gym",
 			"description": "Sistema completo de gestión de clientes con control de acceso IoT. Incluye registro de pagos, inscripciones y control automático de puerta.",
 			"link": "https://gym-access.up.railway.app/",
-      "repository": "https://github.com/ZBrian99/demo-gym",
-			"images": [
-				"/projects/gym.webp"
-			],
-			"technologies": [
-				"React",
-				"Nest.js",
-				"PostgreSQL",
-				"Material UI",
-				"TypeScript",
-        "Redux",
-				"Prisma",
-				"Socket.IO"
-			],
+			"repository": "https://github.com/ZBrian99/demo-gym",
+			"images": ["/projects/gym.webp"],
+			"technologies": ["React", "Nest.js", "PostgreSQL", "Material UI", "TypeScript", "Redux", "Prisma", "Socket.IO"],
 			"type": "freelance",
 			"category": "fullstack"
 		},
 		{
-			"name": "Gestión de Cursos",
+			"name": "Shiatsu X el Mundo ",
 			"description": "Plataforma de gestión de cursos con formularios personalizables, inscripciones, sistema de referidos para vendedores y reportes en Excel.",
 			"link": "https://demo-courses.up.railway.app/login",
 			"repository": "https://github.com/ZBrian99/demo-courses",
-			"images": [
-				"/projects/cursos.webp"
-			],
-			"technologies": [
-				"React",
-				"Nest.js",
-				"PostgreSQL",
-				"Material UI",
-				"TypeScript",
-				"Redux",
-				"Prisma"
-			],
+			"images": ["/projects/cursos.webp"],
+			"technologies": ["React", "Nest.js", "PostgreSQL", "Material UI", "TypeScript", "Redux", "Prisma"],
 			"type": "freelance",
 			"category": "fullstack"
 		},
@@ -47,22 +65,27 @@
 			"link": "https://interup.dev/",
 			"images": ["/projects/interup.webp"],
 			"repository": "https://github.com/ZBrian99/interup",
-			"technologies": ["Astro", "Tailwind", "TypeScript"],
+			"technologies": ["Astro", "TypeScript", "Tailwind"],
 			"type": "profesional",
+			"category": "frontend"
+		},
+		{
+			"name": "Todo App",
+			"description": "Aplicación de lista de tarea con persistencia en localStorage, filtros de busqueda, tags y diseño moderno.",
+			"link": "https://evy-todo-app.vercel.app/",
+			"repository": "https://github.com/ZBrian99/todo-app",
+			"images": ["/projects/todoapp.webp"],
+			"technologies": ["Next.js", "React", "TypeScript", "Tailwind"],
+			"type": "personal",
 			"category": "frontend"
 		},
 		{
 			"name": "Sitio Web Pizzeria",
 			"description": "Landing page moderna para pizzería con diseño atractivo, animaciones y efectos parallax. Incluye menu, precios y logros.",
 			"link": "https://pipzum.vercel.app/",
-			"images": [
-				"/projects/pipzum.webp"
-			],
+			"images": ["/projects/pipzum.webp"],
 			"repository": "https://github.com/ZBrian99/pizzeria",
-			"technologies": [
-				"React",
-				"Sass"
-			],
+			"technologies": ["React", "Sass"],
 			"type": "personal",
 			"category": "frontend"
 		},
@@ -70,14 +93,9 @@
 			"name": "League of Legends",
 			"description": "Rediseño de la página de campeones de league of legends con información detallada, filtros y visualización de historias, habilidades y skins.",
 			"link": "https://leagueoflegendsrework.vercel.app/champions/",
-			"images": [
-				"/projects/lol.webp"
-			],
+			"images": ["/projects/lol.webp"],
 			"repository": "https://github.com/ZBrian99/league_of_legends_rework",
-			"technologies": [
-				"React",
-				"Styled Components"
-			],
+			"technologies": ["React", "Styled Components"],
 			"type": "personal",
 			"category": "frontend"
 		}

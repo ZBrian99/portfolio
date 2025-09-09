@@ -1,4 +1,5 @@
 export const technologyStyles = {
+	'VS Code': { color: '#0066b8', background: 'rgba(0, 102, 184, 0.2)' },
 	React: { color: '#61dafb', background: 'rgba(97, 218, 251, 0.2)' },
 	Redux: { color: '#764abc', background: 'rgba(118, 74, 188, 0.3)' },
 	'Redux Toolkit': { color: '#764abc', background: 'rgba(118, 74, 188, 0.3)' },
@@ -12,7 +13,7 @@ export const technologyStyles = {
 	JavaScript: { color: '#f7df1e', background: 'rgba(247, 223, 30, 0.2)' },
 	TypeScript: { color: '#3178c6', background: 'rgba(49, 120, 198, 0.3)' },
 	'Material UI': { color: '#007fff', background: 'rgba(0, 127, 255, 0.3)' },
-	'Tailwind': { color: '#38bdf8', background: 'rgba(56, 189, 248, 0.2)' },
+	Tailwind: { color: '#38bdf8', background: 'rgba(56, 189, 248, 0.2)' },
 	MongoDB: { color: '#00ed64', background: 'rgba(0, 237, 100, 0.2)' },
 	Astro: { color: '#ff5d01', background: 'rgba(255, 93, 1, 0.2)' },
 	'Socket.IO': { color: '#ffffff', background: 'rgba(255, 255, 255, 0.1)' },
@@ -41,11 +42,19 @@ export const ProjectTypeColors = {
 		background: 'rgba(58, 17, 37, 0.7)',
 		color: '#f9a8d4',
 		border: 'rgba(249, 168, 212, 0.3)',
-	},
+  },
+  "en desarrollo": {
+    background: 'rgba(165, 124, 49, 0.7)',
+    color: '#fbbf24',
+    border: 'rgba(251, 191, 36, 0.3)',
+  }
 };
 
 export const technologyIcons = {
 	React: '/icons/react.svg',
+	'Shadcn': '/icons/shadcn.svg',
+  'Next.js': '/icons/nextjs.svg',
+  Zustand: '/icons/zustand.png',
 	Redux: '/icons/redux.svg',
 	'Redux Toolkit': '/icons/redux.svg',
 	'Node.js': '/icons/nodejs.svg',
@@ -58,7 +67,7 @@ export const technologyIcons = {
 	JavaScript: '/icons/js.svg',
 	TypeScript: '/icons/typescript.svg',
 	'Material UI': '/icons/mui.svg',
-	'Tailwind': '/icons/tailwindcss.svg',
+	Tailwind: '/icons/tailwindcss.svg',
 	MongoDB: '/icons/mongodb.svg',
 	Astro: '/icons/astro.svg',
 	'Socket.IO': '/icons/socketio.svg',
