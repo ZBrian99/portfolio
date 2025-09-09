@@ -62,7 +62,7 @@
 		{
 			"name": "InterUp",
 			"description": "Página web personal para ofrecer servicios como desarrollador freelance. Diseño moderno con temática espacial y microinteracciones.",
-			"link": "https://interup.dev/",
+			"link": "https://interup.up.railway.app/",
 			"images": ["/projects/interup.webp"],
 			"repository": "https://github.com/ZBrian99/interup",
 			"technologies": ["Astro", "TypeScript", "Tailwind"],
