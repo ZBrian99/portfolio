@@ -263,7 +263,7 @@ export const Navbar = () => {
 								<GlowButtonAlt
 									fit
 									stretch
-									href='https://drive.google.com/file/d/12IsykOQ0ZUS4MIaLdcRwnVnJPcqHdU29/view'
+									href='https://drive.google.com/file/d/1vBzqTPoXH_TZqrlb83tRb-AgSsP1nl7m/view'
 									target='_blank'
 									rel='noreferrer'
 								>
@@ -287,7 +287,7 @@ export const Navbar = () => {
 					<GlowButtonAlt
 						fit
 						stretch
-						href='https://drive.google.com/file/d/12IsykOQ0ZUS4MIaLdcRwnVnJPcqHdU29/view'
+						href='https://drive.google.com/file/d/1vBzqTPoXH_TZqrlb83tRb-AgSsP1nl7m/view'
 						target='_blank'
 						rel='noreferrer'
 					>
