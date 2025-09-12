@@ -80,7 +80,7 @@
 			"category": "frontend"
 		},
 		{
-			"name": "Sitio Web Pizzeria",
+			"name": "Pipzum",
 			"description": "Landing page moderna para pizzería con diseño atractivo, animaciones y efectos parallax. Incluye menu, precios y logros.",
 			"link": "https://pipzum.vercel.app/",
 			"images": ["/projects/pipzum.webp"],
