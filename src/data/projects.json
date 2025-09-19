@@ -1,9 +1,9 @@
 {
 	"projects": [
 		{
-			"name": "Orgullo Pro",
+			"name": "Inclusiva",
 			"description": "Plataforma de empleo inclusiva que conecta profesionales y cliente en un solo lugar. Cuenta con perfiles de usuario y filtros de busqueda",
-			"images": ["/projects/orgullopro.webp"],
+			"images": ["/projects/inclusiva.webp"],
 			"technologies": [
 				"Next.js",
 				"Node.js",
@@ -16,7 +16,9 @@
 				"PostgreSQL"
 			],
 			"type": "en desarrollo",
-			"category": "fullstack"
+			"category": "fullstack",
+			"link": "https://inclusiva.vercel.app/",
+			"repository": "https://github.com/ZBrian99/inclusiva"
 		},
 		{
 			"name": "Intima Estética",
