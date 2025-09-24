@@ -2,7 +2,7 @@
 	"projects": [
 		{
 			"name": "Inclusiva",
-			"description": "Plataforma de empleo inclusiva que conecta profesionales y cliente en un solo lugar. Cuenta con perfiles de usuario y filtros de busqueda",
+			"description": "Plataforma inclusiva que conecta personas a través de eventos, servicios, productos y cursos en un espacio seguro y diverso.",
 			"images": ["/projects/inclusiva.webp"],
 			"technologies": [
 				"Next.js",
